@@ -1,0 +1,87 @@
+{
+  "exam_code": "dop-c02",
+  "note": "Questions where the chosen answer is uncertain — double-check before relying on these. `picked` is the best-guess answer; `note` is the original reasoning.",
+  "items": [
+    {
+      "number": 44,
+      "picked": [
+        "B",
+        "D",
+        "E"
+      ],
+      "note": "Q44 (integration tests in ECS pipeline, Choose 3) — picked [B, D, E] (CodeDeploy action provider + imagedefinitions.json output + Lambda action stage for connectivity checks). [A, D, E] (Amazon ECS as action provider instead of CodeDeploy) is the other valid camp; I went with CodeDeploy because the question implies controlled rollouts of new service endpoints."
+    },
+    {
+      "number": 47,
+      "picked": [
+        "B",
+        "C",
+        "F"
+      ],
+      "note": "Q47 (Control Tower + IAM Identity Center + external IdP, least privilege, Choose 3) — picked [B, C, F] (permission sets with PrincipalTag + IdP group + IdP attribute mapping). This is the canonical ABAC pattern with external IdP."
+    },
+    {
+      "number": 54,
+      "picked": [
+        "A",
+        "D",
+        "F"
+      ],
+      "note": "Q54 (encrypted AMI sharing cross-account, Choose 3) — picked [A, D, F] (encrypted copy + grant from source key policy + share encrypted AMI). The KMS grant chain is the part most people miss."
+    },
+    {
+      "number": 61,
+      "picked": [
+        "A",
+        "E",
+        "F"
+      ],
+      "note": "Q61 (S3 multi-Region two-way replication + 15-min failover, Choose 3) — picked [A, E, F] (S3 RTC + Route 53 ARC routing control + UpdateRoutingControlStates). [A, B, C] using Multi-Region Access Point is the other camp; ARC routing controls are the more modern recommended pattern but MRAP is also valid."
+    },
+    {
+      "number": 70,
+      "picked": [
+        "B",
+        "C",
+        "E"
+      ],
+      "note": "Q70 (EKS + EFS CSI not mounting, Choose 3) — picked [B, C, E] (security group NFS inbound + IAM role for CSI + EFS mount targets in EKS subnets). All three are commonly missed configurations."
+    },
+    {
+      "number": 85,
+      "picked": [
+        "C",
+        "E",
+        "F"
+      ],
+      "note": "Q85 (Systems Manager hybrid management with EC2 + IoT Greengrass + on-premises, Choose 3) — picked [C, E, F] (Patch Manager + maintenance window + managed-instance activation + IAM service role for hybrid). [B, E, F] with Run Command instead of Patch Manager is defensible but less canonical for patching."
+    },
+    {
+      "number": 133,
+      "picked": [
+        "A",
+        "C",
+        "E"
+      ],
+      "note": "Q133 (disable new IAM user creds + notify, Choose 3) — picked [A, C, E] (CreateUser EventBridge rule + Lambda disables keys/profiles + SNS topic). [B, D, E] with GetLoginProfile is sometimes selected but CreateUser is the more direct trigger."
+    },
+    {
+      "number": 159,
+      "picked": [
+        "B",
+        "D",
+        "E"
+      ],
+      "note": "Q159 (CI/CD migration with cache clear + rollback, Choose 3) — picked [B, D, E] (BeforeInstall script + CodePipeline + CodeBuild→S3→CodeDeploy). Three-step pipeline pattern."
+    },
+    {
+      "number": 160,
+      "picked": [
+        "B",
+        "C",
+        "E"
+      ],
+      "note": "Q160 (S3 .csv logs + metadata + visualize, Choose 3) — picked [B, C, E] (QuickSight + Athena + Glue Data Catalog). This is the canonical \"S3 + Athena + Glue\" lake-house trio."
+    }
+  ]
+}

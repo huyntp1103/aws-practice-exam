@@ -1,0 +1,29 @@
+{
+  "exam_code": "saa-c03",
+  "note": "Questions where the chosen answer is uncertain — double-check before relying on these. `picked` is the best-guess answer; `note` is the original reasoning.",
+  "items": [
+    {
+      "number": 204,
+      "picked": "B",
+      "note": "Q204 (route across two Regions, exclude unhealthy) — went with B (Route 53 multivalue answer + health checks). Failover routing would also be defensible; the options didn't include it cleanly."
+    },
+    {
+      "number": 332,
+      "picked": "D",
+      "note": "Q332 (prevent accidental EBS snapshot deletion) — D (EBS Snapshot Lock, released late 2023). If your study source predates that, C (Recycle Bin) was the older canonical answer."
+    },
+    {
+      "number": 462,
+      "picked": [
+        "A",
+        "C"
+      ],
+      "note": "Q462 (TCP+UDP, multi-region, low latency) — went with [A, C] (internal NLBs + Global Accelerator). The options described NLBs as \"internal\" rather than \"internet-facing,\" which is non-standard wording but does work with Global Accelerator endpoints."
+    },
+    {
+      "number": 677,
+      "picked": "A",
+      "note": "Q677 (Sunday 12-hour workload, can't tolerate interruption) — A uses Scheduled Reserved Instances. AWS deprecated those a while back, but the option is still in the question pool, so it remains the best fit among the four. In practice today you'd use an Instance Scheduler or EventBridge to start/stop On-Demand or a Savings Plan that covers both windows."
+    }
+  ]
+}
