@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import awsLogo from "@/assets/aws-logo.png";
 
 const STORAGE_KEY = "aws-study:unlocked";
 const HASH = (import.meta.env.VITE_PASSWORD_HASH as string | undefined)?.toLowerCase();
@@ -66,6 +67,10 @@ export function PasswordGate({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <div className="container max-w-sm pt-24">
+        <div className="mb-6 flex flex-col items-center gap-2 text-center">
+          <img src={awsLogo} alt="AWS" className="h-12 w-auto" />
+          <div className="text-sm text-muted-foreground">AWS Exam Practice</div>
+        </div>
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-xl">

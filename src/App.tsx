@@ -7,6 +7,7 @@ import { Session } from "@/pages/Session";
 import { Results } from "@/pages/Results";
 import { History } from "@/pages/History";
 import { cn } from "@/lib/utils";
+import awsLogo from "@/assets/aws-logo.png";
 
 export default function App() {
   return (
@@ -16,8 +17,15 @@ export default function App() {
         <div className="min-h-screen bg-background text-foreground">
           <header className="border-b">
             <div className="container flex h-14 items-center justify-between gap-4">
-              <Link to="/" className="font-semibold tracking-tight">
-                AWS Exam Practice
+              <Link to="/" className="flex items-center gap-2 font-semibold tracking-tight">
+                <img
+                  src={awsLogo}
+                  alt=""
+                  className="h-7 w-auto"
+                  width={28}
+                  height={28}
+                />
+                <span>AWS Exam Practice</span>
               </Link>
               <nav className="flex items-center gap-1 text-sm">
                 <NavItem to="/">Home</NavItem>
