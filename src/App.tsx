@@ -1,4 +1,5 @@
 import { BrowserRouter, NavLink, Route, Routes, Link } from "react-router-dom";
+import { PasswordGate } from "@/components/PasswordGate";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { Home } from "@/pages/Home";
@@ -10,6 +11,7 @@ import { cn } from "@/lib/utils";
 export default function App() {
   return (
     <ThemeProvider>
+      <PasswordGate>
       <BrowserRouter>
         <div className="min-h-screen bg-background text-foreground">
           <header className="border-b">
@@ -34,6 +36,7 @@ export default function App() {
           </main>
         </div>
       </BrowserRouter>
+      </PasswordGate>
     </ThemeProvider>
   );
 }

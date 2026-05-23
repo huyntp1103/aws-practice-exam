@@ -28,6 +28,8 @@ jobs:
       - run: npm ci
 
       - run: npm run build
+        env:
+          VITE_PASSWORD_HASH: ${{ secrets.PASSWORD_HASH }}
 
       # Custom domain for GitHub Pages.
       - run: echo "aws.nguyetquedo.com" > dist/CNAME

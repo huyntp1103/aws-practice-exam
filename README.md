@@ -36,6 +36,30 @@ Stack: Vite + React + TypeScript + Tailwind + shadcn/ui (lightweight subset). St
 - `F` toggle flag
 - `R` reveal answer (when answer key present)
 
+## Password gate (light deterrent)
+
+The app can be hidden behind a SHA-256 password check. The hash is baked into the bundle at build time via `VITE_PASSWORD_HASH`; the password itself never lives in the repo. Bypassable by anyone reading the JS, but enough to stop casual visitors.
+
+**Generate the hash** (from a password you'll remember):
+
+```bash
+echo -n "your-password" | shasum -a 256 | cut -d' ' -f1
+```
+
+**Local dev** — copy `.env.example` to `.env.local` and paste the hash:
+
+```ini
+VITE_PASSWORD_HASH=<hex hash>
+```
+
+**Production (GitHub Pages)** — set a repo secret:
+
+1. Repo → **Settings → Secrets and variables → Actions → New repository secret**
+2. Name: `PASSWORD_HASH`, Value: the hex hash.
+3. The deploy workflow passes it to the build as `VITE_PASSWORD_HASH`.
+
+Leave the env var unset and the gate disables itself (open access). The build also logs a console warning in production if no hash is configured.
+
 ## Data files
 
 The app expects files under `data/<exam>/`:
