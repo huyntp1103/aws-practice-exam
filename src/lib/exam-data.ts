@@ -76,7 +76,19 @@ export function loadExplanationsSeed(examCode: string): Promise<ExplanationsFile
     try {
       const res = await fetch(`/${examCode}/explanations.json`);
       if (!res.ok) return null;
-      return (await res.json()) as ExplanationsFile;
+      const data = (await res.json()) as ExplanationsFile;
+      // Catch a misfiled seed: the file is in data/<examCode>/ but its
+      // exam_code says otherwise. Items whose question numbers don't exist in
+      // the actual bank will be silently dropped at merge time, so this is
+      // often the only signal.
+      if (data?.exam_code && data.exam_code !== examCode) {
+        console.warn(
+          `[explanations] data/${examCode}/explanations.json declares ` +
+            `exam_code="${data.exam_code}" — likely misfiled. Move it to ` +
+            `data/${data.exam_code}/explanations.json.`,
+        );
+      }
+      return data;
     } catch {
       return null;
     }

@@ -321,8 +321,8 @@ function ExplainBlock({
     setErr(null);
     try {
       const apiKey = Storage.getGeminiKey();
-      const { text, model } = await explainQuestion(apiKey, q);
-      const exp: Explanation = { text, model, createdAt: Date.now() };
+      const text = await explainQuestion(apiKey, q);
+      const exp: Explanation = { text, createdAt: Date.now() };
       onSaved(exp);
     } catch (e) {
       setErr((e as Error).message);
@@ -338,12 +338,11 @@ function ExplainBlock({
           <span className="flex items-center gap-1.5">
             <Sparkles className="h-3.5 w-3.5" /> AI explanation
           </span>
-          <span className="text-muted-foreground">
-            {explanation.model}
-            {explanation.createdAt > 0 && (
-              <> · {new Date(explanation.createdAt).toLocaleDateString()}</>
-            )}
-          </span>
+          {explanation.createdAt > 0 && (
+            <span className="text-muted-foreground">
+              {new Date(explanation.createdAt).toLocaleDateString()}
+            </span>
+          )}
         </div>
         <div className="whitespace-pre-wrap">{explanation.text}</div>
         <div className="pt-2">

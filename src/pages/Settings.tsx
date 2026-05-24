@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { Check, Download, Eye, EyeOff, Save, Trash2 } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Check, Download, Eye, EyeOff, Save, Sparkles, Trash2 } from "lucide-react";
 
 import { EXAMS } from "@/lib/exams";
 import { Storage } from "@/lib/storage";
@@ -208,6 +209,11 @@ export function Settings() {
                   </div>
                 </div>
                 <div className="flex gap-1">
+                  <Link to={`/explanations?exam=${e.code}`}>
+                    <Button variant="ghost" size="sm" aria-label="View explanations">
+                      <Sparkles /> View
+                    </Button>
+                  </Link>
                   <Button
                     variant="outline"
                     size="sm"

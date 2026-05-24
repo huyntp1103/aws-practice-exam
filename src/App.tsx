@@ -7,6 +7,7 @@ import { Session } from "@/pages/Session";
 import { Results } from "@/pages/Results";
 import { History } from "@/pages/History";
 import { Settings } from "@/pages/Settings";
+import { Explanations } from "@/pages/Explanations";
 import { cn } from "@/lib/utils";
 import awsLogo from "@/assets/aws-logo.png";
 
@@ -31,6 +32,7 @@ export default function App() {
               <nav className="flex items-center gap-1 text-sm">
                 <NavItem to="/">Home</NavItem>
                 <NavItem to="/history">History</NavItem>
+                <NavItem to="/explanations">Explanations</NavItem>
                 <NavItem to="/settings">Settings</NavItem>
                 <ThemeToggle />
               </nav>
@@ -40,6 +42,7 @@ export default function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/history" element={<History />} />
+              <Route path="/explanations" element={<Explanations />} />
               <Route path="/settings" element={<Settings />} />
               <Route path="/session/:examCode" element={<Session />} />
               <Route path="/results/:examCode/:attemptId" element={<Results />} />

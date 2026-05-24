@@ -39,7 +39,7 @@ async function callOnce(
   apiKey: string,
   model: string,
   prompt: string,
-): Promise<{ text: string; model: string }> {
+): Promise<string> {
   const url = `${BASE_URL}/${encodeURIComponent(model)}:generateContent?key=${encodeURIComponent(apiKey)}`;
   const res = await fetch(url, {
     method: "POST",
@@ -80,7 +80,7 @@ async function callOnce(
       .join("")
       .trim() ?? "";
   if (!text) throw new Error(`Gemini (${model}): empty response`);
-  return { text, model };
+  return text;
 }
 
 function shouldFallback(e: unknown): boolean {
@@ -102,7 +102,7 @@ function shouldFallback(e: unknown): boolean {
 export async function explainQuestion(
   apiKey: string,
   q: RawQuestion,
-): Promise<{ text: string; model: string }> {
+): Promise<string> {
   const key = normalizeAnswer(q.answer);
   if (!key) throw new Error("Question has no answer key — nothing to explain.");
   if (!apiKey) throw new Error("Gemini API key not set. Add it in Settings.");

@@ -83,7 +83,6 @@ export interface UncertainBank {
 
 export interface Explanation {
   text: string;
-  model: string;
   createdAt: number;
 }
 
