@@ -1,7 +1,8 @@
-import type { ExamBank, UncertainBank } from "./types";
+import type { ExamBank, ExplanationsFile, UncertainBank } from "./types";
 
 const bankCache = new Map<string, Promise<ExamBank>>();
 const uncertainCache = new Map<string, Promise<UncertainBank | null>>();
+const explanationsSeedCache = new Map<string, Promise<ExplanationsFile | null>>();
 
 /**
  * Load an exam's question bank. The new layout is data/<exam>/questions.json;
@@ -59,5 +60,28 @@ export function loadUncertain(examCode: string): Promise<UncertainBank | null> {
   })();
 
   uncertainCache.set(examCode, p);
+  return p;
+}
+
+/**
+ * Load optional pre-baked AI explanations for an exam. Returns null when the
+ * file isn't present. Acts as a seed that can be merged with the localStorage
+ * cache so explanations can be shared across browsers/devices (commit the
+ * exported JSON to data/<exam>/explanations.json).
+ */
+export function loadExplanationsSeed(examCode: string): Promise<ExplanationsFile | null> {
+  if (explanationsSeedCache.has(examCode)) return explanationsSeedCache.get(examCode)!;
+
+  const p = (async () => {
+    try {
+      const res = await fetch(`/${examCode}/explanations.json`);
+      if (!res.ok) return null;
+      return (await res.json()) as ExplanationsFile;
+    } catch {
+      return null;
+    }
+  })();
+
+  explanationsSeedCache.set(examCode, p);
   return p;
 }

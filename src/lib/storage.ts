@@ -1,10 +1,12 @@
-import type { Attempt, SessionState, UserPrefs } from "./types";
+import type { Attempt, Explanation, SessionState, UserPrefs } from "./types";
 
 const K = {
   prefs: "aws-study:prefs",
   session: (examCode: string) => `aws-study:session:${examCode}`,
   attempts: (examCode: string) => `aws-study:attempts:${examCode}`,
   flags: (examCode: string) => `aws-study:flags:${examCode}`,
+  geminiKey: "aws-study:gemini-key",
+  explanations: (examCode: string) => `aws-study:explanations:${examCode}`,
 };
 
 const DEFAULT_PREFS: UserPrefs = {
@@ -57,8 +59,8 @@ export const Storage = {
   addAttempt(examCode: string, attempt: Attempt) {
     const list = Storage.getAttempts(examCode);
     list.unshift(attempt);
-    // cap at last 50
-    write(K.attempts(examCode), list.slice(0, 50));
+    // cap at last 30
+    write(K.attempts(examCode), list.slice(0, 30));
   },
   getAttempt(examCode: string, id: string): Attempt | undefined {
     return Storage.getAttempts(examCode).find((a) => a.id === id);
@@ -76,5 +78,74 @@ export const Storage = {
     if (flagged) flags[qNum] = true;
     else delete flags[qNum];
     write(K.flags(examCode), flags);
+  },
+
+  // --- Gemini API key (plain localStorage; treat as semi-secret) ---
+  getGeminiKey(): string {
+    try {
+      return localStorage.getItem(K.geminiKey) ?? "";
+    } catch {
+      return "";
+    }
+  },
+  setGeminiKey(key: string) {
+    try {
+      if (key) localStorage.setItem(K.geminiKey, key);
+      else localStorage.removeItem(K.geminiKey);
+    } catch {
+      // ignore
+    }
+  },
+
+  // --- AI explanations cache (per-exam, keyed by question number) ---
+  getExplanations(examCode: string): Record<string, Explanation> {
+    return read<Record<string, Explanation>>(K.explanations(examCode), {});
+  },
+  setExplanation(examCode: string, qNum: number, exp: Explanation) {
+    const all = Storage.getExplanations(examCode);
+    all[String(qNum)] = exp;
+    write(K.explanations(examCode), all);
+  },
+  clearExplanations(examCode: string) {
+    localStorage.removeItem(K.explanations(examCode));
+  },
+
+  // --- Usage / nuclear actions ---
+  /**
+   * Return aws-study:* localStorage usage in bytes, broken down by key.
+   * UTF-16 chars are counted as 2 bytes each (matches what the browser
+   * actually stores) so the number is conservative-ish.
+   */
+  usage(): { byKey: Array<{ key: string; bytes: number }>; total: number } {
+    const byKey: Array<{ key: string; bytes: number }> = [];
+    let total = 0;
+    try {
+      for (let i = 0; i < localStorage.length; i++) {
+        const k = localStorage.key(i);
+        if (!k || !k.startsWith("aws-study:")) continue;
+        const v = localStorage.getItem(k) ?? "";
+        const bytes = (k.length + v.length) * 2;
+        byKey.push({ key: k, bytes });
+        total += bytes;
+      }
+    } catch {
+      // ignore
+    }
+    byKey.sort((a, b) => b.bytes - a.bytes);
+    return { byKey, total };
+  },
+
+  /** Wipe every aws-study:* key. Caller is responsible for the confirm. */
+  clearAll() {
+    try {
+      const doomed: string[] = [];
+      for (let i = 0; i < localStorage.length; i++) {
+        const k = localStorage.key(i);
+        if (k && k.startsWith("aws-study:")) doomed.push(k);
+      }
+      for (const k of doomed) localStorage.removeItem(k);
+    } catch {
+      // ignore
+    }
   },
 };

@@ -80,3 +80,18 @@ export interface UncertainBank {
   note?: string;
   items: UncertainItem[];
 }
+
+export interface Explanation {
+  text: string;
+  model: string;
+  createdAt: number;
+}
+
+// Shape of the optional data/<exam>/explanations.json seed file the app can
+// pre-load to share explanations across browsers/devices.
+export interface ExplanationsFile {
+  exam_code: string;
+  note?: string;
+  // map of question number (string key) -> explanation
+  items: Record<string, Explanation>;
+}

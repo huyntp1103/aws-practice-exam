@@ -1,14 +1,15 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { AlertTriangle, ArrowLeft, Flag } from "lucide-react";
+import { AlertTriangle, ArrowLeft, Flag, Sparkles } from "lucide-react";
 
-import { loadExamBank, loadUncertain } from "@/lib/exam-data";
+import { loadExamBank, loadExplanationsSeed, loadUncertain } from "@/lib/exam-data";
 import { Storage } from "@/lib/storage";
 import { hasAnswerKey, isCorrect, normalizeAnswer } from "@/lib/session";
 import { examByCode } from "@/lib/exams";
+import { explainQuestion } from "@/lib/gemini";
 import { toUncertainMap, type UncertainMap } from "@/lib/uncertain";
 import { cn } from "@/lib/utils";
-import type { Attempt, ExamBank, RawQuestion } from "@/lib/types";
+import type { Attempt, ExamBank, Explanation, RawQuestion } from "@/lib/types";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -28,16 +29,28 @@ export function Results() {
   const [err, setErr] = useState<string | null>(null);
   const [filter, setFilter] = useState<Filter>("all");
   const [openQ, setOpenQ] = useState<number | null>(null);
+  const [explanations, setExplanations] = useState<Record<string, Explanation>>({});
 
   useEffect(() => {
     loadExamBank(examCode)
       .then(setBank)
       .catch((e) => setErr(String(e.message ?? e)));
     loadUncertain(examCode).then((u) => setUncertain(toUncertainMap(u)));
+    // Merge committed seed (data/<exam>/explanations.json) under localStorage,
+    // so the user's own newer ones win.
+    const local = Storage.getExplanations(examCode);
+    loadExplanationsSeed(examCode).then((seed) => {
+      setExplanations({ ...(seed?.items ?? {}), ...local });
+    });
     const a = Storage.getAttempt(examCode, attemptId);
     if (!a) setErr("Attempt not found.");
     else setAttempt(a);
   }, [examCode, attemptId]);
+
+  function onExplained(qNum: number, exp: Explanation) {
+    Storage.setExplanation(examCode, qNum, exp);
+    setExplanations((prev) => ({ ...prev, [String(qNum)]: exp }));
+  }
 
   const byNum = useMemo(() => {
     if (!bank) return new Map<number, RawQuestion>();
@@ -225,6 +238,14 @@ export function Results() {
                         );
                       })}
                     </div>
+
+                    {key && (
+                      <ExplainBlock
+                        q={q}
+                        explanation={explanations[String(qNum)]}
+                        onSaved={(exp) => onExplained(qNum, exp)}
+                      />
+                    )}
                   </div>
                 )}
               </CardContent>
@@ -279,5 +300,77 @@ function Filter({
     >
       {label}
     </Button>
+  );
+}
+
+function ExplainBlock({
+  q,
+  explanation,
+  onSaved,
+}: {
+  q: RawQuestion;
+  explanation: Explanation | undefined;
+  onSaved: (exp: Explanation) => void;
+}) {
+  const [busy, setBusy] = useState(false);
+  const [err, setErr] = useState<string | null>(null);
+  const hasKey = !!Storage.getGeminiKey();
+
+  async function run() {
+    setBusy(true);
+    setErr(null);
+    try {
+      const apiKey = Storage.getGeminiKey();
+      const { text, model } = await explainQuestion(apiKey, q);
+      const exp: Explanation = { text, model, createdAt: Date.now() };
+      onSaved(exp);
+    } catch (e) {
+      setErr((e as Error).message);
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  if (explanation) {
+    return (
+      <div className="rounded-md border border-primary/30 bg-primary/5 p-3 text-sm leading-relaxed">
+        <div className="mb-1 flex items-center justify-between gap-2 text-xs font-medium">
+          <span className="flex items-center gap-1.5">
+            <Sparkles className="h-3.5 w-3.5" /> AI explanation
+          </span>
+          <span className="text-muted-foreground">
+            {explanation.model}
+            {explanation.createdAt > 0 && (
+              <> · {new Date(explanation.createdAt).toLocaleDateString()}</>
+            )}
+          </span>
+        </div>
+        <div className="whitespace-pre-wrap">{explanation.text}</div>
+        <div className="pt-2">
+          <Button size="sm" variant="ghost" onClick={run} disabled={busy}>
+            <Sparkles /> {busy ? "Regenerating…" : "Regenerate"}
+          </Button>
+        </div>
+        {err && <div className="mt-1 text-xs text-destructive">{err}</div>}
+      </div>
+    );
+  }
+
+  return (
+    <div className="space-y-1">
+      <Button size="sm" variant="outline" onClick={run} disabled={busy || !hasKey}>
+        <Sparkles /> {busy ? "Asking Gemini…" : "Explain"}
+      </Button>
+      {!hasKey && (
+        <div className="text-xs text-muted-foreground">
+          Add a Gemini API key in{" "}
+          <Link to="/settings" className="underline">
+            Settings
+          </Link>{" "}
+          to enable explanations.
+        </div>
+      )}
+      {err && <div className="text-xs text-destructive">{err}</div>}
+    </div>
   );
 }

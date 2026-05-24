@@ -1,0 +1,31 @@
+{
+  "exam_code": "saa-c03",
+  "note": "AI-generated explanations cached client-side. Commit this file to data/<exam>/explanations.json to share across devices.",
+  "items": {
+    "175": {
+      "text": "Option A is correct because AWS Secrets Manager provides a native, fully managed solution for storing and automatically rotating database credentials. It integrates directly with Amazon Aurora and supports custom rotation schedules via built-in Lambda templates, requiring minimal operational overhead.\n\nOptions B, C, and D are incorrect because they require significant \"undifferentiated heavy lifting.\" They force you to manually build, maintain, and secure custom rotation logic using AWS Lambda, Parameter Store, EFS, or S3. These approaches increase operational complexity, introduce potential security gaps in credential handling, and lack the seamless, automated integration that Secrets Manager offers for RDS and Aurora databases. Always prefer managed services over custom-coded infrastructure for security tasks.",
+      "model": "gemini-3.1-flash-lite-preview",
+      "createdAt": 1779616769311
+    },
+    "318": {
+      "text": "Option B is correct because Amazon SageMaker is the purpose-built AWS service for end-to-end ML model development, training, and deployment. Amazon QuickSight natively integrates with AWS services to visualize data and build business intelligence dashboards, providing the least operational overhead for this workflow.\n\nOption A is a common distractor because while AWS Glue has ML transforms for data deduplication, it is not a general-purpose tool for building and training custom ML models. Option C is incorrect because managing an AMI requires significant manual patching, scaling, and infrastructure maintenance. Option D is wrong because QuickSight is a visualization tool; while it supports calculated fields, it lacks the robust ML capabilities required to build and train complex models.",
+      "model": "gemini-3.1-flash-lite-preview",
+      "createdAt": 1779617035508
+    },
+    "512": {
+      "text": "Option C is correct because it leverages Permission Sets, which are the native, scalable way to manage access in IAM Identity Center. By grouping users and assigning Permission Sets to those groups across multiple accounts, you centralize administration. When new employees join, you simply add them to the existing group, and they automatically inherit the correct permissions, minimizing operational overhead.\n\nOptions A and B are incorrect because they suggest managing policies at the user or account level, which is inefficient and difficult to maintain. Option D is a distractor because it suggests managing permissions per user rather than per group, which creates significant administrative burden and violates the principle of least privilege management at scale.",
+      "model": "gemini-3.1-flash-lite-preview",
+      "createdAt": 1779616738290
+    },
+    "541": {
+      "text": "Option D is correct because S3 Block Public Access at the account level provides a centralized, definitive override that prevents public access regardless of individual bucket or object settings. Using an SCP ensures that even administrators cannot disable this protection, enforcing a strict security posture across the entire account.\n\nOption A is a reactive approach; it allows a window of vulnerability between the configuration change and the remediation. Option B is ineffective because it relies on manual intervention, which is prone to human error and delay. Option C is incorrect because AWS Resource Access Manager is used for sharing resources across accounts, not for monitoring or enforcing security configurations.",
+      "model": "gemini-3.1-flash-lite-preview",
+      "createdAt": 1779616519851
+    },
+    "625": {
+      "text": "Option A is correct because AWS Glue is a serverless ETL service that handles the transformation of CSV data into a format compatible with Amazon Redshift with minimal management. It integrates natively with S3 and Redshift, requiring no infrastructure maintenance.\n\nOption B is a common distractor because it requires managing EC2 instances, which increases operational overhead (patching, scaling, and monitoring). Option C is incorrect because the COTS application specifically requires data in Redshift or S3, not DynamoDB. Option D is incorrect because Amazon EMR requires managing cluster configurations and scaling, which is significantly more complex and operationally intensive than using the serverless AWS Glue service.",
+      "model": "gemini-3.1-flash-lite-preview",
+      "createdAt": 1779617014219
+    }
+  }
+}
