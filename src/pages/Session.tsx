@@ -211,9 +211,13 @@ export function Session() {
           <CardContent className="space-y-5 py-6">
             <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
               <Badge variant="secondary">#{q.number}</Badge>
-              <span>Accuracy {q.accuracy_percent}%</span>
-              <span>·</span>
-              <span>{q.votes} votes</span>
+              {q.votes > 0 && (
+                <>
+                  <span>Accuracy {q.accuracy_percent}%</span>
+                  <span>·</span>
+                  <span>{q.votes} votes</span>
+                </>
+              )}
               {multi && <Badge variant="warning">Multi-select</Badge>}
               {!scoreable && <Badge variant="outline">Self-review</Badge>}
               {uncertainNote && (
