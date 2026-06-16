@@ -1,6 +1,6 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { AlertTriangle, ArrowLeft, Flag, Sparkles } from "lucide-react";
+import { AlertTriangle, ArrowLeft, ClipboardCopy, Flag, Sparkles } from "lucide-react";
 
 import { loadExamBank, loadExplanationsSeed, loadUncertain } from "@/lib/exam-data";
 import { Storage } from "@/lib/storage";
@@ -14,6 +14,7 @@ import type { Attempt, ExamBank, Explanation, RawQuestion } from "@/lib/types";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Progress } from "@/components/ui/progress";
 import { Separator } from "@/components/ui/separator";
 
@@ -56,6 +57,59 @@ export function Results() {
     if (!bank) return new Map<number, RawQuestion>();
     return new Map(bank.questions.map((q) => [q.number, q]));
   }, [bank]);
+
+  // Study export: pick questions to feed into a Claude Code command that
+  // updates personal notes. Default-select every strictly-incorrect question
+  // (wrong pick present); the user opts in correct/unanswered ones to review.
+  const [selected, setSelected] = useState<Set<number>>(() => new Set());
+  const [copied, setCopied] = useState(false);
+  const initedRef = useRef(false);
+
+  useEffect(() => {
+    if (initedRef.current || !bank || !attempt) return;
+    const def = new Set<number>();
+    for (const n of attempt.questionNumbers) {
+      const q = byNum.get(n);
+      const picked = attempt.answers[n] ?? [];
+      if (q && picked.length > 0 && isCorrect(q, picked) === false) def.add(n);
+    }
+    setSelected(def);
+    initedRef.current = true;
+  }, [bank, attempt, byNum]);
+
+  function toggleSelected(n: number) {
+    setSelected((prev) => {
+      const next = new Set(prev);
+      if (next.has(n)) next.delete(n);
+      else next.add(n);
+      return next;
+    });
+  }
+
+  const command = useMemo(() => {
+    if (!bank || !attempt || selected.size === 0) return "";
+    const groupA: string[] = []; // got wrong / unanswered
+    const groupB: string[] = []; // got right, review
+    for (const n of attempt.questionNumbers) {
+      if (!selected.has(n)) continue;
+      const q = byNum.get(n);
+      if (!q) continue;
+      const picked = attempt.answers[n] ?? [];
+      if (isCorrect(q, picked) === true) groupB.push(`- #${n}`);
+      else groupA.push(picked.length ? `- #${n} pick=${picked.join(",")}` : `- #${n}`);
+    }
+    return buildCommand(examCode, groupA, groupB);
+  }, [bank, attempt, byNum, selected, examCode]);
+
+  async function copyCommand() {
+    try {
+      await navigator.clipboard.writeText(command);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    } catch {
+      setErr("Couldn't copy to clipboard.");
+    }
+  }
 
   if (err) {
     return (
@@ -156,6 +210,38 @@ export function Results() {
               />
             )}
           </div>
+
+          {scoreable && (
+            <>
+              <Separator />
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <div className="text-sm text-muted-foreground">
+                  <span className="font-medium text-foreground tabular-nums">
+                    {selected.size}
+                  </span>{" "}
+                  selected for study export
+                  <span className="block text-xs">
+                    All incorrect are pre-selected — tick any correct ones you want to
+                    review.
+                  </span>
+                </div>
+                <div className="flex items-center gap-2">
+                  {selected.size > 0 && (
+                    <Button
+                      size="sm"
+                      variant="ghost"
+                      onClick={() => setSelected(new Set())}
+                    >
+                      Clear
+                    </Button>
+                  )}
+                  <Button size="sm" onClick={copyCommand} disabled={selected.size === 0}>
+                    <ClipboardCopy /> {copied ? "Copied!" : "Copy Claude Code command"}
+                  </Button>
+                </div>
+              </div>
+            </>
+          )}
         </CardContent>
       </Card>
 
@@ -170,8 +256,17 @@ export function Results() {
           return (
             <Card key={qNum}>
               <CardContent className="py-4 space-y-2">
+                <div className="flex items-start gap-2">
+                {scoreable && (
+                  <Checkbox
+                    className="mt-1.5"
+                    checked={selected.has(qNum)}
+                    onCheckedChange={() => toggleSelected(qNum)}
+                    aria-label={`Select question ${qNum} for study export`}
+                  />
+                )}
                 <button
-                  className="w-full text-left"
+                  className="flex-1 text-left"
                   onClick={() => setOpenQ(open ? null : qNum)}
                 >
                   <div className="flex flex-wrap items-center gap-2">
@@ -205,6 +300,7 @@ export function Results() {
                   </div>
                   <div className="mt-2 line-clamp-2 text-sm">{q.question}</div>
                 </button>
+                </div>
 
                 {open && (
                   <div className="space-y-2 pt-2">
@@ -270,6 +366,34 @@ export function Results() {
       </div>
     </div>
   );
+}
+
+function buildCommand(examCode: string, groupA: string[], groupB: string[]): string {
+  const lines: string[] = [
+    "Update my personal AWS study notes at `Technical/AWS.md`.",
+    `I'm studying for the ${examCode} exam.`,
+    "",
+    "Questions from a practice session. Look each up in this repo's bank at",
+    `\`/Users/huynguyen-mac-be/personal-project/aws-study/data/${examCode}/questions.json\` (match the \`number\` field) for the full`,
+    "question, options, and correct `answer`.",
+    "",
+  ];
+  if (groupA.length) {
+    lines.push("GROUP A — got WRONG (my pick shown):", ...groupA, "");
+  }
+  if (groupB.length) {
+    lines.push("GROUP B — got RIGHT but want to review:", ...groupB, "");
+  }
+  const what =
+    groupA.length && groupB.length
+      ? "the correct answer + why, and for Group A why my pick was wrong"
+      : groupA.length
+        ? "the correct answer + why my pick was wrong"
+        : "the correct answer + why it's right";
+  lines.push(
+    "For each, consider to add new content or update my study note, follow current rule, focus on exam. Finally please shortly response to summary of what changed.",
+  );
+  return lines.join("\n");
 }
 
 function Stat({ label, value }: { label: string; value: number }) {
