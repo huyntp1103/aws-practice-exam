@@ -131,7 +131,7 @@
       "accuracy_percent": 100,
       "votes": 1,
       "answer": "D",
-      "question": "An application uses an Amazon Aurora MySQL DB cluster that includes one Aurora Replica.\nThe application's read performance degrades when there are more than 200 user connections.\nThe number of user connections is approximately 180 on a consistent basis.\nOccasionally, the number of user connections increases rapidly to more than 200.\n\nA SysOps administrator must implement a solution that will scale the application automatically as user demand increases or decreases.\n\nWhich solution will meet these requirements?\n\n\n\n1\n\n2\n\n3\n\n4\n\n5\n\n6\n\n7\n\n...\n\n35",
+      "question": "An application uses an Amazon Aurora MySQL DB cluster that includes one Aurora Replica.\nThe application's read performance degrades when there are more than 200 user connections.\nThe number of user connections is approximately 180 on a consistent basis.\nOccasionally, the number of user connections increases rapidly to more than 200.\n\nA SysOps administrator must implement a solution that will scale the application automatically as user demand increases or decreases.\n\nWhich solution will meet these requirements?",
       "options": {
         "A": "Modify the DB cluster by increasing the Aurora Replica instance size.",
         "B": "Modify the DB cluster by changing to serverless mode whenever the number of user connections exceeds 200.",
@@ -261,7 +261,7 @@
       "accuracy_percent": 100,
       "votes": 4,
       "answer": "C",
-      "question": "A company uses an Amazon CloudFront distribution to deliver its website.\nTraffic logs for the website must be centrally stored, and all data must be encrypted at rest.\n\nWhich solution will meet these requirements?\n\n\n\n1\n\n2\n\n3\n\n4\n\n5\n\n6\n\n7\n\n...\n\n35",
+      "question": "A company uses an Amazon CloudFront distribution to deliver its website.\nTraffic logs for the website must be centrally stored, and all data must be encrypted at rest.\n\nWhich solution will meet these requirements?",
       "options": {
         "A": "Create an Amazon OpenSearch Service (Amazon Elasticsearch Service) domain with internet access and server-side encryption that uses the default AWS managed customer master key (CMK). Configure CloudFront to use the Amazon OpenSearch Service (Amazon Elasticsearch Service) domain as a log destination.",
         "B": "Create an Amazon OpenSearch Service (Amazon Elasticsearch Service) domain with VPC access and server-side encryption that uses AES-256. Configure CloudFront to use the Amazon OpenSearch Service (Amazon Elasticsearch Service) domain as a log destination.",
@@ -395,7 +395,7 @@
       "accuracy_percent": 100,
       "votes": 2,
       "answer": "B",
-      "question": "A company recently moved its server infrastructure to Amazon EC2 instances.\nThe company wants to use Amazon CloudWatch Logs to track the instance logs.\n\nWhat should a SysOps administrator do to meet this requirement in compliance with AWS best practices?\n\n\n\n1\n\n2\n\n3\n\n4\n\n5\n\n6\n\n7\n\n...\n\n35",
+      "question": "A company recently moved its server infrastructure to Amazon EC2 instances.\nThe company wants to use Amazon CloudWatch Logs to track the instance logs.\n\nWhat should a SysOps administrator do to meet this requirement in compliance with AWS best practices?",
       "options": {
         "A": "Configure CloudWatch from the AWS Management Console for the instances. Wait for AWS to automatically install and configure the agents for the instances",
         "B": "Install and configure the CloudWatch agent on the instances. Attach an IAM role to allow the instances to write logs to CloudWatch",
@@ -529,7 +529,7 @@
       "accuracy_percent": 93,
       "votes": 5,
       "answer": "A",
-      "question": "A company has an Amazon EC2 instance that supports a production system.\nThe EC2 instance is backed by an Amazon Elastic Block Store (Amazon EBS) volume.\nThe EBS volume's drive has filled to 100% capacity, which is causing the application on the EC2 instance to experience errors.\n\nWhich solution will remediate these errors in the LEAST amount of time?\n\n\n\n1\n\n2\n\n3\n\n4\n\n5\n\n6\n\n7\n\n...\n\n35",
+      "question": "A company has an Amazon EC2 instance that supports a production system.\nThe EC2 instance is backed by an Amazon Elastic Block Store (Amazon EBS) volume.\nThe EBS volume's drive has filled to 100% capacity, which is causing the application on the EC2 instance to experience errors.\n\nWhich solution will remediate these errors in the LEAST amount of time?",
       "options": {
         "A": "Modify the EBS volume by adding additional drive space. Log on to the EC2 instance. Use the file system-specific commands to extend the file system.",
         "B": "Create a snapshot of the existing EBS volume. When the snapshot is complete, create an EBS volume of a larger size from the snapshot in the same Availability Zone as the EC2 instance. Attach the new EBS volume to the EC2 instance. Mount the file system.",
@@ -667,7 +667,7 @@
       "accuracy_percent": 100,
       "votes": 18,
       "answer": "D",
-      "question": "A SysOps administrator is deploying an application on 10 Amazon EC2 instances.\nThe application must be highly available.\nThe instances must be placed on distinct underlying hardware.\n\nWhat should the SysOps administrator do to meet these requirements?\n\n\n\n1\n\n2\n\n3\n\n4\n\n5\n\n6\n\n7\n\n...\n\n35",
+      "question": "A SysOps administrator is deploying an application on 10 Amazon EC2 instances.\nThe application must be highly available.\nThe instances must be placed on distinct underlying hardware.\n\nWhat should the SysOps administrator do to meet these requirements?",
       "options": {
         "A": "Launch the instances into a cluster placement group in a single AWS Region.",
         "B": "Launch the instances into a partition placement group in multiple AWS Regions.",
@@ -801,7 +801,7 @@
       "accuracy_percent": 100,
       "votes": 8,
       "answer": "D",
-      "question": "A SysOps administrator is provisioning an Amazon Elastic File System (Amazon EFS) file system to provide shared storage across multiple Amazon EC2 instances.\nThe instances all exist in the same VPC across multiple Availability Zones.\nThere are two instances in each Availability Zone.\nThe SysOps administrator must make the file system accessible to each instance with the lowest possible latency.\n\nWhich solution will meet these requirements?\n\n\n\n1\n\n...\n\n4\n\n5\n\n6\n\n7\n\n8\n\n...\n\n35",
+      "question": "A SysOps administrator is provisioning an Amazon Elastic File System (Amazon EFS) file system to provide shared storage across multiple Amazon EC2 instances.\nThe instances all exist in the same VPC across multiple Availability Zones.\nThere are two instances in each Availability Zone.\nThe SysOps administrator must make the file system accessible to each instance with the lowest possible latency.\n\nWhich solution will meet these requirements?",
       "options": {
         "A": "Create a mount target for the EFS file system in the VPC. Use the mount target to mount the file system on each of the instances.",
         "B": "Create a mount target for the EFS file system in one Availability Zone of the VPC. Use the mount target to mount the file system on the instances in that Availability Zone. Share the directory with the other instances.",
@@ -935,7 +935,7 @@
       "accuracy_percent": 100,
       "votes": 2,
       "answer": "C",
-      "question": "A company needs to monitor its website’s availability to end users.\nThe company needs a solution to provide an Amazon Simple Notification Service (Amazon SNS) notification if the website's uptime decreases to less than 99%.\nThe monitoring must provide an accurate view of the user experience on the website.\n\nWhich solution will meet these requirements?\n\n\n\n1\n\n...\n\n5\n\n6\n\n7\n\n8\n\n9\n\n...\n\n35",
+      "question": "A company needs to monitor its website’s availability to end users.\nThe company needs a solution to provide an Amazon Simple Notification Service (Amazon SNS) notification if the website's uptime decreases to less than 99%.\nThe monitoring must provide an accurate view of the user experience on the website.\n\nWhich solution will meet these requirements?",
       "options": {
         "A": "Create an Amazon CloudWatch alarm that is based on the website's logs that are published to a CloudWatch Logs log group. Configure the alarm to publish an SNS notification if the number of HTTP 4xx errors and 5xx errors exceeds a specified threshold.",
         "B": "Create an Amazon CloudWatch alarm that is based on the website's published metrics in CloudWatch. Configure the alarm to publish an SNS notification that is based on anomaly detection.",
@@ -1065,7 +1065,7 @@
       "accuracy_percent": 100,
       "votes": 4,
       "answer": "A",
-      "question": "A SysOps administrator needs to develop a solution that provides email notification and inserts a record into a database every time a file is put into an Amazon S3 bucket.\n\nWhat is the MOST operationally efficient solution that meets these requirements?\n\n\n\n1\n\n...\n\n6\n\n7\n\n8\n\n9\n\n10\n\n...\n\n35",
+      "question": "A SysOps administrator needs to develop a solution that provides email notification and inserts a record into a database every time a file is put into an Amazon S3 bucket.\n\nWhat is the MOST operationally efficient solution that meets these requirements?",
       "options": {
         "A": "Set up an S3 event notification that targets an Amazon Simple Notification Service (Amazon SNS) topic. Create two subscriptions for the SNS topic. Use one subscription to send the email notification. Use the other subscription to invoke an AWS Lambda function that inserts the record into the database.",
         "B": "Set up an Amazon CloudWatch alarm that enters ALARM state whenever an object is created in the S3 bucket. Configure the alarm to invoke an AWS Lambda function that sends the email notification and inserts the record into the database.",
@@ -1203,7 +1203,7 @@
       "accuracy_percent": 93,
       "votes": 9,
       "answer": "D",
-      "question": "A company is managing multiple AWS accounts in AWS Organizations.\nThe company is reviewing internal security of its AWS environment.\nThe company’s security administrator has their own AWS account and wants to review the VPC configuration of developer AWS accounts.\n\nWhich solution will meet these requirements in the MOST secure manner?\n\n\n\n1\n\n...\n\n7\n\n8\n\n9\n\n10\n\n11\n\n...\n\n35",
+      "question": "A company is managing multiple AWS accounts in AWS Organizations.\nThe company is reviewing internal security of its AWS environment.\nThe company’s security administrator has their own AWS account and wants to review the VPC configuration of developer AWS accounts.\n\nWhich solution will meet these requirements in the MOST secure manner?",
       "options": {
         "A": "Create an IAM policy in each developer account that has read-only access related to VPC resources. Assign the policy to an IAM user. Share the user credentials with the security administrator.",
         "B": "Create an IAM policy in each developer account that has administrator access to all Amazon EC2 actions, including VPC actions. Assign the policy to an IAM user. Share the user credentials with the security administrator.",
@@ -1337,7 +1337,7 @@
       "accuracy_percent": 100,
       "votes": 3,
       "answer": "D",
-      "question": "A company has an application that collects notifications from thousands of alarm systems.\nThe notifications include alarm notifications and information notifications.\nThe information notifications include the system arming processes, disarming processes, and sensor status.\n\nAll notifications are kept as messages in an Amazon Simple Queue Service (Amazon SQS) queue.\nAmazon EC2 instances that are in an Auto Scaling group process the messages.\nA SysOps administrator needs to implement a solution that prioritizes alarm notifications over information notifications.\n\nWhich solution will meet these requirements?\n\n\n\n1\n\n...\n\n8\n\n9\n\n10\n\n11\n\n12\n\n...\n\n35",
+      "question": "A company has an application that collects notifications from thousands of alarm systems.\nThe notifications include alarm notifications and information notifications.\nThe information notifications include the system arming processes, disarming processes, and sensor status.\n\nAll notifications are kept as messages in an Amazon Simple Queue Service (Amazon SQS) queue.\nAmazon EC2 instances that are in an Auto Scaling group process the messages.\nA SysOps administrator needs to implement a solution that prioritizes alarm notifications over information notifications.\n\nWhich solution will meet these requirements?",
       "options": {
         "A": "Adjust the Auto Scaling group to scale faster when a high number of messages is in the queue.",
         "B": "Use the Amazon Simple Notification Service (Amazon SNS) fanout feature with Amazon SQS to send the notifications in parallel to all the C2 instances",
@@ -1475,7 +1475,7 @@
       "accuracy_percent": 100,
       "votes": 3,
       "answer": "D",
-      "question": "A company has 50 AWS accounts and wants to create an identical Amazon VPC in each account.\nAny changes the company makes to the VPCs in the future must be implemented on every VPC.\n\nWhat is the MOST operationally efficient method to deploy and update the VPCs in each account?\n\n\n\n1\n\n...\n\n9\n\n10\n\n11\n\n12\n\n13\n\n...\n\n35",
+      "question": "A company has 50 AWS accounts and wants to create an identical Amazon VPC in each account.\nAny changes the company makes to the VPCs in the future must be implemented on every VPC.\n\nWhat is the MOST operationally efficient method to deploy and update the VPCs in each account?",
       "options": {
         "A": "Create an AWS CloudFormation template that defines the VPC. Sign in to the AWS Management Console under each account. Create a stack from the template.",
         "B": "Create a shell script that configures the VPC using the AWS CLI. Provide a list of accounts to the shell script from a text file. Create the VPC in every account in the list.",
@@ -1613,7 +1613,7 @@
       "accuracy_percent": 100,
       "votes": 3,
       "answer": "B",
-      "question": "A SysOps administrator has been able to consolidate multiple, secure websites onto a single server, and each site is running on a different port.\nThe administrator now wants to start a duplicate server in a second Availability Zone and put both behind a load balancer for high availability.\n\nWhat would be the command line necessary to deploy one of the sites’ certificates to the load balancer?\n\n\n\n1\n\n...\n\n10\n\n11\n\n12\n\n13\n\n14\n\n...\n\n35",
+      "question": "A SysOps administrator has been able to consolidate multiple, secure websites onto a single server, and each site is running on a different port.\nThe administrator now wants to start a duplicate server in a second Availability Zone and put both behind a load balancer for high availability.\n\nWhat would be the command line necessary to deploy one of the sites’ certificates to the load balancer?",
       "options": {
         "A": "aws kms modify-listener –-load-balancer-name my-load-balancer -–certificates CertificateArn=arn:aws:iam::123456789012:server-certifiate/my-new-server-cert",
         "B": "aws elb set-load-balancer-listener-ssl-certificate --load-balancer-name my-load-balancer –-load-balancer-port 443 –-ssl-certificate-id arn:aws:iam::123456789012:server-certificate/new-server-cert",
@@ -1753,7 +1753,7 @@
       "accuracy_percent": 100,
       "votes": 3,
       "answer": "A",
-      "question": "A company runs a high performance computing (HPC) application on an Amazon EC2 instance.\nThe company needs to scale this architecture to two or more EC2 instances.\nThe EC2 instances will need to communicate with each other at high speeds with low latency to support the application.\n\nThe company wants to ensure that the network performance can support the required communication between the EC2 instances\n\nWhat should a SysOps administrator do to meet these requirements?\n\n\n\n1\n\n...\n\n11\n\n12\n\n13\n\n14\n\n15\n\n...\n\n35",
+      "question": "A company runs a high performance computing (HPC) application on an Amazon EC2 instance.\nThe company needs to scale this architecture to two or more EC2 instances.\nThe EC2 instances will need to communicate with each other at high speeds with low latency to support the application.\n\nThe company wants to ensure that the network performance can support the required communication between the EC2 instances\n\nWhat should a SysOps administrator do to meet these requirements?",
       "options": {
         "A": "Create a cluster placement group. Back up the existing EC2 instance to an Amazon Machine Image (AMI). Restore the EC2 instance from the AMI into the placement group. Launch the additional EC2 instances into the placement group.",
         "B": "Back up the existing EC2 instance to an Amazon Machine Image (AMI). Create a launch template from the existing EC2 instance by specifying the AMI. Create an Auto Scaling group and configure the desired instance count.",
@@ -1891,7 +1891,7 @@
       "accuracy_percent": 100,
       "votes": 3,
       "answer": "A",
-      "question": "A SysOps administrator configured VPC flow logs by using the default format.\nThe SysOps administrator specified Amazon CloudWatch Logs as the destination.\nThis solution has worked successfully for several months.\nHowever, because of additional troubleshooting requirements, the SysOps administrator needs to include the tcp-flags field on the flow logs.\n\nWhat should the SysOps administrator do to meet this requirement?\n\n\n\n1\n\n...\n\n12\n\n13\n\n14\n\n15\n\n16\n\n...\n\n35",
+      "question": "A SysOps administrator configured VPC flow logs by using the default format.\nThe SysOps administrator specified Amazon CloudWatch Logs as the destination.\nThis solution has worked successfully for several months.\nHowever, because of additional troubleshooting requirements, the SysOps administrator needs to include the tcp-flags field on the flow logs.\n\nWhat should the SysOps administrator do to meet this requirement?",
       "options": {
         "A": "Create a new flow log. Include the tcp-flags field in the custom log format. Delete the original flow log.",
         "B": "In the CloudWatch Logs log group, modify the filter to include the tcp-flags field and the type field.",
@@ -2025,7 +2025,7 @@
       "accuracy_percent": 100,
       "votes": 3,
       "answer": "D",
-      "question": "A company has a policy that requires all Amazon EC2 instances to have a specific set of tags.\nIf an EC2 instance does not have the required tags, the noncompliant instance should be terminated.\n\nWhat is the MOST operationally efficient solution that meets these requirement?\n\n\n\n1\n\n...\n\n13\n\n14\n\n15\n\n16\n\n17\n\n...\n\n35",
+      "question": "A company has a policy that requires all Amazon EC2 instances to have a specific set of tags.\nIf an EC2 instance does not have the required tags, the noncompliant instance should be terminated.\n\nWhat is the MOST operationally efficient solution that meets these requirement?",
       "options": {
         "A": "Create an Amazon EventBridge (Amazon CloudWatch Events) rule to send all EC2 instance state changes to an AWS Lambda function to determine if each instance is compliant. Terminate any noncompliant instances.",
         "B": "Create an IAM policy that enforces all EC2 instance tag requirements. If the required tags are not in place for an instance, the policy will terminate noncompliant instance.",
@@ -2159,7 +2159,7 @@
       "accuracy_percent": 100,
       "votes": 8,
       "answer": "B",
-      "question": "A company uses an AWS CloudFormation template to provision an Amazon EC2 instance and an Amazon RDS DB instance.\nA SysOps administrator must update the template to ensure that the DB instance is created before the EC2 instance is launched.\n\nWhat should the SysOps administrator do to meet this requirement?\n\n\n\n1\n\n...\n\n14\n\n15\n\n16\n\n17\n\n18\n\n...\n\n35",
+      "question": "A company uses an AWS CloudFormation template to provision an Amazon EC2 instance and an Amazon RDS DB instance.\nA SysOps administrator must update the template to ensure that the DB instance is created before the EC2 instance is launched.\n\nWhat should the SysOps administrator do to meet this requirement?",
       "options": {
         "A": "Add a wait condition to the template. Update the EC2 instance user data script to send a signal after the EC2 instance is started.",
         "B": "Add the DependsOn attribute to the EC2 instance resource, and provide the logical name of the RDS resource.",
@@ -2289,7 +2289,7 @@
       "accuracy_percent": 96,
       "votes": 7,
       "answer": "A",
-      "question": "A company wants to prohibit its developers from using a particular family of Amazon EC2 instances.\nThe company uses AWS Organizations and wants to apply the restriction across multiple accounts.\n\nWhat is the MOST operationally efficient way for the company to apply service control policies (SCPs) to meet these requirements?\n\n\n\n1\n\n...\n\n15\n\n16\n\n17\n\n18\n\n19\n\n...\n\n35",
+      "question": "A company wants to prohibit its developers from using a particular family of Amazon EC2 instances.\nThe company uses AWS Organizations and wants to apply the restriction across multiple accounts.\n\nWhat is the MOST operationally efficient way for the company to apply service control policies (SCPs) to meet these requirements?",
       "options": {
         "A": "Add the accounts to an organizational unit (OU). Apply the SCPs to the OU.",
         "B": "Add the accounts to resource groups in AWS Resource Groups. Apply the SCPs to the resource groups.",
@@ -2423,7 +2423,7 @@
       "accuracy_percent": 100,
       "votes": 3,
       "answer": "A",
-      "question": "A SysOps administrator is responsible for managing a fleet of Amazon EC2 instances.\nThese EC2 instances upload build artifacts to a third-party service.\nThe third-party service recently implemented a strict IP allow list that requires all build uploads to come from a single IP address.\n\nWhat change should the systems administrator make to the existing build fleet to comply with this new requirement?\n\n\n\n1\n\n...\n\n16\n\n17\n\n18\n\n19\n\n20\n\n...\n\n35",
+      "question": "A SysOps administrator is responsible for managing a fleet of Amazon EC2 instances.\nThese EC2 instances upload build artifacts to a third-party service.\nThe third-party service recently implemented a strict IP allow list that requires all build uploads to come from a single IP address.\n\nWhat change should the systems administrator make to the existing build fleet to comply with this new requirement?",
       "options": {
         "A": "Move all of the EC2 instances behind a NAT gateway and provide the gateway IP address to the service.",
         "B": "Move all of the EC2 instances behind an internet gateway and provide the gateway IP address to the service.",
@@ -2553,7 +2553,7 @@
       "accuracy_percent": 94,
       "votes": 7,
       "answer": "D",
-      "question": "A new website will run on Amazon EC2 instances behind an Application Load Balancer.\nAmazon Route 53 will be used to manage DNS records.\n\nWhat type of record should be set in Route 53 to point the website's apex domain name (for example, `company.com`) to the Application Load Balancer?\n\n\n\n1\n\n...\n\n17\n\n18\n\n19\n\n20\n\n21\n\n...\n\n35",
+      "question": "A new website will run on Amazon EC2 instances behind an Application Load Balancer.\nAmazon Route 53 will be used to manage DNS records.\n\nWhat type of record should be set in Route 53 to point the website's apex domain name (for example, `company.com`) to the Application Load Balancer?",
       "options": {
         "A": "CNAME",
         "B": "SOA",
@@ -2683,7 +2683,7 @@
       "accuracy_percent": 100,
       "votes": 2,
       "answer": "D",
-      "question": "A database is running on an Amazon RDS Multi-AZ DB instance.\nA recent security audit found the database to be out of compliance because it was not encrypted.\n\nWhich approach will resolve the encryption requirement?\n\n\n\n1\n\n...\n\n18\n\n19\n\n20\n\n21\n\n22\n\n...\n\n35",
+      "question": "A database is running on an Amazon RDS Multi-AZ DB instance.\nA recent security audit found the database to be out of compliance because it was not encrypted.\n\nWhich approach will resolve the encryption requirement?",
       "options": {
         "A": "Log in to the RDS console and select the encryption box to encrypt the database.",
         "B": "Create a new encrypted Amazon EBS volume and attach it to the instance.",
@@ -2817,7 +2817,7 @@
       "accuracy_percent": 100,
       "votes": 3,
       "answer": "C",
-      "question": "A company decides to stop non-production Amazon EC2 instances during the EC2 instances.\nThe company's IT manager must receive notification in near real time whenever an EC2 instance that has an environment type tag value of non-production is started during the night.\n\nWhich solution will meet this requirement with the MOST operational efficiency?\n\n\n\n1\n\n...\n\n19\n\n20\n\n21\n\n22\n\n23\n\n...\n\n35",
+      "question": "A company decides to stop non-production Amazon EC2 instances during the EC2 instances.\nThe company's IT manager must receive notification in near real time whenever an EC2 instance that has an environment type tag value of non-production is started during the night.\n\nWhich solution will meet this requirement with the MOST operational efficiency?",
       "options": {
         "A": "Configure an AWS Lambda function with an SMTP client library. Subscribe the Lambda function to the AWS Health Dashboard to receive notification whenever an EC2 instance is in the running state. Configure the Lambda function to use Amazon Pinpoint to send email notifications to the IT manager. Deploy a second Lambda function to throttle calls from the first Lambda function during the daytime.",
         "B": "Deploy an AWS Lambda function that queries the Amazon EC2 API to determine the state of each EC2 instance. Use the EC2 instance scheduler to configure the Lambda function to run every minute during the night and to send an email notification to the IT manager for each non-production EC2 instance that is in the running state.",
@@ -2947,7 +2947,7 @@
       "accuracy_percent": 100,
       "votes": 3,
       "answer": "C",
-      "question": "A company has 10 Amazon EC2 instances in its production account.\nA SysOps administrator must ensure that email notifications are sent to administrators each time there is an EC2 instance state change.\n\nWhich solution will meet this requirements?\n\n\n\n1\n\n...\n\n20\n\n21\n\n22\n\n23\n\n24\n\n...\n\n35",
+      "question": "A company has 10 Amazon EC2 instances in its production account.\nA SysOps administrator must ensure that email notifications are sent to administrators each time there is an EC2 instance state change.\n\nWhich solution will meet this requirements?",
       "options": {
         "A": "Configure an Amazon Route 53 simple routing policy that publishes a message to an Amazon Simple Notification Service (Amazon SNS) topic when an EC2 instance state changes. This SNS topic then sends notifications to its email subscribers.",
         "B": "Configure an Amazon Route 53 simple routing policy that publishes a message to an Amazon Simple Queue Service (Amazon SQS) queue when an EC2 instance state changes. This SQS queue then sends notifications to its email subscribers.",
@@ -3081,7 +3081,7 @@
       "accuracy_percent": 92,
       "votes": 4,
       "answer": "B",
-      "question": "A SysOps administrator manages the caching of an Amazon CloudFront distribution that serves pages of a website, The SysOps administrator needs to configure the distribution so that the TTL of individual pages can vary. The TTL of the individual pages must remain within the maximum TLL and the minimum TTL that are set for the distribution.\n\nWhich solution will meet these requirements?\n\n\n\n1\n\n...\n\n21\n\n22\n\n23\n\n24\n\n25\n\n...\n\n35",
+      "question": "A SysOps administrator manages the caching of an Amazon CloudFront distribution that serves pages of a website, The SysOps administrator needs to configure the distribution so that the TTL of individual pages can vary. The TTL of the individual pages must remain within the maximum TLL and the minimum TTL that are set for the distribution.\n\nWhich solution will meet these requirements?",
       "options": {
         "A": "Create an AWS Lambda function that calls the Createlnvalidation API operation when a change in cache time is necessary.",
         "B": "Add a Cache-Control: max-age directive to the object at the origin when content is being returned to CloudFront.",
@@ -3215,7 +3215,7 @@
       "accuracy_percent": 100,
       "votes": 4,
       "answer": "B",
-      "question": "A company monitors its account activity using AWS CloudTrail, and is concerned that some log files are being tampered with after the logs have been delivered to the account’s Amazon S3 bucket.\n\nMoving forward, how can the SysOps administrator confirm that the log files have not been modified after being delivered to the S3 bucket?\n\n\n\n1\n\n...\n\n22\n\n23\n\n24\n\n25\n\n26\n\n...\n\n35",
+      "question": "A company monitors its account activity using AWS CloudTrail, and is concerned that some log files are being tampered with after the logs have been delivered to the account’s Amazon S3 bucket.\n\nMoving forward, how can the SysOps administrator confirm that the log files have not been modified after being delivered to the S3 bucket?",
       "options": {
         "A": "Stream the CloudTrail logs to Amazon CloudWatch Logs to store logs at a secondary location.",
         "B": "Enable log file integrity validation and use digest files to verify the hash value of the log file.",
@@ -3345,7 +3345,7 @@
       "accuracy_percent": 100,
       "votes": 4,
       "answer": "D",
-      "question": "A company must migrate its applications to AWS.\nThe company is using Chef recipes for configuration management.\nThe company wants to continue to use the existing Chef recipes after the applications are migrated to AWS.\n\nWhat is the MOST operationally efficient solution that meets these requirements?\n\n\n\n1\n\n...\n\n23\n\n24\n\n25\n\n26\n\n27\n\n...\n\n35",
+      "question": "A company must migrate its applications to AWS.\nThe company is using Chef recipes for configuration management.\nThe company wants to continue to use the existing Chef recipes after the applications are migrated to AWS.\n\nWhat is the MOST operationally efficient solution that meets these requirements?",
       "options": {
         "A": "Use AWS CloudFormation to create an Amazon EC2 instance, install a Chef server, and add Chef recipes.",
         "B": "Use AWS CloudFormation to create a stack and add layers for Chef recipes.",
@@ -3479,7 +3479,7 @@
       "accuracy_percent": 93,
       "votes": 5,
       "answer": "D",
-      "question": "A company has an application that uses an Amazon Elastic File System (Amazon EFS) file system.\nA recent incident that involved an application logic error corrupted several files.\nThe company wants to improve its ability to back up and recover the EFS file system.\nThe company must be able to recover individual files rapidly.\n\nWhich solution meets these requirements MOST cost-effectively?\n\n\n\n1\n\n...\n\n24\n\n25\n\n26\n\n27\n\n28\n\n...\n\n35",
+      "question": "A company has an application that uses an Amazon Elastic File System (Amazon EFS) file system.\nA recent incident that involved an application logic error corrupted several files.\nThe company wants to improve its ability to back up and recover the EFS file system.\nThe company must be able to recover individual files rapidly.\n\nWhich solution meets these requirements MOST cost-effectively?",
       "options": {
         "A": "Configure Amazon Data Lifecycle Manager (Amazon DLM) to archive a copy of the data to an Amazon S3 Glacier vault. Use S3 Glacier retrieval requests to retrieve individual files.",
         "B": "Create a second EFS file system in another AWS Region. Configure AWS DataSync to copy the data to the backup file system. Recover files by copying them from the backup EFS file system.",
@@ -3612,7 +3612,7 @@
         "A",
         "C"
       ],
-      "question": "A company is building a web application on AWS.\nThe company is using Amazon CloudFront with a domain name of www.example.com.\nAll traffic to CloudFront must be encrypted in transit.\nThe company already has provisioned an SSL certificate for www.example.com in AWS Certificate Manager (ACM).\n\nWhich combination of steps should a SysOps administrator take to encrypt the traffic in transit? (Choose two.)\n\n\n\n1\n\n...\n\n25\n\n26\n\n27\n\n28\n\n29\n\n...\n\n35",
+      "question": "A company is building a web application on AWS.\nThe company is using Amazon CloudFront with a domain name of www.example.com.\nAll traffic to CloudFront must be encrypted in transit.\nThe company already has provisioned an SSL certificate for www.example.com in AWS Certificate Manager (ACM).\n\nWhich combination of steps should a SysOps administrator take to encrypt the traffic in transit? (Choose two.)",
       "options": {
         "A": "For each cache behavior in the CloudFront distribution, modify the Viewer Protocol Policy setting to redirect HTTP to HTTPS.",
         "B": "For each cache behavior in the CloudFront distribution, modify the Viewer Protocol Policy setting to allow HTTP and HTTPS.",
@@ -3747,7 +3747,7 @@
       "accuracy_percent": 100,
       "votes": 1,
       "answer": "B",
-      "question": "A company has turned on server access logging for all of its existing Amazon S3 buckets.\nThe company wants to implement a solution to monitor the logging settings for new and existing S3 buckets.\nThe solution must remediate any S3 buckets that do not have logging turned on.\n\nWhat should a SysOps administrator do to meet these requirements in the MOST operationally efficient way?\n\n\n\n1\n\n...\n\n26\n\n27\n\n28\n\n29\n\n30\n\n...\n\n35",
+      "question": "A company has turned on server access logging for all of its existing Amazon S3 buckets.\nThe company wants to implement a solution to monitor the logging settings for new and existing S3 buckets.\nThe solution must remediate any S3 buckets that do not have logging turned on.\n\nWhat should a SysOps administrator do to meet these requirements in the MOST operationally efficient way?",
       "options": {
         "A": "Track the logging information by using AWS CloudTrail. Launch an AWS Lambda function for remediation.",
         "B": "Configure automatic remediation in AWS Config by using the s3-bucket-logging-enabled rule.",
@@ -3881,7 +3881,7 @@
       "accuracy_percent": 100,
       "votes": 4,
       "answer": "A",
-      "question": "A SysOps administrator manages a company's Amazon S3 buckets.\nThe SysOps administrator has identified 5 GB of incomplete multipart uploads in an S3 bucket in the company's AWS account.\nThe SysOps administrator needs to reduce the number of incomplete multipart upload objects in the S3 bucket.\n\nWhich solution will meet this requirement?\n\n\n\n1\n\n...\n\n27\n\n28\n\n29\n\n30\n\n31\n\n...\n\n35",
+      "question": "A SysOps administrator manages a company's Amazon S3 buckets.\nThe SysOps administrator has identified 5 GB of incomplete multipart uploads in an S3 bucket in the company's AWS account.\nThe SysOps administrator needs to reduce the number of incomplete multipart upload objects in the S3 bucket.\n\nWhich solution will meet this requirement?",
       "options": {
         "A": "Create an S3 Lifecycle rule on the S3 bucket to delete expired markers or incomplete multipart uploads.",
         "B": "Require users that perform uploads of files into Amazon S3 to use the S3 TransferUtility.",
@@ -4011,7 +4011,7 @@
       "accuracy_percent": 100,
       "votes": 3,
       "answer": "A",
-      "question": "A company runs an encrypted Amazon RDS for Oracle DB instance.\nThe company wants to make regular backups available in another AWS Region.\n\nWhat is the MOST operationally efficient solution that meets these requirements?\n\n\n\n1\n\n...\n\n28\n\n29\n\n30\n\n31\n\n32\n\n...\n\n35",
+      "question": "A company runs an encrypted Amazon RDS for Oracle DB instance.\nThe company wants to make regular backups available in another AWS Region.\n\nWhat is the MOST operationally efficient solution that meets these requirements?",
       "options": {
         "A": "Modify the DB instance. Enable cross-Region automated backups.",
         "B": "Create an RDS read replica in another Region. Create a snapshot of the read replica.",
@@ -4149,7 +4149,7 @@
       "accuracy_percent": 100,
       "votes": 5,
       "answer": "A",
-      "question": "A SysOps administrator has used AWS CloudFormation to deploy a serverless application into a production VPC.\nThe application consists of an AWS Lambda function, an Amazon DynamoDB table, and an Amazon API Gateway API.\nThe SysOps administrator must delete the AWS CloudFormation stack without deleting the DynamoDB table.\n\nWhich action should the SysOps administrator take before deleting the AWS CloudFormation stack?\n\n\n\n1\n\n...\n\n29\n\n30\n\n31\n\n32\n\n33\n\n34\n\n35",
+      "question": "A SysOps administrator has used AWS CloudFormation to deploy a serverless application into a production VPC.\nThe application consists of an AWS Lambda function, an Amazon DynamoDB table, and an Amazon API Gateway API.\nThe SysOps administrator must delete the AWS CloudFormation stack without deleting the DynamoDB table.\n\nWhich action should the SysOps administrator take before deleting the AWS CloudFormation stack?",
       "options": {
         "A": "Add a Retain deletion policy to the DynamoDB resource in the AWS CloudFormation stack.",
         "B": "Add a Snapshot deletion policy to the DynamoDB resource in the AWS CloudFormation stack.",
@@ -4287,7 +4287,7 @@
       "accuracy_percent": 100,
       "votes": 3,
       "answer": "D",
-      "question": "A company has a secure website running on Amazon EC2 instances behind an Application Load Balancer (ALB).\nAn SSL certificate from AWS Certificate Manager (ACM) is used on the ALB.\nUsers with legacy web browsers are experiencing issues with the website.\n\nHow should the SysOps administrator resolve these issues in the MOST operationally efficient manner?\n\n\n\n1\n\n...\n\n29\n\n30\n\n31\n\n32\n\n33\n\n34\n\n35",
+      "question": "A company has a secure website running on Amazon EC2 instances behind an Application Load Balancer (ALB).\nAn SSL certificate from AWS Certificate Manager (ACM) is used on the ALB.\nUsers with legacy web browsers are experiencing issues with the website.\n\nHow should the SysOps administrator resolve these issues in the MOST operationally efficient manner?",
       "options": {
         "A": "Create a new SSL certificate in ACM and install the new certificate on the ALB to support legacy web browsers.",
         "B": "Create a second ALB and install a custom SSL certificate with a different domain name on the second ALB to support legacy web browsers.",
@@ -4421,7 +4421,7 @@
       "accuracy_percent": 100,
       "votes": 4,
       "answer": "A",
-      "question": "A company hosts a web application on an Amazon EC2 instance.\nThe web server logs are published to Amazon CloudWatch Logs.\nThe log events have the same structure and include the HTTP response codes that are associated with the user requests.\nThe company needs to monitor the number of times that the web server returns an HTTP 404 response.\n\nWhat is the MOST operationally efficient solution that meets these requirements?\n\n\n\n1\n\n...\n\n29\n\n30\n\n31\n\n32\n\n33\n\n34\n\n35",
+      "question": "A company hosts a web application on an Amazon EC2 instance.\nThe web server logs are published to Amazon CloudWatch Logs.\nThe log events have the same structure and include the HTTP response codes that are associated with the user requests.\nThe company needs to monitor the number of times that the web server returns an HTTP 404 response.\n\nWhat is the MOST operationally efficient solution that meets these requirements?",
       "options": {
         "A": "Create a CloudWatch Logs metric filter that counts the number of times that the web server returns an HTTP 404 response.",
         "B": "Create a CloudWatch Logs subscription filter that counts the number of times that the web server returns an HTTP 404 response.",
@@ -4555,7 +4555,7 @@
       "accuracy_percent": 100,
       "votes": 6,
       "answer": "B",
-      "question": "A company wants to archive sensitive data on Amazon S3 Glacier.\nThe company’s regulatory and compliance requirements do not allow any modifications to the data by any account.\n\nWhich solution meets these requirements?\n\n\n\n1\n\n...\n\n29\n\n30\n\n31\n\n32\n\n33\n\n34\n\n35",
+      "question": "A company wants to archive sensitive data on Amazon S3 Glacier.\nThe company’s regulatory and compliance requirements do not allow any modifications to the data by any account.\n\nWhich solution meets these requirements?",
       "options": {
         "A": "Attach a vault lock policy to an S3 Glacier vault that contains the archived data. Use the lock ID to validate the vault lock policy after 24 hours.",
         "B": "Attach a vault lock policy to an S3 Glacier vault that contains the archived data. Use the lock ID to validate the vault lock policy within 24 hours.",
@@ -4672,7 +4672,7 @@
       "accuracy_percent": 100,
       "votes": 1,
       "answer": "B",
-      "question": "A company has multiple Amazon EC2 instances that run a resource-intensive application in a development environment.\nA SysOps administrator is implementing a solution to stop these EC2 instances when they are not in use.\n\nWhich solution will meet this requirement?\n\n\n\n1\n\n...\n\n29\n\n30\n\n31\n\n32\n\n33\n\n34\n\n35",
+      "question": "A company has multiple Amazon EC2 instances that run a resource-intensive application in a development environment.\nA SysOps administrator is implementing a solution to stop these EC2 instances when they are not in use.\n\nWhich solution will meet this requirement?",
       "options": {
         "A": "Assess AWS CloudTrail logs to verify that there is no EC2 API activity. Invoke an AWS Lambda function to stop the EC2 instances.",
         "B": "Create an Amazon CloudWatch alarm to stop the EC2 instances when the average CPU utilization is lower than 5% for a 30-minute period.",

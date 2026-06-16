@@ -126,7 +126,7 @@
       "number": 10,
       "accuracy_percent": 100,
       "votes": 3,
-      "question": "A company is using an AWS Lambda function to process records from an Amazon Kinesis data stream.\nThe company recently observed slow processing of the records.\nA developer notices that the iterator age metric for the function is increasing and that the Lambda run duration is constantly above normal.\n\nWhich actions should the developer take to increase the processing speed? (Choose two.)\n\n\n\n1\n\n2\n\n3\n\n4\n\n5\n\n6\n\n7\n\n...\n\n32",
+      "question": "A company is using an AWS Lambda function to process records from an Amazon Kinesis data stream.\nThe company recently observed slow processing of the records.\nA developer notices that the iterator age metric for the function is increasing and that the Lambda run duration is constantly above normal.\n\nWhich actions should the developer take to increase the processing speed? (Choose two.)",
       "options": {
         "A": "Increase the number of shards of the Kinesis data stream.",
         "B": "Decrease the timeout of the Lambda function.",
@@ -264,7 +264,7 @@
       "number": 20,
       "accuracy_percent": 100,
       "votes": 1,
-      "question": "A developer hosts a static website on Amazon S3 and connects the website to an Amazon CloudFront distribution.\nThe website uses a custom domain name that points to the CloudFront URL.\n\nThe developer has set up a continuous integration and continuous delivery (CI/CD) pipeline.\nThe pipeline automatically runs when changes occur in an AWS CodeCommit repository.\nThe pipeline has a source stage and then a build stage.\nThe build stage invokes an AWS CodeBuild project that references a buildspec.yml file.\nThe buildspec.yml file builds the code and deploys the static files to the S3 bucket.\n\nThe pipeline runs successfully, and the latest website files are visible in the S3 bucket and at the S3 website URL.\nHowever, when the developer accesses the website through the CloudFront domain, the updates are not reflected on the website.\n\nWhat should the developer configure the buildspec.yml file to do to resolve this issue?\n\n\n\n1\n\n2\n\n3\n\n4\n\n5\n\n6\n\n7\n\n...\n\n32",
+      "question": "A developer hosts a static website on Amazon S3 and connects the website to an Amazon CloudFront distribution.\nThe website uses a custom domain name that points to the CloudFront URL.\n\nThe developer has set up a continuous integration and continuous delivery (CI/CD) pipeline.\nThe pipeline automatically runs when changes occur in an AWS CodeCommit repository.\nThe pipeline has a source stage and then a build stage.\nThe build stage invokes an AWS CodeBuild project that references a buildspec.yml file.\nThe buildspec.yml file builds the code and deploys the static files to the S3 bucket.\n\nThe pipeline runs successfully, and the latest website files are visible in the S3 bucket and at the S3 website URL.\nHowever, when the developer accesses the website through the CloudFront domain, the updates are not reflected on the website.\n\nWhat should the developer configure the buildspec.yml file to do to resolve this issue?",
       "options": {
         "A": "Properly synchronize the objects in the S3 bucket with new files from the source stage.",
         "B": "Delete the previous website files in the S3 bucket and redeploy the website files.",
@@ -394,7 +394,7 @@
       "number": 30,
       "accuracy_percent": 100,
       "votes": 3,
-      "question": "A developer received the following error message during an AWS CloudFormation deployment:\n\nDELETE_FAILED (The following resource(s) failed to delete: [ASGInstanceRole12345678].)\n\nWhich action should the developer take to resolve this error?\n\n\n\n1\n\n2\n\n3\n\n4\n\n5\n\n6\n\n7\n\n...\n\n32",
+      "question": "A developer received the following error message during an AWS CloudFormation deployment:\n\nDELETE_FAILED (The following resource(s) failed to delete: [ASGInstanceRole12345678].)\n\nWhich action should the developer take to resolve this error?",
       "options": {
         "A": "Contact AWS Support to report an issue with the Auto Scaling Groups (ASG) service.",
         "B": "Add a DependsOn attribute to the ASGInstanceRole12345678 resource in the CloudFormation template. Then delete the stack.",
@@ -536,7 +536,7 @@
       "number": 40,
       "accuracy_percent": 100,
       "votes": 4,
-      "question": "A developer is creating an AWS Lambda function that is invoked by messages to an Amazon Simple Notification Service (Amazon SNS) topic.\nThe messages represent customer data updates from a customer relationship management (CRM) system\n\nThe developer wants the Lambda function to process only the messages that pertain to email address changes.\nAdditional subscribers to the SNS topic will process any other messages.\n\nWhich solution will meet these requirements in the LEAST development effort?\n\n\n\n1\n\n2\n\n3\n\n4\n\n5\n\n6\n\n7\n\n...\n\n32",
+      "question": "A developer is creating an AWS Lambda function that is invoked by messages to an Amazon Simple Notification Service (Amazon SNS) topic.\nThe messages represent customer data updates from a customer relationship management (CRM) system\n\nThe developer wants the Lambda function to process only the messages that pertain to email address changes.\nAdditional subscribers to the SNS topic will process any other messages.\n\nWhich solution will meet these requirements in the LEAST development effort?",
       "options": {
         "A": "Use Lambda event filtering to allow only messages that are related to email address changes to invoke the Lambda function.",
         "B": "Use an SNS filter policy on the Lambda function subscription to allow only messages that are related to email address changes to invoke the Lambda function.",
@@ -670,7 +670,7 @@
       "number": 50,
       "accuracy_percent": 100,
       "votes": 6,
-      "question": "A company is adopting serverless computing for some of its new services.\nA development team needs to create a serverless infrastructure by using AWS Serverless Application Model (AWS SAM).\nAll infrastructure must be deployed by using AWS CloudFormation templates.\n\nWhat should the development team do to meet these requirements?\n\n\n\n1\n\n2\n\n3\n\n4\n\n5\n\n6\n\n7\n\n...\n\n32",
+      "question": "A company is adopting serverless computing for some of its new services.\nA development team needs to create a serverless infrastructure by using AWS Serverless Application Model (AWS SAM).\nAll infrastructure must be deployed by using AWS CloudFormation templates.\n\nWhat should the development team do to meet these requirements?",
       "options": {
         "A": "Add a Resources section to the CloudFormation templates that contains AWS::Lambda::Function resources.",
         "B": "Add a Mappings section to the CloudFormation templates that contains AWS::Serverless::Function and AWS::Serverless::API.",
@@ -800,7 +800,7 @@
       "number": 60,
       "accuracy_percent": 100,
       "votes": 6,
-      "question": "A company has an application that stores data in Amazon RDS instances.\nThe application periodically experiences surges of high traffic that cause performance problems.\nDuring periods of peak traffic, a developer notices a reduction in query speed in all database queries.\n\nThe team’s technical lead determines that a multi-threaded and scalable caching solution should be used to offload the heavy read traffic.\nThe solution needs to improve performance.\n\nWhich solution will meet these requirements with the LEAST complexity?\n\n\n\n1\n\n...\n\n4\n\n5\n\n6\n\n7\n\n8\n\n...\n\n32",
+      "question": "A company has an application that stores data in Amazon RDS instances.\nThe application periodically experiences surges of high traffic that cause performance problems.\nDuring periods of peak traffic, a developer notices a reduction in query speed in all database queries.\n\nThe team’s technical lead determines that a multi-threaded and scalable caching solution should be used to offload the heavy read traffic.\nThe solution needs to improve performance.\n\nWhich solution will meet these requirements with the LEAST complexity?",
       "options": {
         "A": "Use Amazon ElastiCache for Memcached to offload read requests from the main database.",
         "B": "Replicate the data to Amazon DynamoDSet up a DynamoDB Accelerator (DAX) cluster.",
@@ -930,7 +930,7 @@
       "number": 70,
       "accuracy_percent": 90,
       "votes": 9,
-      "question": "An application is using Amazon Cognito user pools and identity pools for secure access.\nA developer wants to integrate the user-specific file upload and download features in the application with Amazon S3.\nThe developer must ensure that the files are saved and retrieved in a secure manner and that users can access only their own files.\nThe file sizes range from 3 KB to 300 MB.\n\nWhich option will meet these requirements with the HIGHEST level of security?\n\n\n\n1\n\n...\n\n5\n\n6\n\n7\n\n8\n\n9\n\n...\n\n32",
+      "question": "An application is using Amazon Cognito user pools and identity pools for secure access.\nA developer wants to integrate the user-specific file upload and download features in the application with Amazon S3.\nThe developer must ensure that the files are saved and retrieved in a secure manner and that users can access only their own files.\nThe file sizes range from 3 KB to 300 MB.\n\nWhich option will meet these requirements with the HIGHEST level of security?",
       "options": {
         "A": "Use S3 Event Notifications to validate the file upload and download requests and update the user interface (UI).",
         "B": "Save the details of the uploaded files in a separate Amazon DynamoDB table. Filter the list of files in the user interface (UI) by comparing the current user ID with the user ID associated with the file in the table.",
@@ -1060,7 +1060,7 @@
       "number": 80,
       "accuracy_percent": 100,
       "votes": 2,
-      "question": "A company has a web application that runs on Amazon EC2 instances with a custom Amazon Machine Image (AMI).\nThe company uses AWS CloudFormation to provision the application.\nThe application runs in the us-east-1 Region, and the company needs to deploy the application to the us-west-1 Region.\n\nAn attempt to create the AWS CloudFormation stack in us-west-1 fails.\nAn error message states that the AMI ID does not exist.\nA developer must resolve this error with a solution that uses the least amount of operational overhead.\n\nWhich solution meets these requirements?\n\n\n\n1\n\n...\n\n6\n\n7\n\n8\n\n9\n\n10\n\n...\n\n32",
+      "question": "A company has a web application that runs on Amazon EC2 instances with a custom Amazon Machine Image (AMI).\nThe company uses AWS CloudFormation to provision the application.\nThe application runs in the us-east-1 Region, and the company needs to deploy the application to the us-west-1 Region.\n\nAn attempt to create the AWS CloudFormation stack in us-west-1 fails.\nAn error message states that the AMI ID does not exist.\nA developer must resolve this error with a solution that uses the least amount of operational overhead.\n\nWhich solution meets these requirements?",
       "options": {
         "A": "Change the AWS CloudFormation templates for us-east-1 and us-west-1 to use an AWS AMI. Relaunch the stack for both Regions.",
         "B": "Copy the custom AMI from us-east-1 to us-west-1. Update the AWS CloudFormation template for us-west-1 to refer to AMI ID for the copied AMI. Relaunch the stack.",
@@ -1194,7 +1194,7 @@
       "number": 90,
       "accuracy_percent": 100,
       "votes": 2,
-      "question": "A company has a website that displays a daily newsletter.\nWhen a user visits the website, an AWS Lambda function processes the browser's request and queries the company's on-premises database to obtain the current newsletter.\nThe newsletters are stored in English.\nThe Lambda function uses the Amazon Translate TranslateText API operation to translate the newsletters, and the translation is displayed to the user.\n\nDue to an increase in popularity, the website's response time has slowed.\nThe database is overloaded.\nThe company cannot change the database and needs a solution that improves the response time of the Lambda function.\n\nWhich solution meets these requirements?\n\n\n\n1\n\n...\n\n7\n\n8\n\n9\n\n10\n\n11\n\n...\n\n32",
+      "question": "A company has a website that displays a daily newsletter.\nWhen a user visits the website, an AWS Lambda function processes the browser's request and queries the company's on-premises database to obtain the current newsletter.\nThe newsletters are stored in English.\nThe Lambda function uses the Amazon Translate TranslateText API operation to translate the newsletters, and the translation is displayed to the user.\n\nDue to an increase in popularity, the website's response time has slowed.\nThe database is overloaded.\nThe company cannot change the database and needs a solution that improves the response time of the Lambda function.\n\nWhich solution meets these requirements?",
       "options": {
         "A": "Change to asynchronous Lambda function invocation.",
         "B": "Cache the translated newsletters in the Lambda/tmp directory.",
@@ -1328,7 +1328,7 @@
       "number": 100,
       "accuracy_percent": 100,
       "votes": 2,
-      "question": "A developer is designing a fault-tolerant environment where client sessions will be saved.\n\nHow can the developer ensure that no sessions are lost if an Amazon EC2 instance fails?\n\n\n\n1\n\n...\n\n8\n\n9\n\n10\n\n11\n\n12\n\n...\n\n32",
+      "question": "A developer is designing a fault-tolerant environment where client sessions will be saved.\n\nHow can the developer ensure that no sessions are lost if an Amazon EC2 instance fails?",
       "options": {
         "A": "Use sticky sessions with an Elastic Load Balancer target group.",
         "B": "Use Amazon SQS to save session data.",
@@ -1466,7 +1466,7 @@
       "number": 110,
       "accuracy_percent": 94,
       "votes": 6,
-      "question": "A developer needs to deploy an application in three AWS Regions by using AWS CloudFormation.\nEach Region will use an AWS Elastic Beanstalk environment with an Application Load Balancer (ALB).\nThe developer wants to use AWS Certificate Manager (ACM) to deploy SSL certificates to each ALB.\n\nWhich solution will meet these requirements?\n\n\n\n1\n\n...\n\n9\n\n10\n\n11\n\n12\n\n13\n\n...\n\n32",
+      "question": "A developer needs to deploy an application in three AWS Regions by using AWS CloudFormation.\nEach Region will use an AWS Elastic Beanstalk environment with an Application Load Balancer (ALB).\nThe developer wants to use AWS Certificate Manager (ACM) to deploy SSL certificates to each ALB.\n\nWhich solution will meet these requirements?",
       "options": {
         "A": "Create a certificate in ACM in any one of the Regions. Import the certificate into the ALB that is in each Region.",
         "B": "Create a global certificate in ACM. Update the CloudFormation template to deploy the global certificate to each ALB.",
@@ -1600,7 +1600,7 @@
       "number": 120,
       "accuracy_percent": 100,
       "votes": 3,
-      "question": "A developer builds a serverless application on AWS by using Amazon API Gateway, AWS Lambda functions, and Amazon Route 53.\nDuring testing, the developer notices errors but cannot immediately locate the root cause.\n\nTo identify the errors, the developer needs to search all the application's logs.\n\nWhat should the developer do to meet these requirements with the LEAST operational overhead?\n\n\n\n1\n\n...\n\n10\n\n11\n\n12\n\n13\n\n14\n\n...\n\n32",
+      "question": "A developer builds a serverless application on AWS by using Amazon API Gateway, AWS Lambda functions, and Amazon Route 53.\nDuring testing, the developer notices errors but cannot immediately locate the root cause.\n\nTo identify the errors, the developer needs to search all the application's logs.\n\nWhat should the developer do to meet these requirements with the LEAST operational overhead?",
       "options": {
         "A": "Set up API Gateway health checks to monitor the application's availability. Use the Amazon CloudWatch PutMetricData API operation to publish the logs to CloudWatch. Search and query the logs by using Amazon Athena.",
         "B": "Set up Route 53 health checks to monitor the application's availability. Turn on AWS CloudTrail logs for all the AWS services that the application uses. Send the logs to a specified Amazon S3 bucket. Use Amazon Athena to query the log files directly from Amazon S3.",
@@ -1730,7 +1730,7 @@
       "number": 130,
       "accuracy_percent": 100,
       "votes": 4,
-      "question": "A developer is creating a simple proof-of-concept demo by using AWS CloudFormation and AWS Lambda functions.\nThe demo will use a CloudFormation template to deploy an existing Lambda function.\nThe Lambda function uses deployment packages and dependencies stored in Amazon S3.\nThe developer defined an AWS::Lambda::Function resource in a CloudFormation template.\nThe developer needs to add the S3 bucket to the CloudFormation template.\n\nWhat should the developer do to meet these requirements with the LEAST development effort?\n\n\n\n1\n\n...\n\n11\n\n12\n\n13\n\n14\n\n15\n\n...\n\n32",
+      "question": "A developer is creating a simple proof-of-concept demo by using AWS CloudFormation and AWS Lambda functions.\nThe demo will use a CloudFormation template to deploy an existing Lambda function.\nThe Lambda function uses deployment packages and dependencies stored in Amazon S3.\nThe developer defined an AWS::Lambda::Function resource in a CloudFormation template.\nThe developer needs to add the S3 bucket to the CloudFormation template.\n\nWhat should the developer do to meet these requirements with the LEAST development effort?",
       "options": {
         "A": "Add the function code in the CloudFormation template inline as the code property.",
         "B": "Add the function code in the CloudFormation template as the ZipFile property.",
@@ -1860,7 +1860,7 @@
       "number": 140,
       "accuracy_percent": 100,
       "votes": 5,
-      "question": "A developer is creating an Amazon DynamoDB table by using the AWS CLI.\nThe DynamoDB table must use server-side encryption with an AWS owned encryption key.\n\nHow should the developer create the DynamoDB table to meet these requirements?\n\n\n\n1\n\n...\n\n12\n\n13\n\n14\n\n15\n\n16\n\n...\n\n32",
+      "question": "A developer is creating an Amazon DynamoDB table by using the AWS CLI.\nThe DynamoDB table must use server-side encryption with an AWS owned encryption key.\n\nHow should the developer create the DynamoDB table to meet these requirements?",
       "options": {
         "A": "Create an AWS Key Management Service (AWS KMS) customer managed key. Provide the key's Amazon Resource Name (ARN) in the KMSMasterKeyId parameter during creation of the DynamoDB table.",
         "B": "Create an AWS Key Management Service (AWS KMS) AWS managed key. Provide the key's Amazon Resource Name (ARN) in the KMSMasterKeyId parameter during creation of the DynamoDB table.",
@@ -1998,7 +1998,7 @@
       "number": 150,
       "accuracy_percent": 100,
       "votes": 1,
-      "question": "A company has an application that receives batches of orders from partners every day.\nThe application uses an AWS Lambda function to process the batches.\n\nIf a batch contains no orders, the Lambda function must publish to an Amazon Simple Notification Service (Amazon SNS) topic as soon as possible.\n\nWhich combination of steps will meet this requirement with the LEAST implementation effort? (Choose two.)\n\n\n\n1\n\n...\n\n13\n\n14\n\n15\n\n16\n\n17\n\n...\n\n32",
+      "question": "A company has an application that receives batches of orders from partners every day.\nThe application uses an AWS Lambda function to process the batches.\n\nIf a batch contains no orders, the Lambda function must publish to an Amazon Simple Notification Service (Amazon SNS) topic as soon as possible.\n\nWhich combination of steps will meet this requirement with the LEAST implementation effort? (Choose two.)",
       "options": {
         "A": "Update the existing Lambda function's code to send an Amazon CloudWatch custom metric for the number of orders in a batch for each partner.",
         "B": "Create a new Lambda function as an Amazon Kinesis data stream consumer. Configure the new Lambda function to track orders and to publish to the SNS topic when a batch contains no orders.",
@@ -2132,7 +2132,7 @@
       "number": 160,
       "accuracy_percent": 100,
       "votes": 1,
-      "question": "An IAM role is attached to an Amazon EC2 instance that explicitly denies access to all Amazon S3 API actions.\nThe EC2 instance credentials file specifies the IAM access key and secret access key, which allow full administrative access.\n\nGiven that multiple modes of IAM access are present for this EC2 instance, which of the following is correct?\n\n\n\n1\n\n...\n\n14\n\n15\n\n16\n\n17\n\n18\n\n...\n\n32",
+      "question": "An IAM role is attached to an Amazon EC2 instance that explicitly denies access to all Amazon S3 API actions.\nThe EC2 instance credentials file specifies the IAM access key and secret access key, which allow full administrative access.\n\nGiven that multiple modes of IAM access are present for this EC2 instance, which of the following is correct?",
       "options": {
         "A": "The EC2 instance will only be able to list the S3 buckets.",
         "B": "The EC2 instance will only be able to list the contents of one S3 bucket at a time.",
@@ -2266,7 +2266,7 @@
       "number": 170,
       "accuracy_percent": 100,
       "votes": 3,
-      "question": "A company is hosting a workshop for external users and wants to share the reference documents with the external users for 7 days.\nThe company stores the reference documents in an Amazon S3 bucket that the company owns.\n\nWhat is the MOST secure way to share the documents with the external users?\n\n\n\n1\n\n...\n\n15\n\n16\n\n17\n\n18\n\n19\n\n...\n\n32",
+      "question": "A company is hosting a workshop for external users and wants to share the reference documents with the external users for 7 days.\nThe company stores the reference documents in an Amazon S3 bucket that the company owns.\n\nWhat is the MOST secure way to share the documents with the external users?",
       "options": {
         "A": "Use S3 presigned URLs to share the documents with the external users. Set an expiration time of 7 days.",
         "B": "Move the documents to an Amazon WorkDocs folder. Share the links of the WorkDocs folder with the external users.",
@@ -2400,7 +2400,7 @@
       "number": 180,
       "accuracy_percent": 100,
       "votes": 2,
-      "question": "An application uses Lambda functions to extract metadata from files uploaded to an S3 bucket; the metadata is stored in Amazon DynamoDB.\nThe application starts behaving unexpectedly, and the developer wants to examine the logs of the Lambda function code for errors.\n\nBased on this system configuration, where would the developer find the logs?\n\n\n\n1\n\n...\n\n16\n\n17\n\n18\n\n19\n\n20\n\n...\n\n32",
+      "question": "An application uses Lambda functions to extract metadata from files uploaded to an S3 bucket; the metadata is stored in Amazon DynamoDB.\nThe application starts behaving unexpectedly, and the developer wants to examine the logs of the Lambda function code for errors.\n\nBased on this system configuration, where would the developer find the logs?",
       "options": {
         "A": "Amazon S3",
         "B": "AWS CloudTrail",
@@ -2538,7 +2538,7 @@
       "number": 190,
       "accuracy_percent": 100,
       "votes": 4,
-      "question": "A developer is building a containerized application on AWS.\nThe application communicates with a third-party service by using API keys.\nThe developer needs a secure way to store the API keys and pass the API keys to the containerized application.\n\nWhich solutions will meet these requirements? (Choose two.)\n\n\n\n1\n\n...\n\n17\n\n18\n\n19\n\n20\n\n21\n\n...\n\n32",
+      "question": "A developer is building a containerized application on AWS.\nThe application communicates with a third-party service by using API keys.\nThe developer needs a secure way to store the API keys and pass the API keys to the containerized application.\n\nWhich solutions will meet these requirements? (Choose two.)",
       "options": {
         "A": "Store the API keys as a SecureString parameter in AWS Systems Manager Parameter Store. Grant the application access to retrieve the value from Parameter Store.",
         "B": "Store the API keys in AWS CloudFormation templates by using base64 encoding. Pass the API keys to the application through container definition environment variables.",
@@ -2676,7 +2676,7 @@
       "number": 200,
       "accuracy_percent": 100,
       "votes": 5,
-      "question": "A developer created an AWS Lambda function that performs a series of operations that involve multiple AWS services.\nThe function's duration time is higher than normal.\nTo determine the cause of the issue, the developer must investigate traffic between the services without changing the function code.\n\nWhich solution will meet these requirements?\n\n\n\n1\n\n...\n\n18\n\n19\n\n20\n\n21\n\n22\n\n...\n\n32",
+      "question": "A developer created an AWS Lambda function that performs a series of operations that involve multiple AWS services.\nThe function's duration time is higher than normal.\nTo determine the cause of the issue, the developer must investigate traffic between the services without changing the function code.\n\nWhich solution will meet these requirements?",
       "options": {
         "A": "Enable AWS X-Ray active tracing in the Lambda function. Review the logs in X-Ray.",
         "B": "Configure AWS CloudTrail. View the trail logs that are associated with the Lambda function.",
@@ -2806,7 +2806,7 @@
       "number": 210,
       "accuracy_percent": 100,
       "votes": 2,
-      "question": "A company notices that credentials that the company uses to connect to an external software as a service (SaaS) vendor are stored in a configuration file as plaintext.\n\nThe developer needs to secure the API credentials and enforce automatic credentials rotation on a quarterly basis.\n\nWhich solution will meet these requirements MOST securely?\n\n\n\n1\n\n...\n\n19\n\n20\n\n21\n\n22\n\n23\n\n...\n\n32",
+      "question": "A company notices that credentials that the company uses to connect to an external software as a service (SaaS) vendor are stored in a configuration file as plaintext.\n\nThe developer needs to secure the API credentials and enforce automatic credentials rotation on a quarterly basis.\n\nWhich solution will meet these requirements MOST securely?",
       "options": {
         "A": "Use AWS Key Management Service (AWS KMS) to encrypt the configuration file. Decrypt the configuration file when users make API calls to the SaaS vendor. Enable rotation.",
         "B": "Retrieve temporary credentials from AWS Security Token Service (AWS STS) every 15 minutes. Use the temporary credentials when users make API calls to the SaaS vendor.",
@@ -2936,7 +2936,7 @@
       "number": 220,
       "accuracy_percent": 100,
       "votes": 5,
-      "question": "A developer is building a serverless application that runs on AWS.\nThe developer wants to create an accelerated development workflow that deploys incremental changes to AWS for testing.\nThe developer wants to deploy the incremental changes but does not want to fully deploy the entire application to AWS for every code commit.\n\nWhat should the developer do to meet these requirements?\n\n\n\n1\n\n...\n\n20\n\n21\n\n22\n\n23\n\n24\n\n...\n\n32",
+      "question": "A developer is building a serverless application that runs on AWS.\nThe developer wants to create an accelerated development workflow that deploys incremental changes to AWS for testing.\nThe developer wants to deploy the incremental changes but does not want to fully deploy the entire application to AWS for every code commit.\n\nWhat should the developer do to meet these requirements?",
       "options": {
         "A": "Use the AWS Serverless Application Model (AWS SAM) to build the application. Use the sam sync command to deploy the incremental changes.",
         "B": "Use the AWS Serverless Application Model (AWS SAM) to build the application. Use the sam init command to deploy the incremental changes.",
@@ -3074,7 +3074,7 @@
       "number": 230,
       "accuracy_percent": 100,
       "votes": 3,
-      "question": "A developer is creating an AWS Lambda function that will connect to an Amazon RDS for MySQL instance.\nThe developer wants to store the database credentials.\nThe database credentials need to be encrypted and the database password needs to be automatically rotated.\n\nWhich solution will meet these requirements?\n\n\n\n1\n\n...\n\n21\n\n22\n\n23\n\n24\n\n25\n\n...\n\n32",
+      "question": "A developer is creating an AWS Lambda function that will connect to an Amazon RDS for MySQL instance.\nThe developer wants to store the database credentials.\nThe database credentials need to be encrypted and the database password needs to be automatically rotated.\n\nWhich solution will meet these requirements?",
       "options": {
         "A": "Store the database credentials as environment variables for the Lambda function. Set the environment variables to rotate automatically.",
         "B": "Store the database credentials in AWS Secrets Manager. Set up managed rotation on the database credentials.",
@@ -3204,7 +3204,7 @@
       "number": 240,
       "accuracy_percent": 100,
       "votes": 4,
-      "question": "A developer is preparing to begin development of a new version of an application.\nThe previous version of the application is deployed in a production environment.\nThe developer needs to deploy fixes and updates to the current version during the development of the new version of the application.\nThe code for the new version of the application is stored in AWS CodeCommit.\n\nWhich solution will meet these requirements?\n\n\n\n1\n\n...\n\n22\n\n23\n\n24\n\n25\n\n26\n\n...\n\n32",
+      "question": "A developer is preparing to begin development of a new version of an application.\nThe previous version of the application is deployed in a production environment.\nThe developer needs to deploy fixes and updates to the current version during the development of the new version of the application.\nThe code for the new version of the application is stored in AWS CodeCommit.\n\nWhich solution will meet these requirements?",
       "options": {
         "A": "From the main branch, create a feature branch for production bug fixes. Create a second feature branch from the main branch for development of the new version.",
         "B": "Create a Git tag of the code that is currently deployed in production. Create a Git tag for the development of the new version. Push the two tags to the CodeCommit repository.",
@@ -3334,7 +3334,7 @@
       "number": 250,
       "accuracy_percent": 100,
       "votes": 5,
-      "question": "A company has an ecommerce application.\nTo track product reviews, the company’s development team uses an Amazon DynamoDB table.\n\nEvery record includes the following:\n\n•\tA Review ID, a 16-digit universally unique identifier (UUID)\n\n•\tA Product ID and User ID, 16-digit UUIDs that reference other tables\n\n•\tA Product Rating on a scale of 1-5\n\n•\tAn optional comment from the user\n\nThe table partition key is the Review ID.\nThe most performed query against the table is to find the 10 reviews with the highest rating for a given product.\n\nWhich index will provide the FASTEST response for this query?\n\n\n\n1\n\n...\n\n23\n\n24\n\n25\n\n26\n\n27\n\n...\n\n32",
+      "question": "A company has an ecommerce application.\nTo track product reviews, the company’s development team uses an Amazon DynamoDB table.\n\nEvery record includes the following:\n\n•\tA Review ID, a 16-digit universally unique identifier (UUID)\n\n•\tA Product ID and User ID, 16-digit UUIDs that reference other tables\n\n•\tA Product Rating on a scale of 1-5\n\n•\tAn optional comment from the user\n\nThe table partition key is the Review ID.\nThe most performed query against the table is to find the 10 reviews with the highest rating for a given product.\n\nWhich index will provide the FASTEST response for this query?",
       "options": {
         "A": "A global secondary index (GSI) with Product ID as the partition key and Product Rating as the sort key",
         "B": "A global secondary index (GSI) with Product ID as the partition key and Review ID as the sort key",
@@ -3472,7 +3472,7 @@
       "number": 260,
       "accuracy_percent": 100,
       "votes": 4,
-      "question": "A developer at a company needs to create a small application that makes the same API call once each day at a designated time.\nThe company does not have infrastructure in the AWS Cloud yet, but the company wants to implement this functionality on AWS.\n\nWhich solution meets these requirements in the MOST operationally efficient manner?\n\n\n\n1\n\n...\n\n24\n\n25\n\n26\n\n27\n\n28\n\n...\n\n32",
+      "question": "A developer at a company needs to create a small application that makes the same API call once each day at a designated time.\nThe company does not have infrastructure in the AWS Cloud yet, but the company wants to implement this functionality on AWS.\n\nWhich solution meets these requirements in the MOST operationally efficient manner?",
       "options": {
         "A": "Use a Kubernetes cron job that runs on Amazon Elastic Kubernetes Service (Amazon EKS).",
         "B": "Use an Amazon Linux crontab scheduled job that runs on Amazon EC2.",
@@ -3610,7 +3610,7 @@
       "number": 270,
       "accuracy_percent": 100,
       "votes": 4,
-      "question": "A developer wants to add request validation to a production environment Amazon API Gateway API.\nThe developer needs to test the changes before the API is deployed to the production environment.\nFor the test, the developer will send test requests to the API through a testing tool.\n\nWhich solution will meet these requirements with the LEAST operational overhead?\n\n\n\n1\n\n...\n\n25\n\n26\n\n27\n\n28\n\n29\n\n...\n\n32",
+      "question": "A developer wants to add request validation to a production environment Amazon API Gateway API.\nThe developer needs to test the changes before the API is deployed to the production environment.\nFor the test, the developer will send test requests to the API through a testing tool.\n\nWhich solution will meet these requirements with the LEAST operational overhead?",
       "options": {
         "A": "Export the existing API to an OpenAPI file. Create a new API. Import the OpenAPI file. Modify the new API to add request validation. Perform the tests. Modify the existing API to add request validation. Deploy the existing API to production.",
         "B": "Modify the existing API to add request validation. Deploy the updated API to a new API Gateway stage. Perform the tests. Deploy the updated API to the API Gateway production stage.",
@@ -3744,7 +3744,7 @@
       "number": 280,
       "accuracy_percent": 91,
       "votes": 7,
-      "question": "A team is developing an application that is deployed on Amazon EC2 instances.\nDuring testing, the team receives an error.\nThe EC2 instances are unable to access an Amazon S3 bucket.\n\nWhich steps should the team take to troubleshoot this issue? (Choose two.)\n\n\n\n1\n\n...\n\n26\n\n27\n\n28\n\n29\n\n30\n\n31\n\n32",
+      "question": "A team is developing an application that is deployed on Amazon EC2 instances.\nDuring testing, the team receives an error.\nThe EC2 instances are unable to access an Amazon S3 bucket.\n\nWhich steps should the team take to troubleshoot this issue? (Choose two.)",
       "options": {
         "A": "Check whether the policy that is assigned to the IAM role that is attached to the EC2 instances grants access to Amazon S3.",
         "B": "Check the S3 bucket policy to validate the access permissions for the S3 bucket.",
@@ -3886,7 +3886,7 @@
       "number": 290,
       "accuracy_percent": 100,
       "votes": 4,
-      "question": "A company is planning to use AWS CodeDeploy to deploy an application to Amazon Elastic Container Service (Amazon ECS).\nDuring the deployment of a new version of the application, the company initially must expose only 10% of live traffic to the new version of the deployed application.\nThen, after 15 minutes elapse, the company must route all the remaining live traffic to the new version of the deployed application.\n\nWhich CodeDeploy predefined configuration will meet these requirements?\n\n\n\n1\n\n...\n\n26\n\n27\n\n28\n\n29\n\n30\n\n31\n\n32",
+      "question": "A company is planning to use AWS CodeDeploy to deploy an application to Amazon Elastic Container Service (Amazon ECS).\nDuring the deployment of a new version of the application, the company initially must expose only 10% of live traffic to the new version of the deployed application.\nThen, after 15 minutes elapse, the company must route all the remaining live traffic to the new version of the deployed application.\n\nWhich CodeDeploy predefined configuration will meet these requirements?",
       "options": {
         "A": "CodeDeployDefault.ECSCanary10Percent15Minutes",
         "B": "CodeDeployDefault.LambdaCanary10Percent5Minutes",
@@ -4016,7 +4016,7 @@
       "number": 300,
       "accuracy_percent": 95,
       "votes": 7,
-      "question": "A company has deployed an application on AWS Elastic Beanstalk.\nThe company has configured the Auto Scaling group that is associated with the Elastic Beanstalk environment to have five Amazon EC2 instances.\nIf the capacity is fewer than four EC2 instances during the deployment, application performance degrades.\nThe company is using the all-at-once deployment policy.\n\nWhat is the MOST cost-effective way to solve the deployment issue?\n\n\n\n1\n\n...\n\n26\n\n27\n\n28\n\n29\n\n30\n\n31\n\n32",
+      "question": "A company has deployed an application on AWS Elastic Beanstalk.\nThe company has configured the Auto Scaling group that is associated with the Elastic Beanstalk environment to have five Amazon EC2 instances.\nIf the capacity is fewer than four EC2 instances during the deployment, application performance degrades.\nThe company is using the all-at-once deployment policy.\n\nWhat is the MOST cost-effective way to solve the deployment issue?",
       "options": {
         "A": "Change the Auto Scaling group to six desired instances.",
         "B": "Change the deployment policy to traffic splitting. Specify an evaluation time of 1 hour.",
@@ -4150,7 +4150,7 @@
       "number": 310,
       "accuracy_percent": 100,
       "votes": 8,
-      "question": "A development team maintains a web application by using a single AWS CloudFormation template.\nThe template defines web servers and an Amazon RDS database.\nThe team uses the Cloud Formation template to deploy the Cloud Formation stack to different environments.\n\nDuring a recent application deployment, a developer caused the primary development database to be dropped and recreated.\nThe result of this incident was a loss of data.\nThe team needs to avoid accidental database deletion in the future.\n\nWhich solutions will meet these requirements? (Choose two.)\n\n\n\n1\n\n...\n\n26\n\n27\n\n28\n\n29\n\n30\n\n31\n\n32",
+      "question": "A development team maintains a web application by using a single AWS CloudFormation template.\nThe template defines web servers and an Amazon RDS database.\nThe team uses the Cloud Formation template to deploy the Cloud Formation stack to different environments.\n\nDuring a recent application deployment, a developer caused the primary development database to be dropped and recreated.\nThe result of this incident was a loss of data.\nThe team needs to avoid accidental database deletion in the future.\n\nWhich solutions will meet these requirements? (Choose two.)",
       "options": {
         "A": "Add a CloudFormation Deletion Policy attribute with the Retain value to the database resource.",
         "B": "Update the CloudFormation stack policy to prevent updates to the database.",
@@ -4193,7 +4193,7 @@
       "number": 313,
       "accuracy_percent": 100,
       "votes": 4,
-      "question": "A developer is deploying an AWS Lambda function The developer wants the ability to return to older versions of the function quickly and seamlessly.\n\nHow can the developer achieve this goal with the LEAST operational overhead?\n\n\n\n1\n\n...\n\n26\n\n27\n\n28\n\n29\n\n30\n\n31\n\n32",
+      "question": "A developer is deploying an AWS Lambda function The developer wants the ability to return to older versions of the function quickly and seamlessly.\n\nHow can the developer achieve this goal with the LEAST operational overhead?",
       "options": {
         "A": "Use AWS OpsWorks to perform blue/green deployments.",
         "B": "Use a function alias with different versions.",

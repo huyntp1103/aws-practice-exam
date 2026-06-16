@@ -144,7 +144,7 @@
       "number": 10,
       "accuracy_percent": 100,
       "votes": 9,
-      "question": "A company requires its developers to tag all Amazon Elastic Block Store (Amazon EBS) volumes in an account to indicate a desired backup frequency.\nThis requirement Includes EBS volumes that do not require backups.\nThe company uses custom tags named Backup_Frequency that have values of none, dally, or weekly that correspond to the desired backup frequency.\nAn audit finds that developers are occasionally not tagging the EBS volumes.\n\nA DevOps engineer needs to ensure that all EBS volumes always have the Backup_Frequency tag so that the company can perform backups at least weekly unless a different value is specified.\n\nWhich solution will meet these requirements?\n\n\n\n1\n\n2\n\n3\n\n4\n\n5\n\n6\n\n7\n\n...\n\n18",
+      "question": "A company requires its developers to tag all Amazon Elastic Block Store (Amazon EBS) volumes in an account to indicate a desired backup frequency.\nThis requirement Includes EBS volumes that do not require backups.\nThe company uses custom tags named Backup_Frequency that have values of none, dally, or weekly that correspond to the desired backup frequency.\nAn audit finds that developers are occasionally not tagging the EBS volumes.\n\nA DevOps engineer needs to ensure that all EBS volumes always have the Backup_Frequency tag so that the company can perform backups at least weekly unless a different value is specified.\n\nWhich solution will meet these requirements?",
       "options": {
         "A": "Set up AWS Config in the account. Create a custom rule that returns a compliance failure for all Amazon EC2 resources that do not have a Backup Frequency tag applied. Configure a remediation action that uses a custom AWS Systems Manager Automation runbook to apply the Backup_Frequency tag with a value of weekly.",
         "B": "Set up AWS Config in the account. Use a managed rule that returns a compliance failure for EC2::Volume resources that do not have a Backup Frequency tag applied. Configure a remediation action that uses a custom AWS Systems Manager Automation runbook to apply the Backup_Frequency tag with a value of weekly.",
@@ -282,7 +282,7 @@
       "number": 20,
       "accuracy_percent": 92,
       "votes": 8,
-      "question": "A DevOps engineer is deploying a new version of a company’s application in an AWS CodeDeploy deployment group associated with its Amazon EC2 instances.\nAfter some time, the deployment fails.\nThe engineer realizes that all the events associated with the specific deployment ID are in a Skipped status, and code was not deployed in the instances associated with the deployment group.\n\nWhat are valid reasons for this failure? (Choose two.)\n\n\n\n1\n\n2\n\n3\n\n4\n\n5\n\n6\n\n7\n\n...\n\n18",
+      "question": "A DevOps engineer is deploying a new version of a company’s application in an AWS CodeDeploy deployment group associated with its Amazon EC2 instances.\nAfter some time, the deployment fails.\nThe engineer realizes that all the events associated with the specific deployment ID are in a Skipped status, and code was not deployed in the instances associated with the deployment group.\n\nWhat are valid reasons for this failure? (Choose two.)",
       "options": {
         "A": "The networking configuration does not allow the EC2 instances to reach the internet via a NAT gateway or internet gateway, and the CodeDeploy endpoint cannot be reached.",
         "B": "The IAM user who triggered the application deployment does not have permission to interact with the CodeDeploy endpoint.",
@@ -420,7 +420,7 @@
       "number": 30,
       "accuracy_percent": 100,
       "votes": 5,
-      "question": "A company has developed a static website hosted on an Amazon S3 bucket.\nThe website is deployed using AWS CloudFormation.\nThe CloudFormation template defines an S3 bucket and a custom resource that copies content into the bucket from a source location.\n\nThe company has decided that it needs to move the website to a new location, so the existing CloudFormation stack must be deleted and re-created.\nHowever, CloudFormation reports that the stack could not be deleted cleanly.\n\nWhat is the MOST likely cause and how can the DevOps engineer mitigate this problem for this and future versions of the website?\n\n\n\n1\n\n2\n\n3\n\n4\n\n5\n\n6\n\n7\n\n...\n\n18",
+      "question": "A company has developed a static website hosted on an Amazon S3 bucket.\nThe website is deployed using AWS CloudFormation.\nThe CloudFormation template defines an S3 bucket and a custom resource that copies content into the bucket from a source location.\n\nThe company has decided that it needs to move the website to a new location, so the existing CloudFormation stack must be deleted and re-created.\nHowever, CloudFormation reports that the stack could not be deleted cleanly.\n\nWhat is the MOST likely cause and how can the DevOps engineer mitigate this problem for this and future versions of the website?",
       "options": {
         "A": "Deletion has failed because the S3 bucket has an active website configuration. Modify the CloudFormation template to remove the WebsiteConfiguration property from the S3 bucket resource.",
         "B": "Deletion has failed because the S3 bucket is not empty. Modify the custom resource's AWS Lambda function code to recursively empty the bucket when RequestType is Delete.",
@@ -560,7 +560,7 @@
       "number": 40,
       "accuracy_percent": 100,
       "votes": 8,
-      "question": "A DevOps engineer is creating an AWS CloudFormation template to deploy a web service.\nThe web service will run on Amazon EC2 instances in a private subnet behind an Application Load Balancer (ALB).\nThe DevOps engineer must ensure that the service can accept requests from clients that have IPv6 addresses.\n\nWhat should the DevOps engineer do with the CloudFormation template so that IPv6 clients can access the web service?\n\n\n\n1\n\n2\n\n3\n\n4\n\n5\n\n6\n\n7\n\n...\n\n18",
+      "question": "A DevOps engineer is creating an AWS CloudFormation template to deploy a web service.\nThe web service will run on Amazon EC2 instances in a private subnet behind an Application Load Balancer (ALB).\nThe DevOps engineer must ensure that the service can accept requests from clients that have IPv6 addresses.\n\nWhat should the DevOps engineer do with the CloudFormation template so that IPv6 clients can access the web service?",
       "options": {
         "A": "Add an IPv6 CIDR block to the VPC and the private subnet for the EC2 instances. Create route table entries for the IPv6 network, use EC2 instance types that support IPv6, and assign IPv6 addresses to each EC2 instance.",
         "B": "Assign each EC2 instance an IPv6 Elastic IP address. Create a target group, and add the EC2 instances as targets. Create a listener on port 443 of the ALB, and associate the target group with the ALB.",
@@ -706,7 +706,7 @@
       "number": 50,
       "accuracy_percent": 94,
       "votes": 10,
-      "question": "A company uses AWS CodeCommit for source code control.\nDevelopers apply their changes to various feature branches and create pull requests to move those changes to the main branch when the changes are ready for production.\n\nThe developers should not be able to push changes directly to the main branch.\nThe company applied the AWSCodeCommitPowerUser managed policy to the developers’ IAM role, and now these developers can push changes to the main branch directly on every repository in the AWS account.\n\nWhat should the company do to restrict the developers’ ability to push changes to the main branch directly?\n\n\n\n1\n\n2\n\n3\n\n4\n\n5\n\n6\n\n7\n\n...\n\n18",
+      "question": "A company uses AWS CodeCommit for source code control.\nDevelopers apply their changes to various feature branches and create pull requests to move those changes to the main branch when the changes are ready for production.\n\nThe developers should not be able to push changes directly to the main branch.\nThe company applied the AWSCodeCommitPowerUser managed policy to the developers’ IAM role, and now these developers can push changes to the main branch directly on every repository in the AWS account.\n\nWhat should the company do to restrict the developers’ ability to push changes to the main branch directly?",
       "options": {
         "A": "Create an additional policy to include a Deny rule for the GitPush and PutFile actions. Include a restriction for the specific repositories in the policy statement with a condition that references the main branch.",
         "B": "Remove the IAM policy, and add an AWSCodeCommitReadOnly managed policy. Add an Allow rule for the GitPush and PutFile actions for the specific repositories in the policy statement with a condition that references the main branch.",
@@ -846,7 +846,7 @@
       "number": 60,
       "accuracy_percent": 100,
       "votes": 3,
-      "question": "A company sends its AWS Network Firewall flow logs to an Amazon S3 bucket.\nThe company then analyzes the flow logs by using Amazon Athena.\n\nThe company needs to transform the flow logs and add additional data before the flow logs are delivered to the existing S3 bucket.\n\nWhich solution will meet these requirements?\n\n\n\n1\n\n...\n\n4\n\n5\n\n6\n\n7\n\n8\n\n...\n\n18",
+      "question": "A company sends its AWS Network Firewall flow logs to an Amazon S3 bucket.\nThe company then analyzes the flow logs by using Amazon Athena.\n\nThe company needs to transform the flow logs and add additional data before the flow logs are delivered to the existing S3 bucket.\n\nWhich solution will meet these requirements?",
       "options": {
         "A": "Create an AWS Lambda function to transform the data and to write a new object to the existing S3 bucket. Configure the Lambda function with an S3 trigger for the existing S3 bucket. Specify all object create events for the event type. Acknowledge the recursive invocation.",
         "B": "Enable Amazon EventBridge notifications on the existing S3 bucket. Create a custom EventBridge event bus. Create an EventBridge rule that is associated with the custom event bus. Configure the rule to react to all object create events for the existing S3 bucket and to invoke an AWS Step Functions workflow. Configure a Step Functions task to transform the data and to write the data into a new S3 bucket.",
@@ -986,7 +986,7 @@
       "number": 70,
       "accuracy_percent": 100,
       "votes": 4,
-      "question": "A DevOps engineer is building the infrastructure for an application.\nThe application needs to run on an Amazon Elastic Kubernetes Service (Amazon EKS) cluster that includes Amazon EC2 instances.\nThe EC2 instances need to use an Amazon Elastic File System (Amazon EFS) file system as a storage backend.\nThe Amazon EFS Container Storage Interface (CSI) driver is installed on the EKS cluster.\n\nWhen the DevOps engineer starts the application, the EC2 instances do not mount the EFS file system.\n\nWhich solutions will fix the problem? (Choose three.)\n\n\n\n1\n\n...\n\n5\n\n6\n\n7\n\n8\n\n9\n\n...\n\n18",
+      "question": "A DevOps engineer is building the infrastructure for an application.\nThe application needs to run on an Amazon Elastic Kubernetes Service (Amazon EKS) cluster that includes Amazon EC2 instances.\nThe EC2 instances need to use an Amazon Elastic File System (Amazon EFS) file system as a storage backend.\nThe Amazon EFS Container Storage Interface (CSI) driver is installed on the EKS cluster.\n\nWhen the DevOps engineer starts the application, the EC2 instances do not mount the EFS file system.\n\nWhich solutions will fix the problem? (Choose three.)",
       "options": {
         "A": "Switch the EKS nodes from Amazon EC2 to AWS Fargate.",
         "B": "Add an inbound rule to the EFS file system’s security group to allow NFS traffic from the EKS cluster.",
@@ -1142,7 +1142,7 @@
       "number": 80,
       "accuracy_percent": 100,
       "votes": 10,
-      "question": "A company builds an application that uses an Application Load Balancer in front of Amazon EC2 instances that are in an Auto Scaling group.\nThe application is stateless.\nThe Auto Scaling group uses a custom AMI that is fully prebuilt.\nThe EC2 instances do not have a custom bootstrapping process.\n\nThe AMI that the Auto Scaling group uses was recently deleted.\nThe Auto Scaling group's scaling activities show failures because the AMI ID does not exist.\n\nWhich combination of steps should a DevOps engineer take to meet these requirements? (Choose three.)\n\n\n1\n\n...\n\n6\n\n7\n\n8\n\n9\n\n10\n\n...\n\n18",
+      "question": "A company builds an application that uses an Application Load Balancer in front of Amazon EC2 instances that are in an Auto Scaling group.\nThe application is stateless.\nThe Auto Scaling group uses a custom AMI that is fully prebuilt.\nThe EC2 instances do not have a custom bootstrapping process.\n\nThe AMI that the Auto Scaling group uses was recently deleted.\nThe Auto Scaling group's scaling activities show failures because the AMI ID does not exist.\n\nWhich combination of steps should a DevOps engineer take to meet these requirements? (Choose three.)",
       "options": {
         "A": "Create a new launch template that uses the new AMI.",
         "B": "Update the Auto Scaling group to use the new launch template.",
@@ -1284,7 +1284,7 @@
       "number": 90,
       "accuracy_percent": 100,
       "votes": 2,
-      "question": "A company's DevOps team manages a set of AWS accounts that are in an organization in AWS Organizations.\n\nThe company needs a solution that ensures that all Amazon EC2 instances use approved AM Is that the DevOps team manages.\nThe solution also must remediate the usage of AMIs that are not approved.\nThe individual account administrators must not be able to remove the restriction to use approved AMIs.\n\nWhich solution will meet these requirements?\n\n\n\n1\n\n...\n\n7\n\n8\n\n9\n\n10\n\n11\n\n...\n\n18",
+      "question": "A company's DevOps team manages a set of AWS accounts that are in an organization in AWS Organizations.\n\nThe company needs a solution that ensures that all Amazon EC2 instances use approved AM Is that the DevOps team manages.\nThe solution also must remediate the usage of AMIs that are not approved.\nThe individual account administrators must not be able to remove the restriction to use approved AMIs.\n\nWhich solution will meet these requirements?",
       "options": {
         "A": "Use AWS CloudFormation StackSets to deploy an Amazon EventBridge rule to each account. Configure the rule to react to AWS CloudTrail events for Amazon EC2 and to send a notification to an Amazon Simple Notification Service (Amazon SNS) topic. Subscribe the DevOps team to the SNS topic.",
         "B": "Use AWS CloudFormation StackSets to deploy the approved-amis-by-id AWS Config managed rule to each account. Configure the rule with the list of approved AMIs. Configure the rule to run the AWS-StopEC2Instance AWS Systems Manager Automation runbook for the noncompliant EC2 instances.",
@@ -1422,7 +1422,7 @@
       "number": 100,
       "accuracy_percent": 100,
       "votes": 4,
-      "question": "A company has developed an AWS Lambda function that handles orders received through an API.\nThe company is using AWS CodeDeploy to deploy the Lambda function as the final stage of a CI/CD pipeline.\n\nA DevOps engineer has noticed there are intermittent failures of the ordering API for a few seconds after deployment.\nAfter some investigation, the DevOps engineer believes the failures are due to database changes not having fully propagated before the Lambda function is invoked.\n\nHow should the DevOps engineer overcome this?\n\n\n\n1\n\n...\n\n8\n\n9\n\n10\n\n11\n\n12\n\n...\n\n18",
+      "question": "A company has developed an AWS Lambda function that handles orders received through an API.\nThe company is using AWS CodeDeploy to deploy the Lambda function as the final stage of a CI/CD pipeline.\n\nA DevOps engineer has noticed there are intermittent failures of the ordering API for a few seconds after deployment.\nAfter some investigation, the DevOps engineer believes the failures are due to database changes not having fully propagated before the Lambda function is invoked.\n\nHow should the DevOps engineer overcome this?",
       "options": {
         "A": "Add a BeforeAllowTraffic hook to the AppSpec file that tests and waits for any necessary database changes before traffic can flow to the new version of the Lambda function.",
         "B": "Add an AfterAllowTraffic hook to the AppSpec file that forces traffic to wait for any pending database changes before allowing the new version of the Lambda function to respond.",
@@ -1566,7 +1566,7 @@
       "number": 110,
       "accuracy_percent": 100,
       "votes": 6,
-      "question": "A company has a single AWS account that runs hundreds of Amazon EC2 instances in a single AWS Region.\nNew EC2 instances are launched and terminated each hour in the account.\nThe account also includes existing EC2 instances that have been running for longer than a week.\n\nThe company's security policy requires all running EC2 instances to use an EC2 instance profile.\nIf an EC2 instance does not have an instance profile attached, the EC2 instance must use a default instance profile that has no IAM permissions assigned.\n\nA DevOps engineer reviews the account and discovers EC2 instances that are running without an instance profile.\nDuring the review, the DevOps engineer also observes that new EC2 instances are being launched without an instance profile.\n\nWhich solution will ensure that an instance profile is attached to all existing and future EC2 instances in the Region?\n\n\n\n1\n\n...\n\n9\n\n10\n\n11\n\n12\n\n13\n\n...\n\n18",
+      "question": "A company has a single AWS account that runs hundreds of Amazon EC2 instances in a single AWS Region.\nNew EC2 instances are launched and terminated each hour in the account.\nThe account also includes existing EC2 instances that have been running for longer than a week.\n\nThe company's security policy requires all running EC2 instances to use an EC2 instance profile.\nIf an EC2 instance does not have an instance profile attached, the EC2 instance must use a default instance profile that has no IAM permissions assigned.\n\nA DevOps engineer reviews the account and discovers EC2 instances that are running without an instance profile.\nDuring the review, the DevOps engineer also observes that new EC2 instances are being launched without an instance profile.\n\nWhich solution will ensure that an instance profile is attached to all existing and future EC2 instances in the Region?",
       "options": {
         "A": "Configure an Amazon EventBridge rule that reacts to EC2 RunInstances API calls. Configure the rule to invoke an AWS Lambda function to attach the default instance profile to the EC2 instances.",
         "B": "Configure the ec2-instance-profile-attached AWS Config managed rule with a trigger type of configuration changes. Configure an automatic remediation action that invokes an AWS Systems Manager Automation runbook to attach the default instance profile to the EC2 instances.",
@@ -1704,7 +1704,7 @@
       "number": 120,
       "accuracy_percent": 100,
       "votes": 5,
-      "question": "A company has started using AWS across several teams.\nEach team has multiple accounts and unique security profiles.\nThe company manages the accounts in an organization in AWS Organizations.\nEach account has its own configuration and security controls.\n\nThe company's DevOps team wants to use preventive and detective controls to govern all accounts.\nThe DevOps team needs to ensure the security of accounts now and in the future as the company creates new accounts in the organization.\n\nWhich solution will meet these requirements?\n\n\n\n1\n\n...\n\n10\n\n11\n\n12\n\n13\n\n14\n\n...\n\n18",
+      "question": "A company has started using AWS across several teams.\nEach team has multiple accounts and unique security profiles.\nThe company manages the accounts in an organization in AWS Organizations.\nEach account has its own configuration and security controls.\n\nThe company's DevOps team wants to use preventive and detective controls to govern all accounts.\nThe DevOps team needs to ensure the security of accounts now and in the future as the company creates new accounts in the organization.\n\nWhich solution will meet these requirements?",
       "options": {
         "A": "Use Organizations to create OUs that have appropriate SCPs attached for each team. Place team accounts in the appropriate OUs to apply security controls. Create any new team accounts in the appropriate OUs.",
         "B": "Create an AWS Control Tower landing zone. Configure OUs and appropriate controls in AWS Control Tower for the existing teams. Configure trusted access for AWS Control Tower. Enroll the existing accounts in the appropriate OUs that match the appropriate security policies for each team. Use AWS Control Tower to provision any new accounts.",
@@ -1842,7 +1842,7 @@
       "number": 130,
       "accuracy_percent": 100,
       "votes": 3,
-      "question": "A company's application is currently deployed to a single AWS Region.\nRecently, the company opened a new office on a different continent.\nThe users in the new office are experiencing high latency.\nThe company's application runs on Amazon EC2 instances behind an Application Load Balancer (ALB) and uses Amazon DynamoDB as the database layer.\nThe instances run in an EC2 Auto Scaling group across multiple Availability Zones.\nA DevOps engineer is tasked with minimizing application response times and improving availability for users in both Regions.\n\nWhich combination of actions should be taken to address the latency issues? (Choose three.)\n\n\n\n1\n\n...\n\n11\n\n12\n\n13\n\n14\n\n15\n\n...\n\n18",
+      "question": "A company's application is currently deployed to a single AWS Region.\nRecently, the company opened a new office on a different continent.\nThe users in the new office are experiencing high latency.\nThe company's application runs on Amazon EC2 instances behind an Application Load Balancer (ALB) and uses Amazon DynamoDB as the database layer.\nThe instances run in an EC2 Auto Scaling group across multiple Availability Zones.\nA DevOps engineer is tasked with minimizing application response times and improving availability for users in both Regions.\n\nWhich combination of actions should be taken to address the latency issues? (Choose three.)",
       "options": {
         "A": "Create a new DynamoDB table in the new Region with cross-Region replication enabled.",
         "B": "Create new ALB and Auto Scaling group global resources and configure the new ALB to direct traffic to the new Auto Scaling group.",
@@ -1988,7 +1988,7 @@
       "number": 140,
       "accuracy_percent": 100,
       "votes": 6,
-      "question": "A company has multiple development teams in different business units that work in a shared single AWS account.\nAll Amazon EC2 resources that are created in the account must include tags that specify who created the resources.\nThe tagging must occur within the first hour of resource creation.\n\nA DevOps engineer needs to add tags to the created resources that include the user ID that created the resource and the cost center ID.\nThe DevOps engineer configures an AWS Lambda function with the cost center mappings to tag the resources.\nThe DevOps engineer also sets up AWS CloudTrail in the AWS account.\nAn Amazon S3 bucket stores the CloudTrail event logs.\n\nWhich solution will meet the tagging requirements?\n\n\n\n1\n\n...\n\n12\n\n13\n\n14\n\n15\n\n16\n\n17\n\n18",
+      "question": "A company has multiple development teams in different business units that work in a shared single AWS account.\nAll Amazon EC2 resources that are created in the account must include tags that specify who created the resources.\nThe tagging must occur within the first hour of resource creation.\n\nA DevOps engineer needs to add tags to the created resources that include the user ID that created the resource and the cost center ID.\nThe DevOps engineer configures an AWS Lambda function with the cost center mappings to tag the resources.\nThe DevOps engineer also sets up AWS CloudTrail in the AWS account.\nAn Amazon S3 bucket stores the CloudTrail event logs.\n\nWhich solution will meet the tagging requirements?",
       "options": {
         "A": "Create an S3 event notification on the S3 bucket to invoke the Lambda function for s3:ObjectTagging:Put events. Enable bucket versioning on the S3 bucket.",
         "B": "Enable server access logging on the S3 bucket. Create an S3 event notification on the S3 bucket for s3:ObjectTagging:* events.",
@@ -2124,7 +2124,7 @@
       "number": 150,
       "accuracy_percent": 100,
       "votes": 7,
-      "question": "A company has an on-premises application that is written in Go.\nA DevOps engineer must move the application to AWS.\nThe company's development team wants to enable blue/green deployments and perform A/B testing.\n\nWhich solution will meet these requirements?\n\n\n\n1\n\n...\n\n12\n\n13\n\n14\n\n15\n\n16\n\n17\n\n18",
+      "question": "A company has an on-premises application that is written in Go.\nA DevOps engineer must move the application to AWS.\nThe company's development team wants to enable blue/green deployments and perform A/B testing.\n\nWhich solution will meet these requirements?",
       "options": {
         "A": "Deploy the application on an Amazon EC2 instance, and create an AMI of the instance. Use the AMI to create an automatic scaling launch configuration that is used in an Auto Scaling group. Use Elastic Load Balancing to distribute traffic. When changes are made to the application, a new AMI will be created, which will initiate an EC2 instance refresh.",
         "B": "Use Amazon Lightsail to deploy the application. Store the application in a zipped format in an Amazon S3 bucket. Use this zipped version to deploy new versions of the application to Lightsail. Use Lightsail deployment options to manage the deployment.",
@@ -2270,7 +2270,7 @@
       "number": 160,
       "accuracy_percent": 100,
       "votes": 3,
-      "question": "A company is storing 100 GB of log data in .csv format in an Amazon S3 bucket.\nSQL developers want to query this data and generate graphs to visualize it.\nThe SQL developers also need an efficient, automated way to store metadata from the .csv file.\n\nWhich combination of steps will meet these requirements with the LEAST amount of effort? (Choose three.)\n\n\n\n1\n\n...\n\n12\n\n13\n\n14\n\n15\n\n16\n\n17\n\n18",
+      "question": "A company is storing 100 GB of log data in .csv format in an Amazon S3 bucket.\nSQL developers want to query this data and generate graphs to visualize it.\nThe SQL developers also need an efficient, automated way to store metadata from the .csv file.\n\nWhich combination of steps will meet these requirements with the LEAST amount of effort? (Choose three.)",
       "options": {
         "A": "Filter the data through AWS X-Ray to visualize the data.",
         "B": "Filter the data through Amazon QuickSight to visualize the data.",
@@ -2406,7 +2406,7 @@
       "number": 170,
       "accuracy_percent": 93,
       "votes": 4,
-      "question": "A company has many applications.\nDifferent teams in the company developed the applications by using multiple languages and frameworks.\nThe applications run on premises and on different servers with different operating systems.\nEach team has its own release protocol and process.\nThe company wants to reduce the complexity of the release and maintenance of these applications.\n\nThe company is migrating its technology stacks, including these applications, to AWS.\nThe company wants centralized control of source code, a consistent and automatic delivery pipeline, and as few maintenance tasks as possible on the underlying infrastructure.\n\nWhat should a DevOps engineer do to meet these requirements?\n\n\n\n1\n\n...\n\n12\n\n13\n\n14\n\n15\n\n16\n\n17\n\n18",
+      "question": "A company has many applications.\nDifferent teams in the company developed the applications by using multiple languages and frameworks.\nThe applications run on premises and on different servers with different operating systems.\nEach team has its own release protocol and process.\nThe company wants to reduce the complexity of the release and maintenance of these applications.\n\nThe company is migrating its technology stacks, including these applications, to AWS.\nThe company wants centralized control of source code, a consistent and automatic delivery pipeline, and as few maintenance tasks as possible on the underlying infrastructure.\n\nWhat should a DevOps engineer do to meet these requirements?",
       "options": {
         "A": "Create one AWS CodeCommit repository for all applications. Put each application's code in a different branch. Merge the branches, and use AWS CodeBuild to build the applications. Use AWS CodeDeploy to deploy the applications to one centralized application server.",
         "B": "Create one AWS CodeCommit repository for each of the applications. Use AWS CodeBuild to build the applications one at a time. Use AWS CodeDeploy to deploy the applications to one centralized application server.",
@@ -2445,7 +2445,7 @@
       "number": 173,
       "accuracy_percent": 100,
       "votes": 3,
-      "question": "An Amazon EC2 instance is running in a VPC and needs to download an object from a restricted Amazon S3 bucket.\nWhen the DevOps engineer tries to download the object, an AccessDenied error is received.\n\nWhat are the possible causes for this error? (Choose two.)\n\n\n\n1\n\n...\n\n12\n\n13\n\n14\n\n15\n\n16\n\n17\n\n18",
+      "question": "An Amazon EC2 instance is running in a VPC and needs to download an object from a restricted Amazon S3 bucket.\nWhen the DevOps engineer tries to download the object, an AccessDenied error is received.\n\nWhat are the possible causes for this error? (Choose two.)",
       "options": {
         "A": "The S3 bucket default encryption is enabled.",
         "B": "There is an error in the S3 bucket policy.",

@@ -134,7 +134,7 @@
       "number": 10,
       "accuracy_percent": 100,
       "votes": 6,
-      "question": "Which AWS service or tool helps users visualize, understand, and manage spending and usage over time?\n\n\n\n\n1\n\n2\n\n3\n\n4\n\n5\n\n6\n\n7\n\n...\n\n42",
+      "question": "Which AWS service or tool helps users visualize, understand, and manage spending and usage over time?",
       "options": {
         "A": "AWS Organizations",
         "B": "AWS Pricing Calculator",
@@ -268,7 +268,7 @@
       "number": 20,
       "accuracy_percent": 100,
       "votes": 5,
-      "question": "A company has 5 TB of data stored in Amazon S3.\nThe company plans to occasionally run queries on the data for analysis.\n\nWhich AWS service should the company use to run these queries in the MOST cost-effective manner?\n\n\n\n\n1\n\n2\n\n3\n\n4\n\n5\n\n6\n\n7\n\n...\n\n42",
+      "question": "A company has 5 TB of data stored in Amazon S3.\nThe company plans to occasionally run queries on the data for analysis.\n\nWhich AWS service should the company use to run these queries in the MOST cost-effective manner?",
       "options": {
         "A": "Amazon Redshift",
         "B": "Amazon Athena",
@@ -398,7 +398,7 @@
       "number": 30,
       "accuracy_percent": 100,
       "votes": 9,
-      "question": "An ecommerce company has migrated its IT infrastructure from an on-premises data center to the AWS Cloud.\n\nWhich cost is the company’s direct responsibility?\n\n\n\n\n1\n\n2\n\n3\n\n4\n\n5\n\n6\n\n7\n\n...\n\n42",
+      "question": "An ecommerce company has migrated its IT infrastructure from an on-premises data center to the AWS Cloud.\n\nWhich cost is the company’s direct responsibility?",
       "options": {
         "A": "Cost of application software licenses",
         "B": "Cost of the hardware infrastructure on AWS",
@@ -536,7 +536,7 @@
       "number": 40,
       "accuracy_percent": 100,
       "votes": 6,
-      "question": "Which of the following is a fully managed MySQL-compatible database?\n\n\n\n\n1\n\n2\n\n3\n\n4\n\n5\n\n6\n\n7\n\n...\n\n42",
+      "question": "Which of the following is a fully managed MySQL-compatible database?",
       "options": {
         "A": "Amazon S3",
         "B": "Amazon DynamoDB",
@@ -670,7 +670,7 @@
       "number": 50,
       "accuracy_percent": 92,
       "votes": 7,
-      "question": "Using AWS Identity and Access Management (IAM) to grant access only to the resources needed to perform a task is a concept known as:\n\n\n\n\n1\n\n2\n\n3\n\n4\n\n5\n\n6\n\n7\n\n...\n\n42",
+      "question": "Using AWS Identity and Access Management (IAM) to grant access only to the resources needed to perform a task is a concept known as:",
       "options": {
         "A": "restricted access.",
         "B": "as-needed access.",
@@ -812,7 +812,7 @@
       "number": 60,
       "accuracy_percent": 96,
       "votes": 14,
-      "question": "A company has multiple AWS accounts that include compute workloads that cannot be interrupted.\nThe company wants to obtain billing discounts that are based on the company’s use of AWS services.\n\nWhich AWS feature or purchasing option will meet these requirements?\n\n\n\n\n1\n\n...\n\n4\n\n5\n\n6\n\n7\n\n8\n\n...\n\n42",
+      "question": "A company has multiple AWS accounts that include compute workloads that cannot be interrupted.\nThe company wants to obtain billing discounts that are based on the company’s use of AWS services.\n\nWhich AWS feature or purchasing option will meet these requirements?",
       "options": {
         "A": "Resource tagging",
         "B": "Consolidated billing",
@@ -950,7 +950,7 @@
       "number": 70,
       "accuracy_percent": 100,
       "votes": 3,
-      "question": "Which task is a responsibility of AWS, according to the AWS shared responsibility model?\n\n\n\n1\n\n...\n\n5\n\n6\n\n7\n\n8\n\n9\n\n...\n\n42",
+      "question": "Which task is a responsibility of AWS, according to the AWS shared responsibility model?",
       "options": {
         "A": "Encryption of application data",
         "B": "Authentication of application users",
@@ -1084,7 +1084,7 @@
       "number": 80,
       "accuracy_percent": 100,
       "votes": 2,
-      "question": "A company wants to automatically add and remove Amazon EC2 instances.\nThe company wants the EC2 instances to adjust to varying workloads dynamically.\n\nWhich service or feature will meet these requirements?\n\n\n\n\n1\n\n...\n\n6\n\n7\n\n8\n\n9\n\n10\n\n...\n\n42",
+      "question": "A company wants to automatically add and remove Amazon EC2 instances.\nThe company wants the EC2 instances to adjust to varying workloads dynamically.\n\nWhich service or feature will meet these requirements?",
       "options": {
         "A": "Amazon DynamoDB",
         "B": "Amazon EC2 Spot Instances",
@@ -1218,7 +1218,7 @@
       "number": 90,
       "accuracy_percent": 100,
       "votes": 3,
-      "question": "Which action is a security best practice for access to sensitive data that is stored in an Amazon S3 bucket?\n\n\n\n\n1\n\n...\n\n7\n\n8\n\n9\n\n10\n\n11\n\n...\n\n42",
+      "question": "Which action is a security best practice for access to sensitive data that is stored in an Amazon S3 bucket?",
       "options": {
         "A": "Enable S3 Cross-Region Replication (CRR) on the S3 bucket.",
         "B": "Use IAM roles for applications that require access to the S3 bucket.",
@@ -1348,7 +1348,7 @@
       "number": 100,
       "accuracy_percent": 100,
       "votes": 1,
-      "question": "A company needs to store infrequently used data for data archives and long-term backups.\n\nWhich AWS service or storage class will meet these requirements MOST cost-effectively?\n\n\n\n\n1\n\n...\n\n8\n\n9\n\n10\n\n11\n\n12\n\n...\n\n42",
+      "question": "A company needs to store infrequently used data for data archives and long-term backups.\n\nWhich AWS service or storage class will meet these requirements MOST cost-effectively?",
       "options": {
         "A": "Amazon FSx for Lustre",
         "B": "Amazon Elastic Block Store (Amazon EBS)",
@@ -1482,7 +1482,7 @@
       "number": 110,
       "accuracy_percent": 100,
       "votes": 2,
-      "question": "Which options are AWS Cloud Adoption Framework (AWS CAF) perspectives? (Choose two.)\n\n\n\n1\n\n...\n\n9\n\n10\n\n11\n\n12\n\n13\n\n...\n\n42",
+      "question": "Which options are AWS Cloud Adoption Framework (AWS CAF) perspectives? (Choose two.)",
       "options": {
         "A": "Cloud fluency",
         "B": "Security",
@@ -1616,7 +1616,7 @@
       "number": 120,
       "accuracy_percent": 100,
       "votes": 1,
-      "question": "Which AWS service can migrate Amazon EC2 instances from one AWS Region to another?\n\n\n\n\n1\n\n...\n\n10\n\n11\n\n12\n\n13\n\n14\n\n...\n\n42",
+      "question": "Which AWS service can migrate Amazon EC2 instances from one AWS Region to another?",
       "options": {
         "A": "AWS Application Migration Service",
         "B": "AWS Database Migration Service (AWS DMS)",
@@ -1746,7 +1746,7 @@
       "number": 130,
       "accuracy_percent": 100,
       "votes": 1,
-      "question": "Which programming languages does AWS Cloud Development Kit (AWS CDK) currently support? (Choose two.)\n\n\n\n\n1\n\n...\n\n11\n\n12\n\n13\n\n14\n\n15\n\n...\n\n42",
+      "question": "Which programming languages does AWS Cloud Development Kit (AWS CDK) currently support? (Choose two.)",
       "options": {
         "A": "Python",
         "B": "Swift",
@@ -1880,7 +1880,7 @@
       "number": 140,
       "accuracy_percent": 100,
       "votes": 3,
-      "question": "A company wants to modernize and convert a monolithic application into microservices.\nThe company wants to move the application to AWS.\n\nWhich migration strategy should the company use?\n\n\n\n\n1\n\n...\n\n12\n\n13\n\n14\n\n15\n\n16\n\n...\n\n42",
+      "question": "A company wants to modernize and convert a monolithic application into microservices.\nThe company wants to move the application to AWS.\n\nWhich migration strategy should the company use?",
       "options": {
         "A": "Rehost",
         "B": "Replatform",
@@ -2022,7 +2022,7 @@
       "number": 150,
       "accuracy_percent": 100,
       "votes": 5,
-      "question": "An external auditor has requested that a company provide a list of all its IAM users, including the status of users' credentials and access keys.\n\nWhat is the SIMPLEST way to provide this information?\n\n\n\n\n1\n\n...\n\n13\n\n14\n\n15\n\n16\n\n17\n\n...\n\n42",
+      "question": "An external auditor has requested that a company provide a list of all its IAM users, including the status of users' credentials and access keys.\n\nWhat is the SIMPLEST way to provide this information?",
       "options": {
         "A": "Create an IAM user account for the auditor, granting the auditor administrator permissions.",
         "B": "Take a screenshot of each user's page in the AWS Management Console, then provide the screenshots to the auditor.",
@@ -2160,7 +2160,7 @@
       "number": 160,
       "accuracy_percent": 100,
       "votes": 6,
-      "question": "A company is using Amazon DynamoDB.\n\nWhich task is the company’s responsibility, according to the AWS shared responsibility model?\n\n\n\n\n1\n\n...\n\n14\n\n15\n\n16\n\n17\n\n18\n\n...\n\n42",
+      "question": "A company is using Amazon DynamoDB.\n\nWhich task is the company’s responsibility, according to the AWS shared responsibility model?",
       "options": {
         "A": "Patch the operating system.",
         "B": "Provision hosts.",
@@ -2294,7 +2294,7 @@
       "number": 170,
       "accuracy_percent": 100,
       "votes": 7,
-      "question": "Which AWS service or feature allows a user to establish a dedicated network connection between a company’s on-premises data center and the AWS Cloud?\n\n\n\n\n1\n\n...\n\n15\n\n16\n\n17\n\n18\n\n19\n\n...\n\n42",
+      "question": "Which AWS service or feature allows a user to establish a dedicated network connection between a company’s on-premises data center and the AWS Cloud?",
       "options": {
         "A": "AWS Direct Connect",
         "B": "VPC peering",
@@ -2428,7 +2428,7 @@
       "number": 180,
       "accuracy_percent": 100,
       "votes": 2,
-      "question": "Which AWS service or feature gives users the ability to provision AWS infrastructure programmatically?\n\n\n\n\n1\n\n...\n\n16\n\n17\n\n18\n\n19\n\n20\n\n...\n\n42",
+      "question": "Which AWS service or feature gives users the ability to provision AWS infrastructure programmatically?",
       "options": {
         "A": "AWS Cloud Development Kit (AWS CDK)",
         "B": "Amazon CodeGuru",
@@ -2558,7 +2558,7 @@
       "number": 190,
       "accuracy_percent": 100,
       "votes": 1,
-      "question": "A company wants to provide one of its employees with access to Amazon RDS.\nThe company also wants to limit the interaction to only the AWS CLI and AWS software development kits (SDKs).\n\nWhich combination of actions should the company take to meet these requirements while following the principles of least privilege? (Choose two.)\n\n\n\n\n1\n\n...\n\n17\n\n18\n\n19\n\n20\n\n21\n\n...\n\n42",
+      "question": "A company wants to provide one of its employees with access to Amazon RDS.\nThe company also wants to limit the interaction to only the AWS CLI and AWS software development kits (SDKs).\n\nWhich combination of actions should the company take to meet these requirements while following the principles of least privilege? (Choose two.)",
       "options": {
         "A": "Create an IAM user and provide AWS Management Console access only.",
         "B": "Create an IAM user and provide programmatic access only.",
@@ -2692,7 +2692,7 @@
       "number": 200,
       "accuracy_percent": 100,
       "votes": 1,
-      "question": "Which AWS service or feature allows users to securely store encrypted credentials and retrieve these credentials when required?\n\n\n\n\n1\n\n...\n\n18\n\n19\n\n20\n\n21\n\n22\n\n...\n\n42",
+      "question": "Which AWS service or feature allows users to securely store encrypted credentials and retrieve these credentials when required?",
       "options": {
         "A": "AWS Encryption SDK",
         "B": "AWS Security Hub",
@@ -2826,7 +2826,7 @@
       "number": 210,
       "accuracy_percent": 100,
       "votes": 4,
-      "question": "A company needs to search for text in documents that are stored in Amazon S3.\n\nWhich AWS service will meet these requirements?\n\n\n\n1\n\n...\n\n19\n\n20\n\n21\n\n22\n\n23\n\n...\n\n42",
+      "question": "A company needs to search for text in documents that are stored in Amazon S3.\n\nWhich AWS service will meet these requirements?",
       "options": {
         "A": "Amazon Kendra",
         "B": "Amazon Rekognition",
@@ -2956,7 +2956,7 @@
       "number": 220,
       "accuracy_percent": 100,
       "votes": 6,
-      "question": "What does the Amazon S3 Intelligent-Tiering storage class offer?\n\n\n\n\n1\n\n...\n\n20\n\n21\n\n22\n\n23\n\n24\n\n...\n\n42",
+      "question": "What does the Amazon S3 Intelligent-Tiering storage class offer?",
       "options": {
         "A": "Payment flexibility by reserving storage capacity",
         "B": "Long-term retention of data by copying the data to an encrypted Amazon Elastic Block Store (Amazon EBS) volume",
@@ -3090,7 +3090,7 @@
       "number": 230,
       "accuracy_percent": 100,
       "votes": 11,
-      "question": "Which of the following is the customer's responsibility under the AWS shared responsibility model? (Choose two.)\n\n\n\n\n1\n\n...\n\n21\n\n22\n\n23\n\n24\n\n25\n\n...\n\n42",
+      "question": "Which of the following is the customer's responsibility under the AWS shared responsibility model? (Choose two.)",
       "options": {
         "A": "Maintain the configuration of infrastructure devices.",
         "B": "Maintain patching and updates within the hardware infrastructure.",
@@ -3228,7 +3228,7 @@
       "number": 240,
       "accuracy_percent": 100,
       "votes": 2,
-      "question": "A company wants to deploy a non-containerized Java-based web application on AWS.\nThe company wants to use a managed service to quickly deploy the application.\nThe company wants the service to automatically provision capacity, load balance, scale, and monitor application health.\n\nWhich AWS service will meet these requirements?\n\n\n\n\n1\n\n...\n\n22\n\n23\n\n24\n\n25\n\n26\n\n...\n\n42",
+      "question": "A company wants to deploy a non-containerized Java-based web application on AWS.\nThe company wants to use a managed service to quickly deploy the application.\nThe company wants the service to automatically provision capacity, load balance, scale, and monitor application health.\n\nWhich AWS service will meet these requirements?",
       "options": {
         "A": "Amazon Elastic Container Service (Amazon ECS)",
         "B": "AWS Lambda",
@@ -3358,7 +3358,7 @@
       "number": 250,
       "accuracy_percent": 90,
       "votes": 8,
-      "question": "Which of the following are features of network ACLs as they are used in the AWS Cloud? (Choose two.)\n\n\n\n\n1\n\n...\n\n23\n\n24\n\n25\n\n26\n\n27\n\n...\n\n42",
+      "question": "Which of the following are features of network ACLs as they are used in the AWS Cloud? (Choose two.)",
       "options": {
         "A": "They are stateless.",
         "B": "They are stateful.",
@@ -3492,7 +3492,7 @@
       "number": 260,
       "accuracy_percent": 100,
       "votes": 4,
-      "question": "A user has a stateful workload that will run on Amazon EC2 for the next 3 years.\n\nWhat is the MOST cost-effective pricing model for this workload?\n\n\n\n\n1\n\n...\n\n24\n\n25\n\n26\n\n27\n\n28\n\n...\n\n42",
+      "question": "A user has a stateful workload that will run on Amazon EC2 for the next 3 years.\n\nWhat is the MOST cost-effective pricing model for this workload?",
       "options": {
         "A": "On-Demand Instances",
         "B": "Reserved Instances",
@@ -3626,7 +3626,7 @@
       "number": 270,
       "accuracy_percent": 100,
       "votes": 1,
-      "question": "Which options are AWS Cloud Adoption Framework (AWS CAF) people perspective capabilities? (Choose two.)\n\n\n\n\n1\n\n...\n\n25\n\n26\n\n27\n\n28\n\n29\n\n...\n\n42",
+      "question": "Which options are AWS Cloud Adoption Framework (AWS CAF) people perspective capabilities? (Choose two.)",
       "options": {
         "A": "Organizational alignment",
         "B": "Portfolio management",
@@ -3764,7 +3764,7 @@
       "number": 280,
       "accuracy_percent": 100,
       "votes": 5,
-      "question": "A company created an Amazon EC2 instance.\nThe company wants to control the incoming and outgoing network traffic at the instance level.\n\nWhich AWS resource or service will meet this requirement?\n\n\n\n\n1\n\n...\n\n26\n\n27\n\n28\n\n29\n\n30\n\n...\n\n42",
+      "question": "A company created an Amazon EC2 instance.\nThe company wants to control the incoming and outgoing network traffic at the instance level.\n\nWhich AWS resource or service will meet this requirement?",
       "options": {
         "A": "AWS Shield",
         "B": "Security groups",
@@ -3898,7 +3898,7 @@
       "number": 290,
       "accuracy_percent": 100,
       "votes": 5,
-      "question": "Which Amazon S3 feature or storage class uses the AWS backbone network and edge locations to reduce latencies from the end user to Amazon S3?\n\n\n\n\n1\n\n...\n\n27\n\n28\n\n29\n\n30\n\n31\n\n...\n\n42",
+      "question": "Which Amazon S3 feature or storage class uses the AWS backbone network and edge locations to reduce latencies from the end user to Amazon S3?",
       "options": {
         "A": "S3 Cross-Region Replication",
         "B": "S3 Transfer Acceleration",
@@ -4028,7 +4028,7 @@
       "number": 300,
       "accuracy_percent": 100,
       "votes": 2,
-      "question": "A company needs to track the activity in its AWS accounts, and needs to know when an API call is made against its AWS resources.\n\nWhich AWS tool or service can be used to meet these requirements?\n\n\n\n\n1\n\n...\n\n28\n\n29\n\n30\n\n31\n\n32\n\n...\n\n42",
+      "question": "A company needs to track the activity in its AWS accounts, and needs to know when an API call is made against its AWS resources.\n\nWhich AWS tool or service can be used to meet these requirements?",
       "options": {
         "A": "Amazon CloudWatch",
         "B": "Amazon Inspector",
@@ -4158,7 +4158,7 @@
       "number": 310,
       "accuracy_percent": 100,
       "votes": 5,
-      "question": "A global company wants to use a managed security service for protection from SQL injection attacks.\nThe service also must provide detailed logging information about access to the company's ecommerce applications.\n\nWhich AWS service will meet these requirements?\n\n\n\n\n1\n\n...\n\n29\n\n30\n\n31\n\n32\n\n33\n\n...\n\n42",
+      "question": "A global company wants to use a managed security service for protection from SQL injection attacks.\nThe service also must provide detailed logging information about access to the company's ecommerce applications.\n\nWhich AWS service will meet these requirements?",
       "options": {
         "A": "AWS Network Firewall",
         "B": "Amazon RDS for SQL Server",
@@ -4292,7 +4292,7 @@
       "number": 320,
       "accuracy_percent": 95,
       "votes": 4,
-      "question": "A company needs to perform data processing once a week that typically takes about 5 hours to complete.\n\nWhich AWS service should the company use for this workload?\n\n\n\n\n1\n\n...\n\n30\n\n31\n\n32\n\n33\n\n34\n\n...\n\n42",
+      "question": "A company needs to perform data processing once a week that typically takes about 5 hours to complete.\n\nWhich AWS service should the company use for this workload?",
       "options": {
         "A": "AWS Lambda",
         "B": "Amazon EC2",
@@ -4422,7 +4422,7 @@
       "number": 330,
       "accuracy_percent": 100,
       "votes": 3,
-      "question": "Which of the following are advantages of moving to the AWS Cloud? (Choose two.)\n\n\n\n\n1\n\n...\n\n31\n\n32\n\n33\n\n34\n\n35\n\n...\n\n42",
+      "question": "Which of the following are advantages of moving to the AWS Cloud? (Choose two.)",
       "options": {
         "A": "The ability to turn over the responsibility for all security to AWS.",
         "B": "The ability to use the pay-as-you-go model.",
@@ -4560,7 +4560,7 @@
       "number": 340,
       "accuracy_percent": 100,
       "votes": 5,
-      "question": "An ecommerce company wants to use Amazon EC2 Auto Scaling to add and remove EC2 instances based on CPU utilization.\n\nWhich AWS service or feature can initiate an Amazon EC2 Auto Scaling action to achieve this goal?\n\n\n\n\n1\n\n...\n\n32\n\n33\n\n34\n\n35\n\n36\n\n...\n\n42",
+      "question": "An ecommerce company wants to use Amazon EC2 Auto Scaling to add and remove EC2 instances based on CPU utilization.\n\nWhich AWS service or feature can initiate an Amazon EC2 Auto Scaling action to achieve this goal?",
       "options": {
         "A": "Amazon Simple Queue Service (Amazon SQS)",
         "B": "Amazon Simple Notification Service (Amazon SNS)",
@@ -4702,7 +4702,7 @@
       "number": 350,
       "accuracy_percent": 100,
       "votes": 3,
-      "question": "A company has an Amazon EC2 instance in a private subnet.\nThe company wants to initiate a connection to the internet to pull operating system updates while preventing traffic from the internet from accessing the EC2 instance.\n\nWhich AWS managed service allows this?\n\n\n\n\n1\n\n...\n\n33\n\n34\n\n35\n\n36\n\n37\n\n...\n\n42",
+      "question": "A company has an Amazon EC2 instance in a private subnet.\nThe company wants to initiate a connection to the internet to pull operating system updates while preventing traffic from the internet from accessing the EC2 instance.\n\nWhich AWS managed service allows this?",
       "options": {
         "A": "VPC endpoint",
         "B": "NAT gateway",
@@ -4832,7 +4832,7 @@
       "number": 360,
       "accuracy_percent": 100,
       "votes": 5,
-      "question": "A company wants to migrate unstructured data to AWS.\nThe data needs to be securely moved with inflight encryption and end-to-end data validation.\n\nWhich AWS service will meet these requirements?\n\n\n\n\n1\n\n...\n\n34\n\n35\n\n36\n\n37\n\n38\n\n...\n\n42",
+      "question": "A company wants to migrate unstructured data to AWS.\nThe data needs to be securely moved with inflight encryption and end-to-end data validation.\n\nWhich AWS service will meet these requirements?",
       "options": {
         "A": "AWS Application Migration Service",
         "B": "Amazon Elastic File System (Amazon EFS)",
@@ -4962,7 +4962,7 @@
       "number": 370,
       "accuracy_percent": 100,
       "votes": 2,
-      "question": "Which of the following is entirely the responsibility of AWS, according to the AWS shared responsibility model?\n\n\n\n\n1\n\n...\n\n35\n\n36\n\n37\n\n38\n\n39\n\n...\n\n42",
+      "question": "Which of the following is entirely the responsibility of AWS, according to the AWS shared responsibility model?",
       "options": {
         "A": "Security awareness and training",
         "B": "Development of an IAM password policy",
@@ -5092,7 +5092,7 @@
       "number": 380,
       "accuracy_percent": 100,
       "votes": 2,
-      "question": "Which AWS service or feature will search for and identify AWS resources that are shared externally?\n\n\n\n\n1\n\n...\n\n36\n\n37\n\n38\n\n39\n\n40\n\n41\n\n42",
+      "question": "Which AWS service or feature will search for and identify AWS resources that are shared externally?",
       "options": {
         "A": "Amazon OpenSearch Service",
         "B": "AWS Control Tower",
@@ -5226,7 +5226,7 @@
       "number": 390,
       "accuracy_percent": 100,
       "votes": 2,
-      "question": "A company needs to plan, schedule, and run hundreds of thousands of computing jobs on AWS.\n\nWhich AWS service can the company use to meet this requirement?\n\n\n\n\n1\n\n...\n\n36\n\n37\n\n38\n\n39\n\n40\n\n41\n\n42",
+      "question": "A company needs to plan, schedule, and run hundreds of thousands of computing jobs on AWS.\n\nWhich AWS service can the company use to meet this requirement?",
       "options": {
         "A": "AWS Step Functions",
         "B": "AWS Service Catalog",
@@ -5356,7 +5356,7 @@
       "number": 400,
       "accuracy_percent": 100,
       "votes": 1,
-      "question": "A company needs to deploy a PostgreSQL database into Amazon RDS.\nThe database must be highly available and fault tolerant.\n\nWhich AWS solution should the company use to meet these requirements?\n\n\n\n1\n\n...\n\n36\n\n37\n\n38\n\n39\n\n40\n\n41\n\n42",
+      "question": "A company needs to deploy a PostgreSQL database into Amazon RDS.\nThe database must be highly available and fault tolerant.\n\nWhich AWS solution should the company use to meet these requirements?",
       "options": {
         "A": "Amazon RDS with a single Availability Zone",
         "B": "Amazon RDS snapshots",
@@ -5494,7 +5494,7 @@
       "number": 410,
       "accuracy_percent": 100,
       "votes": 1,
-      "question": "A company needs to use Amazon S3 to store audio files that are each 5 megabytes in size.\nThe company will rarely access the files, but the company must be able to retrieve the files immediately.\n\nWhich S3 storage class will meet these requirements MOST cost-effectively?\n\n\n\n1\n\n...\n\n36\n\n37\n\n38\n\n39\n\n40\n\n41\n\n42",
+      "question": "A company needs to use Amazon S3 to store audio files that are each 5 megabytes in size.\nThe company will rarely access the files, but the company must be able to retrieve the files immediately.\n\nWhich S3 storage class will meet these requirements MOST cost-effectively?",
       "options": {
         "A": "S3 Standard",
         "B": "S3 Standard-Infrequent Access (S3 Standard-IA)",
@@ -5507,7 +5507,7 @@
       "number": 411,
       "accuracy_percent": 100,
       "votes": 1,
-      "question": "According to the AWS shared responsibility model, which of the following are AWS responsibilities? (Choose two.)\n\n\n\n1\n\n...\n\n36\n\n37\n\n38\n\n39\n\n40\n\n41\n\n42",
+      "question": "According to the AWS shared responsibility model, which of the following are AWS responsibilities? (Choose two.)",
       "options": {
         "A": "Network infrastructure and virtualization of infrastructure",
         "B": "Security of application data",
