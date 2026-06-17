@@ -384,12 +384,6 @@ function buildCommand(examCode: string, groupA: string[], groupB: string[]): str
   if (groupB.length) {
     lines.push("GROUP B — got RIGHT but want to review:", ...groupB, "");
   }
-  const what =
-    groupA.length && groupB.length
-      ? "the correct answer + why, and for Group A why my pick was wrong"
-      : groupA.length
-        ? "the correct answer + why my pick was wrong"
-        : "the correct answer + why it's right";
   lines.push(
     "For each, consider to add new content or update my study note, follow current rule, focus on exam. Finally please shortly response to summary of what changed.",
   );
