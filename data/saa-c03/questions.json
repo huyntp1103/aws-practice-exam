@@ -259,7 +259,7 @@
       "number": 20,
       "accuracy_percent": 98,
       "votes": 25,
-      "question": "A company that hosts its web application on AWS wants to ensure all Amazon EC2 instances.\nAmazon RDS DB instances.\nand Amazon Redshift clusters are configured with tags.\nThe company wants to minimize the effort of configuring and operating this check.\n\nWhat should a solutions architect do to accomplish this?",
+      "question": "A company that hosts its web application on AWS wants to ensure all Amazon EC2 instances, Amazon RDS DB instances and Amazon Redshift clusters are configured with tags.\nThe company wants to minimize the effort of configuring and operating this check.\n\nWhat should a solutions architect do to accomplish this?",
       "options": {
         "A": "Use AWS Config rules to define and detect resources that are not properly tagged.",
         "B": "Use Cost Explorer to display resources that are not properly tagged. Tag those resources manually.",
@@ -3152,7 +3152,7 @@
       "number": 237,
       "accuracy_percent": 100,
       "votes": 8,
-      "question": "A solutions architect observes that a nightly batch processing job is automatically scaled up for 1 hour before the desired Amazon EC2 capacity is reached.\nThe peak capacity is the ‘same every night and the batch jobs always start at 1 AM.\nThe solutions architect needs to find a cost-effective solution that will allow for the desired EC2 capacity to be reached quickly and allow the Auto Scaling group to scale down after the batch jobs are complete.\n\nWhat should the solutions architect do to meet these requirements?",
+      "question": "A solutions architect observes that a nightly batch processing job is automatically scaled up for 1 hour before the desired Amazon EC2 capacity is reached.\nThe peak capacity is the same every night and the batch jobs always start at 1 AM.\nThe solutions architect needs to find a cost-effective solution that will allow for the desired EC2 capacity to be reached quickly and allow the Auto Scaling group to scale down after the batch jobs are complete.\n\nWhat should the solutions architect do to meet these requirements?",
       "options": {
         "A": "Increase the minimum capacity for the Auto Scaling group.",
         "B": "Increase the maximum capacity for the Auto Scaling group.",

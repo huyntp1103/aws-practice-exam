@@ -372,7 +372,7 @@ export function Results() {
 
 function buildCommand(examCode: string, groupA: string[], groupB: string[]): string {
   const lines: string[] = [
-    "Update my personal AWS study notes at `Technical/AWS.md`.",
+    "Update my personal AWS study notes at many files in `AWS` folder.",
     `I'm studying for the ${examCode} exam.`,
     "",
     "Questions from a practice session. Look each up in this repo's bank at",
