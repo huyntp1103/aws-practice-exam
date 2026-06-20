@@ -298,7 +298,9 @@ export function Results() {
                       </span>
                     )}
                   </div>
-                  <div className="mt-2 line-clamp-2 text-sm">{q.question}</div>
+                  {!open && (
+                    <div className="mt-2 line-clamp-2 text-sm">{q.question}</div>
+                  )}
                 </button>
                 </div>
 
