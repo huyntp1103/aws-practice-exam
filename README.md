@@ -23,7 +23,7 @@ Stack: Vite + React + TypeScript + Tailwind + shadcn/ui (lightweight subset). St
 - Modes: **Random N** or **Sequential** (resume supported).
 - **Optional timer** (off by default) with countdown + auto-submit on expiry.
 - Single- and multi-select questions (auto-detected from answer key).
-- Flag for review · Reveal answer · Question jumper · "Double-check" notes for uncertain answers.
+- Flag for review · Highlight question text · Strike out eliminated options · Question jumper · "Double-check" notes for uncertain answers.
 - Results: score, filter by incorrect / flagged / unanswered / double-check; expand for full breakdown.
 - Practice history across all exams, filterable by exam, deletable.
 - Light / dark theme toggle (light by default).
@@ -32,9 +32,10 @@ Stack: Vite + React + TypeScript + Tailwind + shadcn/ui (lightweight subset). St
 ## Keyboard shortcuts (in session)
 
 - `A`–`H` pick option
+- `Shift` + `A`–`H` strike/unstrike that option
 - `←` / `→` previous / next question
 - `F` toggle flag
-- `R` reveal answer (when answer key present)
+- `M` toggle highlighter mode (select question text to mark it; click a highlight to remove it)
 
 ## Password gate (light deterrent)
 

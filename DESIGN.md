@@ -15,9 +15,9 @@ The shadcn defaults ship only `destructive`. We added two more because the app n
 | Token | Used for |
 | --- | --- |
 | `primary` | AWS orange — primary actions, selected state, progress bar |
-| `success` | Correct answer reveal, "answer key available" indicators |
+| `success` | Correct answer (Results page), "answer key available" indicators |
 | `warning` | Flagged questions, "Double-check" uncertain notes, timer urgency (<5min) |
-| `destructive` | User's incorrect pick (on reveal), destructive actions, timer expired |
+| `destructive` | User's incorrect pick (Results page), destructive actions, timer expired |
 
 **Don't repurpose `destructive` for warnings.** "User is wrong" and "double-check this" must read as different states.
 
@@ -25,14 +25,16 @@ The shadcn defaults ship only `destructive`. We added two more because the app n
 
 | Visual | Meaning |
 | --- | --- |
-| `success` row tint on an option | Correct answer (only on reveal) |
-| `destructive` row tint on an option | User's pick that is wrong (only on reveal) |
+| `success` row tint on an option | Correct answer (Results page, always shown there) |
+| `destructive` row tint on an option | User's pick that is wrong (Results page) |
 | Primary-tinted jumper square | Question has been answered |
 | Yellow dot on jumper square | Flagged for review |
 | Ring around jumper square | Current question |
 | `warning` "Double-check" badge | Question is in `uncertain.json` |
 | `warning` timer border | <5 min remaining |
 | `destructive` timer border | Expired (auto-submit) |
+| Yellow `<mark>` in question text | User-drawn highlight (Session page, click to remove) |
+| Line-through + dimmed option row | Option struck out (elimination aid; doesn't affect selection) |
 
 When adding a new state, give it a *new* visual. Don't overload an existing color.
 
@@ -70,7 +72,7 @@ No server, no IndexedDB, no third-party storage. If cross-device sync is ever ne
 ## Accessibility
 
 - All interactive elements use shadcn's built-in focus rings.
-- Keyboard shortcuts in session ([src/pages/Session.tsx](src/pages/Session.tsx)): A–H pick option, ←/→ navigate, F flag, R reveal. The handler skips events while a text input is focused.
+- Keyboard shortcuts in session ([src/pages/Session.tsx](src/pages/Session.tsx)): A–H pick option, Shift+A–H strike/unstrike that option, ←/→ navigate, F flag, M toggle highlighter mode. The handler skips events while a text input is focused.
 - Color contrast was verified visually only — not via automated audit.
 
 ## Intentionally excluded

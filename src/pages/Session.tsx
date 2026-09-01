@@ -1,10 +1,18 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { AlertTriangle, ChevronLeft, ChevronRight, Eye, Flag, Home as HomeIcon } from "lucide-react";
+import {
+  AlertTriangle,
+  ChevronLeft,
+  ChevronRight,
+  Flag,
+  Highlighter,
+  Home as HomeIcon,
+  Strikethrough,
+} from "lucide-react";
 
 import { loadExamBank, loadUncertain } from "@/lib/exam-data";
 import { Storage } from "@/lib/storage";
-import { hasAnswerKey, isCorrect, isMulti, makeAttempt, normalizeAnswer } from "@/lib/session";
+import { hasAnswerKey, isMulti, makeAttempt } from "@/lib/session";
 import { examByCode } from "@/lib/exams";
 import { toUncertainMap, type UncertainMap } from "@/lib/uncertain";
 import { cn } from "@/lib/utils";
@@ -30,6 +38,7 @@ export function Session() {
   const [uncertain, setUncertain] = useState<UncertainMap>(() => new Map());
   const [state, setState] = useState<SessionState | null>(null);
   const [err, setErr] = useState<string | null>(null);
+  const [highlightMode, setHighlightMode] = useState(false);
 
   useEffect(() => {
     loadExamBank(examCode)
@@ -96,17 +105,19 @@ export function Session() {
         );
       } else if (e.key === "f" || e.key === "F") {
         toggleFlag();
-      } else if (e.key === "r" || e.key === "R") {
-        if (scoreable && q.answer !== undefined) toggleReveal();
+      } else if (e.key === "m" || e.key === "M") {
+        setHighlightMode((v) => !v);
       } else if (/^[a-hA-H]$/.test(e.key)) {
         const letter = e.key.toUpperCase();
-        if (q.options[letter]) togglePick(letter);
+        if (!q.options[letter]) return;
+        if (e.shiftKey) toggleStrike(letter);
+        else togglePick(letter);
       }
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [state, bank, scoreable]);
+  }, [state, bank]);
 
   function togglePick(letter: string) {
     setState((prev) => {
@@ -140,14 +151,36 @@ export function Session() {
     });
   }
 
-  function toggleReveal() {
+  function toggleStrike(letter: string) {
     setState((prev) => {
       if (!prev) return prev;
       const qNum = prev.config.questionNumbers[prev.currentIndex];
-      const revealed = { ...prev.revealed };
-      if (revealed[qNum]) delete revealed[qNum];
-      else revealed[qNum] = true;
-      return { ...prev, revealed };
+      const current = prev.struck[qNum] ?? [];
+      const next = current.includes(letter)
+        ? current.filter((l) => l !== letter)
+        : [...current, letter];
+      return { ...prev, struck: { ...prev.struck, [qNum]: next } };
+    });
+  }
+
+  function addHighlight(start: number, end: number) {
+    setState((prev) => {
+      if (!prev) return prev;
+      const qNum = prev.config.questionNumbers[prev.currentIndex];
+      const current = prev.highlights[qNum] ?? [];
+      return { ...prev, highlights: { ...prev.highlights, [qNum]: mergeRanges(current, start, end) } };
+    });
+  }
+
+  function removeHighlight(index: number) {
+    setState((prev) => {
+      if (!prev) return prev;
+      const qNum = prev.config.questionNumbers[prev.currentIndex];
+      const current = prev.highlights[qNum] ?? [];
+      return {
+        ...prev,
+        highlights: { ...prev.highlights, [qNum]: current.filter((_, i) => i !== index) },
+      };
     });
   }
 
@@ -177,8 +210,8 @@ export function Session() {
 
   const picked = state.answers[qNum] ?? [];
   const multi = isMulti(q);
-  const answerKey = normalizeAnswer(q.answer);
-  const revealed = !!state.revealed[qNum];
+  const struck = state.struck[qNum] ?? [];
+  const highlights = state.highlights[qNum] ?? [];
   const flagged = !!state.flagged[qNum];
   const uncertainNote = uncertain.get(qNum);
   const progress = ((state.currentIndex + 1) / state.config.questionNumbers.length) * 100;
@@ -227,41 +260,22 @@ export function Session() {
               )}
             </div>
 
-            <div className="whitespace-pre-wrap text-sm leading-relaxed">{q.question}</div>
-
-            {uncertainNote && revealed && (
-              <div className="rounded-md border border-warning/60 bg-warning/10 p-3 text-sm">
-                <div className="mb-1 flex items-center gap-1.5 font-medium">
-                  <AlertTriangle className="h-3.5 w-3.5" /> Uncertain answer
-                </div>
-                <div className="text-xs leading-relaxed">{uncertainNote.note}</div>
-              </div>
-            )}
+            <HighlightableText
+              text={q.question}
+              ranges={highlights}
+              highlightMode={highlightMode}
+              onAddHighlight={addHighlight}
+              onRemoveHighlight={removeHighlight}
+            />
 
             <OptionsList
               q={q}
               picked={picked}
               multi={multi}
-              answerKey={answerKey}
-              revealed={revealed}
+              struck={struck}
               onToggle={togglePick}
+              onToggleStrike={toggleStrike}
             />
-
-            {revealed && answerKey && (
-              <div className="rounded-md border bg-muted/50 p-3 text-sm">
-                <span className="font-medium">Answer: </span>
-                <span className="font-mono">{answerKey.join(", ")}</span>
-                {(() => {
-                  const ok = isCorrect(q, picked);
-                  if (picked.length === 0) return null;
-                  return ok ? (
-                    <Badge variant="success" className="ml-2">Correct</Badge>
-                  ) : (
-                    <Badge variant="destructive" className="ml-2">Incorrect</Badge>
-                  );
-                })()}
-              </div>
-            )}
 
             <div className="flex flex-wrap items-center justify-between gap-2 pt-2">
               <div className="flex gap-2">
@@ -300,6 +314,17 @@ export function Session() {
                 <Button
                   variant="ghost"
                   size="sm"
+                  onClick={() => setHighlightMode((v) => !v)}
+                  className={cn(
+                    highlightMode &&
+                      "bg-yellow-200/70 text-yellow-950 hover:bg-yellow-200 dark:bg-yellow-400/20 dark:text-yellow-200"
+                  )}
+                >
+                  <Highlighter /> {highlightMode ? "Highlighting" : "Highlight"}
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
                   onClick={toggleFlag}
                   className={cn(
                     flagged && "bg-warning text-warning-foreground hover:bg-warning/90"
@@ -307,11 +332,6 @@ export function Session() {
                 >
                   <Flag /> {flagged ? "Flagged" : "Flag"}
                 </Button>
-                {scoreable && q.answer !== undefined && (
-                  <Button variant="ghost" size="sm" onClick={toggleReveal}>
-                    <Eye /> {revealed ? "Hide" : "Reveal"}
-                  </Button>
-                )}
                 <Button
                   variant="default"
                   size="sm"
@@ -337,7 +357,7 @@ export function Session() {
             <div className="pt-2 text-[10px] text-muted-foreground space-y-0.5">
               <div>• Filled = answered</div>
               <div>• Yellow dot = flagged</div>
-              <div>• A–H keys to pick · ←/→ navigate · F flag · R reveal</div>
+              <div>• A–H keys to pick · ←/→ navigate · F flag · M highlight · Shift+letter strike</div>
             </div>
           </CardContent>
         </Card>
@@ -346,42 +366,164 @@ export function Session() {
   );
 }
 
+// --- Highlighter (question text) ---------------------------------------
+
+interface HighlightableTextProps {
+  text: string;
+  ranges: [number, number][];
+  highlightMode: boolean;
+  onAddHighlight: (start: number, end: number) => void;
+  onRemoveHighlight: (index: number) => void;
+}
+
+function HighlightableText({
+  text,
+  ranges,
+  highlightMode,
+  onAddHighlight,
+  onRemoveHighlight,
+}: HighlightableTextProps) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  function handleMouseUp() {
+    if (!highlightMode) return;
+    const sel = window.getSelection();
+    if (!sel || sel.isCollapsed || sel.rangeCount === 0 || !ref.current) return;
+    const range = sel.getRangeAt(0);
+    if (!ref.current.contains(range.commonAncestorContainer)) return;
+    const start = textOffset(ref.current, range.startContainer, range.startOffset);
+    const end = textOffset(ref.current, range.endContainer, range.endOffset);
+    sel.removeAllRanges();
+    if (end > start) onAddHighlight(start, end);
+  }
+
+  const segments = splitByRanges(text, ranges);
+
+  return (
+    <div
+      ref={ref}
+      onMouseUp={handleMouseUp}
+      className={cn(
+        "whitespace-pre-wrap text-sm leading-relaxed",
+        highlightMode && "cursor-text"
+      )}
+    >
+      {segments.map((seg, i) =>
+        seg.rangeIndex === null ? (
+          <span key={i}>{seg.text}</span>
+        ) : (
+          <mark
+            key={i}
+            onClick={() => onRemoveHighlight(seg.rangeIndex!)}
+            title="Click to remove highlight"
+            className="cursor-pointer rounded-sm bg-yellow-200/70 dark:bg-yellow-400/30"
+          >
+            {seg.text}
+          </mark>
+        )
+      )}
+    </div>
+  );
+}
+
+function textOffset(root: Node, node: Node, offset: number): number {
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+  let total = 0;
+  let current = walker.nextNode();
+  while (current) {
+    if (current === node) return total + offset;
+    total += current.textContent?.length ?? 0;
+    current = walker.nextNode();
+  }
+  return total;
+}
+
+function mergeRanges(ranges: [number, number][], start: number, end: number): [number, number][] {
+  const sorted = [...ranges, [start, end] as [number, number]].sort((a, b) => a[0] - b[0]);
+  const merged: [number, number][] = [];
+  for (const [s, e] of sorted) {
+    const last = merged[merged.length - 1];
+    if (last && s <= last[1]) last[1] = Math.max(last[1], e);
+    else merged.push([s, e]);
+  }
+  return merged;
+}
+
+function splitByRanges(
+  text: string,
+  ranges: [number, number][]
+): Array<{ text: string; rangeIndex: number | null }> {
+  const segments: Array<{ text: string; rangeIndex: number | null }> = [];
+  let pos = 0;
+  ranges.forEach(([start, end], idx) => {
+    if (start > pos) segments.push({ text: text.slice(pos, start), rangeIndex: null });
+    segments.push({ text: text.slice(start, end), rangeIndex: idx });
+    pos = end;
+  });
+  if (pos < text.length) segments.push({ text: text.slice(pos), rangeIndex: null });
+  return segments;
+}
+
+// --- Options (with elimination strikethrough) ---------------------------
+
 interface OptsProps {
   q: RawQuestion;
   picked: string[];
   multi: boolean;
-  answerKey: string[] | null;
-  revealed: boolean;
+  struck: string[];
   onToggle: (letter: string) => void;
+  onToggleStrike: (letter: string) => void;
 }
 
-function OptionsList({ q, picked, multi, answerKey, revealed, onToggle }: OptsProps) {
+function OptionsList({ q, picked, multi, struck, onToggle, onToggleStrike }: OptsProps) {
   const letters = Object.keys(q.options).sort();
+
+  function strikeButton(L: string, isStruck: boolean) {
+    return (
+      <button
+        type="button"
+        onClick={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          onToggleStrike(L);
+        }}
+        title={isStruck ? "Unstrike option" : "Strike out option"}
+        aria-label={isStruck ? `Unstrike option ${L}` : `Strike out option ${L}`}
+        className={cn(
+          "shrink-0 self-start rounded p-1 text-muted-foreground hover:bg-muted hover:text-foreground",
+          isStruck && "bg-muted text-foreground"
+        )}
+      >
+        <Strikethrough className="h-3.5 w-3.5" />
+      </button>
+    );
+  }
 
   if (multi) {
     return (
       <div className="space-y-2">
         {letters.map((L) => {
           const checked = picked.includes(L);
-          const isAns = revealed && answerKey?.includes(L);
-          const isWrong = revealed && checked && !answerKey?.includes(L);
+          const isStruck = struck.includes(L);
           return (
             <label
               key={L}
-              className={cn(
-                "flex items-start gap-3 rounded-md border p-3 cursor-pointer hover:bg-accent",
-                isAns && "border-success bg-success/10",
-                isWrong && "border-destructive bg-destructive/10"
-              )}
+              className="flex items-start gap-3 rounded-md border p-3 cursor-pointer hover:bg-accent"
             >
               <Checkbox
                 checked={checked}
                 onCheckedChange={() => onToggle(L)}
                 className="mt-0.5"
               />
-              <div className="text-sm">
+              <div
+                className={cn(
+                  "text-sm flex-1",
+                  isStruck && "text-muted-foreground line-through opacity-60"
+                )}
+              >
                 <span className="font-mono font-medium">{L}.</span> {q.options[L]}
               </div>
+              {strikeButton(L, isStruck)}
             </label>
           );
         })}
@@ -392,23 +534,23 @@ function OptionsList({ q, picked, multi, answerKey, revealed, onToggle }: OptsPr
   return (
     <RadioGroup value={picked[0] ?? ""} onValueChange={onToggle}>
       {letters.map((L) => {
-        const isPicked = picked[0] === L;
-        const isAns = revealed && answerKey?.includes(L);
-        const isWrong = revealed && isPicked && !answerKey?.includes(L);
+        const isStruck = struck.includes(L);
         return (
           <Label
             key={L}
             htmlFor={`opt-${L}`}
-            className={cn(
-              "flex items-start gap-3 rounded-md border p-3 cursor-pointer hover:bg-accent",
-              isAns && "border-success bg-success/10",
-              isWrong && "border-destructive bg-destructive/10"
-            )}
+            className="flex items-start gap-3 rounded-md border p-3 cursor-pointer hover:bg-accent"
           >
             <RadioGroupItem value={L} id={`opt-${L}`} className="mt-0.5" />
-            <div className="text-sm font-normal">
+            <div
+              className={cn(
+                "text-sm font-normal flex-1",
+                isStruck && "text-muted-foreground line-through opacity-60"
+              )}
+            >
               <span className="font-mono font-medium">{L}.</span> {q.options[L]}
             </div>
+            {strikeButton(L, isStruck)}
           </Label>
         );
       })}

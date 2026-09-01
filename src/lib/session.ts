@@ -51,7 +51,8 @@ export function buildSession(bank: ExamBank, opts: {
     currentIndex: 0,
     answers: {},
     flagged: {},
-    revealed: {},
+    struck: {},
+    highlights: {},
     finished: false,
     endsAt,
   };

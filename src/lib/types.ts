@@ -40,7 +40,8 @@ export interface SessionState {
   currentIndex: number;
   answers: Record<number, string[]>; // qNumber -> selected letters (sorted)
   flagged: Record<number, true>;
-  revealed: Record<number, true>;
+  struck: Record<number, string[]>; // qNumber -> eliminated option letters
+  highlights: Record<number, [number, number][]>; // qNumber -> highlighted [start, end) ranges in q.question
   finished: boolean;
   finishedAt?: number;
   endsAt?: number; // unix ms, only when timer enabled

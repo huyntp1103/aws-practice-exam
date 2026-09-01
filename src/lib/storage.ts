@@ -44,7 +44,11 @@ export const Storage = {
   },
 
   getSession(examCode: string): SessionState | null {
-    return read<SessionState | null>(K.session(examCode), null);
+    const s = read<SessionState | null>(K.session(examCode), null);
+    if (!s) return s;
+    // Backfill fields added after this session may have been saved, so
+    // resuming an older in-progress session doesn't crash on undefined access.
+    return { ...s, flagged: s.flagged ?? {}, struck: s.struck ?? {}, highlights: s.highlights ?? {} };
   },
   setSession(examCode: string, state: SessionState) {
     write(K.session(examCode), state);
