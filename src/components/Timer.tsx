@@ -13,13 +13,16 @@ function format(ms: number): string {
 
 interface Props {
   endsAt: number;
+  paused: boolean;
   onExpire: () => void;
 }
 
-export function Timer({ endsAt, onExpire }: Props) {
+export function Timer({ endsAt, paused, onExpire }: Props) {
   const [remaining, setRemaining] = useState(() => endsAt - Date.now());
 
   useEffect(() => {
+    if (paused) return;
+    setRemaining(endsAt - Date.now());
     const id = setInterval(() => {
       const left = endsAt - Date.now();
       setRemaining(left);
@@ -29,9 +32,9 @@ export function Timer({ endsAt, onExpire }: Props) {
       }
     }, 500);
     return () => clearInterval(id);
-  }, [endsAt, onExpire]);
+  }, [endsAt, paused, onExpire]);
 
-  const urgent = remaining > 0 && remaining <= 5 * 60_000;
+  const urgent = !paused && remaining > 0 && remaining <= 5 * 60_000;
   const expired = remaining <= 0;
 
   return (
@@ -39,11 +42,13 @@ export function Timer({ endsAt, onExpire }: Props) {
       className={cn(
         "inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 font-mono text-sm tabular-nums",
         urgent && "border-warning text-warning",
-        expired && "border-destructive text-destructive"
+        expired && "border-destructive text-destructive",
+        paused && "border-muted-foreground/40 text-muted-foreground"
       )}
     >
       <Clock className="h-3.5 w-3.5" />
       {format(remaining)}
+      {paused && <span className="text-[10px] font-sans uppercase tracking-wide">Paused</span>}
     </div>
   );
 }

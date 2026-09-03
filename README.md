@@ -20,8 +20,8 @@ Stack: Vite + React + TypeScript + Tailwind + shadcn/ui (lightweight subset). St
 ## Features
 
 - Pick exam from registry (matches `scrape_exam.py`).
-- Modes: **Random N** or **Sequential** (resume supported).
-- **Optional timer** (off by default) with countdown + auto-submit on expiry.
+- Modes: **Random N** or **Sequential** (optionally a question-number range, e.g. 1–65; resume supported).
+- **Optional timer** (off by default) with countdown, pause/resume, and auto-submit on expiry.
 - Single- and multi-select questions (auto-detected from answer key).
 - Flag for review · Highlight question text · Strike out eliminated options · Question jumper · "Double-check" notes for uncertain answers.
 - Results: score, filter by incorrect / flagged / unanswered / double-check; expand for full breakdown.
@@ -36,6 +36,7 @@ Stack: Vite + React + TypeScript + Tailwind + shadcn/ui (lightweight subset). St
 - `←` / `→` previous / next question
 - `F` toggle flag
 - `M` toggle highlighter mode (select question text to mark it; click a highlight to remove it)
+- `P` pause/resume timer (only when timer enabled)
 
 ## Password gate (light deterrent)
 

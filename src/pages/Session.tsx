@@ -7,6 +7,8 @@ import {
   Flag,
   Highlighter,
   Home as HomeIcon,
+  Pause,
+  Play,
   Strikethrough,
 } from "lucide-react";
 
@@ -107,6 +109,8 @@ export function Session() {
         toggleFlag();
       } else if (e.key === "m" || e.key === "M") {
         setHighlightMode((v) => !v);
+      } else if ((e.key === "p" || e.key === "P") && state.endsAt != null) {
+        togglePause();
       } else if (/^[a-hA-H]$/.test(e.key)) {
         const letter = e.key.toUpperCase();
         if (!q.options[letter]) return;
@@ -148,6 +152,17 @@ export function Session() {
       else flagged[qNum] = true;
       Storage.setFlag(examCode, qNum, !!flagged[qNum]);
       return { ...prev, flagged };
+    });
+  }
+
+  function togglePause() {
+    setState((prev) => {
+      if (!prev || prev.endsAt == null) return prev;
+      if (prev.paused) {
+        const elapsed = Date.now() - (prev.pausedAt ?? Date.now());
+        return { ...prev, paused: false, pausedAt: undefined, endsAt: prev.endsAt + elapsed };
+      }
+      return { ...prev, paused: true, pausedAt: Date.now() };
     });
   }
 
@@ -230,7 +245,19 @@ export function Session() {
           </div>
         </div>
         <div className="flex items-center gap-2">
-          {state.endsAt && <Timer endsAt={state.endsAt} onExpire={() => finish(true)} />}
+          {state.endsAt != null && (
+            <>
+              <Timer endsAt={state.endsAt} paused={!!state.paused} onExpire={() => finish(true)} />
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={togglePause}
+                aria-label={state.paused ? "Resume timer" : "Pause timer"}
+              >
+                {state.paused ? <Play /> : <Pause />}
+              </Button>
+            </>
+          )}
           <Badge variant="outline">
             {state.currentIndex + 1} / {state.config.questionNumbers.length}
           </Badge>
@@ -358,6 +385,7 @@ export function Session() {
               <div>• Filled = answered</div>
               <div>• Yellow dot = flagged</div>
               <div>• A–H keys to pick · ←/→ navigate · F flag · M highlight · Shift+letter strike</div>
+              {state.endsAt != null && <div>• P pause/resume timer</div>}
             </div>
           </CardContent>
         </Card>

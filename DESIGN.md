@@ -72,7 +72,7 @@ No server, no IndexedDB, no third-party storage. If cross-device sync is ever ne
 ## Accessibility
 
 - All interactive elements use shadcn's built-in focus rings.
-- Keyboard shortcuts in session ([src/pages/Session.tsx](src/pages/Session.tsx)): A–H pick option, Shift+A–H strike/unstrike that option, ←/→ navigate, F flag, M toggle highlighter mode. The handler skips events while a text input is focused.
+- Keyboard shortcuts in session ([src/pages/Session.tsx](src/pages/Session.tsx)): A–H pick option, Shift+A–H strike/unstrike that option, ←/→ navigate, F flag, M toggle highlighter mode, P pause/resume timer (only when timer enabled). The handler skips events while a text input is focused.
 - Color contrast was verified visually only — not via automated audit.
 
 ## Intentionally excluded

@@ -45,6 +45,8 @@ export interface SessionState {
   finished: boolean;
   finishedAt?: number;
   endsAt?: number; // unix ms, only when timer enabled
+  paused?: boolean; // timer paused (only meaningful when endsAt is set)
+  pausedAt?: number; // unix ms when paused; used to shift endsAt forward on resume
 }
 
 export interface Attempt {

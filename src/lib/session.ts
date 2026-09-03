@@ -28,10 +28,20 @@ export function buildSession(bank: ExamBank, opts: {
   count: number;
   timerEnabled: boolean;
   timerMinutes: number;
+  rangeStart?: number; // sequential mode only: inclusive question-number range
+  rangeEnd?: number;
 }): SessionState {
   const allNumbers = bank.questions.map((q) => q.number);
-  const questionNumbers =
-    opts.mode === "random" ? pickRandom(allNumbers, opts.count) : allNumbers.slice();
+  let questionNumbers: number[];
+  if (opts.mode === "random") {
+    questionNumbers = pickRandom(allNumbers, opts.count);
+  } else if (opts.rangeStart != null && opts.rangeEnd != null) {
+    questionNumbers = bank.questions
+      .filter((q) => q.number >= opts.rangeStart! && q.number <= opts.rangeEnd!)
+      .map((q) => q.number);
+  } else {
+    questionNumbers = allNumbers.slice();
+  }
 
   const startedAt = Date.now();
   const endsAt = opts.timerEnabled
@@ -55,6 +65,7 @@ export function buildSession(bank: ExamBank, opts: {
     highlights: {},
     finished: false,
     endsAt,
+    paused: false,
   };
 }
 

@@ -27,6 +27,8 @@ export function Home() {
   );
   const [mode, setMode] = useState<Mode>(prefs.defaultMode);
   const [count, setCount] = useState<number>(prefs.defaultCount);
+  const [rangeStart, setRangeStart] = useState<number | "">("");
+  const [rangeEnd, setRangeEnd] = useState<number | "">("");
   const [timerEnabled, setTimerEnabled] = useState<boolean>(prefs.defaultTimerEnabled);
   const [timerMinutes, setTimerMinutes] = useState<number>(prefs.defaultTimerMinutes);
 
@@ -48,6 +50,26 @@ export function Home() {
 
   const scoreable = useMemo(() => (bank ? hasAnswerKey(bank) : false), [bank]);
 
+  const bankRange = useMemo(() => {
+    if (!bank || bank.questions.length === 0) return null;
+    const nums = bank.questions.map((q) => q.number);
+    return { min: Math.min(...nums), max: Math.max(...nums) };
+  }, [bank]);
+
+  // Reset the range picker to the full bank whenever the exam changes.
+  useEffect(() => {
+    setRangeStart("");
+    setRangeEnd("");
+  }, [bankRange]);
+
+  const rangeMatchCount = useMemo(() => {
+    if (!bank) return 0;
+    if (rangeStart === "" || rangeEnd === "") return bank.questions.length;
+    const lo = Math.min(rangeStart, rangeEnd);
+    const hi = Math.max(rangeStart, rangeEnd);
+    return bank.questions.filter((q) => q.number >= lo && q.number <= hi).length;
+  }, [bank, rangeStart, rangeEnd]);
+
   function savePrefsPartial(p: Partial<UserPrefs>) {
     const next = { ...prefs, ...p };
     setPrefs(next);
@@ -57,11 +79,14 @@ export function Home() {
   function start() {
     if (!bank) return;
     const effectiveCount = mode === "sequential" ? bank.questions.length : count;
+    const hasRange = mode === "sequential" && rangeStart !== "" && rangeEnd !== "";
     const session = buildSession(bank, {
       mode,
       count: effectiveCount,
       timerEnabled,
       timerMinutes,
+      rangeStart: hasRange ? Math.min(rangeStart as number, rangeEnd as number) : undefined,
+      rangeEnd: hasRange ? Math.max(rangeStart as number, rangeEnd as number) : undefined,
     });
     Storage.setSession(examCode, session);
     savePrefsPartial({
@@ -144,11 +169,48 @@ export function Home() {
                 <RadioGroupItem value="sequential" id="m-seq" />
                 <div>
                   <div className="text-sm font-medium">Sequential</div>
-                  <div className="text-xs text-muted-foreground">Walk through the whole bank</div>
+                  <div className="text-xs text-muted-foreground">Walk through the bank in order, optionally a range</div>
                 </div>
               </label>
             </RadioGroup>
           </section>
+
+          {/* Question range (sequential only) */}
+          {mode === "sequential" && (
+            <section className="space-y-2">
+              <Label>Question range</Label>
+              <div className="flex flex-wrap items-center gap-2">
+                <Input
+                  type="number"
+                  min={bankRange?.min ?? 1}
+                  max={bankRange?.max ?? 999}
+                  placeholder={bankRange ? String(bankRange.min) : "from"}
+                  className="w-24"
+                  value={rangeStart}
+                  onChange={(e) =>
+                    setRangeStart(e.target.value === "" ? "" : parseInt(e.target.value, 10))
+                  }
+                />
+                <span className="text-sm text-muted-foreground">to</span>
+                <Input
+                  type="number"
+                  min={bankRange?.min ?? 1}
+                  max={bankRange?.max ?? 999}
+                  placeholder={bankRange ? String(bankRange.max) : "to"}
+                  className="w-24"
+                  value={rangeEnd}
+                  onChange={(e) =>
+                    setRangeEnd(e.target.value === "" ? "" : parseInt(e.target.value, 10))
+                  }
+                />
+                <span className="text-xs text-muted-foreground">
+                  {bankRange
+                    ? `full bank ${bankRange.min}–${bankRange.max} · ${rangeMatchCount} question${rangeMatchCount === 1 ? "" : "s"} match`
+                    : "leave blank for the whole bank"}
+                </span>
+              </div>
+            </section>
+          )}
 
           {/* Count (random only) */}
           {mode === "random" && (
@@ -220,7 +282,11 @@ export function Home() {
 
           {/* Actions */}
           <section className="flex flex-wrap items-center gap-2">
-            <Button onClick={start} disabled={!bank} size="lg">
+            <Button
+              onClick={start}
+              disabled={!bank || (mode === "sequential" && rangeMatchCount === 0)}
+              size="lg"
+            >
               <Play /> Start session
             </Button>
             {resumeAvailable && (
