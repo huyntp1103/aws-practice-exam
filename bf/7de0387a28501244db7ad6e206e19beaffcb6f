@@ -1,0 +1,43 @@
+src/lib/types.ts
+  s_f9250a1ae7cf69::t_619726b5bc6601 48-49
+src/pages/Session.tsx
+  s_f9250a1ae7cf69::t_133f07f603ab99 112-113
+  s_f9250a1ae7cf69::t_e256e4e4fda680 248-260
+  s_f9250a1ae7cf69::t_f445ef664a111c 10-11
+  s_f9250a1ae7cf69::t_241e5ebd88f144 158-168
+  s_f9250a1ae7cf69::t_09f9081891fff3 388
+src/lib/session.ts
+  s_f9250a1ae7cf69::t_ff80bbc33e4a5c 31-32,35-44
+  s_f9250a1ae7cf69::t_fba80104e42574 68
+src/components/Timer.tsx
+  s_f9250a1ae7cf69::t_3dd7f7a034185a 16,20,24-25,35,37,45-46,51
+src/pages/Home.tsx
+  s_f9250a1ae7cf69::t_30070d7e2b4687 30-31
+  s_f9250a1ae7cf69::t_3dcbdd8e40352b 172
+  s_f9250a1ae7cf69::t_13849dc1e4095c 88-89
+  s_f9250a1ae7cf69::t_4361eb9dd6ffa8 178-214
+  s_f9250a1ae7cf69::t_befcfe5b155529 285-289
+  s_f9250a1ae7cf69::t_3325d1ab84641c 53-72
+  s_f9250a1ae7cf69::t_10e41eef1c26f4 82
+DESIGN.md
+  s_f9250a1ae7cf69::t_87ee70fb185fe6 75
+README.md
+  s_f9250a1ae7cf69::t_49e0acfa630cb5 23-24
+  s_f9250a1ae7cf69::t_ccfb3c80a855e1 39
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "bf7de0387a28501244db7ad6e206e19beaffcb6f",
+  "prompts": {},
+  "sessions": {
+    "s_f9250a1ae7cf69": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4c9faf61-b3f6-4270-9b26-1891955d9f2d",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "Huy Nguyen <huyntp1103@gmail.com>"
+    }
+  }
+}
