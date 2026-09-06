@@ -7,6 +7,7 @@ export interface RawQuestion {
   question: string;
   options: Record<string, string>;
   answer?: string | string[];
+  tags?: string[];
 }
 
 export interface ExamBank {
@@ -23,7 +24,7 @@ export interface ExamMeta {
   name: string;       // display
 }
 
-export type Mode = "random" | "sequential";
+export type Mode = "random" | "sequential" | "tag";
 
 export interface SessionConfig {
   examCode: string;
@@ -33,6 +34,7 @@ export interface SessionConfig {
   timerMinutes: number; // total minutes when enabled
   startedAt: number;    // unix ms
   questionNumbers: number[]; // ordered question numbers for this session
+  tags?: string[];       // tag mode only: tags selected to filter by
 }
 
 export interface SessionState {
@@ -59,6 +61,7 @@ export interface Attempt {
   timerEnabled: boolean;
   timerMinutes: number;
   questionNumbers: number[];
+  tags?: string[];
   answers: Record<number, string[]>;
   flagged: Record<number, true>;
   score?: { correct: number; scoreable: number; total: number };

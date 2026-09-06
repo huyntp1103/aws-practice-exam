@@ -16,7 +16,10 @@
         "C": "Use suspend and resume scaling.",
         "D": "Use target tracking scaling."
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "compute"
+      ]
     },
     {
       "number": 2,
@@ -29,7 +32,11 @@
         "C": "Use S3 server-side encryption with an AWS KMS key.",
         "D": "Use S3 server-side encryption with customer provided key."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "storage",
+        "security-identity"
+      ]
     },
     {
       "number": 3,
@@ -42,7 +49,10 @@
         "C": "Enable Cross-origin resource sharing (CORS) configuration in the bucket.",
         "D": "Enable Cross-Region Replication (CRR)."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "storage"
+      ]
     },
     {
       "number": 4,
@@ -55,7 +65,10 @@
         "C": "An Amazon Aurora database with Read Replicas",
         "D": "Redshift"
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "database"
+      ]
     },
     {
       "number": 5,
@@ -68,7 +81,11 @@
         "C": "Set up and configure Amazon Polly to scan for usage patterns on Amazon S3 data",
         "D": "Set up and configure Amazon Fraud Detector to send out alert notifications whenever a security violation is detected on their Amazon S3 data."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "storage",
+        "security-identity"
+      ]
     },
     {
       "number": 6,
@@ -85,6 +102,10 @@
       "answer": [
         "A",
         "D"
+      ],
+      "tags": [
+        "networking",
+        "governance-multi-account"
       ]
     },
     {
@@ -98,7 +119,10 @@
         "C": "Configure a Scheduled scaling policy for the Auto Scaling group to launch new instances before the start of the day.",
         "D": "Configure a Predictive scaling policy for the Auto Scaling group to automatically adjust the number of Amazon EC2 instances"
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "compute"
+      ]
     },
     {
       "number": 8,
@@ -111,7 +135,11 @@
         "C": "Create an IAM Role and assign it to your EC2 instances which will grant exclusive access to your RDS instance.",
         "D": "Use a combination of IAM and STS to enforce restricted access to your RDS instance using a temporary authentication token."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "compute",
+        "database"
+      ]
     },
     {
       "number": 9,
@@ -124,7 +152,11 @@
         "C": "Disk Reads activity of an EC2 instance",
         "D": "Network packets out of an EC2 instance"
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "compute",
+        "monitoring-management"
+      ]
     },
     {
       "number": 10,
@@ -137,7 +169,11 @@
         "C": "Lambda does not provide encryption for the environment variables. Deploy your code to an Amazon EC2 instance instead.",
         "D": "Create a new AWS KMS key and use it to enable encryption helpers that leverage on AWS Key Management Service to store and encrypt the sensitive information."
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "security-identity",
+        "compute"
+      ]
     },
     {
       "number": 11,
@@ -150,7 +186,11 @@
         "C": "Deploy an Amazon Data Firehose stream to capture and transform the streaming data. Deliver the anonymized data to Amazon Redshift for analysis.",
         "D": "Ingest real-time data using Amazon Kinesis Data Stream. Use an AWS Lambda function to anonymize the PII, then store it in Amazon DynamoDB."
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "analytics-big-data",
+        "database"
+      ]
     },
     {
       "number": 12,
@@ -167,6 +207,10 @@
       "answer": [
         "A",
         "E"
+      ],
+      "tags": [
+        "storage",
+        "security-identity"
       ]
     },
     {
@@ -180,7 +224,11 @@
         "C": "Set up an Amazon SNS topic and configure two SQS queues to poll the SNS topic. Grant S3 permission to send notifications to SNS and update the bucket to use the new SNS topic.",
         "D": "Create an Amazon SNS topic and configure two SQS queues to subscribe to the topic. Grant S3 permission to send notifications to SNS and update the bucket to use the new SNS topic."
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "messaging-integration",
+        "storage"
+      ]
     },
     {
       "number": 14,
@@ -197,6 +245,10 @@
       "answer": [
         "B",
         "C"
+      ],
+      "tags": [
+        "storage",
+        "networking"
       ]
     },
     {
@@ -210,7 +262,10 @@
         "C": "Use IAM users",
         "D": "Use Amazon VPC"
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "hybrid-connectivity"
+      ]
     },
     {
       "number": 16,
@@ -227,6 +282,10 @@
       "answer": [
         "A",
         "D"
+      ],
+      "tags": [
+        "security-identity",
+        "hybrid-connectivity"
       ]
     },
     {
@@ -240,7 +299,10 @@
         "C": "Amazon DynamoDB Read Replica",
         "D": "Amazon CloudFront running as a Multi-AZ deployment"
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "database"
+      ]
     },
     {
       "number": 18,
@@ -253,7 +315,11 @@
         "C": "Create an API using Amazon API Gateway and use AWS Lambda to handle the bursts of traffic in seconds.",
         "D": "Create an API using Amazon API Gateway and use an Auto Scaling group of Amazon EC2 instances to handle the bursts of traffic in seconds."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "messaging-integration",
+        "compute"
+      ]
     },
     {
       "number": 19,
@@ -266,7 +332,10 @@
         "C": "Enable Enhanced Monitoring in RDS.",
         "D": "Check the CPU% and MEM% metrics which are readily available in the Amazon RDS console that shows the percentage of the CPU bandwidth and total memory consumed by each database process of your RDS instance."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "database"
+      ]
     },
     {
       "number": 20,
@@ -279,7 +348,11 @@
         "C": "Security Group Outbound Rule: Protocol – TCP, Port Range – 22, Destination 110.238.98.71/32",
         "D": "Security Group Outbound Rule: Protocol – UDP, Port Range – 22, Destination 0.0.0.0/0"
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "security-identity",
+        "compute"
+      ]
     },
     {
       "number": 21,
@@ -296,6 +369,10 @@
       "answer": [
         "B",
         "D"
+      ],
+      "tags": [
+        "security-identity",
+        "storage"
       ]
     },
     {
@@ -309,7 +386,11 @@
         "C": "Configure the trading application on Amazon EC2 Windows Server instances across two Availability Zones. Use Amazon FSx for NetApp ONTAP to create a Multi-AZ file system and access the data via iSCSI protocol.",
         "D": "Configure the trading application on Amazon EC2 Windows instances across two Availability Zones. Use Amazon Simple Storage Service (Amazon S3) for storage and configure cross-region replication to sync data between S3 buckets in each Availability Zone."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "storage",
+        "compute"
+      ]
     },
     {
       "number": 23,
@@ -322,7 +403,11 @@
         "C": "Set up an alarm in Amazon CloudWatch to monitor S3 object-level operations that are recorded on CloudTrail. Create an Amazon EventBridge (Amazon CloudWatch Events) rule that triggers the ECS cluster when new CloudTrail events are detected.",
         "D": "Set up an alarm in CloudWatch to monitor S3 object-level operations recorded on CloudTrail. Set two alarm actions to update the ECS task count to scale-out/scale-in depending on the S3 event."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "compute",
+        "storage"
+      ]
     },
     {
       "number": 24,
@@ -335,7 +420,10 @@
         "C": "Modify the existing API Gateway with the updated version of the APIs, but keep the same custom domain name for the new API Gateway by using the import-to-update operation in either overwrite or merge mode.",
         "D": "Implement a blue-green deployment strategy for the API Gateway, deploying the latest version of the APIs to the green environment. Route some user traffic to it, validate the new APIs, and once thoroughly validated, promote the green environment to production."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "messaging-integration"
+      ]
     },
     {
       "number": 25,
@@ -348,7 +436,11 @@
         "C": "Upgrading your existing EBS volumes to Provisioned IOPS SSD Volumes",
         "D": "Use Amazon ElastiCache"
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "storage",
+        "database"
+      ]
     },
     {
       "number": 26,
@@ -361,7 +453,10 @@
         "C": "Implement read scaling with Aurora Global Database.",
         "D": "Set up a read replica that can operate across different regions."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "database"
+      ]
     },
     {
       "number": 27,
@@ -374,7 +469,11 @@
         "C": "Set up a DAX cluster to access the source DynamoDB table. Create a new DynamoDB trigger and an AWS Lambda function. For every update made in the user data, the trigger will send data to the Lambda function which will then notify the subscribers via email using Amazon SNS. Set up a DAX cluster to access the source DynamoDB table. Create a new DynamoDB trigger and a Lambda function. For every update made in the user data, the trigger will send data to the Lambda function which will then notify the subscribers via email using SNS.",
         "D": "Enable DynamoDB Stream and create an AWS Lambda trigger, as well as the IAM role which contains all of the permissions that the Lambda function will need at runtime. The data from the stream record will be processed by the Lambda function which will then publish a message to Amazon SNS Topic that will notify the subscribers via email."
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "compute",
+        "database"
+      ]
     },
     {
       "number": 28,
@@ -387,7 +486,11 @@
         "C": "Set up an Apache Spark job running in an Amazon EC2 instance and create an Amazon EventBridge (Amazon CloudWatch Events) rule to monitor S3 PUT events in the S3 bucket. Configure AWS Lambda to invoke the Spark job for every new .csv file added via a Function URL.",
         "D": "Create an ETL (Extract, Transform, Load) job and a Data Catalog table in AWS Glue. Configure the Glue crawler to run on a schedule to check for new files in the S3 bucket every hour and convert them to Parquet format."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "storage",
+        "analytics-big-data"
+      ]
     },
     {
       "number": 29,
@@ -400,7 +503,11 @@
         "C": "Use CloudFront in front of the API Gateway to act as a cache.",
         "D": "Move the Lambda function in a VPC."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "messaging-integration",
+        "compute"
+      ]
     },
     {
       "number": 30,
@@ -413,7 +520,10 @@
         "C": "Run an Amazon Macie job to view the Service Organization Control (SOC), Payment Card Industry (PCI), and other compliance reports from AWS Certificate Manager (ACM).",
         "D": "View all of the AWS security compliance reports from AWS Security Hub."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "governance-multi-account"
+      ]
     },
     {
       "number": 31,
@@ -426,7 +536,11 @@
         "C": "Enable the Enhanced Monitoring option in EC2 and install Amazon CloudWatch agent to all the EC2 instances to be able to view the memory and disk utilization in the CloudWatch dashboard.",
         "D": "Use Amazon Inspector and install the Inspector agent to all EC2 instances."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "monitoring-management",
+        "compute"
+      ]
     },
     {
       "number": 32,
@@ -445,6 +559,10 @@
         "A",
         "B",
         "E"
+      ],
+      "tags": [
+        "security-identity",
+        "storage"
       ]
     },
     {
@@ -458,7 +576,11 @@
         "C": "Configure your CloudFront distribution to use Field-Level Encryption to protect your private data and only allow access to members.",
         "D": "Use Signed Cookies to control who can access the private files in your CloudFront distribution by modifying your application to determine whether a user should have access to your content. For members, send the required Set-Cookie headers to the viewer which will unlock the content only to them."
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "networking",
+        "storage"
+      ]
     },
     {
       "number": 34,
@@ -471,7 +593,10 @@
         "C": "The EC2 instance launched from the oldest launch template.",
         "D": "The instance will be randomly selected by the Auto Scaling group"
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "compute"
+      ]
     },
     {
       "number": 35,
@@ -484,7 +609,10 @@
         "C": "Block the IP addresses of the offending websites using NACL.",
         "D": "Store and privately serve the high-quality photos on Amazon WorkDocs instead."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "storage"
+      ]
     },
     {
       "number": 36,
@@ -497,7 +625,11 @@
         "C": "Manually upgrade the Amazon EC2 instances being used by API Gateway",
         "D": "Deploy Multi-AZ in API Gateway with Read Replica"
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "messaging-integration",
+        "compute"
+      ]
     },
     {
       "number": 37,
@@ -510,7 +642,11 @@
         "C": "Create a custom endpoint in Aurora based on the specified criteria for the production traffic and another custom endpoint to handle the reporting queries.",
         "D": "Do nothing since by default, Aurora will automatically direct the production traffic to your high-capacity instances and the reporting queries to your low-capacity instances."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "database",
+        "compute"
+      ]
     },
     {
       "number": 38,
@@ -523,7 +659,11 @@
         "C": "Set up a signed URL for all users.",
         "D": "Create an IAM bucket policy that disables delete operation."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "storage",
+        "security-identity"
+      ]
     },
     {
       "number": 39,
@@ -536,7 +676,10 @@
         "C": "Increase the database instance size",
         "D": "Create a read replica"
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "database"
+      ]
     },
     {
       "number": 40,
@@ -553,6 +696,10 @@
       "answer": [
         "A",
         "E"
+      ],
+      "tags": [
+        "networking",
+        "compute"
       ]
     },
     {
@@ -566,7 +713,11 @@
         "C": "Establish a Direct Connect connection to integrate your on-premises network to your VPC. Upload the documents on Amazon EBS Volumes and use a lifecycle policy to automatically move the EBS snapshots to an S3 bucket, and then later to Glacier for archival.",
         "D": "Use AWS Snowmobile to migrate all of the files from the on-premises network. Upload the documents to an S3 bucket and set up a lifecycle policy to move the data into Glacier for archival."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "hybrid-connectivity",
+        "storage"
+      ]
     },
     {
       "number": 42,
@@ -579,7 +730,11 @@
         "C": "Use partition keys with low-cardinality attributes, which have a few number of distinct values for each item.",
         "D": "Avoid using a composite primary key, which is composed of a partition key and a sort key."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "database",
+        "compute"
+      ]
     },
     {
       "number": 43,
@@ -592,7 +747,11 @@
         "C": "Authenticate the users using Redis AUTH by creating a new Redis Cluster with both the --transit-encryption-enabled and --auth-token parameters enabled.",
         "D": "Enable the in-transit encryption for Redis replication groups."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "security-identity",
+        "database"
+      ]
     },
     {
       "number": 44,
@@ -605,7 +764,11 @@
         "C": "Set up a web application firewall using AWS WAF to filter, monitor, and block HTTP traffic.",
         "D": "A combination of Security Groups and Network Access Control Lists to only allow authorized traffic to access your VPC."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "security-identity",
+        "networking"
+      ]
     },
     {
       "number": 45,
@@ -618,7 +781,10 @@
         "C": "Use Amazon Elastic File System and Amazon S3 for hot and cold storage respectively.",
         "D": "Use Amazon FSx For Windows File Server and Amazon S3 for hot and cold storage respectively."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "storage"
+      ]
     },
     {
       "number": 46,
@@ -631,7 +797,10 @@
         "C": "Create two NAT Gateways in each availability zone. Configure the route table in each public subnet to ensure that instances use the NAT Gateway in the same availability zone.",
         "D": "Create three NAT Gateways in each availability zone. Configure the route table in each private subnet to ensure that instances use the NAT Gateway in the same availability zone."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "networking"
+      ]
     },
     {
       "number": 47,
@@ -644,7 +813,11 @@
         "C": "Enable DynamoDB Encryption at Rest with the default AWS-managed key and S3 Server-Side Encryption with the default AWS KMS key to route all traffic to DynamoDB and S3 via private endpoints.",
         "D": "Use AWS Direct Connect to route all access to S3 and DynamoDB via private endpoints."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "database",
+        "storage"
+      ]
     },
     {
       "number": 48,
@@ -657,7 +830,10 @@
         "C": "Attach an instance store volume in your existing EC2 instance. Use Amazon S3 to store your backup data and configure a lifecycle policy to transition your objects to Amazon S3 Glacier.",
         "D": "Attach an instance store volume in your EC2 instance. Use Amazon S3 to store your backup data and configure a lifecycle policy to transition your objects to Amazon S3 One Zone-IA."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "storage"
+      ]
     },
     {
       "number": 49,
@@ -670,7 +846,10 @@
         "C": "Enable S3 Object Lock in governance mode with a legal hold of one year.",
         "D": "Enable S3 Object Lock in compliance mode with a legal hold of one year."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "storage"
+      ]
     },
     {
       "number": 50,
@@ -683,7 +862,10 @@
         "C": "Use AWS Key Management Service to create AWS managed keys and store the non-extractable key material in AWS CloudHSM.",
         "D": "Use AWS Key Management Service to create a KMS key in a custom key store and store the non-extractable key material in AWS CloudHSM."
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "security-identity"
+      ]
     },
     {
       "number": 51,
@@ -696,7 +878,10 @@
         "C": "Create a scheduled AWS Lambda function using AWS EventBridge for transferring data from multiple accounts to the S3 buckets of the central account.",
         "D": "Use AWS Control Tower to centrally manage each account's S3 buckets."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "analytics-big-data"
+      ]
     },
     {
       "number": 52,
@@ -709,7 +894,10 @@
         "C": "Create an Auto Scaling group of EC2 instances and set the minimum capacity to 2 and the maximum capacity to 6. Use 2 Availability Zones and deploy 1 instance for each AZ.",
         "D": "Create an Auto Scaling group of EC2 instances and set the minimum capacity to 2 and the maximum capacity to 4. Deploy 2 instances in Availability Zone A and 2 instances in Availability Zone B."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "compute"
+      ]
     },
     {
       "number": 53,
@@ -722,7 +910,11 @@
         "C": "Migrate the existing file share configuration to Amazon EFS.",
         "D": "Migrate the existing file share configuration to Amazon EBS."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "storage",
+        "hybrid-connectivity"
+      ]
     },
     {
       "number": 54,
@@ -735,7 +927,10 @@
         "C": "Amazon Timestream for Analytics",
         "D": "Amazon Aurora Global Database"
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "database"
+      ]
     },
     {
       "number": 55,
@@ -752,6 +947,9 @@
       "answer": [
         "A",
         "C"
+      ],
+      "tags": [
+        "storage"
       ]
     },
     {
@@ -765,7 +963,11 @@
         "C": "Use AWS Snowball Edge to transfer large amounts of data.",
         "D": "Set up a Site-to-Site VPN connection."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "storage",
+        "migration-data-transfer"
+      ]
     },
     {
       "number": 57,
@@ -778,7 +980,11 @@
         "C": "Create a Network File System (NFS) file share using AWS Storage Gateway.",
         "D": "Create a file system using Amazon FSx for Windows File Server and join it to an Active Directory domain in AWS."
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "storage",
+        "hybrid-connectivity"
+      ]
     },
     {
       "number": 58,
@@ -791,7 +997,11 @@
         "C": "Create a rate-based rule in AWS WAF and associate the web ACL to an Application Load Balancer.",
         "D": "Create a custom rule in the security group of the Application Load Balancer to block the offending requests."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "networking",
+        "compute"
+      ]
     },
     {
       "number": 59,
@@ -804,7 +1014,11 @@
         "C": "Create an RDS event subscription and send the notifications to Amazon SNS. Configure the SNS topic to fan out the event notifications to multiple Amazon SQS queues. Process the data using AWS Lambda functions.",
         "D": "Create a native function or a stored procedure that invokes an AWS Lambda function. Configure the Lambda function to send event notifications to an Amazon SQS queue for the processing system to consume."
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "compute",
+        "database"
+      ]
     },
     {
       "number": 60,
@@ -817,7 +1031,11 @@
         "C": "Provision an Amazon EC2 instance and install the SFTP service. Mount an encrypted Amazon EFS file system on the EC2 instance to store the uploaded files. Add a cron job to delete the files older than a month.",
         "D": "Create an Amazon S3 bucket with encryption enabled. Launch an AWS Transfer for SFTP endpoint to securely upload files to the S3 bucket. Configure an S3 lifecycle rule to delete files after a month."
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "storage",
+        "security-identity"
+      ]
     },
     {
       "number": 61,
@@ -830,7 +1048,11 @@
         "C": "Use Amazon Macie to scan for vulnerabilities and unintended network exposure. Refactor the web application to be less susceptible to SQL injection attacks based on the security assessment. Utilize the AWS Audit Manager to reuse the security assessment across all AWS accounts.",
         "D": "Use Amazon GuardDuty and set up a managed rule to block request patterns associated with the exploitation of SQL databases, like SQL injection attacks. Associate it with the Application Load Balancer and utilize the AWS Security Hub service to reuse the managed rules across all the AWS accounts"
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "networking",
+        "security-identity"
+      ]
     },
     {
       "number": 62,
@@ -843,7 +1065,10 @@
         "C": "Launch the EC2 instance to a private subnet and attach a NAT Gateway to the VPC to allow outbound IPv6 communication to the internet. Use AWS Firewall Manager to set up the required rules for traffic inspection and traffic filtering.",
         "D": "Launch the EC2 instance to a private subnet and attach an Egress-Only Internet Gateway to the VPC to allow outbound IPv6 communication to the internet. Use AWS Network Firewall to set up the required rules for traffic inspection and traffic filtering."
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "networking"
+      ]
     },
     {
       "number": 63,
@@ -860,6 +1085,11 @@
       "answer": [
         "A",
         "D"
+      ],
+      "tags": [
+        "migration-data-transfer",
+        "hybrid-connectivity",
+        "database"
       ]
     },
     {
@@ -873,7 +1103,11 @@
         "C": "Enable default Amazon EBS volume encryption for the account with a new AWS KMS key to ensure encryption of sensitive data within the Amazon EKS cluster.",
         "D": "Use Amazon EKS default options and the Amazon Elastic Block Store (Amazon EBS) Container Storage Interface (CSI) driver as an add-on to securely store sensitive data within the Amazon EKS cluster."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "compute",
+        "security-identity"
+      ]
     },
     {
       "number": 65,
@@ -890,6 +1124,11 @@
       "answer": [
         "C",
         "E"
+      ],
+      "tags": [
+        "migration-data-transfer",
+        "database",
+        "hybrid-connectivity"
       ]
     },
     {
@@ -903,7 +1142,11 @@
         "C": "Use an AWS Snowball Edge cluster to migrate data to Amazon S3 and AWS DataSync to capture ongoing changes. Create your own custom AWS KMS envelope encryption key for the associated AWS Snowball Edge job.",
         "D": "Use AWS Schema Conversion Tool (AWS SCT) to convert MySQL data to CSV files. Set up the AWS Application Migration Service (AWS MGN) to capture ongoing changes from the on-premises MySQL database and send them to Amazon S3."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "migration-data-transfer",
+        "hybrid-connectivity"
+      ]
     },
     {
       "number": 67,
@@ -916,7 +1159,11 @@
         "C": "Increase the rate limit of API Gateway",
         "D": "Increase the memory allocation of the Lambda function"
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "compute",
+        "database"
+      ]
     },
     {
       "number": 68,
@@ -929,7 +1176,11 @@
         "C": "Use Amazon WorkDocs to store the document models.",
         "D": "Launch an Amazon Aurora Serverless database."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "compute",
+        "database"
+      ]
     },
     {
       "number": 69,
@@ -942,7 +1193,10 @@
         "C": "Migrate the application to Amazon Elastic Container Service with ECS tasks that use the AWS Fargate launch type.",
         "D": "Migrate the application to Amazon Elastic Container Service with ECS tasks that use the Amazon EC2 launch type."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "compute"
+      ]
     },
     {
       "number": 70,
@@ -959,6 +1213,10 @@
       "answer": [
         "B",
         "E"
+      ],
+      "tags": [
+        "networking",
+        "hybrid-connectivity"
       ]
     },
     {
@@ -976,6 +1234,10 @@
       "answer": [
         "A",
         "B"
+      ],
+      "tags": [
+        "database",
+        "compute"
       ]
     },
     {
@@ -989,7 +1251,10 @@
         "C": "Set up an AWS Config aggregator on the root account of the organization to enable multi-account, multi-region data aggregation. Deploy conformance packs to standardize the baselines and network configurations for all accounts.",
         "D": "Centralized the creation of AWS accounts using AWS Systems Manager OpsCenter. Enforce policies and detect violations to all AWS accounts using AWS Security Hub."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "governance-multi-account"
+      ]
     },
     {
       "number": 73,
@@ -1006,6 +1271,9 @@
       "answer": [
         "A",
         "C"
+      ],
+      "tags": [
+        "storage"
       ]
     },
     {
@@ -1019,7 +1287,10 @@
         "C": "Create an S3 Standard bucket with S3 Object Lock in compliance mode enabled then configure a lifecycle rule that transfers files to Amazon S3 Glacier Deep Archive after 3 years.",
         "D": "Create a One-Zone-IA bucket with object-level versioning enabled and configure a lifecycle rule that transfers files to Amazon S3 Glacier Deep Archive after 3 years."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "storage"
+      ]
     },
     {
       "number": 75,
@@ -1036,6 +1307,10 @@
       "answer": [
         "A",
         "B"
+      ],
+      "tags": [
+        "security-identity",
+        "compute"
       ]
     },
     {
@@ -1049,7 +1324,11 @@
         "C": "Launch a new Amazon Data Firehose and configure the second ECS task to read from it. Create an IAM role that the ECS tasks can assume in order to get access to the S3 buckets and Data Firehose. Specify the ARN of the IAM Role in the taskDefinitionArn field of the task definition.",
         "D": "Launch a new Amazon MQ queue and configure the second ECS task to read from it. Create an IAM role that the ECS tasks can assume in order to get access to the S3 buckets and Amazon MQ queue. Set the (EnableTaskIAMRole) option to true in the task definition."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "compute",
+        "security-identity"
+      ]
     },
     {
       "number": 77,
@@ -1062,7 +1341,11 @@
         "C": "Use the AWS Network Firewall to detach the instance’s primary elastic network interface and move it to a new instance upon failure.",
         "D": "Set up AWS Transfer for FTPS service in Implicit FTPS mode to automatically disable the source/destination checks on the instance’s primary elastic network interface and reassociate it to another instance."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "networking",
+        "compute"
+      ]
     },
     {
       "number": 78,
@@ -1075,7 +1358,11 @@
         "C": "Set up a Weighted routing policy configuration in Route 53 by adding health checks on both the primary stack and the DR environment. Configure the network access control list and the route table to allow Route 53 to send requests to the endpoints specified in the health checks. Enable the Evaluate Target Health option by setting it to Yes.",
         "D": "Set up a CloudWatch Alarm to monitor the primary Route 53 DNS endpoint and create a custom Lambda function. Execute the ChangeResourceRecordSets API call using the function to initiate the failover to the secondary DNS record."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "networking",
+        "compute"
+      ]
     },
     {
       "number": 79,
@@ -1088,7 +1375,11 @@
         "C": "Add the API Credentials in the Security Group and assign it to the EC2 instance.",
         "D": "Store the API credentials in a bastion host."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "compute",
+        "security-identity"
+      ]
     },
     {
       "number": 80,
@@ -1101,7 +1392,11 @@
         "C": "Use Amazon Rekognition to monitor and recognize patterns on S3.",
         "D": "Use Amazon Inspector to alert whenever a security violation is detected on S3."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "security-identity",
+        "storage"
+      ]
     },
     {
       "number": 81,
@@ -1118,6 +1413,10 @@
       "answer": [
         "A",
         "D"
+      ],
+      "tags": [
+        "storage",
+        "networking"
       ]
     },
     {
@@ -1131,7 +1430,11 @@
         "C": "Use Amazon Kinesis to process the photos and generate the video montage in real-time.",
         "D": "Use Amazon S3 to store and process the photos and then generate the video montage afterward."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "messaging-integration",
+        "compute"
+      ]
     },
     {
       "number": 83,
@@ -1144,7 +1447,10 @@
         "C": "Create an S3 Standard bucket with S3 Object Lock in compliance mode enabled then configure a lifecycle rule that transfers files to Amazon S3 Glacier Deep Archive after 3 years.",
         "D": "Create a One-Zone-IA bucket with object-level versioning enabled and configure a lifecycle rule that transfers files to Amazon S3 Glacier Deep Archive after 3 years."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "storage"
+      ]
     },
     {
       "number": 84,
@@ -1157,7 +1463,11 @@
         "C": "Create a DynamoDB gateway endpoint. Set up a Network Access Control List (NACL) rule that allows outbound traffic to the dynamodb.us-east-1.amazonaws.com gateway endpoint. Use the built-in on-demand DynamoDB backups for cross-account backup and recovery.",
         "D": "Create a DynamoDB interface endpoint. Set up a stateless rule using AWS Network Firewall to control all outbound traffic to only use the  dynamodb.us-east-1.amazonaws.com endpoint. Integrate the DynamoDB table with Amazon Timestream to allow point-in-time recovery from a different AWS account."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "database",
+        "compute"
+      ]
     },
     {
       "number": 85,
@@ -1174,6 +1484,11 @@
       "answer": [
         "A",
         "D"
+      ],
+      "tags": [
+        "networking",
+        "compute",
+        "security-identity"
       ]
     },
     {
@@ -1187,7 +1502,11 @@
         "C": "Use Amazon S3 Transfer Acceleration on the existing S3 bucket and have the Outposts servers use the Transfer Acceleration endpoint for downloads.",
         "D": "Create an Amazon CloudFront distribution with the us-west-2 S3 bucket as the origin. Use signed URLs for software downloads."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "storage",
+        "hybrid-connectivity"
+      ]
     },
     {
       "number": 87,
@@ -1200,7 +1519,11 @@
         "C": "Use AWS Snowmobile to transfer the data over to S3.",
         "D": "Order multiple AWS Snowball devices to upload the files to Amazon S3."
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "storage",
+        "migration-data-transfer"
+      ]
     },
     {
       "number": 88,
@@ -1217,6 +1540,9 @@
       "answer": [
         "C",
         "D"
+      ],
+      "tags": [
+        "storage"
       ]
     },
     {
@@ -1234,6 +1560,10 @@
       "answer": [
         "B",
         "E"
+      ],
+      "tags": [
+        "messaging-integration",
+        "monitoring-management"
       ]
     },
     {
@@ -1251,6 +1581,9 @@
       "answer": [
         "C",
         "E"
+      ],
+      "tags": [
+        "messaging-integration"
       ]
     },
     {
@@ -1264,7 +1597,11 @@
         "C": "Generate a CloudFront response headers policy. Utilize the policy to deliver the suitable image format according to the User-Agent HTTP header in the incoming request.",
         "D": "Implement an image conversion service on EC2 instances and integrate it with CloudFront. Use Lambda functions to modify the response headers and serve the appropriate format based on the User-Agent header."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "networking",
+        "compute"
+      ]
     },
     {
       "number": 92,
@@ -1281,6 +1618,10 @@
       "answer": [
         "A",
         "B"
+      ],
+      "tags": [
+        "storage",
+        "networking"
       ]
     },
     {
@@ -1298,6 +1639,10 @@
       "answer": [
         "A",
         "C"
+      ],
+      "tags": [
+        "hybrid-connectivity",
+        "compute"
       ]
     },
     {
@@ -1311,7 +1656,11 @@
         "C": "Use Amazon Detective to detect images with graphic nudity or violence in Amazon S3. Ensure that all communications made by your AWS resources do not traverse the public Internet via the AWS Audit Manager service.",
         "D": "Use Amazon Monitron to monitor each user upload in S3. Use the AWS Transit Gateway Network Manager to block any outbound requests to the public Internet."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "ai-ml",
+        "storage"
+      ]
     },
     {
       "number": 95,
@@ -1328,6 +1677,11 @@
       "answer": [
         "D",
         "E"
+      ],
+      "tags": [
+        "security-identity",
+        "governance-multi-account",
+        "hybrid-connectivity"
       ]
     },
     {
@@ -1341,7 +1695,11 @@
         "C": "Use Route 53 with the failover option to a static S3 website bucket or CloudFront distribution.",
         "D": "Add more servers in case the application fails."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "networking",
+        "storage"
+      ]
     },
     {
       "number": 97,
@@ -1354,7 +1712,10 @@
         "C": "AWS Direct Connect",
         "D": "Amazon S3 Multipart Upload"
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "migration-data-transfer"
+      ]
     },
     {
       "number": 98,
@@ -1367,7 +1728,11 @@
         "C": "Use AWS SSO",
         "D": "All of the given options are correct."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "storage",
+        "compute"
+      ]
     },
     {
       "number": 99,
@@ -1380,7 +1745,10 @@
         "C": "Use an EBS-cycle policy in Amazon S3 to automatically back up the EBS volumes.",
         "D": "Use Amazon Data Lifecycle Manager (Amazon DLM) to automate the creation of EBS snapshots."
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "storage"
+      ]
     },
     {
       "number": 100,
@@ -1397,6 +1765,9 @@
       "answer": [
         "C",
         "D"
+      ],
+      "tags": [
+        "compute"
       ]
     },
     {
@@ -1410,7 +1781,11 @@
         "C": "Store the database credentials, API keys, and other secrets to AWS ACM.",
         "D": "Store the database credentials, API keys, and other secrets in AWS KMS."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "security-identity",
+        "database"
+      ]
     },
     {
       "number": 102,
@@ -1423,7 +1798,10 @@
         "C": "The main route table in your VPC to route traffic through a NAT instance",
         "D": "An EIP to the Virtual Private Gateway"
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "hybrid-connectivity"
+      ]
     },
     {
       "number": 103,
@@ -1436,7 +1814,10 @@
         "C": "Deploy a Windows Bastion host with an Elastic IP address in the public subnet and allow SSH access to the bastion from anywhere.",
         "D": "Deploy a Windows Bastion host with an Elastic IP address in the public subnet and allow RDP access to bastion only from the corporate IP addresses."
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "networking"
+      ]
     },
     {
       "number": 104,
@@ -1453,6 +1834,10 @@
       "answer": [
         "A",
         "D"
+      ],
+      "tags": [
+        "security-identity",
+        "storage"
       ]
     },
     {
@@ -1466,7 +1851,11 @@
         "C": "Use Amazon S3 event notifications to trigger an AWS Lambda function that converts .csv files to Apache Parquet format using Apache Spark on an Amazon EMR cluster. Save the processed files to the “tutorialsdojo-data-transformed\" bucket.",
         "D": "Use AWS Glue crawler to automatically discover the raw data file in S3 as well as check its corresponding schema. Create a scheduled ETL job in AWS Glue that will convert .csv files to Apache Parquet format and store the output of the processed files in the “tutorialsdojo-data-transformed\" bucket."
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "analytics-big-data",
+        "storage"
+      ]
     },
     {
       "number": 106,
@@ -1483,6 +1872,10 @@
       "answer": [
         "A",
         "C"
+      ],
+      "tags": [
+        "networking",
+        "compute"
       ]
     },
     {
@@ -1496,7 +1889,10 @@
         "C": "A new database instance is created in the standby Availability Zone.",
         "D": "The canonical name record (CNAME) is switched from the primary to standby instance."
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "database"
+      ]
     },
     {
       "number": 108,
@@ -1509,7 +1905,10 @@
         "C": "Configure Amazon CloudFront distribution and set an Application Load Balancer as the origin. Create a security group rule and deny all the suspicious addresses. Use Amazon SNS for notification.",
         "D": "Configure Amazon CloudFront distribution and set a Network Load Balancer as the origin. Use Amazon GuardDuty to block suspicious hosts based on its security findings. Set up a custom AWS Lambda function that processes the security logs and invokes Amazon SNS for notification."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "networking"
+      ]
     },
     {
       "number": 109,
@@ -1522,7 +1921,11 @@
         "C": "Configure a Gateway Load Balancer in front of the auto-scaling group. Ensure that the IP Listener Routing uses the GENEVE protocol on port 6081 to allow gRPC response traffic.",
         "D": "Configure a Network Load Balancer in front of the auto-scaling group. Create an AWS Global Accelerator accelerator and set the load balancer as an endpoint."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "networking",
+        "compute"
+      ]
     },
     {
       "number": 110,
@@ -1535,7 +1938,11 @@
         "C": "Use Amazon S3 as the data storage and CloudFront as the CDN.",
         "D": "Use multiple EC2 instance stores for data storage and ElastiCache as the CDN."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "storage",
+        "networking"
+      ]
     },
     {
       "number": 111,
@@ -1552,6 +1959,11 @@
       "answer": [
         "D",
         "E"
+      ],
+      "tags": [
+        "governance-multi-account",
+        "security-identity",
+        "hybrid-connectivity"
       ]
     },
     {
@@ -1565,7 +1977,11 @@
         "C": "Replace the Kinesis Data Streams with an Amazon SQS queue. Create a Lambda function that will asynchronously process the requests.",
         "D": "Use a combination of SNS to buffer the requests and then asynchronously process them using On-Demand EC2 Instances."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "analytics-big-data",
+        "storage"
+      ]
     },
     {
       "number": 113,
@@ -1578,7 +1994,11 @@
         "C": "Set up a new CloudFront web distribution with the geo-restriction feature enabled.",
         "D": "Use Route 53 Weighted Routing policy."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "networking",
+        "compute"
+      ]
     },
     {
       "number": 114,
@@ -1591,7 +2011,11 @@
         "C": "Block all the IP addresses where the SQL injection and cross-site scripting attacks originated using the Network Access Control List.",
         "D": "Set up security rules that block SQL injection and cross-site scripting attacks in AWS Web Application Firewall (WAF). Associate the rules to the Application Load Balancer."
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "networking",
+        "compute"
+      ]
     },
     {
       "number": 115,
@@ -1604,7 +2028,11 @@
         "C": "Launch an Auto Scaling Group using an AMI that has a pre-configured Apache web server, then configure the scaling policy accordingly. Store the images in an Elastic Block Store. Then, point your instance’s endpoint to AWS Global Accelerator.",
         "D": "Host the website in an AWS Elastic Beanstalk environment. Upload the images in an S3 bucket. Use CloudFront as a CDN to deliver the images closer to your end-users."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "storage",
+        "networking"
+      ]
     },
     {
       "number": 116,
@@ -1617,7 +2045,11 @@
         "C": "Use AWS DataSync to move the historical records from on-premises to AWS. Choose Amazon S3 Standard to be the destination for the data. Modify the S3 lifecycle configuration to move the data from the Standard tier to Amazon S3 Glacier Deep Archive after 30 days.",
         "D": "Use AWS Storage Gateway to move the historical records from on-premises to AWS. Choose Amazon S3 Glacier to be the destination for the data. Modify the S3 lifecycle configuration to move the data from the Standard tier to Amazon S3 Glacier Deep Archive after 30 days."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "storage",
+        "hybrid-connectivity"
+      ]
     },
     {
       "number": 117,
@@ -1630,7 +2062,11 @@
         "C": "x-amz-server-side-encryption-customer-key-MD5",
         "D": "x-amz-server-side-encryption"
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "security-identity",
+        "storage"
+      ]
     },
     {
       "number": 118,
@@ -1643,7 +2079,10 @@
         "C": "Latency Routing",
         "D": "Weighted Routing"
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "networking"
+      ]
     },
     {
       "number": 119,
@@ -1656,7 +2095,11 @@
         "C": "Use AWS DataSync to move the data. Store all of your data in Amazon EFS and enable object lock.",
         "D": "Use AWS Storage Gateway to establish hybrid cloud storage. Store all of your data in Amazon EBS and enable object lock."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "migration-data-transfer",
+        "storage"
+      ]
     },
     {
       "number": 120,
@@ -1669,7 +2112,11 @@
         "C": "Use AWS Storage Gateway to backup the data and transition it to Amazon S3 Glacier Deep Archive.",
         "D": "Use Amazon S3 to store the backup data and add a lifecycle rule to transition the current version to Amazon S3 Glacier."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "storage",
+        "hybrid-connectivity"
+      ]
     },
     {
       "number": 121,
@@ -1682,7 +2129,10 @@
         "C": "Create multiple Amazon SNS topics and configure the Amazon SQS queues to subscribe to the SNS topics. Publish the message to the designated SQS queue based on the quote request type.",
         "D": "Create a data stream in Amazon Kinesis Data Streams. Use the Amazon Kinesis Client Library to deliver all the records to the designated SQS queues based on the quote request type."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "messaging-integration"
+      ]
     },
     {
       "number": 122,
@@ -1695,7 +2145,10 @@
         "C": "Generate an endpoint policy for trusted S3 buckets.",
         "D": "Generate an endpoint policy for trusted VPCs."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "storage"
+      ]
     },
     {
       "number": 123,
@@ -1708,7 +2161,11 @@
         "C": "Use AWS Config to set up a rule in your AWS account.",
         "D": "Use AWS CloudTrail and review the event history of your AWS account."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "storage",
+        "monitoring-management"
+      ]
     },
     {
       "number": 124,
@@ -1721,7 +2178,10 @@
         "C": "Associate an Elastic IP address to an Application Load Balancer.",
         "D": "Create an Alias Record in Route 53 which maps to the DNS name of the load balancer."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "networking"
+      ]
     },
     {
       "number": 125,
@@ -1734,7 +2194,11 @@
         "C": "Install the CloudWatch agent on each instance and monitor the SwapUtilization metric.",
         "D": "Create a CloudWatch dashboard and monitor the SwapUsed metric."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "compute",
+        "monitoring-management"
+      ]
     },
     {
       "number": 126,
@@ -1747,7 +2211,10 @@
         "C": "Set up a new IPv6-only subnet with a large CIDR range. Associate the new subnet with the VPC then launch the instance.",
         "D": "Disable the IPv4 support in the VPC and use the available IPv6 addresses."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "networking"
+      ]
     },
     {
       "number": 127,
@@ -1760,7 +2227,10 @@
         "C": "Use Amazon Managed Service for Apache Flink Studio and store the processed data in Amazon DynamoDB.",
         "D": "Create an Amazon EC2 instance and store the processed data in Amazon EBS."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "analytics-big-data"
+      ]
     },
     {
       "number": 128,
@@ -1773,7 +2243,10 @@
         "C": "Use AWS Cost Explorer to view spending and filter usage data by Resource.",
         "D": "Create a Cost and Usage report for AWS services that each department is using."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "monitoring-management"
+      ]
     },
     {
       "number": 129,
@@ -1786,7 +2259,11 @@
         "C": "Replace the existing cameras with AWS IoT. Upload a face detection model to the AWS IoT devices and send them over to AWS Control Tower for checking and notification",
         "D": "Set up Amazon Managed Service for Prometheus to stream live feeds from the cameras. Use Amazon Fraud Detector to detect unauthorized personnel. Set the phone numbers of the security as subscribers to an SNS topic."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "ai-ml",
+        "analytics-big-data"
+      ]
     },
     {
       "number": 130,
@@ -1799,7 +2276,11 @@
         "C": "Change the ALB with a Network Load Balancer (NLB) to handle more traffic. Use the AWS Migration Service (DMS) to migrate the embedded NoSQL database to Amazon DynamoDB.",
         "D": "Configure the Auto Scaling group to spread the Amazon EC2 instances across three Availability Zones. Configure replication of the NoSQL database on the set of Amazon EC2 instances to spread the database load."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "compute",
+        "migration-data-transfer"
+      ]
     },
     {
       "number": 131,
@@ -1812,7 +2293,10 @@
         "C": "Amazon Relational Database Service (RDS) and Amazon MQ",
         "D": "Amazon Aurora and Amazon Cognito"
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "database"
+      ]
     },
     {
       "number": 132,
@@ -1825,7 +2309,11 @@
         "C": "Attach the kms:decrypt permission to the Lambda function’s execution role. Add a statement to the AWS KMS key’s policy that grants the function’s ARN the kms:decrypt permission.",
         "D": "Attach the kms:decrypt permission to the Lambda function’s resource policy. Add a statement to the AWS KMS key’s policy that grants the function’s execution role the kms:decrypt permission."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "security-identity",
+        "storage"
+      ]
     },
     {
       "number": 133,
@@ -1838,7 +2326,11 @@
         "C": "Create a new S3 bucket access policy with unlimited access for each IAM user.",
         "D": "Create a new IAM role and add each user to the IAM role."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "security-identity",
+        "storage"
+      ]
     },
     {
       "number": 134,
@@ -1855,6 +2347,10 @@
       "answer": [
         "A",
         "D"
+      ],
+      "tags": [
+        "compute",
+        "networking"
       ]
     },
     {
@@ -1868,7 +2364,11 @@
         "C": "Amazon Redshift",
         "D": "Amazon SQS"
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "storage",
+        "analytics-big-data"
+      ]
     },
     {
       "number": 136,
@@ -1881,7 +2381,11 @@
         "C": "Enable Amazon Aurora Parallel Query.",
         "D": "Create a new Network Load Balancer to evenly distribute the read queries to the Read Replicas of the Amazon Aurora database."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "database",
+        "compute"
+      ]
     },
     {
       "number": 137,
@@ -1894,7 +2398,10 @@
         "C": "Use larger instances for your application with an attached Elastic Fabric Adapter (EFA).",
         "D": "Set up Amazon Aurora Serverless for on-demand, auto-scaling configuration of your EC2 Instances and also enable Amazon Aurora Parallel Query feature for faster analytical queries over your current data."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "compute"
+      ]
     },
     {
       "number": 138,
@@ -1907,7 +2414,11 @@
         "C": "In the Route table, add this new route entry: 0.0.0.0 -> igw-b51618cc",
         "D": "In the Route table, add this new route entry: 10.0.0.0/27 -> local"
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "compute",
+        "security-identity"
+      ]
     },
     {
       "number": 139,
@@ -1920,7 +2431,11 @@
         "C": "Set up cross-origin resource sharing (CORS) in S3 by creating a bucket policy that allows an IAM user or role to copy objects from the source bucket in one account to the destination bucket in the other account.",
         "D": "Connect the two S3 buckets from two different AWS accounts to Amazon WorkDocs. Set up cross-account access to integrate the two S3 buckets. Use the Amazon WorkDocs console to copy the objects from one account to the other with modified object ownership assigned to the destination account."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "security-identity",
+        "storage"
+      ]
     },
     {
       "number": 140,
@@ -1933,7 +2448,11 @@
         "C": "Generate AWS Budgets reports for usage cost data and deliver them via Amazon Simple Queue Service (SQS).",
         "D": "Utilize the downloadable AWS Cost Explorer report .csv files to access the cost-related data. Predict usage costs using AWS Budgets."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "monitoring-management",
+        "ai-ml"
+      ]
     },
     {
       "number": 141,
@@ -1946,7 +2465,10 @@
         "C": "Use EC2 Dedicated Instances with elastic inference accelerator",
         "D": "Set up a cluster placement group within a single Availability Zone in the same AWS Region."
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "compute"
+      ]
     },
     {
       "number": 142,
@@ -1959,7 +2481,10 @@
         "C": "Your AWS account was hacked and someone has deleted some data in your Kinesis stream.",
         "D": "By default, the data records are only accessible for 24 hours from the time they are added to a Kinesis stream."
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "analytics-big-data"
+      ]
     },
     {
       "number": 143,
@@ -1972,7 +2497,10 @@
         "C": "By default, AWS allows you to provision a maximum of 20 instances per Availability Zone. Select a different Availability Zone and retry the failed request.",
         "D": "There is a vCPU-based On-Demand Instance limit per region which is why subsequent requests failed. Just submit the limit increase form to AWS and retry the failed requests once approved."
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "compute"
+      ]
     },
     {
       "number": 144,
@@ -1985,7 +2513,10 @@
         "C": "Change the DEV and PROD VPCs to have overlapping CIDR blocks to be able to connect them.",
         "D": "Do nothing. Since these two VPCs are already connected via UAT, they already have a connection to each other."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "networking"
+      ]
     },
     {
       "number": 145,
@@ -1998,7 +2529,11 @@
         "C": "AWS Snowball Edge",
         "D": "AWS Storage Gateway"
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "hybrid-connectivity",
+        "storage"
+      ]
     },
     {
       "number": 146,
@@ -2015,6 +2550,9 @@
       "answer": [
         "B",
         "E"
+      ],
+      "tags": [
+        "security-identity"
       ]
     },
     {
@@ -2032,6 +2570,10 @@
       "answer": [
         "B",
         "D"
+      ],
+      "tags": [
+        "storage",
+        "security-identity"
       ]
     },
     {
@@ -2045,7 +2587,10 @@
         "C": "Use AWS Import/Export",
         "D": "Use Multipart Upload"
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "storage"
+      ]
     },
     {
       "number": 149,
@@ -2058,7 +2603,11 @@
         "C": "Configure ASG to suspend the health check process for each EC2 instance.",
         "D": "Enable the Termination Protection option for all EC2 instances."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "storage",
+        "compute"
+      ]
     },
     {
       "number": 150,
@@ -2071,7 +2620,11 @@
         "C": "Amazon Managed Streaming for Apache Kafka (Amazon MSK)",
         "D": "Amazon Kinesis Data Streams"
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "analytics-big-data",
+        "database"
+      ]
     },
     {
       "number": 151,
@@ -2084,7 +2637,11 @@
         "C": "Enable the hibernation mode on the EC2 instance.",
         "D": "Disable the Instance Metadata Service to reduce the things that need to be loaded at startup."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "compute",
+        "storage"
+      ]
     },
     {
       "number": 152,
@@ -2101,6 +2658,9 @@
       "answer": [
         "A",
         "C"
+      ],
+      "tags": [
+        "compute"
       ]
     },
     {
@@ -2118,6 +2678,9 @@
       "answer": [
         "B",
         "E"
+      ],
+      "tags": [
+        "storage"
       ]
     },
     {
@@ -2131,7 +2694,10 @@
         "C": "Amazon S3 Transfer Acceleration",
         "D": "Use CloudFront Origin Access Control (OAC)"
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "storage"
+      ]
     },
     {
       "number": 155,
@@ -2144,7 +2710,10 @@
         "C": "Use Amazon SQS.",
         "D": "Use Amazon Timestream."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "storage"
+      ]
     },
     {
       "number": 156,
@@ -2161,6 +2730,9 @@
       "answer": [
         "A",
         "B"
+      ],
+      "tags": [
+        "compute"
       ]
     },
     {
@@ -2174,7 +2746,10 @@
         "C": "Configure the UpdateReplacePolicy attribute in the CloudFormation template. Send a success signal after the applications are installed and configured using the cfn-signal helper script.",
         "D": "Configure a CreationPolicy attribute to the instance in the CloudFormation template. Send a success signal after the applications are installed and configured using the cfn-signal helper script."
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "compute"
+      ]
     },
     {
       "number": 158,
@@ -2187,7 +2762,10 @@
         "C": "Spot Instances",
         "D": "On-Demand Capacity Reservations"
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "compute"
+      ]
     },
     {
       "number": 159,
@@ -2200,7 +2778,10 @@
         "C": "Dedicated instances",
         "D": "On-demand instances"
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "compute"
+      ]
     },
     {
       "number": 160,
@@ -2217,6 +2798,10 @@
       "answer": [
         "A",
         "D"
+      ],
+      "tags": [
+        "database",
+        "compute"
       ]
     },
     {
@@ -2230,7 +2815,11 @@
         "C": "It will be allowed.",
         "D": "It will be denied."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "networking",
+        "compute"
+      ]
     },
     {
       "number": 162,
@@ -2243,7 +2832,10 @@
         "C": "Create a new IAM policy for the Amazon S3 bucket that automatically deletes the logs after a month",
         "D": "Enable CORS on the Amazon S3 bucket which will enable the automatic monthly deletion of data"
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "storage"
+      ]
     },
     {
       "number": 163,
@@ -2256,7 +2848,10 @@
         "C": "Create a Lambda function that removes any data already processed. Then, use Amazon EventBridge (Amazon CloudWatch Events) to trigger this function whenever the ETL job's status switches to SUCCEEDED.",
         "D": "Enable job bookmark for the ETL job."
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "analytics-big-data"
+      ]
     },
     {
       "number": 164,
@@ -2269,7 +2864,11 @@
         "C": "Configure the Security Group of the EC2 instance to permit ingress traffic over port 3389 from your IP.",
         "D": "Configure the Security Group of the EC2 instance to permit ingress traffic over port 22 from your IP."
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "compute",
+        "security-identity"
+      ]
     },
     {
       "number": 165,
@@ -2286,6 +2885,10 @@
       "answer": [
         "A",
         "C"
+      ],
+      "tags": [
+        "security-identity",
+        "storage"
       ]
     },
     {
@@ -2299,7 +2902,10 @@
         "C": "Create a new target group.",
         "D": "Create a new target group and launch template."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "compute"
+      ]
     },
     {
       "number": 167,
@@ -2312,7 +2918,10 @@
         "C": "Configure an Active-Active Failover with One Primary and One Secondary Resource.",
         "D": "Configure an Active-Passive Failover with Multiple Primary and Secondary Resources."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "networking"
+      ]
     },
     {
       "number": 168,
@@ -2325,7 +2934,10 @@
         "C": "Use AWS Fargate on Amazon EKS with Service Auto Scaling to run the containerized banking platform",
         "D": "Deploy an Amazon EKS Cluster on AWS Outposts with Kubernetes Cluster Autoscaler and sync any orphaned pods with Amazon AppFlow"
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "compute"
+      ]
     },
     {
       "number": 169,
@@ -2338,7 +2950,11 @@
         "C": "Amazon S3 for storing the ELB log files and an EC2 instance for analyzing the log files using a custom-built application.",
         "D": "Amazon S3 for storing ELB log files and Amazon EMR for analyzing the log files."
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "networking",
+        "analytics-big-data"
+      ]
     },
     {
       "number": 170,
@@ -2351,7 +2967,10 @@
         "C": "Utilize the Amazon Lex service to convert audio recordings into text. Call the Amazon Translate API to translate Hindi texts into English and use Amazon SageMaker Clarify for sentiment prediction and analysis.",
         "D": "Set up Amazon Comprehend to convert audio recordings into text. Use Amazon Kendra to translate Hindi texts into English and utilize the Amazon Detective service to automatically detect negative user behaviors for sentiment analysis."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "ai-ml"
+      ]
     },
     {
       "number": 171,
@@ -2368,6 +2987,9 @@
       "answer": [
         "A",
         "C"
+      ],
+      "tags": [
+        "database"
       ]
     },
     {
@@ -2385,6 +3007,10 @@
       "answer": [
         "A",
         "C"
+      ],
+      "tags": [
+        "networking",
+        "compute"
       ]
     },
     {
@@ -2402,6 +3028,9 @@
       "answer": [
         "B",
         "D"
+      ],
+      "tags": [
+        "networking"
       ]
     },
     {
@@ -2415,7 +3044,10 @@
         "C": "Create an IAM Role that enforces MFA authentication with the least privilege permission. Set up a corresponding IAM Group for each department. Attach the IAM Role to the IAM Groups.",
         "D": "Set up IAM roles for each IAM user and associate a permissions boundary that defines the maximum permissions."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "security-identity"
+      ]
     },
     {
       "number": 175,
@@ -2428,7 +3060,11 @@
         "C": "Deploy four EC2 instances with Auto Scaling in one Availability Zone and four in another availability zone in the same region behind an Amazon Elastic Load Balancer.",
         "D": "Deploy two EC2 instances with Auto Scaling in four regions behind an Amazon Elastic Load Balancer."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "compute",
+        "networking"
+      ]
     },
     {
       "number": 176,
@@ -2445,6 +3081,9 @@
       "answer": [
         "C",
         "D"
+      ],
+      "tags": [
+        "compute"
       ]
     },
     {
@@ -2458,7 +3097,11 @@
         "C": "Network ACL Inbound Rule: Protocol – UDP, Port Range – 22, Source 175.45.116.100/32",
         "D": "Network ACL Inbound Rule: Protocol – TCP, Port Range-22, Source 175.45.116.100/0"
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "security-identity",
+        "networking"
+      ]
     },
     {
       "number": 178,
@@ -2471,7 +3114,10 @@
         "C": "Create a new CloudFront web distribution and configure it to serve HTTPS requests using dedicated IP addresses in order to associate your alternate domain names with a dedicated IP address in each CloudFront edge location.",
         "D": "Upload all SSL certificates of the domains in the ALB using the console and bind multiple certificates to the same secure listener on your load balancer. ALB will automatically choose the optimal TLS certificate for each client using Server Name Indication (SNI)."
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "networking"
+      ]
     },
     {
       "number": 179,
@@ -2488,6 +3134,9 @@
       "answer": [
         "C",
         "D"
+      ],
+      "tags": [
+        "compute"
       ]
     },
     {
@@ -2505,6 +3154,10 @@
       "answer": [
         "D",
         "E"
+      ],
+      "tags": [
+        "networking",
+        "storage"
       ]
     },
     {
@@ -2518,7 +3171,11 @@
         "C": "Create a new Amazon SNS topic and Amazon SQS queue. Add an S3 event notification configuration on the bucket to publish s3:ObjectCreated:* and ObjectRemoved:DeleteMarkerCreated event types to SQS and SNS.",
         "D": "Create a new Amazon SNS topic and Amazon MQ. Add an S3 event notification configuration on the bucket to publish s3:ObjectCreated:* and ObjectRemoved:DeleteMarkerCreated event types to SQS and SNS."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "messaging-integration",
+        "storage"
+      ]
     },
     {
       "number": 182,
@@ -2531,7 +3188,11 @@
         "C": "Use S3 Object Lambda with a Lambda function that processes the data based on the bucket's name and object tags.",
         "D": "Use S3 Object Lambda with a Lambda function that processes the data based on the bucket’s name."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "compute",
+        "storage"
+      ]
     },
     {
       "number": 183,
@@ -2544,7 +3205,11 @@
         "C": "Create an Amazon S3 bucket to store the captured data and use Amazon Redshift Spectrum to analyze the data.",
         "D": "Create a Kinesis Data Stream and use AWS Lambda to read records from the data stream."
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "compute",
+        "analytics-big-data"
+      ]
     },
     {
       "number": 184,
@@ -2557,7 +3222,11 @@
         "C": "Configure RDS to export the automated snapshot automatically to Amazon S3 and create a lifecycle policy to delete the object after 90 days.",
         "D": "Create a daily scheduled event using CloudWatch Events and AWS Lambda to directly download the RDS automated snapshot to an S3 bucket. Archive snapshots older than 90 days to Glacier."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "database",
+        "monitoring-management"
+      ]
     },
     {
       "number": 185,
@@ -2570,7 +3239,11 @@
         "C": "Use AWS Snowball Edge to directly backup the data in Amazon S3 Glacier.",
         "D": "Use the AWS Storage Gateway file gateway to store all the backup data in Amazon S3."
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "storage",
+        "hybrid-connectivity"
+      ]
     },
     {
       "number": 186,
@@ -2583,7 +3256,10 @@
         "C": "Create a new AWS VPN CloudHub. Set up a Virtual Private Network (VPN) connection for additional AWS accounts.",
         "D": "Create a new Direct Connect gateway and integrate it with the existing Direct Connect connection. Set up a Transit Gateway between AWS accounts and associate it with the Direct Connect gateway."
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "hybrid-connectivity"
+      ]
     },
     {
       "number": 187,
@@ -2600,6 +3276,9 @@
       "answer": [
         "A",
         "E"
+      ],
+      "tags": [
+        "security-identity"
       ]
     },
     {
@@ -2613,7 +3292,10 @@
         "C": "Change the default_storage_engine of the DB instance’s parameter group to MyISAM.",
         "D": "Modify the DB instance storage type to Provisioned IOPS."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "database"
+      ]
     },
     {
       "number": 189,
@@ -2626,7 +3308,10 @@
         "C": "Create an Amazon S3 gateway endpoint to enable a connection between the instances and Amazon S3.",
         "D": "Set up an AWS Transit Gateway to access Amazon S3."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "storage"
+      ]
     },
     {
       "number": 190,
@@ -2639,7 +3324,11 @@
         "C": "Take a snapshot of the DB cluster. Use the snapshot to create a new Aurora DB cluster.",
         "D": "Add an Aurora Replica to the cluster and set its instance class to Serverless. Failover to the read replica and promote it to primary."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "database",
+        "migration-data-transfer"
+      ]
     },
     {
       "number": 191,
@@ -2652,7 +3341,10 @@
         "C": "Migrate the cluster to an Amazon Elastic Kubernetes Service (EKS) cluster using Amazon EKS Anywhere and the database to an Amazon DynamoDB table.",
         "D": "Migrate the cluster to an Amazon Elastic Container Service (ECS) cluster with the images stored in the Amazon Elastic Container Registry (Amazon ECR). Move the database to an Amazon Neptune database"
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "compute"
+      ]
     },
     {
       "number": 192,
@@ -2665,7 +3357,10 @@
         "C": "Create a Lambda function that runs compliance checks on tagged resources. Schedule the function using Amazon EventBridge (Amazon CloudWatch Events).",
         "D": "Use service control policies (SCP) to detect resources that are not tagged properly."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "monitoring-management"
+      ]
     },
     {
       "number": 193,
@@ -2678,7 +3373,11 @@
         "C": "Configure an AWS Config rule in the root account to detect if changes to the new account’s Config rules are made.",
         "D": "Set up an AWS Control Tower in the root account to detect if there were any changes to the new account’s AWS Config rules. Attach an IAM trust relationship to the IAM User of each developer which prevents any changes in AWS Config."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "monitoring-management",
+        "governance-multi-account"
+      ]
     },
     {
       "number": 194,
@@ -2691,7 +3390,10 @@
         "C": "Deploy the application in an AWS Lambda function with Container image support. Attach an Amazon Elastic File System (Amazon EFS) volume to the function.",
         "D": "Deploy the application Amazon ECS cluster with Amazon EC2 worker nodes and attach a 5 GB Amazon EBS volume."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "compute"
+      ]
     },
     {
       "number": 195,
@@ -2704,7 +3406,10 @@
         "C": "Store the values in a file saved in an Amazon S3 bucket. Enable encryption on the Amazon S3 bucket. Configure the application to download the file contents when it starts.",
         "D": "Store the values as key-value pairs in AWS Systems Manager OpsCenter. By default, the key-value pairs will be encrypted at rest. Configure the application to retrieve the variables when it starts."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "security-identity"
+      ]
     },
     {
       "number": 196,
@@ -2717,7 +3422,10 @@
         "C": "Downgrade the database to a smaller instance.",
         "D": "Perform a mysqldump to get a copy of the database on a local machine. Use MySQL Workbench to analyze the queries."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "database"
+      ]
     },
     {
       "number": 197,
@@ -2730,7 +3438,10 @@
         "C": "Create a new ALB listener on port 443 and configure it to redirect HTTP traffic to HTTPS.",
         "D": "Configure the existing on port 443 and add a redirect action to HTTP on port 80."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "networking"
+      ]
     },
     {
       "number": 198,
@@ -2743,7 +3454,11 @@
         "C": "Amazon Elastic Block Storage",
         "D": "Amazon SQS"
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "hybrid-connectivity",
+        "storage"
+      ]
     },
     {
       "number": 199,
@@ -2756,7 +3471,11 @@
         "C": "Create a new Network ACL inbound rule in the subnet of the EC2 instance with the following details:\n\nProtocol: TCP\n\nPort Range: 20 - 21\n\nSource: 175.45.116.100/0\n\nAllow/Deny: ALLOW",
         "D": "Create a new Network ACL inbound rule in the subnet of the EC2 instance with the following details:\n\nProtocol: UDP\n\nPort Range: 20 - 21\n\nSource: 175.45.116.100/0\n\nAllow/Deny: ALLOW"
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "compute",
+        "security-identity"
+      ]
     },
     {
       "number": 200,
@@ -2769,7 +3488,10 @@
         "C": "Store the audit logs in an Amazon S3 bucket and enable Multi-Factor Authentication Delete (MFA Delete) on the S3 bucket.",
         "D": "Store the audit logs in an EFS volume and use Network File System version 4 (NFSv4) file-locking mechanism."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "storage"
+      ]
     },
     {
       "number": 201,
@@ -2782,7 +3504,11 @@
         "C": "Upload the licenses on AWS Systems Manager Fleet Manager to be encrypted and distributed to Amazon EC2 instances. Attach an IAM role on the EC2 instances to request a license from the Fleet Manager. Set up an Amazon SNS to send notifications and alerts once all licenses are used",
         "D": "Configure AWS Resource Access Manager (AWS RAM) to track and control the licenses used by AWS resources. Configure AWS RAM to provide available licenses for Amazon EC2 instances. Set up an Amazon SNS to send notifications and alerts once all licenses are used."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "compute",
+        "messaging-integration"
+      ]
     },
     {
       "number": 202,
@@ -2799,6 +3525,10 @@
       "answer": [
         "B",
         "C"
+      ],
+      "tags": [
+        "migration-data-transfer",
+        "database"
       ]
     },
     {
@@ -2812,7 +3542,11 @@
         "C": "A single On-Demand Amazon EC2 instance for both storing and processing the log files",
         "D": "Amazon S3 Glacier Deep Archive for storing the application log files and AWS ParallelCluster for processing the log files."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "storage",
+        "compute"
+      ]
     },
     {
       "number": 204,
@@ -2829,6 +3563,10 @@
       "answer": [
         "A",
         "C"
+      ],
+      "tags": [
+        "compute",
+        "storage"
       ]
     },
     {
@@ -2842,7 +3580,11 @@
         "C": "Create a new customer-managed key from the AWS Key Management Service (AWS KMS). Configure the default encryption behavior of the bucket to use the customer-managed key. Manually rotate the KMS key and every year.",
         "D": "Create an S3 bucket policy for the S3 bucket that rejects any object uploads unless the request includes the s3:x-amz-server-side-encryption\":\"aws:kms\" header. Enable the S3 Object Lock in compliance mode for all objects to automatically rotate the built-in AES256 customer-managed key of the bucket."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "storage",
+        "security-identity"
+      ]
     },
     {
       "number": 206,
@@ -2855,7 +3597,11 @@
         "C": "Allows all AWS Directory Service (ds) calls as long as the resource contains the directory ID:  987654321012",
         "D": "Allows all AWS Directory Service (ds) calls as long as the resource contains the directory name of: DirectoryTutorialsDojo1234"
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "hybrid-connectivity",
+        "security-identity"
+      ]
     },
     {
       "number": 207,
@@ -2872,6 +3618,10 @@
       "answer": [
         "C",
         "D"
+      ],
+      "tags": [
+        "storage",
+        "compute"
       ]
     },
     {
@@ -2885,7 +3635,11 @@
         "C": "First, look at the existing Flow logs for keywords related to the application error to create a custom metric. Then, create a CloudWatch alarm for that custom metric which invokes an action to restart the EC2 instance.",
         "D": "First, look at the existing Flow logs for keywords related to the application error to create a custom metric. Then, create a CloudWatch alarm for that custom metric which calls a Lambda function that invokes an action to restart the EC2 instance."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "monitoring-management",
+        "compute"
+      ]
     },
     {
       "number": 209,
@@ -2898,7 +3652,10 @@
         "C": "Amazon Glue, Amazon Redshift, Amazon S3",
         "D": "Amazon Athena, Amazon Redshift Spectrum, AWS Glue"
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "analytics-big-data"
+      ]
     },
     {
       "number": 210,
@@ -2911,7 +3668,10 @@
         "C": "By using a Curl or Get Command to get the latest metadata information from http://169.254.169.254/latest/meta-data/",
         "D": "By using a Curl or Get Command to get the latest user data information from http://169.254.169.254/latest/user-data/"
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "compute"
+      ]
     },
     {
       "number": 211,
@@ -2928,6 +3688,9 @@
       "answer": [
         "B",
         "C"
+      ],
+      "tags": [
+        "storage"
       ]
     },
     {
@@ -2941,7 +3704,11 @@
         "C": "Set up a Multi-AZ deployments configuration of your production database in RDS. Direct the Data Analytics team to query the production data from the standby instance.",
         "D": "Upgrade the instance type of the RDS database to a large instance."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "database",
+        "compute"
+      ]
     },
     {
       "number": 213,
@@ -2958,6 +3725,11 @@
       "answer": [
         "A",
         "C"
+      ],
+      "tags": [
+        "database",
+        "networking",
+        "compute"
       ]
     },
     {
@@ -2971,7 +3743,10 @@
         "C": "Set the IOPS to 600 then maintain a high queue length.",
         "D": "Set the IOPS to 800 then maintain a low queue length."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "compute"
+      ]
     },
     {
       "number": 215,
@@ -2984,7 +3759,11 @@
         "C": "Write a CloudFormation template that includes the auto-scaling group, application load balancer, and DynamoDB table. In the event of a failure, deploy the template in a secondary region. Use Route 53 DNS failover to automatically route traffic to the resources in the secondary region. Set up and configure the Amazon Managed Service for Prometheus service to receive insights for improving your workloads based on the AWS best practices.",
         "D": "Write a CloudFormation template that includes the auto-scaling group, application load balancer, and DynamoDB table. In the event of a failure, deploy the template in a secondary region. Configure Amazon EventBridge (Amazon CloudWatch Events) to trigger a Lambda function that updates the application’s Route 53 DNS record. Launch an Amazon Managed Grafana workspace to automatically receive tips and action items for improving your workloads based on the AWS best practices"
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "networking",
+        "database"
+      ]
     },
     {
       "number": 216,
@@ -2997,7 +3776,10 @@
         "C": "Utilize AWS App Mesh to control and monitor the communication between services deployed on Amazon EKS. Set up Amazon CloudWatch Application Insights to trigger autoscaling in the EKS cluster.",
         "D": "Set up CloudWatch alarms for CPU utilization or request count to monitor the relevant metrics of the container applications running on Amazon EKS."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "compute"
+      ]
     },
     {
       "number": 217,
@@ -3010,7 +3792,10 @@
         "C": "Create a new S3 bucket in another region and configure Cross-Account Access to the bucket located in us-east-1.",
         "D": "Enable Cross-Region Replication."
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "storage"
+      ]
     },
     {
       "number": 218,
@@ -3023,7 +3808,11 @@
         "C": "Use DynamoDB Auto Scaling",
         "D": "Create an SQS queue in front of the DynamoDB table."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "database",
+        "compute"
+      ]
     },
     {
       "number": 219,
@@ -3036,7 +3825,11 @@
         "C": "Use Automated snapshots of your Redshift Cluster.",
         "D": "Enable Cross-Region Snapshots Copy in your Amazon Redshift Cluster."
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "analytics-big-data",
+        "database"
+      ]
     },
     {
       "number": 220,
@@ -3049,7 +3842,11 @@
         "C": "Install the AWS Systems Manager Agent (SSM Agent) in each instance which will automatically collect and push data to CloudWatch Logs. Analyze the log data with CloudWatch Logs Insights.",
         "D": "Install AWS Inspector Agent in each instance which will collect and push data to CloudWatch Logs periodically. Set up a CloudWatch dashboard to properly analyze the log data of all instances."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "monitoring-management",
+        "compute"
+      ]
     },
     {
       "number": 221,
@@ -3062,7 +3859,11 @@
         "C": "Deploy  an Auto Scaling group with 4 instances in one Availability Zone behind an Application Load Balancer.",
         "D": "Deploy an Auto Scaling group with 1 instance in each of 4 Availability Zones behind an Application Load Balancer."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "compute",
+        "networking"
+      ]
     },
     {
       "number": 222,
@@ -3075,7 +3876,10 @@
         "C": "Use Amazon SQS",
         "D": "Use Amazon SWF"
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "storage"
+      ]
     },
     {
       "number": 223,
@@ -3092,6 +3896,9 @@
       "answer": [
         "D",
         "E"
+      ],
+      "tags": [
+        "compute"
       ]
     },
     {
@@ -3105,7 +3912,10 @@
         "C": "Set up an Amazon SNS Topic to handle the messages.",
         "D": "Create an Amazon Data Firehose to handle the messages."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "analytics-big-data"
+      ]
     },
     {
       "number": 225,
@@ -3118,7 +3928,11 @@
         "C": "Use OpenSSL to generate a self-signed certificate. Import the SSL/TLS certificate to the AWS Certificate Manager (ACM) and associate it with the HTTPS listener of the ALBs",
         "D": "Issue an SSL/TLS certificate using the AWS Certificate Manager Private Certificate Authority. Associate the new certificate on the HTTPS listener of the ALBs."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "security-identity",
+        "networking"
+      ]
     },
     {
       "number": 226,
@@ -3131,7 +3945,11 @@
         "C": "Enable DynamoDB Streams to capture table activity and automatically trigger the Lambda function.",
         "D": "Use Systems Manager Automation to detect new entries in the DynamoDB table then automatically invoke the Lambda function for processing."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "compute",
+        "database"
+      ]
     },
     {
       "number": 227,
@@ -3144,7 +3962,11 @@
         "C": "Set up an AWS VPN CloudHub for inter-region VPC access and a Direct Connect gateway for the VPN connections to the on-premises data centers. Create a virtual private gateway in each VPC, then create a private virtual interface for each AWS Direct Connect connection to the Direct Connect gateway.",
         "D": "Enable inter-region VPC peering that allows peering relationships to be established between multiple VPCs across different AWS regions. Set up a networking configuration that ensures that the traffic will always stay on the global AWS backbone and never traverse the public Internet."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "networking",
+        "hybrid-connectivity"
+      ]
     },
     {
       "number": 228,
@@ -3161,6 +3983,9 @@
       "answer": [
         "A",
         "E"
+      ],
+      "tags": [
+        "security-identity"
       ]
     },
     {
@@ -3174,7 +3999,11 @@
         "C": "Use a CloudFront web distribution and Route 53 with a Geoproximity routing policy in order to process the data in close geographical proximity to users and respond to user requests at low latencies. Process real-time streaming data using Kinesis and durably store the results to an Amazon S3 bucket.",
         "D": "Integrate CloudFront with Lambda@Edge in order to process the data in close geographical proximity to users and respond to user requests at low latencies. Process real-time streaming data using Kinesis and durably store the results to an Amazon S3 bucket."
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "analytics-big-data",
+        "storage"
+      ]
     },
     {
       "number": 230,
@@ -3187,7 +4016,10 @@
         "C": "Enable Amazon RDS Read Replicas",
         "D": "Use SQS to queue up the requests"
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "database"
+      ]
     },
     {
       "number": 231,
@@ -3204,6 +4036,10 @@
       "answer": [
         "D",
         "E"
+      ],
+      "tags": [
+        "database",
+        "monitoring-management"
       ]
     },
     {
@@ -3217,7 +4053,10 @@
         "C": "For the MS SQL rule, change the Source to the static AnyCast IP address attached to the application tier.",
         "D": "For the MS SQL rule, change the Source to the Network ACL ID attached to the application tier."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "security-identity"
+      ]
     },
     {
       "number": 233,
@@ -3230,7 +4069,10 @@
         "C": "Attach an Elastic Network Interface (ENI) on each Amazon EC2 instance to accelerate High Performance Computing (HPC).",
         "D": "Attach a Private Virtual Interface (VIF) on each Amazon EC2 instance to accelerate High Performance Computing (HPC)."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "compute"
+      ]
     },
     {
       "number": 234,
@@ -3247,6 +4089,10 @@
       "answer": [
         "A",
         "B"
+      ],
+      "tags": [
+        "security-identity",
+        "compute"
       ]
     },
     {
@@ -3260,7 +4106,10 @@
         "C": "2 instances in eu-west-1a, 2 instances in eu-west-1b, and 2 instances in eu-west-1c",
         "D": "6 instances in eu-west-1a, 6 instances in eu-west-1b, and no instances in eu-west-1c"
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "compute"
+      ]
     },
     {
       "number": 236,
@@ -3273,7 +4122,11 @@
         "C": "Create an S3 bucket policy that lists the CloudFront distribution ID as the principal and the target bucket as the Amazon Resource Name (ARN).",
         "D": "Create a web ACL in AWS WAF to block any public S3 access and attach it to the CloudFront distribution."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "storage",
+        "networking"
+      ]
     },
     {
       "number": 237,
@@ -3286,7 +4139,11 @@
         "C": "Create an Amazon EventBridge (Amazon CloudWatch Events) rule to check for AWS Personal Health Dashboard events that are related to Amazon EC2 instances. To send notifications, set an Amazon SNS topic as a target for the rule.",
         "D": "Set up an Amazon EventBridge (Amazon CloudWatch Events) rule to check for AWS Service Health Dashboard events that are related to Amazon EC2 instances. To send notifications, set an Amazon SNS topic as a target for the rule."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "compute",
+        "messaging-integration"
+      ]
     },
     {
       "number": 238,
@@ -3299,7 +4156,10 @@
         "C": "Enable cross-account access of the startup’s S3 bucket to allow the data downloads and exclusive access from the partner’s AWS account",
         "D": "Enable S3 Object Lock in governance mode to lower data transfer costs and set a Legal Hold for each object to disable anonymous access"
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "storage"
+      ]
     },
     {
       "number": 239,
@@ -3312,7 +4172,10 @@
         "C": "Use the AWS Application Discovery Service for lift-and-shift migrations. Deploy the AWS Application Discovery Agent to the on-premises data center to start the replication process. After the replication task is completed, launch Amazon EC2 instances based on the created AMIs.",
         "D": "Utilize AWS DataSync to migrate the application workloads to AWS. Deploy the AWS DataSync VM on the on-premises data center. Once replication is completed, launch Amazon EC2 instances based on the created AMIs."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "hybrid-connectivity"
+      ]
     },
     {
       "number": 240,
@@ -3325,7 +4188,10 @@
         "C": "Data is unavailable until the instance is restarted.",
         "D": "Data is automatically deleted."
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "compute"
+      ]
     },
     {
       "number": 241,
@@ -3338,7 +4204,11 @@
         "C": "To be able to run SQL queries, use AWS Athena to analyze the export data file in S3.",
         "D": "Use a migration tool to load the CSV export file from S3 to a database that is designed for online analytic processing (OLAP) such as AWS RedShift. Run some queries once the data has been loaded to complete your validation."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "storage",
+        "analytics-big-data"
+      ]
     },
     {
       "number": 242,
@@ -3351,7 +4221,11 @@
         "C": "Distribute the traffic using Application Load Balancer and store the data in Amazon RDS.",
         "D": "Distribute the traffic using Network Load Balancer and store the data in Amazon DynamoDB."
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "database",
+        "networking"
+      ]
     },
     {
       "number": 243,
@@ -3368,6 +4242,9 @@
       "answer": [
         "A",
         "C"
+      ],
+      "tags": [
+        "storage"
       ]
     },
     {
@@ -3381,7 +4258,11 @@
         "C": "Develop an on-premises custom identity broker application and use STS to issue short-lived AWS credentials.",
         "D": "Use IAM roles to rotate the IAM credentials whenever LDAP credentials are updated."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "hybrid-connectivity",
+        "security-identity"
+      ]
     },
     {
       "number": 245,
@@ -3394,7 +4275,11 @@
         "C": "Create a custom AWS Config rule to check for the max-age of IAM access keys. Schedule an AWS Batch job that runs every 24 hours to delete all the non-compliant access keys.",
         "D": "Create an Amazon EventBridge (Amazon CloudWatch Events) rule to filter IAM user access keys older than 90 days. Define a target to invoke a Lambda function to deactivate and delete the old access keys."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "security-identity",
+        "monitoring-management"
+      ]
     },
     {
       "number": 246,
@@ -3407,7 +4292,11 @@
         "C": "The DNS resolution and DNS hostname of the VPC configuration should be enabled.",
         "D": "The security group of the EC2 instance needs to be modified."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "networking",
+        "compute"
+      ]
     },
     {
       "number": 247,
@@ -3420,7 +4309,11 @@
         "C": "Use Amazon Transcribe to read and analyze the PDF reports using the StartTranscriptionJob API operation. Use Amazon CloudWatch Logs to detect protected health information (PHI) content by tracking access logs and security events.",
         "D": "Use Amazon Textract with the StartDocumentTextDetection API operation to extract text from PDF reports. Analyze the extracted data with a custom-built PHI detection algorithm within the Lambda function."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "compute",
+        "ai-ml"
+      ]
     },
     {
       "number": 248,
@@ -3433,7 +4326,11 @@
         "C": "Use the AWS Certificate Manager Private Certificate Authority (ACM PCA) to generate a private certificate for api.tutorialsdojo.com. Override the invoke URL using stage variables.",
         "D": "Request a public certificate in the us-east-2 region for api.tutorialsdojo.com using AWS Certificate Manager (ACM). Create a regional API Gateway domain name and associate it with api.tutorialsdojo.com and the ACM certificate. In Route 53, create an alias record for api.tutorialsdojo.com that points to the API Gateway domain name."
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "security-identity",
+        "messaging-integration"
+      ]
     },
     {
       "number": 249,
@@ -3446,7 +4343,10 @@
         "C": "Store the files in S3 then after a month, change the storage class of the tdojo-finance prefix to One Zone-IA while the remaining go to Glacier using lifecycle policy.",
         "D": "Store the files in S3 then after a month, change the storage class of the tdojo-finance prefix to S3-IA while the remaining go to Glacier using lifecycle policy."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "storage"
+      ]
     },
     {
       "number": 250,
@@ -3459,7 +4359,10 @@
         "C": "Deploy the web and application tier instances to a public subnet and then allocate an Elastic IP address to each EC2 instance.",
         "D": "Deploy a NAT gateway in the public subnet and add a route to it from the private subnet where the web and application tiers are hosted."
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "networking"
+      ]
     },
     {
       "number": 251,
@@ -3476,6 +4379,9 @@
       "answer": [
         "C",
         "E"
+      ],
+      "tags": [
+        "messaging-integration"
       ]
     },
     {
@@ -3489,7 +4395,11 @@
         "C": "Create a Scheduled Lambda Function that will run a custom script to check compliance against changes made to the passwords periodically.",
         "D": "Create a rule in the Amazon CloudWatch event. Build an event pattern to match events on IAM. Set the event name to “ChangePassword” in the event pattern. Configure SNS to send notifications to you whenever a user has made changes to his password."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "monitoring-management",
+        "security-identity"
+      ]
     },
     {
       "number": 253,
@@ -3502,7 +4412,11 @@
         "C": "Use an AWS DataSync agent to rapidly move the data over the Internet.",
         "D": "Use an AWS Storage Gateway file gateway to store and retrieve files directly using the SMB file system protocol."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "hybrid-connectivity",
+        "migration-data-transfer"
+      ]
     },
     {
       "number": 254,
@@ -3515,7 +4429,10 @@
         "C": "Create five read replicas across different availability zones. In the event of an Availability Zone outage, promote any replica to become the primary instance.",
         "D": "Create five cross-region read replicas in each region. In the event of an Availability Zone outage, promote any replica to become the primary instance."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "database"
+      ]
     },
     {
       "number": 255,
@@ -3528,7 +4445,11 @@
         "C": "Enable detailed monitoring on the EC2 instances of the Auto Scaling group. Use Auto Scaling with custom metrics to scale out the Auto Scaling group based on the aggregated memory usage of EC2 instances.",
         "D": "Set up Amazon Rekognition to automatically identify and recognize the cause of the high memory usage. Use the AWS Well-Architected Tool to automatically trigger the scale-out event in the ASG based on the overall memory usage."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "monitoring-management",
+        "compute"
+      ]
     },
     {
       "number": 256,
@@ -3541,7 +4462,11 @@
         "C": "Use Amazon Cognito User Pools for authentication and use Cognito Identity Pools to provide temporary AWS credentials. Create fine-grained IAM roles for Aurora and EFS access in each team.",
         "D": "Create separate AWS accounts for each team using AWS Organizations. Set up cross-account IAM roles with least privilege and assign specific Aurora and EFS permissions based on team roles."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "database",
+        "security-identity"
+      ]
     },
     {
       "number": 257,
@@ -3554,7 +4479,10 @@
         "C": "Use Compute optimized instance with instance store volume.",
         "D": "Use Memory optimized instances with EBS volume."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "compute"
+      ]
     },
     {
       "number": 258,
@@ -3567,7 +4495,10 @@
         "C": "Deploy the EC2 instance in a different Region. Install the conversion software on the instance. Perform data transformation and re-upload it to Amazon S3.",
         "D": "Deploy the EC2 instance in the same Region as Amazon S3. Install the file conversion software on the instance. Perform data transformation and re-upload it to Amazon S3."
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "storage"
+      ]
     },
     {
       "number": 259,
@@ -3580,7 +4511,10 @@
         "C": "Create a dynamic scaling policy based on the historical average CPU load of the application.",
         "D": "Create a Scheduled Amazon EventBridge (Amazon CloudWatch Events) Rule that runs a scaling job on a Lambda function every midnight."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "compute"
+      ]
     },
     {
       "number": 260,
@@ -3593,7 +4527,10 @@
         "C": "Use AWS Control Tower to launch a landing zone to automatically provision and configure new accounts through an Account Factory. Utilize the AWS Control Tower dashboard to monitor provisioned accounts across your enterprise. Set up preventive and detective guardrails for policy enforcement.",
         "D": "Use AWS Service Catalog to launch new AWS member accounts. Configure AWS Service Catalog Launch Constraints to continuously track configuration changes and monitor non-compliant resources. Set up a Multi-Account Multi-Region Data Aggregator to monitor compliance data for rules and accounts in an aggregated view"
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "governance-multi-account"
+      ]
     },
     {
       "number": 261,
@@ -3610,6 +4547,9 @@
       "answer": [
         "A",
         "C"
+      ],
+      "tags": [
+        "analytics-big-data"
       ]
     },
     {
@@ -3623,7 +4563,11 @@
         "C": "Amazon DynamoDB",
         "D": "Amazon RDS"
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "database",
+        "hybrid-connectivity"
+      ]
     },
     {
       "number": 263,
@@ -3636,7 +4580,10 @@
         "C": "Launch the application to an Amazon Elastic Kubernetes Service (Amazon EKS) cluster. Create VPC endpoints for the AWS Wavelength Zones and apply them to the Amazon EKS cluster. Install the AWS IAM Authenticator for Kubernetes (aws-iam-authenticator) to your cluster.",
         "D": "Host the application to an Amazon EKS cluster and run the Kubernetes pods on AWS Fargate. Create node groups in AWS Wavelength Zones for the Amazon EKS cluster. Add the EKS pod execution IAM role (AmazonEKSFargatePodExecutionRole) to your cluster and ensure that the Fargate profile has the same IAM role as your Amazon EC2 node groups."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "compute"
+      ]
     },
     {
       "number": 264,
@@ -3649,7 +4596,11 @@
         "C": "AWS Step Functions",
         "D": "AWS Glue"
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "analytics-big-data",
+        "storage"
+      ]
     },
     {
       "number": 265,
@@ -3662,7 +4613,10 @@
         "C": "Upload the data to Amazon FSx for Windows File Server using the Server Message Block (SMB) protocol.",
         "D": "Upload the data to S3 then use a lifecycle policy to transfer data to S3 One Zone-IA."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "storage"
+      ]
     },
     {
       "number": 266,
@@ -3675,7 +4629,10 @@
         "C": "Delete an AWS Lambda function from any network address.",
         "D": "Create an AWS Lambda function using the 187.5.104.11/32 address."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "compute"
+      ]
     },
     {
       "number": 267,
@@ -3688,7 +4645,10 @@
         "C": "First, configure Amazon Cloud Trail to receive custom logs and then use EMR to apply heuristics on the logs.",
         "D": "First, send all the log events to Amazon SQS then set up an Auto Scaling group of EC2 servers to consume the logs and finally, apply the heuristics."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "analytics-big-data"
+      ]
     },
     {
       "number": 268,
@@ -3701,7 +4661,11 @@
         "C": "Amazon EBS",
         "D": "Amazon FSx for Windows File Server"
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "storage",
+        "compute"
+      ]
     },
     {
       "number": 269,
@@ -3714,7 +4678,10 @@
         "C": "Use a smaller instance type for the NAT instance.",
         "D": "Remove the NAT instance and create an S3 interface endpoint to access S3 objects."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "storage"
+      ]
     },
     {
       "number": 270,
@@ -3727,7 +4694,11 @@
         "C": "Transit Gateway with equal-cost multipath routing (ECMP)",
         "D": "AWS Site-to-Site VPN"
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "hybrid-connectivity",
+        "networking"
+      ]
     },
     {
       "number": 271,
@@ -3740,7 +4711,11 @@
         "C": "Use Amazon Data Firehose to send the data from the device to Amazon S3. Process the data on an EC2 instance with at least 512 MB of memory.",
         "D": "Store the data in Amazon Redshift and process it with AWS Lambda."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "compute",
+        "storage"
+      ]
     },
     {
       "number": 272,
@@ -3753,7 +4728,11 @@
         "C": "Simple scaling",
         "D": "Scheduled Scaling"
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "compute",
+        "monitoring-management"
+      ]
     },
     {
       "number": 273,
@@ -3770,6 +4749,9 @@
       "answer": [
         "A",
         "B"
+      ],
+      "tags": [
+        "security-identity"
       ]
     },
     {
@@ -3787,6 +4769,10 @@
       "answer": [
         "A",
         "B"
+      ],
+      "tags": [
+        "security-identity",
+        "storage"
       ]
     },
     {
@@ -3800,7 +4786,11 @@
         "C": "Launch the UAT and production instances in different Availability Zones and use Multi Factor Authentication.",
         "D": "Define the tags on the UAT and production servers and add a condition to the IAM policy which allows access to specific tags."
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "security-identity",
+        "compute"
+      ]
     },
     {
       "number": 276,
@@ -3813,7 +4803,11 @@
         "C": "Block the IP addresses in the Network Access Control List",
         "D": "Assign a static Anycast IP address to each EC2 instance"
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "security-identity",
+        "networking"
+      ]
     },
     {
       "number": 277,
@@ -3826,7 +4820,11 @@
         "C": "The wrong instance type was used for the EC2 instance.",
         "D": "The wrong subnet was used in your VPC"
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "networking",
+        "compute"
+      ]
     },
     {
       "number": 278,
@@ -3839,7 +4837,10 @@
         "C": "Add a lifecycle hook to your Auto Scaling group to move instances in the Terminating state to the Terminating:Wait state to delay the termination of unhealthy Amazon EC2 instances. Configure a CloudWatch Events rule for the EC2 Instance-terminate Lifecycle Action Auto Scaling Event with an associated Lambda function. Trigger the CloudWatch agent to push the application logs and then resume the instance termination once all the logs are sent to CloudWatch Logs.",
         "D": "Add a lifecycle hook to your Auto Scaling group to move instances in the Terminating state to the Terminating:Wait state to delay the termination of the unhealthy Amazon EC2 instances. Configure a CloudWatch Events rule for the EC2 Instance Terminate Successful Auto Scaling Event with an associated Lambda function. Set up the AWS Systems Manager Run Command service to run a script that collects and uploads the application logs from the instance to a CloudWatch Logs group. Resume the instance termination once all the logs are sent."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "compute"
+      ]
     },
     {
       "number": 279,
@@ -3852,7 +4853,11 @@
         "C": "Use Amazon Neptune to convert the source schema and code to match that of the target database in RDS. Use the AWS Batch to effectively migrate the data from the source database to the target database in a batch process.",
         "D": "Heterogeneous database migration is not supported in AWS. You have to transform your database first to PostgreSQL and then migrate it to RDS."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "migration-data-transfer",
+        "hybrid-connectivity"
+      ]
     },
     {
       "number": 280,
@@ -3865,7 +4870,10 @@
         "C": "Run Command",
         "D": "EC2Config"
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "compute"
+      ]
     },
     {
       "number": 281,
@@ -3878,7 +4886,11 @@
         "C": "The message is deleted and becomes duplicated in the SQS when the EC2 instance comes online.",
         "D": "The message will be sent to a Dead Letter Queue in AWS DataSync."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "messaging-integration",
+        "compute"
+      ]
     },
     {
       "number": 282,
@@ -3891,7 +4903,11 @@
         "C": "Amazon Aurora flips the A record of your DB Instance to point at the healthy replica, which in turn is promoted to become the new primary.",
         "D": "Aurora will first attempt to create a new DB Instance in a different Availability Zone of the original instance. If unable to do so, Aurora will attempt to create a new DB Instance in the original Availability Zone in which the instance was first launched."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "database",
+        "compute"
+      ]
     },
     {
       "number": 283,
@@ -3904,7 +4920,11 @@
         "C": "FTP health check",
         "D": "TCP health check"
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "networking",
+        "compute"
+      ]
     },
     {
       "number": 284,
@@ -3917,7 +4937,10 @@
         "C": "Amazon Aurora",
         "D": "SimpleDB"
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "database"
+      ]
     },
     {
       "number": 285,
@@ -3930,7 +4953,10 @@
         "C": "The keys are lost permanently if you did not have a copy.",
         "D": "Use the Amazon CLI to get a copy of the keys."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "security-identity"
+      ]
     },
     {
       "number": 286,
@@ -3943,7 +4969,10 @@
         "C": "Create a firewall at the subnet level using the Amazon Detective service. Inspect the ingress and egress traffic using the VPC Reachability Analyzer.",
         "D": "Enable Traffic Mirroring on the Network Load Balancer and forward traffic to the instances. Create a traffic mirror filter to inspect the ingress and egress of data that traverses your Amazon VPC."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "networking"
+      ]
     },
     {
       "number": 287,
@@ -3956,7 +4985,10 @@
         "C": "Use Amazon S3 -Intelligent Tiering",
         "D": "Use Amazon Glacier Deep Archive"
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "storage"
+      ]
     },
     {
       "number": 288,
@@ -3969,7 +5001,11 @@
         "C": "No action needed. It can already be accessed from any IP address using SSH.",
         "D": "Both the outbound security group and outbound network ACL need to be modified to allow outbound traffic."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "security-identity",
+        "networking"
+      ]
     },
     {
       "number": 289,
@@ -3982,7 +5018,11 @@
         "C": "Processing Timeout",
         "D": "Receiving Timeout"
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "messaging-integration",
+        "compute"
+      ]
     },
     {
       "number": 290,
@@ -3995,7 +5035,10 @@
         "C": "Set up DynamoDB connector for Amazon Athena Federated Query",
         "D": "Use CloudFront functions"
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "database"
+      ]
     },
     {
       "number": 291,
@@ -4008,7 +5051,11 @@
         "C": "Use AWS Storage Gateway - Cached Volumes.",
         "D": "Use Amazon Glacier."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "hybrid-connectivity",
+        "storage"
+      ]
     },
     {
       "number": 292,
@@ -4021,7 +5068,11 @@
         "C": "Use CloudTrail and configure the destination S3 bucket to use Server Side Encryption (SSE) with AES-128 encryption algorithm.",
         "D": "Use CloudTrail with its default settings"
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "security-identity",
+        "monitoring-management"
+      ]
     },
     {
       "number": 293,
@@ -4034,7 +5085,10 @@
         "C": "AWS Directory Services, VPN connection, and AWS Identity and Access Management",
         "D": "AWS Directory Services, VPN connection, and Amazon S3"
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "hybrid-connectivity"
+      ]
     },
     {
       "number": 294,
@@ -4047,7 +5101,10 @@
         "C": "Create an alias for CNAME record to the load balancer DNS name.",
         "D": "Create an A record aliased to the load balancer DNS name."
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "networking"
+      ]
     },
     {
       "number": 295,
@@ -4060,7 +5117,11 @@
         "C": "Change the web architecture to access the financial data hosted in your S3 bucket by creating a custom VPC endpoint service.",
         "D": "Change the web architecture to access the financial data in S3 through an interface VPC endpoint, which is powered by AWS PrivateLink."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "networking",
+        "storage"
+      ]
     },
     {
       "number": 296,
@@ -4073,7 +5134,10 @@
         "C": "The EBS volume can be used in read-only mode while the snapshot is in progress.",
         "D": "The EBS volume cannot be used until the snapshot completes."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "storage"
+      ]
     },
     {
       "number": 297,
@@ -4086,7 +5150,11 @@
         "C": "The SQS queue is set to short-polling.",
         "D": "Missing permissions in SQS."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "messaging-integration",
+        "compute"
+      ]
     },
     {
       "number": 298,
@@ -4099,7 +5167,11 @@
         "C": "Increase the base number of Auto Scaling instances for the Auto Scaling group",
         "D": "Add provisioned IOPS to the instances"
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "compute",
+        "monitoring-management"
+      ]
     },
     {
       "number": 299,
@@ -4117,6 +5189,9 @@
       "answer": [
         "A",
         "C"
+      ],
+      "tags": [
+        "security-identity"
       ]
     },
     {
@@ -4130,7 +5205,10 @@
         "C": "Use ECS as the container management service then set up On-Demand EC2 Instances for processing both mission-critical and non-essential batch jobs.",
         "D": "Use ECS as the container management service then set up Spot EC2 Instances for processing both mission-critical and non-essential batch jobs."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "compute"
+      ]
     },
     {
       "number": 301,
@@ -4143,7 +5221,11 @@
         "C": "Remove the NAT Gateway and use a Gateway VPC endpoint to access the S3 bucket from the instance.",
         "D": "Re-assign the NAT Gateway to a lower EC2 instance type."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "networking",
+        "storage"
+      ]
     },
     {
       "number": 302,
@@ -4156,7 +5238,10 @@
         "C": "Weighted",
         "D": "Geolocation"
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "networking"
+      ]
     },
     {
       "number": 303,
@@ -4169,7 +5254,10 @@
         "C": "Enable Enhanced Networking with Intel 82599 Virtual Function (VF) interface on the Windows EC2 Instances.",
         "D": "Use AWS ParallelCluster to deploy and manage the HPC cluster to provide higher bandwidth, higher packet per second (PPS) performance, and lower inter-instance latencies."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "compute"
+      ]
     },
     {
       "number": 304,
@@ -4182,7 +5270,11 @@
         "C": "Install and run the AWS X-Ray daemon on the Amazon ECS cluster. Use the Amazon CloudWatch ServiceLens to analyze the traffic that goes through the application.",
         "D": "Integrate Amazon EventBridge (Amazon CloudWatch Events) metrics on the Application Load Balancer to capture the client IP address. Use Amazon CloudWatch Container Insights to analyze traffic patterns."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "compute",
+        "networking"
+      ]
     },
     {
       "number": 305,
@@ -4195,7 +5287,11 @@
         "C": "Set up AWS Storage Gateway to move the existing health records from the on-premises network to the AWS Cloud. Launch an Amazon EBS-backed EC2 instance to store both the existing and new records. Enable Amazon S3 server access logging and S3 Object Lock in the bucket.",
         "D": "Set up AWS DataSync to move the existing health records from the on-premises network to the AWS Cloud. Launch a new Amazon S3 bucket to store existing and new records. Enable AWS CloudTrail with Management Events and Amazon S3 Object Lock in the bucket."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "hybrid-connectivity",
+        "storage"
+      ]
     },
     {
       "number": 306,
@@ -4208,7 +5304,11 @@
         "C": "AWS X-Ray",
         "D": "Amazon API Gateway"
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "monitoring-management",
+        "database"
+      ]
     },
     {
       "number": 307,
@@ -4225,6 +5325,10 @@
       "answer": [
         "A",
         "B"
+      ],
+      "tags": [
+        "messaging-integration",
+        "monitoring-management"
       ]
     },
     {
@@ -4238,7 +5342,11 @@
         "C": "Configure Amazon SQS to use short polling by setting the ReceiveMessageWaitTimeSeconds to a number greater than zero.",
         "D": "Configure Amazon SQS to use short polling by setting the ReceiveMessageWaitTimeSeconds to zero."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "messaging-integration",
+        "compute"
+      ]
     },
     {
       "number": 309,
@@ -4251,7 +5359,11 @@
         "C": "Configure a VPC Endpoint along with a corresponding route entry that directs the data to S3.",
         "D": "Provision a NAT gateway in the private subnet with a corresponding route entry that directs the data to S3."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "storage",
+        "networking"
+      ]
     },
     {
       "number": 310,
@@ -4264,7 +5376,10 @@
         "C": "Volume Gateway in cached mode",
         "D": "File Gateway"
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "hybrid-connectivity"
+      ]
     },
     {
       "number": 311,
@@ -4277,7 +5392,10 @@
         "C": "Do nothing. Amazon S3 will automatically manage performance at this scale.",
         "D": "Use a predictable naming scheme in the key names such as sequential numbers or date time sequences."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "storage"
+      ]
     },
     {
       "number": 312,
@@ -4290,7 +5408,10 @@
         "C": "AWS DataSync",
         "D": "Amazon FSx for Lustre"
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "storage"
+      ]
     },
     {
       "number": 313,
@@ -4307,6 +5428,10 @@
       "answer": [
         "B",
         "D"
+      ],
+      "tags": [
+        "hybrid-connectivity",
+        "networking"
       ]
     },
     {
@@ -4320,7 +5445,11 @@
         "C": "Use AWS Secrets Manager to generate and store short-lived authentication tokens.",
         "D": "Use an MFA token to access and connect to a database."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "security-identity",
+        "database"
+      ]
     },
     {
       "number": 315,
@@ -4333,7 +5462,11 @@
         "C": "Use an AWS Storage Gateway hardware appliance for your compute resources. Configure Volume Gateway to store the application data and create an Amazon S3 bucket to store a backup of your data.",
         "D": "Use AWS Storage Gateway with a gateway VM appliance for your compute resources. Configure File Gateway to store the application data and backup data."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "storage",
+        "hybrid-connectivity"
+      ]
     },
     {
       "number": 316,
@@ -4346,7 +5479,11 @@
         "C": "Amazon Elastic File System",
         "D": "AWS Storage Gateway - File Gateway"
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "storage",
+        "compute"
+      ]
     },
     {
       "number": 317,
@@ -4359,7 +5496,10 @@
         "C": "Create a step scaling policy and configure an instance warm-up time condition.",
         "D": "Create a CloudFront distribution and set the EC2 instance as the origin."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "compute"
+      ]
     },
     {
       "number": 318,
@@ -4372,7 +5512,10 @@
         "C": "Create an AMI of the backend application's EC2 instance. Use the image to set up an Auto Scaling group and configure a target tracking scaling policy based on the ApproximateAgeOfOldestMessage metric.",
         "D": "Create an AMI of the backend application's EC2 instance and launch it to a cluster placement group."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "compute"
+      ]
     },
     {
       "number": 319,
@@ -4389,6 +5532,9 @@
       "answer": [
         "A",
         "C"
+      ],
+      "tags": [
+        "networking"
       ]
     },
     {
@@ -4402,7 +5548,10 @@
         "C": "Modify the VPN configuration by increasing the number of tunnels to scale the throughput.",
         "D": "Re-route some of the VPN connections to a secondary customer gateway device on the remote network’s end."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "hybrid-connectivity"
+      ]
     },
     {
       "number": 321,
@@ -4415,7 +5564,10 @@
         "C": "Deploy the GraphQL APIs as Kubernetes pods to AWS Fargate and AWS Outposts using Amazon EKS Anywhere for deployment. Create a custom domain using Amazon CloudFront and enable the Origin Shield feature to allow HTTPS communication to the GraphQL APIs.",
         "D": "Develop the application using the AWS AppSync service and use its built-in custom domain feature. Associate an SSL certificate to the AWS AppSync API using the AWS Certificate Manager (ACM) service to enable HTTPS communication."
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "security-identity"
+      ]
     },
     {
       "number": 322,
@@ -4428,7 +5580,11 @@
         "C": "Update the Network Access Control Lists of all subnets used by the Amazon EC2 instances to “deny” all IP addresses from the specific country.",
         "D": "Update the Network Access Control Lists of all subnets used by the Application Load Balancers to “deny” all IP addresses from the specific country."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "compute",
+        "networking"
+      ]
     },
     {
       "number": 323,
@@ -4445,6 +5601,10 @@
       "answer": [
         "B",
         "D"
+      ],
+      "tags": [
+        "messaging-integration",
+        "monitoring-management"
       ]
     },
     {
@@ -4458,7 +5618,10 @@
         "C": "Use Lambda functions to process simulation tasks in parallel.",
         "D": "Run the simulations using AWS Fargate."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "compute"
+      ]
     },
     {
       "number": 325,
@@ -4475,6 +5638,9 @@
       "answer": [
         "A",
         "B"
+      ],
+      "tags": [
+        "compute"
       ]
     },
     {
@@ -4488,7 +5654,10 @@
         "C": "Use On-Demand Capacity Reservations, which provide compute capacity that is always available on the specified recurring schedule.",
         "D": "Use Dedicated Hosts, which provide a physical host that is fully dedicated to running your instances, and bring your existing per-socket, per-core, or per-VM software licenses to reduce costs."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "hybrid-connectivity"
+      ]
     },
     {
       "number": 327,
@@ -4501,7 +5670,11 @@
         "C": "Cross-zone load balancing",
         "D": "AWS Direct Connect SiteLink"
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "compute",
+        "networking"
+      ]
     },
     {
       "number": 328,
@@ -4515,7 +5688,11 @@
         "D": "Do nothing. This feature is already enabled by default.",
         "E": "None of the above."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "database",
+        "compute"
+      ]
     },
     {
       "number": 329,
@@ -4528,7 +5705,10 @@
         "C": "Mount an Amazon EFS file system on the on-premises client and copy all backups to an NFS share.",
         "D": "Create an AWS Backup plan to copy data backups to a local SMB share every 48 hours."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "hybrid-connectivity"
+      ]
     },
     {
       "number": 330,
@@ -4541,7 +5721,11 @@
         "C": "Use path conditions to define rules that forward requests to different target groups based on the URL in the request.",
         "D": "Replace your ALB with a Network Load Balancer then use host conditions to define rules that forward requests to different target groups based on the URL in the request."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "compute",
+        "networking"
+      ]
     },
     {
       "number": 331,
@@ -4554,7 +5738,11 @@
         "C": "Remove the stored access keys in the AMI. Create a new IAM role with permissions to access the DynamoDB table and assign it to the EC2 instances.",
         "D": "Do nothing. The architecture is already secure because the access keys are already in the Amazon Machine Image."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "database",
+        "compute"
+      ]
     },
     {
       "number": 332,
@@ -4567,7 +5755,11 @@
         "C": "Compute Optimized Instances",
         "D": "General Purpose Instances"
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "compute",
+        "storage"
+      ]
     },
     {
       "number": 333,
@@ -4580,7 +5772,10 @@
         "C": "The Lambda function contains a recursive code and has been running for over 15 minutes.",
         "D": "The failed Lambda Invocations contain a ServiceException error which means that the AWS Lambda service encountered an internal error."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "compute"
+      ]
     },
     {
       "number": 334,
@@ -4593,7 +5788,10 @@
         "C": "In order to use the Cross-Region Replication feature in S3, you need to first enable versioning on the bucket.",
         "D": "The Cross-Region Replication feature is only available for Amazon S3 - Infrequent Access."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "storage"
+      ]
     },
     {
       "number": 335,
@@ -4606,7 +5804,10 @@
         "C": "Create an Amazon Pinpoint journey for the multi-engagement SMS marketing campaign and an Amazon Kinesis Data Stream for analysis. Configure Amazon Pinpoint to send events to the Kinesis data stream for collection, processing, and analysis. Set the retention period of the Kinesis data stream to 365 days.",
         "D": "Set up an Amazon Connect contact flow to send the confirmation SMS messages to the mobile app users. Deploy an AWS Lambda function to process and analyze the responses. Store the data to Amazon S3 Glacier Flexible Retrieval"
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "analytics-big-data"
+      ]
     },
     {
       "number": 336,
@@ -4619,7 +5820,10 @@
         "C": "Set up a pilot light strategy using AWS Elastic Disaster Recovery (AWS DRS) to replicate the changes of the on-premises application to AWS",
         "D": "On AWS, implement a warm standby using Amazon RDS for SQL Server database and configure AWS Database Migration Service (AWS DMS) with change data capture (CDC) to sync the data from the on-premises application."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "hybrid-connectivity"
+      ]
     },
     {
       "number": 337,
@@ -4632,7 +5836,10 @@
         "C": "{\n\"Version\": \"2012-10-17\",\n\"Statement\": [\n{\n\"Effect\": \"Allow\",\n\"Action\": [\n\"dynamodb:PutItem\",\n\"dynamodb:DeleteItem\",\n\"dynamodb:GetItem\",\n\"dynamodb:UpdateItem\"\n],\n\"Resource\": \"arn:aws:dynamodb:us-east-2:123456789012:table/*\"\n}\n]\n}",
         "D": "{\n\"Version\": \"2012-10-17\",\n\"Statement\": [\n{\n\"Effect\": \"Allow\",\n\"Action\": \"*\",\n\"Resource\": \"arn:aws:dynamodb:us-east-2:123456789012:table/tutorialsdojo\"\n}\n]\n}"
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "database"
+      ]
     },
     {
       "number": 338,
@@ -4645,7 +5852,11 @@
         "C": "Set up an RDS database and enable the IAM DB Authentication.",
         "D": "Launch the mysql client using the --ssl-ca parameter when connecting to the database."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "database",
+        "security-identity"
+      ]
     },
     {
       "number": 339,
@@ -4658,7 +5869,10 @@
         "C": "Create a bucket policy that will require the users to set the object's ACL to bucket-owner-full-control.",
         "D": "Enable server access logging and set up an IAM policy that will require the users to set the object's ACL to bucket-owner-full-control."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "storage"
+      ]
     },
     {
       "number": 340,
@@ -4671,7 +5885,11 @@
         "C": "Ingest the data using Amazon Simple Queue Service and create an AWS Lambda function to store the data in Amazon Redshift.",
         "D": "Ingest the data using Amazon Kinesis Data Streams and create an AWS Lambda function to store the data in Amazon DynamoDB."
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "analytics-big-data",
+        "database"
+      ]
     },
     {
       "number": 341,
@@ -4684,7 +5902,10 @@
         "C": "Provide access to externally authenticated users via Identity Federation. Set up an IAM role to specify permissions for users from each department whose identity is federated from your organization or a third-party identity provider.",
         "D": "Use AWS Organizations and Service Control Policies to control services on each account."
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "governance-multi-account"
+      ]
     },
     {
       "number": 342,
@@ -4697,7 +5918,10 @@
         "C": "The Cache-Control max-age directive is set to zero.",
         "D": "There are two primary origins configured in your Amazon CloudFront Origin Group."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "networking"
+      ]
     },
     {
       "number": 343,
@@ -4710,7 +5934,11 @@
         "C": "Host the APIs in a static S3 web hosting bucket behind a CloudFront web distribution.",
         "D": "Use a Spot Fleet of Amazon EC2 instances, each with an Elastic Fabric Adapter (EFA) for more consistent latency and higher network throughput. Set up an Application Load Balancer to distribute traffic to the instances."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "messaging-integration",
+        "compute"
+      ]
     },
     {
       "number": 344,
@@ -4723,7 +5951,11 @@
         "C": "NAT Gateway",
         "D": "NAT Instance"
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "networking",
+        "compute"
+      ]
     },
     {
       "number": 345,
@@ -4736,7 +5968,10 @@
         "C": "Amazon Elastic Container Service (Amazon ECS)",
         "D": "AWS Elastic Beanstalk"
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "compute"
+      ]
     },
     {
       "number": 346,
@@ -4749,7 +5984,11 @@
         "C": "Leverage on Amazon CloudFront and use HTTP POST method to reduce latency.",
         "D": "Use Amazon Elastic Block Store Provisioned IOPS and an Amazon EBS-optimized instance."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "storage",
+        "compute"
+      ]
     },
     {
       "number": 347,
@@ -4762,7 +6001,11 @@
         "C": "Generate a pre-signed URL for the objects on the S3 bucket. Use the Amazon S3 Storage Lens to discover personally identifiable information (PII) or financial data.",
         "D": "Add S3 read permission to the IAM policy of each IAM user from the sandbox accounts. Use Amazon Detective to discover personally identifiable information (PII) or financial data."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "storage",
+        "security-identity"
+      ]
     },
     {
       "number": 348,
@@ -4775,7 +6018,11 @@
         "C": "Amazon S3",
         "D": "Amazon ElastiCache"
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "storage",
+        "compute"
+      ]
     },
     {
       "number": 349,
@@ -4788,7 +6035,11 @@
         "C": "You should restart the EC2 instance since there might be some issue with the instance",
         "D": "You should create a new instance since there might be some issue with the instance"
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "security-identity",
+        "networking"
+      ]
     },
     {
       "number": 350,
@@ -4805,6 +6056,9 @@
       "answer": [
         "A",
         "D"
+      ],
+      "tags": [
+        "database"
       ]
     },
     {
@@ -4818,7 +6072,10 @@
         "C": "Vertical scaling means running the same software on bigger machines which is limited by the capacity of the individual server. Horizontal scaling is adding more servers to the existing pool and doesn’t run into limitations of individual servers.",
         "D": "Horizontal scaling means running the same software on smaller containers such as Docker and Kubernetes using ECS or EKS. Vertical scaling is adding more servers to the existing pool and doesn’t run into limitations of individual servers."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "compute"
+      ]
     },
     {
       "number": 352,
@@ -4831,7 +6088,10 @@
         "C": "Add the following entry to the route table: 10.0.0.0/27 -> Your Internet Gateway",
         "D": "Add this new entry to the route table: 0.0.0.0/0 -> Your Internet Gateway"
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "networking"
+      ]
     },
     {
       "number": 353,
@@ -4844,7 +6104,11 @@
         "C": "Create a new record in Amazon Route 53 with Weighted Routing policy to load balance the incoming traffic.",
         "D": "Launch a new microservice in AWS Fargate that acts as a load balancer since using an ALB or NLB with Fargate is not possible."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "networking",
+        "compute"
+      ]
     },
     {
       "number": 354,
@@ -4857,7 +6121,11 @@
         "C": "Add a separate cache behavior path for the content and configure a custom object caching with a Minimum TTL of 0",
         "D": "Add Cache-Control no-cache, no-store, or private directives in the S3 bucket"
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "storage",
+        "networking"
+      ]
     },
     {
       "number": 355,
@@ -4870,7 +6138,10 @@
         "C": "Amazon AppStream",
         "D": "Amazon Simple Queue Service"
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "analytics-big-data"
+      ]
     },
     {
       "number": 356,
@@ -4883,7 +6154,11 @@
         "C": "AWS Transfer for SFTP",
         "D": "CloudTrail Processing Library"
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "monitoring-management",
+        "compute"
+      ]
     },
     {
       "number": 357,
@@ -4896,7 +6171,11 @@
         "C": "Apply minification on the data and implement the Lake Formation tag-based access control (LF-TBAC) authorization strategy to ensure security.",
         "D": "Compress the data into GZIP format before storing it in the S3 bucket. Apply an IAM policy with aws:SourceArn and aws:SourceAccount global condition context keys in Lake Formation that prevents cross-service confused deputy problems and other security issues."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "analytics-big-data",
+        "security-identity"
+      ]
     },
     {
       "number": 358,
@@ -4909,7 +6188,11 @@
         "C": "Application files are stored in S3. The server log files can be optionally stored in CloudTrail or in CloudWatch Logs.",
         "D": "Application files are stored in S3. The server log files can also optionally be stored in S3 or in CloudWatch Logs."
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "storage",
+        "compute"
+      ]
     },
     {
       "number": 359,
@@ -4926,6 +6209,10 @@
       "answer": [
         "B",
         "D"
+      ],
+      "tags": [
+        "governance-multi-account",
+        "security-identity"
       ]
     },
     {
@@ -4939,7 +6226,10 @@
         "C": "Improve the performance of the stream by decreasing the number of its shards using the MergeShard command.",
         "D": "Implement Step Scaling to the Kinesis Data Stream."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "analytics-big-data"
+      ]
     },
     {
       "number": 361,
@@ -4952,7 +6242,10 @@
         "C": "Create a Direct Connect Gateway and add VPC attachments to connect all departments. Configure AWS Security Hub to secure the application traffic travelling between the VPCs.",
         "D": "Launch an AWS Transit Gateway and add VPC attachments to connect all departments. Set up AWS Network Firewall to secure the application traffic travelling between the VPCs."
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "networking"
+      ]
     },
     {
       "number": 362,
@@ -4965,7 +6258,10 @@
         "C": "Enable Hash Joins to improve the database query performance.",
         "D": "Use an Asynchronous Key Prefetch in Amazon Aurora to improve the performance of queries that join tables across indexes."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "database"
+      ]
     },
     {
       "number": 363,
@@ -4978,7 +6274,11 @@
         "C": "Launch multiple EC2 instances behind an Application Load Balancer to host your application services, and SWF which will act as a highly-scalable buffer that stores messages as they travel between distributed applications.",
         "D": "Launch multiple On-Demand EC2 instances to host your application services and an SQS queue which will act as a highly-scalable buffer that stores messages as they travel between distributed applications."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "compute",
+        "messaging-integration"
+      ]
     },
     {
       "number": 364,
@@ -4991,7 +6291,11 @@
         "C": "Store your API credentials in Amazon Glacier.",
         "D": "Store the API credentials in the root web application directory of the EC2 instance."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "storage",
+        "compute"
+      ]
     },
     {
       "number": 365,
@@ -5008,6 +6312,9 @@
       "answer": [
         "B",
         "C"
+      ],
+      "tags": [
+        "compute"
       ]
     },
     {
@@ -5021,7 +6328,10 @@
         "C": "Verify all running instances are of the same size and type and then try the launch again.",
         "D": "Submit a capacity increase request to AWS as you are initially limited to only 12 instances per Placement Group."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "compute"
+      ]
     },
     {
       "number": 367,
@@ -5034,7 +6344,11 @@
         "C": "Create an Amazon Comprehend analysis job. Index the sentiment along with the transcript to an Amazon OpenSearch cluster. Visualize the results using Amazon Managed Grafana.",
         "D": "Train a custom Natural Language Processing (NLP) model using Amazon SageMaker. Index the sentiment along with the transcript to an Amazon OpenSearch cluster. Visualize the results using the OpenSearch Dashboard."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "analytics-big-data",
+        "ai-ml"
+      ]
     },
     {
       "number": 368,
@@ -5051,6 +6365,10 @@
       "answer": [
         "A",
         "D"
+      ],
+      "tags": [
+        "storage",
+        "compute"
       ]
     },
     {
@@ -5064,7 +6382,10 @@
         "C": "You should consider using AWS CloudHSM over AWS KMS if you require your keys stored in dedicated, third-party validated hardware security modules under your exclusive control.",
         "D": "AWS CloudHSM should always be used for any payment transactions."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "security-identity"
+      ]
     },
     {
       "number": 370,
@@ -5077,7 +6398,11 @@
         "C": "Assign an IAM Policy to the user to allow it to send API calls.",
         "D": "Create a set of Access Keys for the user and attach the necessary permissions."
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "database",
+        "security-identity"
+      ]
     },
     {
       "number": 371,
@@ -5090,7 +6415,11 @@
         "C": "Consider using Spot instances instead of reserved EC2 instances",
         "D": "Consider removing the Elastic Load Balancer"
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "database",
+        "storage"
+      ]
     },
     {
       "number": 372,
@@ -5103,7 +6432,11 @@
         "C": "Egress-only Internet gateway",
         "D": "Internet Gateway"
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "networking",
+        "compute"
+      ]
     },
     {
       "number": 373,
@@ -5116,7 +6449,10 @@
         "C": "Amazon FSx for Lustre",
         "D": "Amazon Elastic Block Storage (EBS)"
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "storage"
+      ]
     },
     {
       "number": 374,
@@ -5129,7 +6465,11 @@
         "C": "Amazon RDS database with RDS Proxy",
         "D": "Amazon ElastiCache for Memcached with Auto Discovery"
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "database",
+        "networking"
+      ]
     },
     {
       "number": 375,
@@ -5142,7 +6482,11 @@
         "C": "By default, data records in Kinesis are only accessible for 24 hours from the time they are added to a stream.",
         "D": "The access of the Kinesis stream to the S3 bucket is insufficient."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "analytics-big-data",
+        "storage"
+      ]
     },
     {
       "number": 376,
@@ -5155,7 +6499,11 @@
         "C": "Use an Application Load Balancer to distribute the load to the multiple EC2 instances across all AWS Regions.",
         "D": "Use AWS DataSync to distribute the load to the multiple EC2 instances across all AWS Regions."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "compute",
+        "networking"
+      ]
     },
     {
       "number": 377,
@@ -5168,7 +6516,10 @@
         "C": "An invalid section named Parameters is present. This will cause the CloudFormation stack to fail.",
         "D": "The Conditions section is missing."
       },
-      "answer": "B"
+      "answer": "B",
+      "tags": [
+        "networking"
+      ]
     },
     {
       "number": 378,
@@ -5185,6 +6536,9 @@
       "answer": [
         "A",
         "E"
+      ],
+      "tags": [
+        "database"
       ]
     },
     {
@@ -5202,6 +6556,9 @@
       "answer": [
         "A",
         "B"
+      ],
+      "tags": [
+        "database"
       ]
     },
     {
@@ -5215,7 +6572,11 @@
         "C": "Provision two EC2 instances deployed in different Availability Zones and configure them to be part of an origin group.",
         "D": "Use Lambda@Edge to improve the performance of your web application and ensure high availability. Set the Lambda@Edge functions to be part of an origin group."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "compute",
+        "networking"
+      ]
     },
     {
       "number": 381,
@@ -5228,7 +6589,11 @@
         "C": "Create a new Lambda function that tracks the changes in the IP addresses of all ALBs across multiple AWS Regions. Schedule the function to run and update the corporate firewall every hour using Amazon CloudWatch Events.",
         "D": "Launch a Network Load Balancer with an associated Elastic IP address. Set the ALBs in multiple Regions as targets."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "networking",
+        "compute"
+      ]
     },
     {
       "number": 382,
@@ -5241,7 +6606,10 @@
         "C": "Amazon S3 Standard-IA",
         "D": "Amazon S3 Glacier Deep Archive"
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "storage"
+      ]
     },
     {
       "number": 383,
@@ -5254,7 +6622,10 @@
         "C": "Move all the static assets to Amazon S3. Set concurrency limit in AWS Lambda to move the application to a serverless architecture. Migrate the database to Amazon DynamoDB.",
         "D": "Move all the static assets and web pages to Amazon S3. Re-host the application to Amazon Elastic Container Service (Amazon ECS) containers and enable Service Auto Scaling. Migrate the database to Amazon RDS with Multi-AZ deployments configuration."
       },
-      "answer": "D"
+      "answer": "D",
+      "tags": [
+        "compute"
+      ]
     },
     {
       "number": 384,
@@ -5267,7 +6638,10 @@
         "C": "Launch an EC2 instance that acts as a proxy for the Lambda function. Give the instance’s public IP as a webhook to the third-party analytics service.",
         "D": "Create an API Gateway endpoint for the Lambda function. Provide the endpoint as a webhook to the third-party analytics service."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "compute"
+      ]
     },
     {
       "number": 385,
@@ -5280,7 +6654,11 @@
         "C": "Enable the EBS Encryption By Default feature for the AWS Region.",
         "D": "Launch new EBS volumes and encrypt them using asymmetric AWS KMS keys."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "storage",
+        "security-identity"
+      ]
     },
     {
       "number": 386,
@@ -5293,7 +6671,10 @@
         "C": "Use Amazon ElastiCache to improve database performance.",
         "D": "Create an Amazon RDS for MySQL read replica in the secondary AWS Region."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "database"
+      ]
     },
     {
       "number": 387,
@@ -5310,6 +6691,9 @@
       "answer": [
         "D",
         "E"
+      ],
+      "tags": [
+        "compute"
       ]
     },
     {
@@ -5323,7 +6707,11 @@
         "C": "Launch an Amazon Elastic File System (Amazon EFS) file system with Bursting Throughput mode and set the performance mode to General Purpose. Configure the EFS file system as the container mount point in the ECS task definition of the Amazon ECS cluster.",
         "D": "Launch an Amazon DynamoDB table with Amazon DynamoDB Accelerator (DAX) and DynamoDB Streams enabled. Configure the table to be accessible by all Amazon ECS cluster instances. Set the DynamoDB table as the container mount point in the ECS task definition of the Amazon ECS cluster."
       },
-      "answer": "A"
+      "answer": "A",
+      "tags": [
+        "compute",
+        "storage"
+      ]
     },
     {
       "number": 389,
@@ -5336,7 +6724,11 @@
         "C": "Deploy a conversational chatbot using Amazon Lex. Define conversation flow for specific user intentions. Integrate AWS Lambda functions as code hooks to perform actions based on user requests.",
         "D": "Deploy a conversational chatbot using Amazon Rekognition. Define conversation flow for specific user intentions. Create AWS Lambda functions that can be invoked depending on user intentions."
       },
-      "answer": "C"
+      "answer": "C",
+      "tags": [
+        "ai-ml",
+        "compute"
+      ]
     },
     {
       "number": 390,
@@ -5353,6 +6745,11 @@
       "answer": [
         "B",
         "E"
+      ],
+      "tags": [
+        "messaging-integration",
+        "security-identity",
+        "monitoring-management"
       ]
     }
   ]

@@ -29,6 +29,7 @@ export function Home() {
   const [count, setCount] = useState<number>(prefs.defaultCount);
   const [rangeStart, setRangeStart] = useState<number | "">("");
   const [rangeEnd, setRangeEnd] = useState<number | "">("");
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [timerEnabled, setTimerEnabled] = useState<boolean>(prefs.defaultTimerEnabled);
   const [timerMinutes, setTimerMinutes] = useState<number>(prefs.defaultTimerMinutes);
 
@@ -56,10 +57,11 @@ export function Home() {
     return { min: Math.min(...nums), max: Math.max(...nums) };
   }, [bank]);
 
-  // Reset the range picker to the full bank whenever the exam changes.
+  // Reset the range picker and tag selection to the full bank whenever the exam changes.
   useEffect(() => {
     setRangeStart("");
     setRangeEnd("");
+    setSelectedTags([]);
   }, [bankRange]);
 
   const rangeMatchCount = useMemo(() => {
@@ -70,6 +72,26 @@ export function Home() {
     return bank.questions.filter((q) => q.number >= lo && q.number <= hi).length;
   }, [bank, rangeStart, rangeEnd]);
 
+  const allTags = useMemo(() => {
+    if (!bank) return [] as string[];
+    const set = new Set<string>();
+    for (const q of bank.questions) {
+      for (const t of q.tags ?? []) set.add(t);
+    }
+    return Array.from(set).sort();
+  }, [bank]);
+
+  const tagMatchCount = useMemo(() => {
+    if (!bank || selectedTags.length === 0) return 0;
+    return bank.questions.filter((q) => q.tags?.some((t) => selectedTags.includes(t))).length;
+  }, [bank, selectedTags]);
+
+  function toggleTag(tag: string) {
+    setSelectedTags((prev) =>
+      prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]
+    );
+  }
+
   function savePrefsPartial(p: Partial<UserPrefs>) {
     const next = { ...prefs, ...p };
     setPrefs(next);
@@ -78,7 +100,8 @@ export function Home() {
 
   function start() {
     if (!bank) return;
-    const effectiveCount = mode === "sequential" ? bank.questions.length : count;
+    const effectiveCount =
+      mode === "sequential" ? bank.questions.length : mode === "tag" ? tagMatchCount : count;
     const hasRange = mode === "sequential" && rangeStart !== "" && rangeEnd !== "";
     const session = buildSession(bank, {
       mode,
@@ -87,6 +110,7 @@ export function Home() {
       timerMinutes,
       rangeStart: hasRange ? Math.min(rangeStart as number, rangeEnd as number) : undefined,
       rangeEnd: hasRange ? Math.max(rangeStart as number, rangeEnd as number) : undefined,
+      tags: mode === "tag" ? selectedTags : undefined,
     });
     Storage.setSession(examCode, session);
     savePrefsPartial({
@@ -156,7 +180,7 @@ export function Home() {
             <RadioGroup
               value={mode}
               onValueChange={(v) => setMode(v as Mode)}
-              className="grid grid-cols-1 gap-2 sm:grid-cols-2"
+              className="grid grid-cols-1 gap-2 sm:grid-cols-3"
             >
               <label className="flex items-center gap-3 rounded-md border p-3 cursor-pointer hover:bg-accent">
                 <RadioGroupItem value="random" id="m-random" />
@@ -172,8 +196,45 @@ export function Home() {
                   <div className="text-xs text-muted-foreground">Walk through the bank in order, optionally a range</div>
                 </div>
               </label>
+              <label className="flex items-center gap-3 rounded-md border p-3 cursor-pointer hover:bg-accent">
+                <RadioGroupItem value="tag" id="m-tag" />
+                <div>
+                  <div className="text-sm font-medium">By Topic</div>
+                  <div className="text-xs text-muted-foreground">Practice questions from selected tags</div>
+                </div>
+              </label>
             </RadioGroup>
           </section>
+
+          {/* Tag picker (tag mode only) */}
+          {mode === "tag" && (
+            <section className="space-y-2">
+              <Label>Tags</Label>
+              {allTags.length === 0 ? (
+                <div className="text-xs text-muted-foreground">This exam bank has no tags yet.</div>
+              ) : (
+                <>
+                  <div className="flex flex-wrap gap-2">
+                    {allTags.map((tag) => (
+                      <Badge
+                        key={tag}
+                        variant={selectedTags.includes(tag) ? "default" : "outline"}
+                        className="cursor-pointer select-none"
+                        onClick={() => toggleTag(tag)}
+                      >
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                  <div className="text-xs text-muted-foreground">
+                    {selectedTags.length === 0
+                      ? "Select one or more tags"
+                      : `${tagMatchCount} question${tagMatchCount === 1 ? "" : "s"} match`}
+                  </div>
+                </>
+              )}
+            </section>
+          )}
 
           {/* Question range (sequential only) */}
           {mode === "sequential" && (
@@ -284,7 +345,11 @@ export function Home() {
           <section className="flex flex-wrap items-center gap-2">
             <Button
               onClick={start}
-              disabled={!bank || (mode === "sequential" && rangeMatchCount === 0)}
+              disabled={
+                !bank ||
+                (mode === "sequential" && rangeMatchCount === 0) ||
+                (mode === "tag" && tagMatchCount === 0)
+              }
               size="lg"
             >
               <Play /> Start session
@@ -345,6 +410,7 @@ function PastAttempts({ examCode }: { examCode: string }) {
                     ? `${a.score!.correct}/${a.score!.scoreable} correct (${pct}%)`
                     : "self-review"}
                   {a.timerEnabled && ` · timed ${a.timerMinutes}m`}
+                  {a.tags && a.tags.length > 0 && ` · ${a.tags.join(", ")}`}
                 </div>
               </div>
               <div className="flex gap-1">

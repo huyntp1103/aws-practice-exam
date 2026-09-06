@@ -30,11 +30,17 @@ export function buildSession(bank: ExamBank, opts: {
   timerMinutes: number;
   rangeStart?: number; // sequential mode only: inclusive question-number range
   rangeEnd?: number;
+  tags?: string[]; // tag mode only: keep questions matching any of these tags
 }): SessionState {
   const allNumbers = bank.questions.map((q) => q.number);
   let questionNumbers: number[];
   if (opts.mode === "random") {
     questionNumbers = pickRandom(allNumbers, opts.count);
+  } else if (opts.mode === "tag") {
+    const tags = opts.tags ?? [];
+    questionNumbers = bank.questions
+      .filter((q) => q.tags?.some((t) => tags.includes(t)))
+      .map((q) => q.number);
   } else if (opts.rangeStart != null && opts.rangeEnd != null) {
     questionNumbers = bank.questions
       .filter((q) => q.number >= opts.rangeStart! && q.number <= opts.rangeEnd!)
@@ -57,6 +63,7 @@ export function buildSession(bank: ExamBank, opts: {
       timerMinutes: opts.timerMinutes,
       startedAt,
       questionNumbers,
+      tags: opts.mode === "tag" ? opts.tags : undefined,
     },
     currentIndex: 0,
     answers: {},
@@ -107,6 +114,7 @@ export function makeAttempt(state: SessionState, bank: ExamBank): Attempt {
     timerEnabled: state.config.timerEnabled,
     timerMinutes: state.config.timerMinutes,
     questionNumbers: state.config.questionNumbers,
+    tags: state.config.tags,
     answers: state.answers,
     flagged: state.flagged,
     score: scoreAttempt(bank, state),
