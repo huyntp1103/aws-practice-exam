@@ -45,6 +45,7 @@ export function Home() {
       .then((b) => setBank(b))
       .catch((e) => setBankErr(String(e.message ?? e)));
     const sess = Storage.getSession(examCode);
+    if (sess?.finished) Storage.clearSession(examCode); // self-heal pre-existing stale finished sessions
     setResumeAvailable(!!sess && !sess.finished);
     setAttemptCount(Storage.getAttempts(examCode).length);
   }, [examCode]);

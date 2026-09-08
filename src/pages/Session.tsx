@@ -48,16 +48,22 @@ export function Session() {
       .catch((e) => setErr(String(e.message ?? e)));
     loadUncertain(examCode).then((u) => setUncertain(toUncertainMap(u)));
     const s = Storage.getSession(examCode);
-    if (!s) {
+    if (!s || s.finished) {
+      // A finished session shouldn't still be here (finish() clears it), but
+      // guard anyway so a stale/back-navigated session never renders as live
+      // with its old picks intact.
+      if (s) Storage.clearSession(examCode);
       setErr("No active session for this exam. Start one from Home.");
     } else {
       setState(s);
     }
   }, [examCode]);
 
-  // Persist on every state change.
+  // Persist on every state change, except the final "finished" transition —
+  // that one is immediately cleared by finish(), and persisting it here would
+  // undo the clear and leave a completed session looking live on reload.
   useEffect(() => {
-    if (state) Storage.setSession(examCode, state);
+    if (state && !state.finished) Storage.setSession(examCode, state);
   }, [examCode, state]);
 
   const byNum = useMemo(() => {
