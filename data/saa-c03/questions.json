@@ -9487,7 +9487,7 @@
       "votes": 4,
       "question": "A company wants to migrate its on-premises Microsoft SQL Server Enterprise edition database to AWS.\nThe company's online application uses the database to process transactions.\nThe data analysis team uses the same production database to run reports for analytical processing.\nThe company wants to reduce operational overhead by moving to managed services wherever possible.\n\nWhich solution will meet these requirements with the LEAST operational overhead?",
       "options": {
-        "A": "Migrate to Amazon RDS for Microsoft SOL Server. Use read replicas for reporting purposes",
+        "A": "Migrate to Amazon RDS for Microsoft SQL Server. Use read replicas for reporting purposes",
         "B": "Migrate to Microsoft SQL Server on Amazon EC2. Use Always On read replicas for reporting purposes",
         "C": "Migrate to Amazon DynamoDB. Use DynamoDB on-demand replicas for reporting purposes",
         "D": "Migrate to Amazon Aurora MySQL. Use Aurora read replicas for reporting purposes"
@@ -9640,9 +9640,10 @@
         "C": "Provision a subnet in each Availability Zone. Configure the Auto Scaling group to distribute the EC2 instances across both Availability Zones. Configure the DB instance for Multi-AZ deployment.",
         "D": "Provision a subnet that extends across both Availability Zones. Configure the Auto Scaling group to distribute the EC2 instances across both Availability Zones. Configure the DB instance for Multi-AZ deployment."
       },
-      "answer": "A",
+      "answer": "C",
       "tags": [
-        "compute"
+        "networking",
+        "database"
       ]
     },
     {
