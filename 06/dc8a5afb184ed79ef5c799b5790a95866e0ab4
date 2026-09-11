@@ -1,0 +1,23 @@
+data/saa-c03/explanations.json
+  s_e788bebb2c41a4::t_2eb4607daf552e 2286-2287
+data/saa-c03/questions.json
+  s_e788bebb2c41a4::t_8e3c6a1a632257 9645
+  s_e788bebb2c41a4::t_2fe868d3f00ff6 9643,9646
+  s_e788bebb2c41a4::t_b558813b97d754 9490
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "06dc8a5afb184ed79ef5c799b5790a95866e0ab4",
+  "prompts": {},
+  "sessions": {
+    "s_e788bebb2c41a4": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "dc8e9357-de58-4a17-83e5-959a7bdc991a",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "Huy Nguyen <huyntp1103@gmail.com>"
+    }
+  }
+}
