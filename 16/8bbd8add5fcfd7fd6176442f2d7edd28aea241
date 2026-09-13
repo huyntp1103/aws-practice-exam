@@ -1,0 +1,21 @@
+src/pages/Session.tsx
+  s_b7c976f1d3238d::t_6aa9a4df936d96 141-156
+  s_b7c976f1d3238d::t_d370c89880c516 44-51
+  s_b7c976f1d3238d::t_1bb0929e2c80df 239
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "168bbd8add5fcfd7fd6176442f2d7edd28aea241",
+  "prompts": {},
+  "sessions": {
+    "s_b7c976f1d3238d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "fb829c97-e6e3-4ff3-aeac-434001abdbdd",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "Huy Nguyen <huyntp1103@gmail.com>"
+    }
+  }
+}
