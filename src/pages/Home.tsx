@@ -5,7 +5,7 @@ import { Play, RotateCw, Trash2 } from "lucide-react";
 import { EXAMS } from "@/lib/exams";
 import { loadExamBank } from "@/lib/exam-data";
 import { Storage } from "@/lib/storage";
-import { buildSession, hasAnswerKey } from "@/lib/session";
+import { buildSession, hasAnswerKey, matchesTags } from "@/lib/session";
 import type { ExamBank, Mode, UserPrefs } from "@/lib/types";
 
 import { Button } from "@/components/ui/button";
@@ -30,6 +30,7 @@ export function Home() {
   const [rangeStart, setRangeStart] = useState<number | "">("");
   const [rangeEnd, setRangeEnd] = useState<number | "">("");
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const [primaryTagOnly, setPrimaryTagOnly] = useState(true);
   const [timerEnabled, setTimerEnabled] = useState<boolean>(prefs.defaultTimerEnabled);
   const [timerMinutes, setTimerMinutes] = useState<number>(prefs.defaultTimerMinutes);
 
@@ -63,6 +64,7 @@ export function Home() {
     setRangeStart("");
     setRangeEnd("");
     setSelectedTags([]);
+    setPrimaryTagOnly(true);
   }, [bankRange]);
 
   const rangeMatchCount = useMemo(() => {
@@ -84,8 +86,8 @@ export function Home() {
 
   const tagMatchCount = useMemo(() => {
     if (!bank || selectedTags.length === 0) return 0;
-    return bank.questions.filter((q) => q.tags?.some((t) => selectedTags.includes(t))).length;
-  }, [bank, selectedTags]);
+    return bank.questions.filter((q) => matchesTags(q, selectedTags, primaryTagOnly)).length;
+  }, [bank, selectedTags, primaryTagOnly]);
 
   function toggleTag(tag: string) {
     setSelectedTags((prev) =>
@@ -112,6 +114,7 @@ export function Home() {
       rangeStart: hasRange ? Math.min(rangeStart as number, rangeEnd as number) : undefined,
       rangeEnd: hasRange ? Math.max(rangeStart as number, rangeEnd as number) : undefined,
       tags: mode === "tag" ? selectedTags : undefined,
+      primaryTagOnly: mode === "tag" ? primaryTagOnly : undefined,
     });
     Storage.setSession(examCode, session);
     savePrefsPartial({
@@ -226,6 +229,23 @@ export function Home() {
                         {tag}
                       </Badge>
                     ))}
+                  </div>
+                  <div className="flex items-center justify-between gap-2 pt-1">
+                    <div className="space-y-0.5">
+                      <Label htmlFor="primary-only-toggle" className="text-xs font-normal">
+                        Primary tag only
+                      </Label>
+                      <div className="text-xs text-muted-foreground">
+                        {primaryTagOnly
+                          ? "Match only each question's main-knowledge tag"
+                          : "Match a question's main OR secondary tag"}
+                      </div>
+                    </div>
+                    <Switch
+                      id="primary-only-toggle"
+                      checked={primaryTagOnly}
+                      onCheckedChange={setPrimaryTagOnly}
+                    />
                   </div>
                   <div className="text-xs text-muted-foreground">
                     {selectedTags.length === 0
@@ -411,7 +431,7 @@ function PastAttempts({ examCode }: { examCode: string }) {
                     ? `${a.score!.correct}/${a.score!.scoreable} correct (${pct}%)`
                     : "self-review"}
                   {a.timerEnabled && ` · timed ${a.timerMinutes}m`}
-                  {a.tags && a.tags.length > 0 && ` · ${a.tags.join(", ")}`}
+                  {a.tags && a.tags.length > 0 && ` · ${a.tags.join(", ")}${a.primaryTagOnly ? " (primary only)" : ""}`}
                 </div>
               </div>
               <div className="flex gap-1">

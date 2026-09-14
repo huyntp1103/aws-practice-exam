@@ -23,6 +23,15 @@ export function pickRandom<T>(arr: T[], n: number): T[] {
   return a.slice(0, Math.min(n, a.length));
 }
 
+// Tag mode: does q match the selected tags? primaryOnly restricts the check
+// to tags[0] (the required "main knowledge" tag); otherwise any of the
+// question's tags (primary or secondary) counts as a match.
+export function matchesTags(q: RawQuestion, tags: string[], primaryOnly: boolean): boolean {
+  if (tags.length === 0) return false;
+  if (primaryOnly) return !!q.tags?.[0] && tags.includes(q.tags[0]);
+  return !!q.tags?.some((t) => tags.includes(t));
+}
+
 export function buildSession(bank: ExamBank, opts: {
   mode: SessionConfig["mode"];
   count: number;
@@ -31,6 +40,7 @@ export function buildSession(bank: ExamBank, opts: {
   rangeStart?: number; // sequential mode only: inclusive question-number range
   rangeEnd?: number;
   tags?: string[]; // tag mode only: keep questions matching any of these tags
+  primaryTagOnly?: boolean; // tag mode only: match tags[0] only, not tags[1] too
 }): SessionState {
   const allNumbers = bank.questions.map((q) => q.number);
   let questionNumbers: number[];
@@ -39,7 +49,7 @@ export function buildSession(bank: ExamBank, opts: {
   } else if (opts.mode === "tag") {
     const tags = opts.tags ?? [];
     questionNumbers = bank.questions
-      .filter((q) => q.tags?.some((t) => tags.includes(t)))
+      .filter((q) => matchesTags(q, tags, !!opts.primaryTagOnly))
       .map((q) => q.number);
   } else if (opts.rangeStart != null && opts.rangeEnd != null) {
     questionNumbers = bank.questions
@@ -64,6 +74,7 @@ export function buildSession(bank: ExamBank, opts: {
       startedAt,
       questionNumbers,
       tags: opts.mode === "tag" ? opts.tags : undefined,
+      primaryTagOnly: opts.mode === "tag" ? opts.primaryTagOnly : undefined,
     },
     currentIndex: 0,
     answers: {},
@@ -115,6 +126,7 @@ export function makeAttempt(state: SessionState, bank: ExamBank): Attempt {
     timerMinutes: state.config.timerMinutes,
     questionNumbers: state.config.questionNumbers,
     tags: state.config.tags,
+    primaryTagOnly: state.config.primaryTagOnly,
     answers: state.answers,
     flagged: state.flagged,
     score: scoreAttempt(bank, state),

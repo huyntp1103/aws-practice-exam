@@ -35,6 +35,7 @@ export interface SessionConfig {
   startedAt: number;    // unix ms
   questionNumbers: number[]; // ordered question numbers for this session
   tags?: string[];       // tag mode only: tags selected to filter by
+  primaryTagOnly?: boolean; // tag mode only: match against tags[0] only, not tags[1] too
 }
 
 export interface SessionState {
@@ -62,6 +63,7 @@ export interface Attempt {
   timerMinutes: number;
   questionNumbers: number[];
   tags?: string[];
+  primaryTagOnly?: boolean;
   answers: Record<number, string[]>;
   flagged: Record<number, true>;
   score?: { correct: number; scoreable: number; total: number };

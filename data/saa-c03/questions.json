@@ -716,7 +716,7 @@
       "question": "A company is deploying a new public web application to AWS.\nThe application will run behind an Application Load Balancer (ALB).\nThe application needs to be encrypted at the edge with an SSL/TLS certificate that is issued by an external certificate authority (CA).\nThe certificate must be rotated each year before the certificate expires.\n\nWhat should a solutions architect do to meet these requirements?",
       "options": {
         "A": "Use AWS Certificate Manager (ACM) to issue an SSL/TLS certificate. Apply the certificate to the ALB. Use the managed renewal feature to automatically rotate the certificate.",
-        "B": "Use AWS Certificate Manager (ACM) to issue an SSL/TLS certificate. Import the key material from the certificate. Apply the certificate to the ALUse the managed renewal feature to automatically rotate the certificate.",
+        "B": "Use AWS Certificate Manager (ACM) to issue an SSL/TLS certificate. Import the key material from the certificate. Apply the certificate to the ALB. Use the managed renewal feature to automatically rotate the certificate.",
         "C": "Use AWS Certificate Manager (ACM) Private Certificate Authority to issue an SSL/TLS certificate from the root CA. Apply the certificate to the ALB. Use the managed renewal feature to automatically rotate the certificate.",
         "D": "Use AWS Certificate Manager (ACM) to import an SSL/TLS certificate. Apply the certificate to the ALB. Use Amazon EventBridge (Amazon CloudWatch Events) to send a notification when the certificate is nearing expiration. Rotate the certificate manually."
       },
@@ -733,7 +733,7 @@
       "question": "A company runs its infrastructure on AWS and has a registered base of 700,000 users for its document management application.\nThe company intends to create a product that converts large .pdf files to .jpg image files.\nThe .pdf files average 5 MB in size.\nThe company needs to store the original files and the converted files.\nA solutions architect must design a scalable solution to accommodate demand that will grow rapidly over time.\n\nWhich solution meets these requirements MOST cost-effectively?",
       "options": {
         "A": "Save the .pdf files to Amazon S3. Configure an S3 PUT event to invoke an AWS Lambda function to convert the files to .jpg format and store them back in Amazon S3.",
-        "B": "Save the .pdf files to Amazon DynamoDUse the DynamoDB Streams feature to invoke an AWS Lambda function to convert the files to .jpg format and store them back in DynamoDB.",
+        "B": "Save the .pdf files to Amazon DynamoDB. Use the DynamoDB Streams feature to invoke an AWS Lambda function to convert the files to .jpg format and store them back in DynamoDB.",
         "C": "Upload the .pdf files to an AWS Elastic Beanstalk application that includes Amazon EC2 instances, Amazon Elastic Block Store (Amazon EBS) storage, and an Auto Scaling group. Use a program in the EC2 instances to convert the files to .jpg format. Save the .pdf files and the .jpg files in the EBS store.",
         "D": "Upload the .pdf files to an AWS Elastic Beanstalk application that includes Amazon EC2 instances, Amazon Elastic File System (Amazon EFS) storage, and an Auto Scaling group. Use a program in the EC2 instances to convert the file to .jpg format. Save the .pdf files and the .jpg files in the EBS store."
       },
@@ -860,8 +860,7 @@
       ],
       "tags": [
         "security-identity",
-        "networking",
-        "compute"
+        "networking"
       ]
     },
     {
@@ -938,7 +937,7 @@
       "number": 56,
       "accuracy_percent": 91,
       "votes": 15,
-      "question": "A company recently signed a contract with an AWS Managed Service Provider (MSP) Partner for help with an application migration initiative.\nA solutions architect needs ta share an Amazon Machine Image (AMI) from an existing AWS account with the MSP Partner's AWS account.\nThe AMI is backed by Amazon Elastic Block Store (Amazon EBS) and uses an AWS Key Management Service (AWS KMS) customer managed key to encrypt EBS volume snapshots.\n\nWhat is the MOST secure way for the solutions architect to share the AMI with the MSP Partner's AWS account?",
+      "question": "A company recently signed a contract with an AWS Managed Service Provider (MSP) Partner for help with an application migration initiative.\nA solutions architect needs to share an Amazon Machine Image (AMI) from an existing AWS account with the MSP Partner's AWS account.\nThe AMI is backed by Amazon Elastic Block Store (Amazon EBS) and uses an AWS Key Management Service (AWS KMS) customer managed key to encrypt EBS volume snapshots.\n\nWhat is the MOST secure way for the solutions architect to share the AMI with the MSP Partner's AWS account?",
       "options": {
         "A": "Make the encrypted AMI and snapshots publicly available. Modify the key policy to allow the MSP Partner's AWS account to use the key.",
         "B": "Modify the launchPermission property of the AMI. Share the AMI with the MSP Partner's AWS account only. Modify the key policy to allow the MSP Partner's AWS account to use the key.",
@@ -1467,8 +1466,7 @@
       ],
       "tags": [
         "migration-data-transfer",
-        "hybrid-connectivity",
-        "database"
+        "hybrid-connectivity"
       ]
     },
     {
@@ -1892,8 +1890,7 @@
       ],
       "tags": [
         "networking",
-        "security-identity",
-        "messaging-integration"
+        "security-identity"
       ]
     },
     {
@@ -2065,8 +2062,7 @@
       ],
       "tags": [
         "ai-ml",
-        "analytics-big-data",
-        "storage"
+        "analytics-big-data"
       ]
     },
     {
@@ -2120,8 +2116,7 @@
       ],
       "tags": [
         "migration-data-transfer",
-        "database",
-        "compute"
+        "database"
       ]
     },
     {
@@ -2375,8 +2370,7 @@
       ],
       "tags": [
         "database",
-        "compute",
-        "networking"
+        "compute"
       ]
     },
     {
@@ -2414,8 +2408,7 @@
       ],
       "tags": [
         "analytics-big-data",
-        "storage",
-        "compute"
+        "storage"
       ]
     },
     {
@@ -3368,8 +3361,7 @@
       ],
       "tags": [
         "analytics-big-data",
-        "messaging-integration",
-        "compute"
+        "messaging-integration"
       ]
     },
     {
@@ -4189,8 +4181,7 @@
       ],
       "tags": [
         "security-identity",
-        "governance-multi-account",
-        "hybrid-connectivity"
+        "governance-multi-account"
       ]
     },
     {
@@ -6555,8 +6546,7 @@
       ],
       "tags": [
         "database",
-        "compute",
-        "messaging-integration"
+        "compute"
       ]
     },
     {
@@ -7419,8 +7409,7 @@
       ],
       "tags": [
         "storage",
-        "networking",
-        "compute"
+        "networking"
       ]
     },
     {
@@ -8806,8 +8795,7 @@
       ],
       "tags": [
         "compute",
-        "database",
-        "networking"
+        "database"
       ]
     },
     {
@@ -9870,8 +9858,7 @@
       ],
       "tags": [
         "security-identity",
-        "compute",
-        "networking"
+        "compute"
       ]
     },
     {
@@ -10014,8 +10001,7 @@
       ],
       "tags": [
         "storage",
-        "analytics-big-data",
-        "hybrid-connectivity"
+        "analytics-big-data"
       ]
     },
     {
@@ -10104,8 +10090,7 @@
       ],
       "tags": [
         "security-identity",
-        "messaging-integration",
-        "networking"
+        "messaging-integration"
       ]
     },
     {
@@ -10318,8 +10303,7 @@
       ],
       "tags": [
         "compute",
-        "hybrid-connectivity",
-        "database"
+        "hybrid-connectivity"
       ]
     },
     {
@@ -11016,8 +11000,7 @@
       ],
       "tags": [
         "hybrid-connectivity",
-        "migration-data-transfer",
-        "storage"
+        "migration-data-transfer"
       ]
     },
     {

@@ -1088,8 +1088,7 @@
       ],
       "tags": [
         "migration-data-transfer",
-        "hybrid-connectivity",
-        "database"
+        "hybrid-connectivity"
       ]
     },
     {
@@ -1127,8 +1126,7 @@
       ],
       "tags": [
         "migration-data-transfer",
-        "database",
-        "hybrid-connectivity"
+        "database"
       ]
     },
     {
@@ -1487,8 +1485,7 @@
       ],
       "tags": [
         "networking",
-        "compute",
-        "security-identity"
+        "compute"
       ]
     },
     {
@@ -1680,8 +1677,7 @@
       ],
       "tags": [
         "security-identity",
-        "governance-multi-account",
-        "hybrid-connectivity"
+        "governance-multi-account"
       ]
     },
     {
@@ -1962,8 +1958,7 @@
       ],
       "tags": [
         "governance-multi-account",
-        "security-identity",
-        "hybrid-connectivity"
+        "security-identity"
       ]
     },
     {
@@ -3728,8 +3723,7 @@
       ],
       "tags": [
         "database",
-        "networking",
-        "compute"
+        "networking"
       ]
     },
     {
@@ -6748,8 +6742,7 @@
       ],
       "tags": [
         "messaging-integration",
-        "security-identity",
-        "monitoring-management"
+        "security-identity"
       ]
     }
   ]
