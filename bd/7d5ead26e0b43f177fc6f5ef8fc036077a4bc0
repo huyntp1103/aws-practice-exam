@@ -1,0 +1,45 @@
+src/pages/Home.tsx
+  s_e788bebb2c41a4::t_2ab9aea06b83d9 233-249
+  s_e788bebb2c41a4::t_ec39532bc1411e 33
+  s_e788bebb2c41a4::t_71d8ed74ac5ce7 89-90
+  s_e788bebb2c41a4::t_c4a8945ff356b7 117
+  s_e788bebb2c41a4::t_cba9719e4f2e17 67
+  s_e788bebb2c41a4::t_0b2a7c9664ed72 8
+  s_e788bebb2c41a4::t_e0236194e8facb 434
+src/lib/types.ts
+  s_e788bebb2c41a4::t_74cebbbad01fb9 38
+  s_e788bebb2c41a4::t_a9fcd1889c9388 66
+data/saa-c03/questions.json
+  s_e788bebb2c41a4::t_f50a060bfc9837 863,1469,1893,2065,2119,2373,2411,3364,4184,6549,7412,8798,9861,10004,10093,10306,11003
+  s_b7c976f1d3238d::t_9bf791892c03a2 736
+  s_b7c976f1d3238d::t_b32f1508ce4af8 719
+  s_b7c976f1d3238d::t_c34aee6d4085f9 940
+src/lib/session.ts
+  s_e788bebb2c41a4::t_ff41b3b850a64c 129
+  s_e788bebb2c41a4::t_39e28d34a1a72e 77
+  s_e788bebb2c41a4::t_b62a3850194754 26-34,43,52
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "bd7d5ead26e0b43f177fc6f5ef8fc036077a4bc0",
+  "prompts": {},
+  "sessions": {
+    "s_b7c976f1d3238d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "fb829c97-e6e3-4ff3-aeac-434001abdbdd",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "Huy Nguyen <huyntp1103@gmail.com>"
+    },
+    "s_e788bebb2c41a4": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "dc8e9357-de58-4a17-83e5-959a7bdc991a",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "Huy Nguyen <huyntp1103@gmail.com>"
+    }
+  }
+}
