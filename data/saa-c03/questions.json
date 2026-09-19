@@ -160,7 +160,7 @@
       "question": "A company runs an ecommerce application on Amazon EC2 instances behind an Application Load Balancer.\nThe instances run in an Amazon EC2 Auto Scaling group across multiple Availability Zones.\nThe Auto Scaling group scales based on CPU utilization metrics.\nThe ecommerce application stores the transaction data in a MySQL 8.0 database that is hosted on a large EC2 instance.\n\nThe database's performance degrades quickly as application load increases.\nThe application handles more read requests than write transactions.\nThe company wants a solution that will automatically scale the database to meet the demand of unpredictable read workloads while maintaining high availability.\n\nWhich solution will meet these requirements?",
       "options": {
         "A": "Use Amazon Redshift with a single node for leader and compute functionality.",
-        "B": "Use Amazon RDS with a Single-AZ deployment Configure Amazon RDS to add reader instances in a different Availability Zone.",
+        "B": "Use Amazon RDS with a Single-AZ deployment. Configure Amazon RDS to add reader instances in a different Availability Zone.",
         "C": "Use Amazon Aurora with a Multi-AZ deployment. Configure Aurora Auto Scaling with Aurora Replicas.",
         "D": "Use Amazon ElastiCache for Memcached with EC2 Spot Instances."
       },
@@ -1337,7 +1337,7 @@
       "question": "A company has a dynamic web application hosted on two Amazon EC2 instances.\nThe company has its own SSL certificate, which is on each instance to perform SSL termination.\n\nThere has been an increase in traffic recently, and the operations team determined that SSL encryption and decryption is causing the compute capacity of the web servers to reach their maximum limit.\n\nWhat should a solutions architect do to increase the application's performance?",
       "options": {
         "A": "Create a new SSL certificate using AWS Certificate Manager (ACM). Install the ACM certificate on each instance.",
-        "B": "Create an Amazon S3 bucket Migrate the SSL certificate to the S3 bucket. Configure the EC2 instances to reference the bucket for SSL termination.",
+        "B": "Create an Amazon S3 bucket. Migrate the SSL certificate to the S3 bucket. Configure the EC2 instances to reference the bucket for SSL termination.",
         "C": "Create another EC2 instance as a proxy server. Migrate the SSL certificate to the new instance and configure it to direct connections to the existing EC2 instances.",
         "D": "Import the SSL certificate into AWS Certificate Manager (ACM). Create an Application Load Balancer with an HTTPS listener that uses the SSL certificate from ACM."
       },
@@ -1386,11 +1386,11 @@
       "number": 83,
       "accuracy_percent": 100,
       "votes": 14,
-      "question": "An application runs on Amazon EC2 instances across multiple Availability Zonas.\nThe instances run in an Amazon EC2 Auto Scaling group behind an Application Load Balancer.\nThe application performs best when the CPU utilization of the EC2 instances is at or near 40%.\n\nWhat should a solutions architect do to maintain the desired performance across all instances in the group?",
+      "question": "An application runs on Amazon EC2 instances across multiple Availability Zones.\nThe instances run in an Amazon EC2 Auto Scaling group behind an Application Load Balancer.\nThe application performs best when the CPU utilization of the EC2 instances is at or near 40%.\n\nWhat should a solutions architect do to maintain the desired performance across all instances in the group?",
       "options": {
         "A": "Use a simple scaling policy to dynamically scale the Auto Scaling group.",
         "B": "Use a target tracking policy to dynamically scale the Auto Scaling group.",
-        "C": "Use an AWS Lambda function ta update the desired Auto Scaling group capacity.",
+        "C": "Use an AWS Lambda function to update the desired Auto Scaling group capacity.",
         "D": "Use scheduled scaling actions to scale up and scale down the Auto Scaling group."
       },
       "answer": "B",
@@ -1440,7 +1440,7 @@
       "options": {
         "A": "Create a VPC peering connection between the company's VPC and the provider's VPC. Update the route table to connect to the target service.",
         "B": "Ask the provider to create a virtual private gateway in its VPC. Use AWS PrivateLink to connect to the target service.",
-        "C": "Create a NAT gateway in a public subnet of the company’s VPUpdate the route table to connect to the target service.",
+        "C": "Create a NAT gateway in a public subnet of the company’s VPC. Update the route table to connect to the target service.",
         "D": "Ask the provider to create a VPC endpoint for the target service. Use AWS PrivateLink to connect to the target service."
       },
       "answer": "D",
@@ -1526,7 +1526,7 @@
       "number": 91,
       "accuracy_percent": 98,
       "votes": 13,
-      "question": "A company recently started using Amazon Aurora as the data store for its global ecommerce application.\nWhen large reports are run, developers report that the ecommerce application is performing poorly.\nAfter reviewing metrics in Amazon CloudWatch, a solutions architect finds that the ReadIOPS and CPUUtilizalion metrics are spiking when monthly reports run.\n\nWhat is the MOST cost-effective solution?",
+      "question": "A company recently started using Amazon Aurora as the data store for its global ecommerce application.\nWhen large reports are run, developers report that the ecommerce application is performing poorly.\nAfter reviewing metrics in Amazon CloudWatch, a solutions architect finds that the ReadIOPS and CPUUtilization metrics are spiking when monthly reports run.\n\nWhat is the MOST cost-effective solution?",
       "options": {
         "A": "Migrate the monthly reporting to Amazon Redshift.",
         "B": "Migrate the monthly reporting to an Aurora Replica.",
@@ -2003,7 +2003,7 @@
       "options": {
         "A": "Use AWS Transfer Family to configure an SFTP-enabled server with a publicly accessible endpoint. Choose the S3 data lake as the destination.",
         "B": "Use Amazon S3 File Gateway as an SFTP server. Expose the S3 File Gateway endpoint URL to the new partner. Share the S3 File Gateway endpoint with the new partner.",
-        "C": "Launch an Amazon EC2 instance in a private subnet in a VPInstruct the new partner to upload files to the EC2 instance by using a VPN. Run a cron job script, on the EC2 instance to upload files to the S3 data lake.",
+        "C": "Launch an Amazon EC2 instance in a private subnet in a VPC. Instruct the new partner to upload files to the EC2 instance by using a VPN. Run a cron job script, on the EC2 instance to upload files to the S3 data lake.",
         "D": "Launch Amazon EC2 instances in a private subnet in a VPC. Place a Network Load Balancer (NLB) in front of the EC2 instances. Create an SFTP listener port for the NLB. Share the NLB hostname with the new partner. Run a cron job script on the EC2 instances to upload files to the S3 data lake."
       },
       "answer": "A",
@@ -2485,7 +2485,7 @@
         "A": "Use AWS Key Management Service (AWS KMS) certificates on the ALB to encrypt data in transit. Use AWS Certificate Manager (ACM) to encrypt the EBS volumes and Aurora database storage at rest.",
         "B": "Use the AWS root account to log in to the AWS Management Console. Upload the company’s encryption certificates. While in the root account, select the option to turn on encryption for all data at rest and in transit for the account.",
         "C": "Use AWS Key Management Service (AWS KMS) to encrypt the EBS volumes and Aurora database storage at rest. Attach an AWS Certificate Manager (ACM) certificate to the ALB to encrypt data in transit.",
-        "D": "Use BitLocker to encrypt all data at rest. Import the company’s TLS certificate keys to AWS Key Management Service (AWS KMS) Attach the KMS keys to the ALB to encrypt data in transit."
+        "D": "Use BitLocker to encrypt all data at rest. Import the company’s TLS certificate keys to AWS Key Management Service (AWS KMS). Attach the KMS keys to the ALB to encrypt data in transit."
       },
       "answer": "C",
       "tags": [
@@ -2611,7 +2611,7 @@
       "number": 155,
       "accuracy_percent": 96,
       "votes": 9,
-      "question": "A company runs analytics software on Amazon EC2 instances. The software accepts job requests from users to process data that has been uploaded to Amazon S3. Users report that some submitted data is not being processed Amazon CloudWatch reveals that the EC2 instances have a consistent CPU utilization at or near 100%. The company wants to improve system performance and scale the system based on user load.\n\nWhat should a solutions architect do to meet these requirements?",
+      "question": "A company runs analytics software on Amazon EC2 instances. The software accepts job requests from users to process data that has been uploaded to Amazon S3. Users report that some submitted data is not being processed. Amazon CloudWatch reveals that the EC2 instances have a consistent CPU utilization at or near 100%. The company wants to improve system performance and scale the system based on user load.\n\nWhat should a solutions architect do to meet these requirements?",
       "options": {
         "A": "Create a copy of the instance. Place all instances behind an Application Load Balancer.",
         "B": "Create an S3 VPC endpoint for Amazon S3. Update the software to reference the endpoint.",
@@ -2679,7 +2679,7 @@
       "votes": 2,
       "question": "A company needs to give a globally distributed development team secure access to the company's AWS resources in a way that complies with security policies.\n\nThe company currently uses an on-premises Active Directory for internal authentication.\nThe company uses AWS Organizations to manage multiple AWS accounts that support multiple projects.\n\nThe company needs a solution to integrate with the existing infrastructure to provide centralized identity management and access control.\n\nWhich solution will meet these requirements with the LEAST operational overhead?",
       "options": {
-        "A": "Set up AWS Directory Service to create an AWS managed Microsoft Active Directory on AWS. Establish a trust relationship with the on-premises Active Directory. Use IAM rotes that are assigned to Active Directory groups to access AWS resources within the company's AWS accounts.",
+        "A": "Set up AWS Directory Service to create an AWS managed Microsoft Active Directory on AWS. Establish a trust relationship with the on-premises Active Directory. Use IAM roles that are assigned to Active Directory groups to access AWS resources within the company's AWS accounts.",
         "B": "Create an IAM user for each developer. Manually manage permissions for each IAM user based on each user's involvement with each project. Enforce multi-factor authentication (MFA) as an additional layer of security.",
         "C": "Use AD Connector in AWS Directory Service to connect to the on-premises Active Directory. Integrate AD Connector with AWS IAM Identity Center. Configure permissions sets to give each AD group access to specific AWS accounts and resources.",
         "D": "Use Amazon Cognito to deploy an identity federation solution. Integrate the identity federation solution with the on-premises Active Directory. Use Amazon Cognito to provide access tokens for developers to access AWS accounts and resources."
@@ -2795,8 +2795,8 @@
       "options": {
         "A": "Delete the read replica Do not make changes to the primary instance",
         "B": "Resize the read replica to a smaller instance size Do not make changes to the primary instance",
-        "C": "Resize the read replica to a larger instance size Resize the primary instance to a smaller instance size",
-        "D": "Delete the read replica Resize the primary instance to a larger instance"
+        "C": "Resize the read replica to a larger instance size. Resize the primary instance to a smaller instance size",
+        "D": "Delete the read replica. Resize the primary instance to a larger instance"
       },
       "answer": "B",
       "tags": [
@@ -2861,7 +2861,7 @@
       "options": {
         "A": "Configure AWS Direct Connect to connect to the VPC. Configure the VPC route tables to allow and deny traffic between AWS and on premises as required.",
         "B": "Create an IAM policy to allow access to the AWS Management Console only from a defined set of corporate IP addresses. Restrict user access based on job responsibility by using an IAM policy and roles.",
-        "C": "Configure AWS Site-to-Site VPN to connect to the VPConfigure route table entries to direct traffic from on premises to the VPConfigure instance security groups and network ACLs to allow only required traffic from on premises.",
+        "C": "Configure AWS Site-to-Site VPN to connect to the VPC. Configure route table entries to direct traffic from on premises to the VPC. Configure instance security groups and network ACLs to allow only required traffic from on premises.",
         "D": "Configure AWS Transit Gateway to connect to the VPC. Configure route table entries to direct traffic from on premises to the VPC. Configure instance security groups and network ACLs to allow only required traffic from on premises."
       },
       "answer": "C",
@@ -2926,7 +2926,7 @@
       "options": {
         "A": "Create a gateway VPC endpoint for the S3 bucket that has the necessary permissions for the VPC. Configure the subnet route table to use the gateway VPC endpoint.",
         "B": "Move the S3 bucket inside the VPC. Configure the subnet route table to access the S3 bucket through private IP addresses.",
-        "C": "Create an Amazon S3 access point for the Amazon EC2 instance inside the VPConfigure the web application to upload by using the Amazon S3 access point.",
+        "C": "Create an Amazon S3 access point for the Amazon EC2 instance inside the VPC. Configure the web application to upload by using the Amazon S3 access point.",
         "D": "Configure an AWS Direct Connect connection between the VPC that has the Amazon EC2 instance and Amazon S3 to provide a dedicated network path."
       },
       "answer": "A",
@@ -3114,7 +3114,7 @@
       "options": {
         "A": "Create a DX connection in each new account. Route the network traffic to the on-premises servers.",
         "B": "Configure VPC endpoints in the DX VPC for all required services. Route the network traffic to the on-premises servers.",
-        "C": "Create a VPN connection between each new account and the DX VPRoute the network traffic to the on-premises servers.",
+        "C": "Create a VPN connection between each new account and the DX VPC. Route the network traffic to the on-premises servers.",
         "D": "Configure AWS Transit Gateway between the accounts. Assign DX to the transit gateway and route network traffic to the on-premises servers."
       },
       "answer": "D",
@@ -3279,7 +3279,7 @@
       "votes": 2,
       "question": "A company is using an Amazon Elastic Kubernetes Service (Amazon EKS) cluster.\nThe company must ensure that Kubernetes service accounts in the EKS cluster have secure and granular access to specific AWS resources by using IAM roles for service accounts (IRSA).\n\nWhich combination of solutions will meet these requirements? (Choose two.)",
       "options": {
-        "A": "Create an IAM policy that defines the required permissions Attach the policy directly to the IAM role of the EKS nodes.",
+        "A": "Create an IAM policy that defines the required permissions. Attach the policy directly to the IAM role of the EKS nodes.",
         "B": "Implement network policies within the EKS cluster to prevent Kubernetes service accounts from accessing specific AWS services.",
         "C": "Modify the EKS cluster's IAM role to include permissions for each Kubernetes service account. Ensure a one-to-one mapping between IAM roles and Kubernetes roles.",
         "D": "Define an IAM role that includes the necessary permissions. Annotate the Kubernetes service accounts with the Amazon ResourceName (ARN) of the IAM role.",
@@ -3569,7 +3569,7 @@
       "options": {
         "A": "Deploy the web application on Amazon EC2 instances in public subnets behind a public Application Load Balancer (ALB). Attach an internet gateway to the VPC. Set the inbound source of the ALB's security group to 0.0.0.0/0.",
         "B": "Deploy the web application on Amazon EC2 instances in private subnets behind an internal Application Load Balancer (ALB). Deploy NAT gateways in public subnets. Attach an internet gateway to the VPC. Set the inbound source of the ALB's security group to the company's office network CIDR block.",
-        "C": "Deploy the web application on Amazon EC2 instances in public subnets behind an internal Application Load Balancer (ALB). Deploy NAT gateways in private subnets. Attach an internet gateway to the VPSet the outbound destination of the ALB’s security group to the company's office network CIDR block.",
+        "C": "Deploy the web application on Amazon EC2 instances in public subnets behind an internal Application Load Balancer (ALB). Deploy NAT gateways in private subnets. Attach an internet gateway to the VPC. Set the outbound destination of the ALB’s security group to the company's office network CIDR block.",
         "D": "Deploy the web application on Amazon EC2 instances in private subnets behind a public Application Load Balancer (ALB). Attach an internet gateway to the VPC. Set the outbound destination of the ALB’s security group to 0.0.0.0/0."
       },
       "answer": "B",
@@ -3654,7 +3654,7 @@
       "options": {
         "A": "Create a transit gateway, and associate the Direct Connect connection with a new transit VIF. Turn on the transit gateway's route propagation feature.",
         "B": "Create a Direct Connect gateway. Recreate the private VIFs to use the new gateway. Associate each VPC by creating new virtual private gateways.",
-        "C": "Create a transit VPConnect the Direct Connect connection to the transit VPCreate a peering connection between all other VPCs in the Region. Update the route tables.",
+        "C": "Create a transit VPC. Connect the Direct Connect connection to the transit VPC. Create a peering connection between all other VPCs in the Region. Update the route tables.",
         "D": "Create AWS Site-to-Site VPN connections from on premises to each VPC. Ensure that both VPN tunnels are UP for each connection. Turn on the route propagation feature."
       },
       "answer": "A",
@@ -4290,7 +4290,7 @@
       "votes": 8,
       "question": "A company is storing 700 terabytes of data on a large network-attached storage (NAS) system in its corporate data center.\nThe company has a hybrid environment with a 10 Gbps AWS Direct Connect connection.\n\nAfter an audit from a regulator, the company has 90 days to move the data to the cloud.\nThe company needs to move the data efficiently and without disruption.\nThe company still needs to be able to access and update the data during the transfer window.\n\nWhich solution will meet these requirements?",
       "options": {
-        "A": "Create an AWS DataSync agent in the corporate data center. Create a data transfer task Start the transfer to an Amazon S3 bucket.",
+        "A": "Create an AWS DataSync agent in the corporate data center. Create a data transfer task. Start the transfer to an Amazon S3 bucket.",
         "B": "Back up the data to AWS Snowball Edge Storage Optimized devices. Ship the devices to an AWS data center. Mount a target Amazon S3 bucket on the on-premises file system.",
         "C": "Use rsync to copy the data directly from local storage to a designated Amazon S3 bucket over the Direct Connect connection.",
         "D": "Back up the data on tapes. Ship the tapes to an AWS data center. Mount a target Amazon S3 bucket on the on-premises file system."
@@ -4660,7 +4660,7 @@
       "question": "A company is building an application in the AWS Cloud.\nThe application is hosted on Amazon EC2 instances behind an Application Load Balancer (ALB).\nThe company uses Amazon Route 53 for the DNS.\n\nThe company needs a managed solution with proactive engagement to detect against DDoS attacks.\n\nWhich solution will meet these requirements?",
       "options": {
         "A": "Enable AWS Config. Configure an AWS Config managed rule that detects DDoS attacks.",
-        "B": "Enable AWS WAF on the ALCreate an AWS WAF web ACL with rules to detect and prevent DDoS attacks. Associate the web ACL with the ALB.",
+        "B": "Enable AWS WAF on the ALB. Create an AWS WAF web ACL with rules to detect and prevent DDoS attacks. Associate the web ACL with the ALB.",
         "C": "Store the ALB access logs in an Amazon S3 bucket. Configure Amazon GuardDuty to detect and take automated preventative actions for DDoS attacks.",
         "D": "Subscribe to AWS Shield Advanced. Configure hosted zones in Route 53. Add ALB resources as protected resources."
       },
@@ -4855,12 +4855,12 @@
       "number": 289,
       "accuracy_percent": 100,
       "votes": 2,
-      "question": "A company runs a Node js function on a server in its on-premises data center.\nThe data center stores data in a PostgreSQL database.\nThe company stores the credentials in a connection string in an environment variable on the server.\nThe company wants to migrate its application to AWS and to replace the Node.js application server with AWS Lambda.\nThe company also wants to migrate to Amazon RDS for PostgreSQL and to ensure that the database credentials are securely managed.\n\nWhich solution will meet these requirements with the LEAST operational overhead?",
+      "question": "A company runs a Node.js function on a server in its on-premises data center.\nThe data center stores data in a PostgreSQL database.\nThe company stores the credentials in a connection string in an environment variable on the server.\nThe company wants to migrate its application to AWS and to replace the Node.js application server with AWS Lambda.\nThe company also wants to migrate to Amazon RDS for PostgreSQL and to ensure that the database credentials are securely managed.\n\nWhich solution will meet these requirements with the LEAST operational overhead?",
       "options": {
-        "A": "Store the database credentials as a parameter in AWS Systems Manager Parameter Store Configure Parameter Store to automatically rotate the secrets every 30 days. Update the Lambda function to retrieve the credentials from the parameter.",
+        "A": "Store the database credentials as a parameter in AWS Systems Manager Parameter Store. Configure Parameter Store to automatically rotate the secrets every 30 days. Update the Lambda function to retrieve the credentials from the parameter.",
         "B": "Store the database credentials as a secret in AWS Secrets Manager. Configure Secrets Manager to automatically rotate the credentials every 30 days. Update the Lambda function to retrieve the credentials from the secret.",
         "C": "Store the database credentials as an encrypted Lambda environment variable. Write a custom Lambda function to rotate the credentials. Schedule the Lambda function to run every 30 days.",
-        "D": "Store the database credentials as a key in AWS Key Management Service (AWS KMS). Configure automatic rotation for the key. Update the Lambda function to retneve the credentials from the KMS key."
+        "D": "Store the database credentials as a key in AWS Key Management Service (AWS KMS). Configure automatic rotation for the key. Update the Lambda function to retrieve the credentials from the KMS key."
       },
       "answer": "B",
       "tags": [
@@ -4892,7 +4892,7 @@
       "question": "A company needs to design a resilient web application to process customer orders.\nThe web application must automatically handle increases in web traffic and application usage without affecting the customer experience or losing customer orders.\n\nWhich solution will meet these requirements?",
       "options": {
         "A": "Use a NAT gateway to manage web traffic. Use Amazon EC2 Auto Scaling groups to receive, process, and store processed customer orders. Use an AWS Lambda function to capture and store unprocessed orders.",
-        "B": "Use a Network Load Balancer (NLB) to manage web traffic. Use an Application Load Balancer to receive customer orders from the NLUse Amazon Redshift with a Multi-AZ deployment to store unprocessed and processed customer orders.",
+        "B": "Use a Network Load Balancer (NLB) to manage web traffic. Use an Application Load Balancer to receive customer orders from the NLB. Use Amazon Redshift with a Multi-AZ deployment to store unprocessed and processed customer orders.",
         "C": "Use a Gateway Load Balancer (GWLB) to manage web traffic. Use Amazon Elastic Container Service (Amazon ECS) to receive and process customer orders. Use the GWLB to capture and store unprocessed orders. Use Amazon DynamoDB to store processed customer orders.",
         "D": "Use an Application Load Balancer to manage web traffic. Use Amazon EC2 Auto Scaling groups to receive and process customer orders. Use Amazon Simple Queue Service (Amazon SQS) to store unprocessed orders. Use Amazon RDS with a Multi-AZ deployment to store processed customer orders."
       },
@@ -4925,7 +4925,7 @@
       "votes": 4,
       "question": "A company hosts its multi-tier, public web application in the AWS Cloud.\nThe web application runs on Amazon EC2 instances, and its database runs on Amazon RDS.\nThe company is anticipating a large increase in sales during an upcoming holiday weekend.\nA solutions architect needs to build a solution to analyze the performance of the web application with a granularity of no more than 2 minutes.\n\nWhat should the solutions architect do to meet this requirement?",
       "options": {
-        "A": "Send Amazon CloudWatch logs to Amazon Redshift. Use Amazon QuickS ght to perform further analysis.",
+        "A": "Send Amazon CloudWatch logs to Amazon Redshift. Use Amazon QuickSight to perform further analysis.",
         "B": "Enable detailed monitoring on all EC2 instances. Use Amazon CloudWatch metrics to perform further analysis.",
         "C": "Create an AWS Lambda function to fetch EC2 logs from Amazon CloudWatch Logs. Use Amazon CloudWatch metrics to perform further analysis.",
         "D": "Send EC2 logs to Amazon S3. Use Amazon Redshift to fetch logs from the S3 bucket to process raw data for further analysis with Amazon QuickSight."
@@ -6503,7 +6503,7 @@
         "A": "Store the logs in Amazon S3. Use Amazon Athena tor analysis.",
         "B": "Store the logs in Amazon RDS. Use a database client for analysis.",
         "C": "Store the logs in Amazon OpenSearch Service. Use OpenSearch Service for analysis.",
-        "D": "Store the logs in an Amazon EMR cluster Use a supported open-source framework for SQL-based analysis."
+        "D": "Store the logs in an Amazon EMR cluster. Use a supported open-source framework for SQL-based analysis."
       },
       "answer": "A",
       "tags": [
@@ -6591,7 +6591,7 @@
       "options": {
         "A": "Order an AWS Snowball Edge device. Configure the Snowball Edge device to perform the online data transfer to an S3 bucket",
         "B": "Deploy an AWS DataSync agent on premises. Configure the DataSync agent to perform the online data transfer to an S3 bucket.",
-        "C": "Create an Amazon S3 File Gateway on premises Configure the S3 File Gateway to perform the online data transfer to an S3 bucket",
+        "C": "Create an Amazon S3 File Gateway on premises. Configure the S3 File Gateway to perform the online data transfer to an S3 bucket",
         "D": "Configure an accelerator in Amazon S3 Transfer Acceleration on premises. Configure the accelerator to perform the online data transfer to an S3 bucket."
       },
       "answer": "B",
@@ -7349,7 +7349,7 @@
       "options": {
         "A": "Create a gateway VPC endpoint for Amazon S3. Create a route in the VPC route table to the endpoint.",
         "B": "Create an internal Network Load Balancer that has the S3 bucket as the target.",
-        "C": "Deploy the S3 bucket inside the VPCreate a route in the VPC route table to the bucket.",
+        "C": "Deploy the S3 bucket inside the VPC. Create a route in the VPC route table to the bucket.",
         "D": "Create an AWS Direct Connect connection between the VPC and an S3 regional endpoint."
       },
       "answer": "A",
@@ -7976,7 +7976,7 @@
         "A": "Delete one EC2 instance and enable termination protection on the other EC2 instance. Update the DB instance to be Multi-AZ, and enable deletion protection.",
         "B": "Update the DB instance to be Multi-AZ, and enable deletion protection. Place the EC2 instances behind an Application Load Balancer, and run them in an EC2 Auto Scaling group across multiple Availability Zones.",
         "C": "Create an additional DB instance along with an Amazon API Gateway and an AWS Lambda function. Configure the application to invoke the Lambda function through API Gateway. Have the Lambda function write the data to the two DB instances.",
-        "D": "Place the EC2 instances in an EC2 Auto Scaling group that has multiple subnets located in multiple Availability Zones. Use Spot Instances instead of On-Demand Instances. Set up Amazon CloudWatch alarms to monitor the health of the instances Update the DB instance to be Multi-AZ, and enable deletion protection."
+        "D": "Place the EC2 instances in an EC2 Auto Scaling group that has multiple subnets located in multiple Availability Zones. Use Spot Instances instead of On-Demand Instances. Set up Amazon CloudWatch alarms to monitor the health of the instances. Update the DB instance to be Multi-AZ, and enable deletion protection."
       },
       "answer": "B",
       "tags": [
@@ -8006,7 +8006,7 @@
       "question": "A company runs an application that receives data from thousands of geographically dispersed remote devices that use UDP.\nThe application processes the data immediately and sends a message back to the device if necessary.\nNo data is stored.\n\nThe company needs a solution that minimizes latency for the data transmission from the devices.\nThe solution also must provide rapid failover to another AWS Region.\n\nWhich solution will meet these requirements?",
       "options": {
         "A": "Configure an Amazon Route 53 failover routing policy. Create a Network Load Balancer (NLB) in each of the two Regions. Configure the NLB to invoke an AWS Lambda function to process the data.",
-        "B": "Use AWS Global Accelerator. Create a Network Load Balancer (NLB) in each of the two Regions as an endpoint. Create an Amazon Elastic Container Service (Amazon ECS) cluster with the Fargate launch type. Create an ECS service on the cluster. Set the ECS service as the target for the NLProcess the data in Amazon ECS.",
+        "B": "Use AWS Global Accelerator. Create a Network Load Balancer (NLB) in each of the two Regions as an endpoint. Create an Amazon Elastic Container Service (Amazon ECS) cluster with the Fargate launch type. Create an ECS service on the cluster. Set the ECS service as the target for the NLB. Process the data in Amazon ECS.",
         "C": "Use AWS Global Accelerator. Create an Application Load Balancer (ALB) in each of the two Regions as an endpoint. Create an Amazon Elastic Container Service (Amazon ECS) cluster with the Fargate launch type. Create an ECS service on the cluster. Set the ECS service as the target for the ALB. Process the data in Amazon ECS.",
         "D": "Configure an Amazon Route 53 failover routing policy. Create an Application Load Balancer (ALB) in each of the two Regions. Create an Amazon Elastic Container Service (Amazon ECS) cluster with the Fargate launch type. Create an ECS service on the cluster. Set the ECS service as the target for the ALB. Process the data in Amazon ECS."
       },
@@ -8091,7 +8091,7 @@
       "number": 480,
       "accuracy_percent": 100,
       "votes": 5,
-      "question": "A company hosts a three-tier web application in the AWS Cloud.\nA Multi-AZAmazon RDS for MySQL server forms the database layer Amazon ElastiCache forms the cache layer.\nThe company wants a caching strategy that adds or updates data in the cache when a customer adds an item to the database.\nThe data in the cache must always match the data in the database.\n\nWhich solution will meet these requirements?",
+      "question": "A company hosts a three-tier web application in the AWS Cloud.\nA Multi-AZ Amazon RDS for MySQL server forms the database layer. Amazon ElastiCache forms the cache layer.\nThe company wants a caching strategy that adds or updates data in the cache when a customer adds an item to the database.\nThe data in the cache must always match the data in the database.\n\nWhich solution will meet these requirements?",
       "options": {
         "A": "Implement the lazy loading caching strategy",
         "B": "Implement the write-through caching strategy",
@@ -8298,7 +8298,7 @@
       "options": {
         "A": "Create a bastion host in the same subnet as the EC2 instances. Grant the ec2:CreateVpnConnection IAM permission to the developers. Install EC2 Instance Connect so that the developers can connect to the EC2 instances.",
         "B": "Create an AWS Site-to-Site VPN connection between the corporate network and the VPC. Instruct the developers to use the Site-to-Site VPN connection to access the EC2 instances when the developers are on the corporate network. Instruct the developers to set up another VPN connection for access when they work remotely.",
-        "C": "Create a bastion host in the public subnet of the VPConfigure the security groups and SSH keys of the bastion host to only allow connections and SSH authentication from the developers’ corporate and remote networks. Instruct the developers to connect through the bastion host by using SSH to reach the EC2 instances.",
+        "C": "Create a bastion host in the public subnet of the VPC. Configure the security groups and SSH keys of the bastion host to only allow connections and SSH authentication from the developers’ corporate and remote networks. Instruct the developers to connect through the bastion host by using SSH to reach the EC2 instances.",
         "D": "Attach the AmazonSSMManagedInstanceCore IAM policy to an IAM role that is associated with the EC2 instances. Instruct the developers to use AWS Systems Manager Session Manager to access the EC2 instances."
       },
       "answer": "D",
@@ -8462,7 +8462,7 @@
       "question": "A company is conducting an internal audit.\nThe company wants to ensure that the data in an Amazon S3 bucket that is associated with the company’s AWS Lake Formation data lake does not contain sensitive customer or employee data.\nThe company wants to discover personally identifiable information (PII) or financial information, including passport numbers and credit card numbers.\n\nWhich solution will meet these requirements?",
       "options": {
         "A": "Configure AWS Audit Manager on the account. Select the Payment Card Industry Data Security Standards (PCI DSS) for auditing.",
-        "B": "Configure Amazon S3 Inventory on the S3 bucket Configure Amazon Athena to query the inventory.",
+        "B": "Configure Amazon S3 Inventory on the S3 bucket. Configure Amazon Athena to query the inventory.",
         "C": "Configure Amazon Macie to run a data discovery job that uses managed identifiers for the required data types.",
         "D": "Use Amazon S3 Select to run a report across the S3 bucket."
       },
@@ -8975,7 +8975,7 @@
         "A": "Create an Amazon CloudWatch alarm that enters the ALARM state when the CPUUtilization metric is less than 20%. Create an AWS Lambda function that the CloudWatch alarm invokes to terminate one of the EC2 instances in the ALB target group.",
         "B": "Create an EC2 Auto Scaling group. Select the existing ALB as the load balancer and the existing target group as the target group. Set a target tracking scaling policy that is based on the ASGAverageCPUUtilization metric. Set the minimum instances to 2, the desired capacity to 3, the maximum instances to 6, and the target value to 50%. Add the EC2 instances to the Auto Scaling group.",
         "C": "Create an EC2 Auto Scaling group. Select the existing ALB as the load balancer and the existing target group as the target group. Set the minimum instances to 2, the desired capacity to 3, and the maximum instances to 6. Add the EC2 instances to the Auto Scaling group.",
-        "D": "Create two Amazon CloudWatch alarms. Configure the first CloudWatch alarm to enter the ALARM state when the average CPUUtilization metric is below 20%. Configure the second CloudWatch alarm to enter the ALARM state when the average CPUUtilization matric is above 50%. Configure the alarms to publish to an Amazon Simple Notification Service (Amazon SNS) topic to send an email message. After receiving the message, log in to decrease or increase the number of EC2 instances that are running."
+        "D": "Create two Amazon CloudWatch alarms. Configure the first CloudWatch alarm to enter the ALARM state when the average CPUUtilization metric is below 20%. Configure the second CloudWatch alarm to enter the ALARM state when the average CPUUtilization metric is above 50%. Configure the alarms to publish to an Amazon Simple Notification Service (Amazon SNS) topic to send an email message. After receiving the message, log in to decrease or increase the number of EC2 instances that are running."
       },
       "answer": "B",
       "tags": [
@@ -9298,8 +9298,8 @@
       "question": "A company wants to monitor its AWS costs for financial review.\nThe cloud operations team is designing an architecture in the AWS Organizations management account to query AWS Cost and Usage Reports for all member accounts.\nThe team must run this query once a month and provide a detailed analysis of the bill.\n\nWhich solution is the MOST scalable and cost-effective way to meet these requirements?",
       "options": {
         "A": "Enable Cost and Usage Reports in the management account. Deliver reports to Amazon Kinesis. Use Amazon EMR for analysis.",
-        "B": "Enable Cost and Usage Reports in the management account. Deliver the reports to Amazon S3 Use Amazon Athena for analysis.",
-        "C": "Enable Cost and Usage Reports for member accounts. Deliver the reports to Amazon S3 Use Amazon Redshift for analysis.",
+        "B": "Enable Cost and Usage Reports in the management account. Deliver the reports to Amazon S3. Use Amazon Athena for analysis.",
+        "C": "Enable Cost and Usage Reports for member accounts. Deliver the reports to Amazon S3. Use Amazon Redshift for analysis.",
         "D": "Enable Cost and Usage Reports for member accounts. Deliver the reports to Amazon Kinesis. Use Amazon QuickSight tor analysis."
       },
       "answer": "B",
@@ -11175,8 +11175,8 @@
       "question": "A solutions architect configured a VPC that has a small range of IP addresses.\nThe number of Amazon EC2 instances that are in the VPC is increasing, and there is an insufficient number of IP addresses for future workloads.\n\nWhich solution resolves this issue with the LEAST operational overhead?",
       "options": {
         "A": "Add an additional IPv4 CIDR block to increase the number of IP addresses and create additional subnets in the VPC. Create new resources in the new subnets by using the new CIDR.",
-        "B": "Create a second VPC with additional subnets. Use a peering connection to connect the second VPC with the first VPC Update the routes and create new resources in the subnets of the second VPC.",
-        "C": "Use AWS Transit Gateway to add a transit gateway and connect a second VPC with the first VPUpdate the routes of the transit gateway and VPCs. Create new resources in the subnets of the second VPC.",
+        "B": "Create a second VPC with additional subnets. Use a peering connection to connect the second VPC with the first VPC. Update the routes and create new resources in the subnets of the second VPC.",
+        "C": "Use AWS Transit Gateway to add a transit gateway and connect a second VPC with the first VPC. Update the routes of the transit gateway and VPCs. Create new resources in the subnets of the second VPC.",
         "D": "Create a second VPC. Create a Site-to-Site VPN connection between the first VPC and the second VPC by using a VPN-hosted solution on Amazon EC2 and a virtual private gateway. Update the route between VPCs to the traffic through the VPN. Create new resources in the subnets of the second VPC."
       },
       "answer": "A",
@@ -11192,7 +11192,7 @@
       "options": {
         "A": "Deploy a NAT instance in the VPC. Route all the internet-based traffic through the NAT instance.",
         "B": "Deploy a NAT gateway in the public subnets. Modify the private subnet route table to direct all internet-bound traffic to the NAT gateway.",
-        "C": "Configure an internet gateway and attach it to the VPModify the private subnet route table to direct internet-bound traffic to the internet gateway.",
+        "C": "Configure an internet gateway and attach it to the VPC. Modify the private subnet route table to direct internet-bound traffic to the internet gateway.",
         "D": "Configure a virtual private gateway and attach it to the VPC. Modify the private subnet route table to direct internet-bound traffic to the virtual private gateway."
       },
       "answer": "B",
@@ -11240,8 +11240,8 @@
       "question": "A company is migrating its workloads to AWS.\nThe company has transactional and sensitive data in its databases.\nThe company wants to use AWS Cloud solutions to increase security and reduce operational overhead for the databases.\n\nWhich solution will meet these requirements?",
       "options": {
         "A": "Migrate the databases to Amazon EC2. Use an AWS Key Management Service (AWS KMS) AWS managed key for encryption.",
-        "B": "Migrate the databases to Amazon RDS Configure encryption at rest.",
-        "C": "Migrate the data to Amazon S3 Use Amazon Macie for data security and protection",
+        "B": "Migrate the databases to Amazon RDS. Configure encryption at rest.",
+        "C": "Migrate the data to Amazon S3. Use Amazon Macie for data security and protection",
         "D": "Migrate the database to Amazon RDS. Use Amazon CloudWatch Logs for data security and protection."
       },
       "answer": "B",
