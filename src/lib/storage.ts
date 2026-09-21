@@ -73,6 +73,25 @@ export const Storage = {
     const list = Storage.getAttempts(examCode).filter((a) => a.id !== id);
     write(K.attempts(examCode), list);
   },
+  /** Merge imported attempts in, skipping ids already present. Same 30-cap as addAttempt. */
+  addAttempts(examCode: string, attempts: Attempt[]): { added: number; skipped: number } {
+    const list = Storage.getAttempts(examCode);
+    const existingIds = new Set(list.map((a) => a.id));
+    let added = 0;
+    let skipped = 0;
+    for (const a of attempts) {
+      if (existingIds.has(a.id)) {
+        skipped++;
+        continue;
+      }
+      existingIds.add(a.id);
+      list.push(a);
+      added++;
+    }
+    list.sort((a, b) => b.finishedAt - a.finishedAt);
+    write(K.attempts(examCode), list.slice(0, 30));
+    return { added, skipped };
+  },
 
   getFlags(examCode: string): Record<number, true> {
     return read<Record<number, true>>(K.flags(examCode), {});

@@ -102,3 +102,10 @@ export interface ExplanationsFile {
   // map of question number (string key) -> explanation
   items: Record<string, Explanation>;
 }
+
+// Shape of a practice-history export downloaded from History.tsx and
+// re-imported on another device. Each attempt carries its own examCode.
+export interface HistoryExportFile {
+  exported_at: string; // ISO timestamp
+  attempts: Attempt[];
+}
