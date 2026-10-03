@@ -2313,7 +2313,7 @@
         "C": "Modify the CloudFormation templates. Replace the EC2 instances with R5 EC2 instances. Use Amazon CloudWatch built-in EC2 memory metrics to track the application performance for future capacity planning.",
         "D": "Modify the CloudFormation templates. Replace the EC2 instances with R5 EC2 instances. Deploy the Amazon CloudWatch agent on the EC2 instances to generate custom application latency metrics for future capacity planning."
       },
-      "answer": "C",
+      "answer": "D",
       "tags": [
         "compute"
       ]
@@ -3151,7 +3151,7 @@
         "C": "Use the Amazon Aurora Clone feature for Oracle to create a point-in-time restore. Delete clones that are older than 90 days.",
         "D": "Create a backup plan that has a retention period of 90 days by using AWS Backup for Amazon RDS."
       },
-      "answer": "A",
+      "answer": "D",
       "tags": [
         "database",
         "hybrid-connectivity"
@@ -3690,7 +3690,7 @@
         "C": "Deploy an Application Load Balancer (ALB) that uses private subnets. Configure an ALB security group inbound rule to allow inbound traffic from the VPC CIDR block for HTTPS protocol.",
         "D": "Deploy a Network Load Balancer (NLB) that uses private subnets. Configure an NLB listener for HTTPS communication over the internet."
       },
-      "answer": "B",
+      "answer": "A",
       "tags": [
         "networking"
       ]
@@ -3706,7 +3706,7 @@
         "C": "Create a Route 53 private hosted zone. Associate the private hosted zone with the VPC.",
         "D": "Create a Route 53 public hosted zone. Create a record for each service to allow service communication"
       },
-      "answer": "C",
+      "answer": "A",
       "tags": [
         "networking",
         "hybrid-connectivity"
@@ -4545,7 +4545,7 @@
         "C": "Configure a transient cluster that runs the primary node on an On-Demand Instance and the core nodes and task nodes on Spot Instances.",
         "D": "Configure a long-running cluster that runs the primary node on an On-Demand Instance, the core nodes on Spot Instances, and the task nodes on Spot Instances."
       },
-      "answer": "A",
+      "answer": "B",
       "tags": [
         "analytics-big-data"
       ]
@@ -5319,7 +5319,7 @@
         "C": "Create a Systems Manager document to upload all server logs to a central S3 bucket. Use Amazon EventBridge to run the Systems Manager document against all servers that are in the account daily.",
         "D": "Install an Amazon CloudWatch agent. Push all logs to a CloudWatch log group. Create a CloudWatch logs subscription that pushes any incoming log events to an Amazon Kinesis Data Firehose delivery stream. Set Amazon S3 as the destination."
       },
-      "answer": "D",
+      "answer": "A",
       "tags": [
         "monitoring-management",
         "storage"
@@ -5635,7 +5635,7 @@
         "C": "Deploy an AWS Storage Gateway volume gateway with cached volumes with an Amazon S3 bucket as the target storage. Migrate the data to the Storage Gateway appliance.",
         "D": "Configure an AWS Site-to-Site VPN connection from the on-premises environment to AWS. Migrate data to an Amazon Elastic File System (Amazon EFS) file system."
       },
-      "answer": "B",
+      "answer": "C",
       "tags": [
         "storage",
         "hybrid-connectivity"
@@ -5668,7 +5668,7 @@
         "C": "Create an AWS managed prefix list. Use an AWS Security Hub policy to enforce the security group update across the organization. Use an AWS Lambda function to update the prefix list automatically when the CIDR ranges change.",
         "D": "Create security groups in a central administrative AWS account. Create an AWS Firewall Manager common security group policy for the whole organization. Select the previously created security groups as primary groups in the policy."
       },
-      "answer": "D",
+      "answer": "B",
       "tags": [
         "security-identity",
         "networking"
@@ -6086,7 +6086,7 @@
         "C": "Create credentials on the RDS for MySQL database for the application user and store the credentials in AWS Secrets Manager. Configure the application to load the database credentials from Secrets Manager. Set up a credentials rotation schedule for the application user in the RDS for MySQL database using Secrets Manager.",
         "D": "Create credentials on the RDS for MySQL database for the application user and store the credentials in AWS Systems Manager Parameter Store. Configure the application to load the database credentials from Parameter Store. Set up a credentials rotation schedule for the application user in the RDS for MySQL database using Parameter Store."
       },
-      "answer": "B",
+      "answer": "C",
       "tags": [
         "security-identity",
         "database"
@@ -6219,8 +6219,8 @@
         "E": "Recreate the AWS KMS key. Add a key policy to allow the Organizations root Amazon Resource Name (ARN) to use the AWS KMS key."
       },
       "answer": [
-        "C",
-        "D"
+        "A",
+        "C"
       ],
       "tags": [
         "security-identity",
@@ -6611,7 +6611,7 @@
         "C": "Create an FSx for Windows File Server file system in us-east-1 that has a Multi-AZ deployment type. Use AWS Backup to create a daily backup plan that includes a backup rule that copies the backup to us-west-2. Configure AWS Backup Vault Lock in compliance mode for a target vault in us-west-2. Configure a minimum duration of 5 years.",
         "D": "Create an FSx for Windows File Server file system in us-east-1 that has a Single-AZ 2 deployment type. Use AWS Backup to create a daily backup plan that includes a backup rule that copies the backup to us-west-2. Configure AWS Backup Vault Lock in governance mode for a target vault in us-west-2. Configure a minimum duration of 5 years."
       },
-      "answer": "B",
+      "answer": "C",
       "tags": [
         "monitoring-management",
         "storage"
@@ -7001,7 +7001,7 @@
         "C": "Create an Amazon Simple Queue Service (Amazon SQS) queue. Integrate the queue with an Amazon EventBridge rule to receive payment notifications from mobile devices. Configure the rule to validate payment notifications and send the notifications to the backend application. Deploy the backend application on Amazon EC2 Spot Instances. Configure a Spot Fleet with a default allocation strategy.",
         "D": "Create an Amazon API Gateway API. Integrate the API with AWS Lambda to receive payment notifications from mobile devices. Invoke a Lambda function to validate payment notifications and send the notifications to the backend application. Deploy the backend application on Amazon Elastic Container Service (Amazon ECS). Configure Amazon ECS with an AWS Fargate launch type."
       },
-      "answer": "C",
+      "answer": "D",
       "tags": [
         "messaging-integration"
       ]
@@ -8197,7 +8197,7 @@
         "C": "Launch EC2 instances in a secondary AWS Region. Keep the EC2 instances in the secondary Region active at all times.",
         "D": "Launch EC2 instances in a secondary Availability Zone. Keep the EC2 instances in the secondary Availability Zone active at all times."
       },
-      "answer": "A",
+      "answer": "B",
       "tags": [
         "compute"
       ]
@@ -9335,7 +9335,7 @@
         "C": "Switch to Amazon DynamoDB with DynamoDB Accelerator (DAX) for read connections.",
         "D": "Switch to Amazon Redshift with relocation capability."
       },
-      "answer": "A",
+      "answer": "B",
       "tags": [
         "database"
       ]
