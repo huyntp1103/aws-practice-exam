@@ -5,6 +5,8 @@ import {
   ChevronLeft,
   ChevronRight,
   Flag,
+  Eye,
+  EyeOff,
   Highlighter,
   Home as HomeIcon,
   Pause,
@@ -14,7 +16,7 @@ import {
 
 import { loadExamBank, loadUncertain } from "@/lib/exam-data";
 import { Storage } from "@/lib/storage";
-import { hasAnswerKey, isMulti, makeAttempt } from "@/lib/session";
+import { hasAnswerKey, isMulti, makeAttempt, normalizeAnswer } from "@/lib/session";
 import { examByCode } from "@/lib/exams";
 import { toUncertainMap, type UncertainMap } from "@/lib/uncertain";
 import { cn } from "@/lib/utils";
@@ -41,6 +43,8 @@ export function Session() {
   const [state, setState] = useState<SessionState | null>(null);
   const [err, setErr] = useState<string | null>(null);
   const [highlightMode, setHighlightMode] = useState(false);
+  // Question numbers whose answer is currently revealed. Not persisted: a reload hides them again.
+  const [revealed, setRevealed] = useState<Set<number>>(() => new Set());
 
   useEffect(() => {
     loadExamBank(examCode)
@@ -113,6 +117,8 @@ export function Session() {
         );
       } else if (e.key === "f" || e.key === "F") {
         toggleFlag();
+      } else if ((e.key === "r" || e.key === "R") && q.answer !== undefined) {
+        toggleReveal(qNum);
       } else if (e.key === "m" || e.key === "M") {
         setHighlightMode((v) => !v);
       } else if ((e.key === "p" || e.key === "P") && state.endsAt != null) {
@@ -146,6 +152,15 @@ export function Session() {
         next = current[0] === letter ? [] : [letter];
       }
       return { ...prev, answers: { ...prev.answers, [qNum]: next } };
+    });
+  }
+
+  function toggleReveal(qNum: number) {
+    setRevealed((prev) => {
+      const next = new Set(prev);
+      if (next.has(qNum)) next.delete(qNum);
+      else next.add(qNum);
+      return next;
     });
   }
 
@@ -234,6 +249,8 @@ export function Session() {
   const struck = state.struck[qNum] ?? [];
   const highlights = state.highlights[qNum] ?? [];
   const flagged = !!state.flagged[qNum];
+  const correct = normalizeAnswer(q.answer);
+  const isRevealed = correct !== null && revealed.has(qNum);
   const uncertainNote = uncertain.get(qNum);
   const progress = ((state.currentIndex + 1) / state.config.questionNumbers.length) * 100;
 
@@ -306,9 +323,16 @@ export function Session() {
               picked={picked}
               multi={multi}
               struck={struck}
+              correct={isRevealed ? correct : null}
               onToggle={togglePick}
               onToggleStrike={toggleStrike}
             />
+
+            {isRevealed && (
+              <div className="rounded-md border border-success/40 bg-success/10 p-3 text-sm">
+                Correct answer: <span className="font-mono font-semibold">{correct!.join(", ")}</span>
+              </div>
+            )}
 
             <div className="flex flex-wrap items-center justify-between gap-2 pt-2">
               <div className="flex gap-2">
@@ -355,6 +379,11 @@ export function Session() {
                 >
                   <Highlighter /> {highlightMode ? "Highlighting" : "Highlight"}
                 </Button>
+                {correct !== null && (
+                  <Button variant="ghost" size="sm" onClick={() => toggleReveal(qNum)}>
+                    {isRevealed ? <EyeOff /> : <Eye />} {isRevealed ? "Hide answer" : "Reveal"}
+                  </Button>
+                )}
                 <Button
                   variant="ghost"
                   size="sm"
@@ -390,7 +419,7 @@ export function Session() {
             <div className="pt-2 text-[10px] text-muted-foreground space-y-0.5">
               <div>• Filled = answered</div>
               <div>• Yellow dot = flagged</div>
-              <div>• A–H keys to pick · ←/→ navigate · F flag · M highlight · Shift+letter strike</div>
+              <div>• A–H keys to pick · ←/→ navigate · F flag · M highlight · R reveal · Shift+letter strike</div>
               {state.endsAt != null && <div>• P pause/resume timer</div>}
             </div>
           </CardContent>
@@ -505,12 +534,18 @@ interface OptsProps {
   picked: string[];
   multi: boolean;
   struck: string[];
+  correct: string[] | null;
   onToggle: (letter: string) => void;
   onToggleStrike: (letter: string) => void;
 }
 
-function OptionsList({ q, picked, multi, struck, onToggle, onToggleStrike }: OptsProps) {
+function OptionsList({ q, picked, multi, struck, correct, onToggle, onToggleStrike }: OptsProps) {
   const letters = Object.keys(q.options).sort();
+  const rowCls = (L: string) =>
+    cn(
+      "flex items-start gap-3 rounded-md border p-3 cursor-pointer hover:bg-accent",
+      correct?.includes(L) && "border-success bg-success/10"
+    );
 
   function strikeButton(L: string, isStruck: boolean) {
     return (
@@ -542,7 +577,7 @@ function OptionsList({ q, picked, multi, struck, onToggle, onToggleStrike }: Opt
           return (
             <label
               key={L}
-              className="flex items-start gap-3 rounded-md border p-3 cursor-pointer hover:bg-accent"
+              className={rowCls(L)}
             >
               <Checkbox
                 checked={checked}
@@ -573,7 +608,7 @@ function OptionsList({ q, picked, multi, struck, onToggle, onToggleStrike }: Opt
           <Label
             key={L}
             htmlFor={`opt-${L}`}
-            className="flex items-start gap-3 rounded-md border p-3 cursor-pointer hover:bg-accent"
+            className={rowCls(L)}
           >
             <RadioGroupItem value={L} id={`opt-${L}`} className="mt-0.5" />
             <div
