@@ -1,0 +1,24 @@
+data/saa-c03/questions.json
+  s_68365e92190cb3::t_9eeda1ea56c9c0 2316,3154,3693,3709,5322,5638,5671,6089,6222-6223,6614,7004,8200,9338
+  s_68365e92190cb3::t_fa8f9c8e6166ab 4548
+data/saa-c03/explanations.json
+  s_68365e92190cb3::t_fb96b2ca92e894 550,750,878,882,1082,1266,1342,1350,1450,1482,1574,1666,1946,2214
+src/pages/Session.tsx
+  s_68365e92190cb3::t_729af28781fd4d 8-9,19,46-47,120-121,158-166,252-253,326,331-336,382-386,422,537,542,544-548,580,611
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "679ba9d080c1a9a863c5343f701915f277ab12a8",
+  "prompts": {},
+  "sessions": {
+    "s_68365e92190cb3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e10a2053-caaf-4637-a0d9-8d92f594aaf5",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": null
+    }
+  }
+}
