@@ -4,7 +4,7 @@ import { AlertTriangle, ArrowLeft, ClipboardCopy, Flag, Sparkles } from "lucide-
 
 import { loadExamBank, loadExplanationsSeed, loadUncertain } from "@/lib/exam-data";
 import { Storage } from "@/lib/storage";
-import { hasAnswerKey, isCorrect, normalizeAnswer } from "@/lib/session";
+import { hasAnswerKey, isCorrect, normalizeAnswer, scoreQuestions } from "@/lib/session";
 import { examByCode } from "@/lib/exams";
 import { explainQuestion } from "@/lib/gemini";
 import { toUncertainMap, type UncertainMap } from "@/lib/uncertain";
@@ -135,10 +135,12 @@ export function Results() {
     (n) => (attempt.answers[n]?.length ?? 0) > 0
   ).length;
   const flaggedCount = Object.keys(attempt.flagged).length;
+  // Recomputed live (not the persisted attempt.score) so attempts saved
+  // before unanswered questions were excluded from scoring still show the
+  // corrected percentage.
+  const score = scoreQuestions(bank, attempt.questionNumbers, attempt.answers);
   const pct =
-    attempt.score && attempt.score.scoreable > 0
-      ? Math.round((attempt.score.correct / attempt.score.scoreable) * 100)
-      : null;
+    score.scoreable > 0 ? Math.round((score.correct / score.scoreable) * 100) : null;
 
   const visible = attempt.questionNumbers.filter((n) => {
     const q = byNum.get(n);
@@ -174,7 +176,7 @@ export function Results() {
               <div className="flex items-end gap-3">
                 <div className="text-4xl font-bold tabular-nums">{pct}%</div>
                 <div className="text-sm text-muted-foreground pb-1">
-                  {attempt.score!.correct} of {attempt.score!.scoreable} scoreable
+                  {score.correct} of {score.scoreable} scoreable
                 </div>
               </div>
               <Progress value={pct} />

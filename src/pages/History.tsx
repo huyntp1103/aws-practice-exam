@@ -3,8 +3,10 @@ import { useNavigate } from "react-router-dom";
 import { Download, Trash2, Upload } from "lucide-react";
 
 import { EXAMS, examByCode } from "@/lib/exams";
+import { loadExamBank } from "@/lib/exam-data";
+import { scoreQuestions } from "@/lib/session";
 import { Storage } from "@/lib/storage";
-import type { Attempt, HistoryExportFile } from "@/lib/types";
+import type { Attempt, ExamBank, HistoryExportFile } from "@/lib/types";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -55,11 +57,33 @@ export function History() {
   const [rows, setRows] = useState<Row[]>(() => loadAll());
   const [examFilter, setExamFilter] = useState<string>("all");
   const [importMsg, setImportMsg] = useState<string | null>(null);
+  const [banks, setBanks] = useState<Record<string, ExamBank>>({});
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     setRows(loadAll());
   }, []);
+
+  // Load the bank for every exam present in history so scores can be
+  // recomputed live (not trusted from the persisted, possibly-stale
+  // attempt.score) — this keeps old attempts' percentages correct after
+  // scoring-logic fixes (e.g. excluding unanswered questions).
+  useEffect(() => {
+    const codes = new Set(rows.map((r) => r.exam));
+    for (const code of codes) {
+      if (banks[code]) continue;
+      loadExamBank(code)
+        .then((bank) => setBanks((prev) => ({ ...prev, [code]: bank })))
+        .catch(() => {});
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [rows]);
+
+  function scoreOf(r: Row): Attempt["score"] {
+    const bank = banks[r.exam];
+    if (!bank) return r.score;
+    return scoreQuestions(bank, r.questionNumbers, r.answers);
+  }
 
   const examsInHistory = useMemo(() => {
     const set = new Set(rows.map((r) => r.exam));
@@ -72,14 +96,16 @@ export function History() {
     let scoreableSum = 0;
     let correctSum = 0;
     for (const r of visible) {
-      if (r.score) {
-        scoreableSum += r.score.scoreable;
-        correctSum += r.score.correct;
+      const score = scoreOf(r);
+      if (score) {
+        scoreableSum += score.scoreable;
+        correctSum += score.correct;
       }
     }
     const avgPct = scoreableSum > 0 ? Math.round((correctSum / scoreableSum) * 100) : null;
     return { count: visible.length, avgPct };
-  }, [visible]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [visible, banks]);
 
   function deleteRow(r: Row) {
     if (!confirm("Delete this attempt?")) return;
@@ -207,9 +233,10 @@ export function History() {
         )}
         {visible.map((r) => {
           const dt = new Date(r.finishedAt);
+          const score = scoreOf(r);
           const pct =
-            r.score && r.score.scoreable > 0
-              ? Math.round((r.score.correct / r.score.scoreable) * 100)
+            score && score.scoreable > 0
+              ? Math.round((score.correct / score.scoreable) * 100)
               : null;
           const meta = examByCode(r.exam);
           return (
@@ -227,7 +254,7 @@ export function History() {
                     {r.mode} · {r.count} Q
                     {r.timerEnabled && ` · timed ${r.timerMinutes}m`}
                     {pct !== null
-                      ? ` · ${r.score!.correct}/${r.score!.scoreable} correct (${pct}%)`
+                      ? ` · ${score!.correct}/${score!.scoreable} correct (${pct}%)`
                       : " · self-review"}
                   </div>
                 </div>

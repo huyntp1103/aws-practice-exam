@@ -809,7 +809,7 @@
       "question": "A company plans to launch an Amazon EC2 instance in a private subnet for its internal corporate web portal. For security purposes, the EC2 instance must send data to Amazon DynamoDB and Amazon S3 via private endpoints that don't pass through the public Internet.\n\nWhich of the following can meet the above requirements?",
       "options": {
         "A": "Use Amazon VPC endpoints to route all access to S3 and DynamoDB via private endpoints.",
-        "B": "Use Amazon VPC endpoints to route all access to S3 and DynamoDB via private endpoints.",
+        "B": "Use AWS VPN CloudHub to route all access in S3 and DynamoDB to a private endpoint.",
         "C": "Enable DynamoDB Encryption at Rest with the default AWS-managed key and S3 Server-Side Encryption with the default AWS KMS key to route all traffic to DynamoDB and S3 via private endpoints.",
         "D": "Use AWS Direct Connect to route all access to S3 and DynamoDB via private endpoints."
       },

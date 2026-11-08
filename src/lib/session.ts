@@ -90,28 +90,36 @@ export function buildSession(bank: ExamBank, opts: {
 export function isCorrect(q: RawQuestion, picked: string[] | undefined): boolean | null {
   const key = normalizeAnswer(q.answer);
   if (!key) return null;
-  if (!picked || picked.length === 0) return false;
+  if (!picked || picked.length === 0) return null;
   const sorted = [...picked].sort();
   if (sorted.length !== key.length) return false;
   return sorted.every((v, i) => v === key[i]);
+}
+
+export function scoreQuestions(
+  bank: ExamBank,
+  questionNumbers: number[],
+  answers: Record<number, string[]>,
+): NonNullable<Attempt["score"]> {
+  let correct = 0;
+  let scoreable = 0;
+  const byNum = new Map(bank.questions.map((q) => [q.number, q]));
+  for (const qNum of questionNumbers) {
+    const q = byNum.get(qNum);
+    if (!q) continue;
+    const result = isCorrect(q, answers[qNum]);
+    if (result === null) continue;
+    scoreable += 1;
+    if (result) correct += 1;
+  }
+  return { correct, scoreable, total: questionNumbers.length };
 }
 
 export function scoreAttempt(
   bank: ExamBank,
   state: SessionState,
 ): Attempt["score"] {
-  let correct = 0;
-  let scoreable = 0;
-  const byNum = new Map(bank.questions.map((q) => [q.number, q]));
-  for (const qNum of state.config.questionNumbers) {
-    const q = byNum.get(qNum);
-    if (!q) continue;
-    const result = isCorrect(q, state.answers[qNum]);
-    if (result === null) continue;
-    scoreable += 1;
-    if (result) correct += 1;
-  }
-  return { correct, scoreable, total: state.config.questionNumbers.length };
+  return scoreQuestions(bank, state.config.questionNumbers, state.answers);
 }
 
 export function makeAttempt(state: SessionState, bank: ExamBank): Attempt {

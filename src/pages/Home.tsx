@@ -5,7 +5,7 @@ import { Play, RotateCw, Trash2 } from "lucide-react";
 import { EXAMS } from "@/lib/exams";
 import { loadExamBank } from "@/lib/exam-data";
 import { Storage } from "@/lib/storage";
-import { buildSession, hasAnswerKey, matchesTags } from "@/lib/session";
+import { buildSession, hasAnswerKey, matchesTags, scoreQuestions } from "@/lib/session";
 import type { ExamBank, Mode, UserPrefs } from "@/lib/types";
 
 import { Button } from "@/components/ui/button";
@@ -390,12 +390,12 @@ export function Home() {
       </Card>
 
       {/* Past attempts */}
-      {attemptCount > 0 && bank && <PastAttempts examCode={examCode} />}
+      {attemptCount > 0 && bank && <PastAttempts examCode={examCode} bank={bank} />}
     </div>
   );
 }
 
-function PastAttempts({ examCode }: { examCode: string }) {
+function PastAttempts({ examCode, bank }: { examCode: string; bank: ExamBank }) {
   const nav = useNavigate();
   const [attempts, setAttempts] = useState(() => Storage.getAttempts(examCode));
 
@@ -413,10 +413,10 @@ function PastAttempts({ examCode }: { examCode: string }) {
       <CardContent className="space-y-2">
         {attempts.slice(0, 10).map((a) => {
           const dt = new Date(a.finishedAt);
-          const pct =
-            a.score && a.score.scoreable > 0
-              ? Math.round((a.score.correct / a.score.scoreable) * 100)
-              : null;
+          // Recomputed live so attempts saved before the unanswered-scoring
+          // fix still show the corrected percentage.
+          const score = scoreQuestions(bank, a.questionNumbers, a.answers);
+          const pct = score.scoreable > 0 ? Math.round((score.correct / score.scoreable) * 100) : null;
           return (
             <div
               key={a.id}
@@ -428,7 +428,7 @@ function PastAttempts({ examCode }: { examCode: string }) {
                 </div>
                 <div className="text-xs text-muted-foreground">
                   {pct !== null
-                    ? `${a.score!.correct}/${a.score!.scoreable} correct (${pct}%)`
+                    ? `${score.correct}/${score.scoreable} correct (${pct}%)`
                     : "self-review"}
                   {a.timerEnabled && ` · timed ${a.timerMinutes}m`}
                   {a.tags && a.tags.length > 0 && ` · ${a.tags.join(", ")}${a.primaryTagOnly ? " (primary only)" : ""}`}
