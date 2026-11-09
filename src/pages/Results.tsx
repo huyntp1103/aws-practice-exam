@@ -17,6 +17,7 @@ import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Progress } from "@/components/ui/progress";
 import { Separator } from "@/components/ui/separator";
+import { ExplanationText } from "@/components/ExplanationText";
 
 type Filter = "all" | "incorrect" | "flagged" | "unanswered" | "uncertain";
 
@@ -436,7 +437,19 @@ function ExplainBlock({
 }) {
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState<string | null>(null);
+  const [format, setFormat] = useState(() => Storage.getPrefs().explanationFormat);
+  const [lang, setLang] = useState(() => Storage.getPrefs().explanationLang);
   const hasKey = !!Storage.getGeminiKey();
+
+  function changeFormat(f: "formatted" | "plain") {
+    setFormat(f);
+    Storage.setPrefs({ ...Storage.getPrefs(), explanationFormat: f });
+  }
+
+  function changeLang(l: "en" | "vi") {
+    setLang(l);
+    Storage.setPrefs({ ...Storage.getPrefs(), explanationLang: l });
+  }
 
   async function run() {
     setBusy(true);
@@ -466,11 +479,50 @@ function ExplainBlock({
             </span>
           )}
         </div>
-        <div className="whitespace-pre-wrap">{explanation.text}</div>
-        <div className="pt-2">
+        <ExplanationText
+          text={lang === "vi" && explanation.textVi ? explanation.textVi : explanation.text}
+          mode={format}
+        />
+        <div className="flex flex-wrap items-center justify-between gap-2 pt-2">
           <Button size="sm" variant="ghost" onClick={run} disabled={busy}>
             <Sparkles /> {busy ? "Regenerating…" : "Regenerate"}
           </Button>
+          <div className="flex flex-wrap items-center gap-2">
+            <div className="flex gap-1">
+              <Button
+                size="sm"
+                variant={lang === "en" ? "secondary" : "ghost"}
+                onClick={() => changeLang("en")}
+              >
+                EN
+              </Button>
+              <Button
+                size="sm"
+                variant={lang === "vi" ? "secondary" : "ghost"}
+                disabled={!explanation.textVi}
+                title={explanation.textVi ? undefined : "No Vietnamese translation available"}
+                onClick={() => changeLang("vi")}
+              >
+                VI
+              </Button>
+            </div>
+            <div className="flex gap-1">
+              <Button
+                size="sm"
+                variant={format === "formatted" ? "secondary" : "ghost"}
+                onClick={() => changeFormat("formatted")}
+              >
+                Formatted
+              </Button>
+              <Button
+                size="sm"
+                variant={format === "plain" ? "secondary" : "ghost"}
+                onClick={() => changeFormat("plain")}
+              >
+                Plain
+              </Button>
+            </div>
+          </div>
         </div>
         {err && <div className="mt-1 text-xs text-destructive">{err}</div>}
       </div>

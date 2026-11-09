@@ -75,6 +75,8 @@ export interface UserPrefs {
   defaultCount: number;
   defaultTimerEnabled: boolean;
   defaultTimerMinutes: number;
+  explanationFormat: "formatted" | "plain";
+  explanationLang: "en" | "vi";
 }
 
 export interface UncertainItem {
@@ -91,6 +93,7 @@ export interface UncertainBank {
 
 export interface Explanation {
   text: string;
+  textVi?: string;
   createdAt: number;
 }
 

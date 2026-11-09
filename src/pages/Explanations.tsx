@@ -11,6 +11,7 @@ import type { ExamBank, Explanation, RawQuestion } from "@/lib/types";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { ExplanationText } from "@/components/ExplanationText";
 
 type Source = "seed" | "local" | "both";
 
@@ -31,6 +32,18 @@ export function Explanations() {
   const [openQ, setOpenQ] = useState<number | null>(null);
   const [loading, setLoading] = useState(true);
   const [err, setErr] = useState<string | null>(null);
+  const [format, setFormat] = useState(() => Storage.getPrefs().explanationFormat);
+  const [lang, setLang] = useState(() => Storage.getPrefs().explanationLang);
+
+  function changeFormat(f: "formatted" | "plain") {
+    setFormat(f);
+    Storage.setPrefs({ ...Storage.getPrefs(), explanationFormat: f });
+  }
+
+  function changeLang(l: "en" | "vi") {
+    setLang(l);
+    Storage.setPrefs({ ...Storage.getPrefs(), explanationLang: l });
+  }
 
   useEffect(() => {
     setLoading(true);
@@ -158,6 +171,46 @@ export function Explanations() {
               </Button>
             </div>
           </div>
+
+          <div className="space-y-1.5">
+            <div className="text-xs font-medium text-muted-foreground">View</div>
+            <div className="flex flex-wrap items-center gap-1.5">
+              <Button
+                size="sm"
+                variant={format === "formatted" ? "default" : "outline"}
+                onClick={() => changeFormat("formatted")}
+              >
+                Formatted
+              </Button>
+              <Button
+                size="sm"
+                variant={format === "plain" ? "default" : "outline"}
+                onClick={() => changeFormat("plain")}
+              >
+                Plain
+              </Button>
+            </div>
+          </div>
+
+          <div className="space-y-1.5">
+            <div className="text-xs font-medium text-muted-foreground">Language</div>
+            <div className="flex flex-wrap items-center gap-1.5">
+              <Button
+                size="sm"
+                variant={lang === "en" ? "default" : "outline"}
+                onClick={() => changeLang("en")}
+              >
+                English
+              </Button>
+              <Button
+                size="sm"
+                variant={lang === "vi" ? "default" : "outline"}
+                onClick={() => changeLang("vi")}
+              >
+                Tiếng Việt
+              </Button>
+            </div>
+          </div>
         </CardContent>
       </Card>
 
@@ -254,7 +307,15 @@ export function Explanations() {
                           </span>
                         )}
                       </div>
-                      <div className="whitespace-pre-wrap">{r.explanation.text}</div>
+                      <ExplanationText
+                        text={lang === "vi" && r.explanation.textVi ? r.explanation.textVi : r.explanation.text}
+                        mode={format}
+                      />
+                      {lang === "vi" && !r.explanation.textVi && (
+                        <div className="mt-1 text-xs text-muted-foreground">
+                          (No Vietnamese translation yet — showing English.)
+                        </div>
+                      )}
                     </div>
                   </div>
                 )}

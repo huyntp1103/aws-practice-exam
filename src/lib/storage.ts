@@ -15,6 +15,8 @@ const DEFAULT_PREFS: UserPrefs = {
   defaultCount: 25,
   defaultTimerEnabled: false,
   defaultTimerMinutes: 130,
+  explanationFormat: "formatted",
+  explanationLang: "en",
 };
 
 function read<T>(key: string, fallback: T): T {
