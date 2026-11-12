@@ -1445,7 +1445,7 @@
         "C": "Create an S3 Standard bucket with S3 Object Lock in compliance mode enabled then configure a lifecycle rule that transfers files to Amazon S3 Glacier Deep Archive after 3 years.",
         "D": "Create a One-Zone-IA bucket with object-level versioning enabled and configure a lifecycle rule that transfers files to Amazon S3 Glacier Deep Archive after 3 years."
       },
-      "answer": "C",
+      "answer": "A",
       "tags": [
         "storage"
       ]
@@ -1499,7 +1499,7 @@
         "C": "Use Amazon S3 Transfer Acceleration on the existing S3 bucket and have the Outposts servers use the Transfer Acceleration endpoint for downloads.",
         "D": "Create an Amazon CloudFront distribution with the us-west-2 S3 bucket as the origin. Use signed URLs for software downloads."
       },
-      "answer": "C",
+      "answer": "D",
       "tags": [
         "storage",
         "hybrid-connectivity"
@@ -3385,7 +3385,7 @@
         "C": "Deploy the application in an AWS Lambda function with Container image support. Attach an Amazon Elastic File System (Amazon EFS) volume to the function.",
         "D": "Deploy the application Amazon ECS cluster with Amazon EC2 worker nodes and attach a 5 GB Amazon EBS volume."
       },
-      "answer": "A",
+      "answer": "B",
       "tags": [
         "compute"
       ]
