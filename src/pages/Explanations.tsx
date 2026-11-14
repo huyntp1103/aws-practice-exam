@@ -24,7 +24,10 @@ interface Row {
 
 export function Explanations() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const examFilter = searchParams.get("exam") ?? EXAMS[0].code;
+  const examFilter =
+    searchParams.get("exam") ??
+    EXAMS.find((e) => e.code === "saa-c03-bonso")?.code ??
+    EXAMS[0].code;
   const sourceFilter = (searchParams.get("source") as Source | "all" | null) ?? "all";
 
   const [bank, setBank] = useState<ExamBank | null>(null);

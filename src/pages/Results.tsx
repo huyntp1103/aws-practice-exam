@@ -32,6 +32,17 @@ export function Results() {
   const [filter, setFilter] = useState<Filter>("all");
   const [openQ, setOpenQ] = useState<number | null>(null);
   const [explanations, setExplanations] = useState<Record<string, Explanation>>({});
+  const cardRefs = useRef<Map<number, HTMLDivElement>>(new Map());
+
+  function openQuestion(qNum: number) {
+    const willOpen = openQ !== qNum;
+    setOpenQ(willOpen ? qNum : null);
+    if (willOpen) {
+      requestAnimationFrame(() => {
+        cardRefs.current.get(qNum)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    }
+  }
 
   useEffect(() => {
     loadExamBank(examCode)
@@ -257,7 +268,14 @@ export function Results() {
           const ok = isCorrect(q, picked);
           const open = openQ === qNum;
           return (
-            <Card key={qNum}>
+            <Card
+              key={qNum}
+              ref={(el) => {
+                if (el) cardRefs.current.set(qNum, el);
+                else cardRefs.current.delete(qNum);
+              }}
+              className="scroll-mt-4"
+            >
               <CardContent className="py-4 space-y-2">
                 <div className="flex items-start gap-2">
                 {scoreable && (
@@ -270,7 +288,7 @@ export function Results() {
                 )}
                 <button
                   className="flex-1 text-left"
-                  onClick={() => setOpenQ(open ? null : qNum)}
+                  onClick={() => openQuestion(qNum)}
                 >
                   <div className="flex flex-wrap items-center gap-2">
                     <Badge variant="secondary">#{q.number}</Badge>

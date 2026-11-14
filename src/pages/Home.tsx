@@ -23,7 +23,7 @@ export function Home() {
   const nav = useNavigate();
   const [prefs, setPrefs] = useState<UserPrefs>(() => Storage.getPrefs());
   const [examCode, setExamCode] = useState<string>(
-    EXAMS.find((e) => e.code === "saa-c03")?.code ?? EXAMS[0].code
+    EXAMS.find((e) => e.code === "saa-c03-bonso")?.code ?? EXAMS[0].code
   );
   const [mode, setMode] = useState<Mode>(prefs.defaultMode);
   const [count, setCount] = useState<number>(prefs.defaultCount);
