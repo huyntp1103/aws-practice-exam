@@ -30,8 +30,23 @@ export function Results() {
   const [attempt, setAttempt] = useState<Attempt | null>(null);
   const [err, setErr] = useState<string | null>(null);
   const [filter, setFilter] = useState<Filter>("all");
-  const [openQ, setOpenQ] = useState<number | null>(null);
+  const [openQ, setOpenQ] = useState<Set<number>>(() => new Set());
   const [explanations, setExplanations] = useState<Record<string, Explanation>>({});
+  const cardRefs = useRef<Map<number, HTMLDivElement>>(new Map());
+
+  function openQuestion(qNum: number) {
+    setOpenQ((prev) => {
+      const next = new Set(prev);
+      if (next.has(qNum)) next.delete(qNum);
+      else next.add(qNum);
+      return next;
+    });
+    if (!openQ.has(qNum)) {
+      requestAnimationFrame(() => {
+        cardRefs.current.get(qNum)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    }
+  }
 
   useEffect(() => {
     loadExamBank(examCode)
@@ -255,9 +270,16 @@ export function Results() {
           const picked = attempt.answers[qNum] ?? [];
           const key = normalizeAnswer(q.answer);
           const ok = isCorrect(q, picked);
-          const open = openQ === qNum;
+          const open = openQ.has(qNum);
           return (
-            <Card key={qNum}>
+            <Card
+              key={qNum}
+              ref={(el) => {
+                if (el) cardRefs.current.set(qNum, el);
+                else cardRefs.current.delete(qNum);
+              }}
+              className="scroll-mt-4"
+            >
               <CardContent className="py-4 space-y-2">
                 <div className="flex items-start gap-2">
                 {scoreable && (
@@ -270,7 +292,7 @@ export function Results() {
                 )}
                 <button
                   className="flex-1 text-left"
-                  onClick={() => setOpenQ(open ? null : qNum)}
+                  onClick={() => openQuestion(qNum)}
                 >
                   <div className="flex flex-wrap items-center gap-2">
                     <Badge variant="secondary">#{q.number}</Badge>
