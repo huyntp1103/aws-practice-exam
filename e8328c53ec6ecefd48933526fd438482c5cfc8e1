@@ -1,0 +1,34 @@
+src/pages/Home.tsx
+  s_725ea0acdd81d9::t_47b3030be20dad 431
+  s_725ea0acdd81d9::t_26dd7f6f7db459 8
+  s_725ea0acdd81d9::t_ccdd7f23413be4 393,398,416-419
+src/pages/History.tsx
+  s_725ea0acdd81d9::t_bf807cb3fa0b61 236,238-239
+  s_725ea0acdd81d9::t_acaab339df32e7 6-7,9
+  s_725ea0acdd81d9::t_1410bb971e4d1a 60,67-87,99-102,107-108
+  s_725ea0acdd81d9::t_f90754bdb8e3a6 257
+src/pages/Results.tsx
+  s_725ea0acdd81d9::t_22901bf581c72c 179
+  s_725ea0acdd81d9::t_c83b0b5bee868e 138-141,143
+  s_725ea0acdd81d9::t_90356ddcae3d92 7
+src/lib/session.ts
+  s_725ea0acdd81d9::t_1cc1a71b2c2e03 103
+  s_725ea0acdd81d9::t_1b7d91436765f2 99,101-102,107,110,115-122
+  s_725ea0acdd81d9::t_46a2c283969c98 93
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e8328c53ec6ecefd48933526fd438482c5cfc8e1",
+  "prompts": {},
+  "sessions": {
+    "s_725ea0acdd81d9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "0fa5a0b8-e00e-4c56-b4ea-5cf56e2d93bf",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": null
+    }
+  }
+}

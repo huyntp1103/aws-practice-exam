@@ -1,0 +1,29 @@
+src/pages/Results.tsx
+  s_c5301522058e39::t_b92a33154ddad2 375
+src/pages/Home.tsx
+  s_9e9696d9b2f33d::t_fa472348a27550 25-27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "71c63e437b1b4afa13feafc05e176c1cd5cb8087",
+  "prompts": {},
+  "sessions": {
+    "s_9e9696d9b2f33d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8e0b12ba-6047-45cb-9e90-f6295866bf5d",
+        "model": "unknown"
+      },
+      "human_author": "Huy Nguyen <huyntp1103@gmail.com>"
+    },
+    "s_c5301522058e39": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "72708b48-f0da-46fd-95f7-53f6043f0421",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Huy Nguyen <huyntp1103@gmail.com>"
+    }
+  }
+}

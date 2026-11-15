@@ -1,0 +1,32 @@
+data/saa-c03/questions.json
+  s_b7c976f1d3238d::t_723b216dbefb9e 1389
+  s_725ea0acdd81d9::t_7cf5f40f789fe3 163,1340,2488,2798-2799,3282,4293,6506,6594,7979,8465,9301-9302,11243-11244
+  s_725ea0acdd81d9::t_1fe8d762e2db2d 2614
+  s_b7c976f1d3238d::t_5beaab41e7db6e 1393
+  s_725ea0acdd81d9::t_fff132d1a79d7b 2682,4858,4860,4863,4928,8978
+  s_725ea0acdd81d9::t_a48ce132766a87 1443,1529,2006,2864,2929,3117,3572,3657,4663,4895,7352,8009,8094,8301,11178-11179,11195
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "730b4c7022ea98e74148fb8cca575aef214b90c9",
+  "prompts": {},
+  "sessions": {
+    "s_725ea0acdd81d9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "0fa5a0b8-e00e-4c56-b4ea-5cf56e2d93bf",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": null
+    },
+    "s_b7c976f1d3238d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "fb829c97-e6e3-4ff3-aeac-434001abdbdd",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "Huy Nguyen <huyntp1103@gmail.com>"
+    }
+  }
+}

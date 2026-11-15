@@ -1,0 +1,26 @@
+src/pages/Results.tsx
+  s_725ea0acdd81d9::t_1ada0506da2294 275-282,295
+  s_725ea0acdd81d9::t_b15c9c9f14ec83 273
+  s_725ea0acdd81d9::t_2071259ae1941a 35-37,45-49
+  s_725ea0acdd81d9::t_8d68b7aed14e88 33,38-44
+src/pages/Explanations.tsx
+  s_725ea0acdd81d9::t_d5a0170b342889 27-30
+src/pages/Home.tsx
+  s_725ea0acdd81d9::t_8e06220c52a325 26
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "085a8504121675b2f757e426b0f9840dda2f3fc7",
+  "prompts": {},
+  "sessions": {
+    "s_725ea0acdd81d9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "0fa5a0b8-e00e-4c56-b4ea-5cf56e2d93bf",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": null
+    }
+  }
+}

@@ -1,0 +1,19 @@
+src/lib/session.ts
+  s_725ea0acdd81d9::t_46a2c283969c98 93
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "bd540f06bc508c2cea475eff270384b4ab7ce1c9",
+  "prompts": {},
+  "sessions": {
+    "s_725ea0acdd81d9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "0fa5a0b8-e00e-4c56-b4ea-5cf56e2d93bf",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "Huy Nguyen <huyntp1103@gmail.com>"
+    }
+  }
+}
