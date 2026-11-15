@@ -113,19 +113,34 @@ export function History() {
     setRows(loadAll());
   }
 
-  function exportHistory() {
-    if (visible.length === 0) return;
-    const payload: HistoryExportFile = {
-      exported_at: new Date().toISOString(),
-      attempts: visible.map(({ exam: _exam, ...a }) => a),
-    };
+  function downloadExport(payload: HistoryExportFile, filename: string) {
     const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = examFilter === "all" ? "aws-study-history.json" : `aws-study-history-${examFilter}.json`;
+    a.download = filename;
     a.click();
     URL.revokeObjectURL(url);
+  }
+
+  function exportHistory() {
+    if (visible.length === 0) return;
+    downloadExport(
+      {
+        exported_at: new Date().toISOString(),
+        attempts: visible.map(({ exam: _exam, ...a }) => a),
+      },
+      examFilter === "all" ? "aws-study-history.json" : `aws-study-history-${examFilter}.json`,
+    );
+  }
+
+  function exportAttempt(r: Row) {
+    const { exam: _exam, ...a } = r;
+    const dt = new Date(r.finishedAt).toISOString().slice(0, 10);
+    downloadExport(
+      { exported_at: new Date().toISOString(), attempts: [a] },
+      `${r.exam}-attempt-${dt}.json`,
+    );
   }
 
   function importHistory(file: File) {
@@ -265,6 +280,14 @@ export function History() {
                     onClick={() => nav(`/results/${r.exam}/${r.id}`)}
                   >
                     Review
+                  </Button>
+                  <Button
+                    size="sm"
+                    variant="ghost"
+                    onClick={() => exportAttempt(r)}
+                    aria-label="Export attempt"
+                  >
+                    <Download />
                   </Button>
                   <Button
                     size="sm"

@@ -19,8 +19,20 @@ function spaFallback(): PluginOption {
   };
 }
 
+// Custom domain for GitHub Pages.
+function ghPagesCname(): PluginOption {
+  return {
+    name: "gh-pages-cname",
+    apply: "build",
+    closeBundle() {
+      const distDir = path.resolve(__dirname, "dist");
+      fs.writeFileSync(path.join(distDir, "CNAME"), "aws.nguyetquedo.com\n");
+    },
+  };
+}
+
 export default defineConfig({
-  plugins: [react(), spaFallback()],
+  plugins: [react(), spaFallback(), ghPagesCname()],
   // Serve per-exam JSON from ./data at the site root.
   // E.g. /saa-c03/questions.json -> ./data/saa-c03/questions.json
   publicDir: path.resolve(__dirname, "./data"),
