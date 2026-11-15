@@ -1,0 +1,18 @@
+404.html
+  h_360fd414b92958 9
+assets/index-BHFqdpme.js
+  h_360fd414b92958 1,9,17,25,33-34,37-38,40,49,58,67,72,77,82,87,92,97,102,107,112,117,122,127,132,137,142,147,152,157,162,167,172,177,182,187,192,197,202,207,212,214,217,219-221
+index.html
+  h_360fd414b92958 9
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "245257f8a7adbae6ba2a087e9f704e37c8e99fcf",
+  "prompts": {},
+  "humans": {
+    "h_360fd414b92958": {
+      "author": "Huy Nguyen <huyntp1103@gmail.com>"
+    }
+  }
+}
