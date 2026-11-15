@@ -1,0 +1,26 @@
+{
+  "exam_code": "saa-c03-bonso",
+  "note": "Questions where the chosen answer is uncertain — double-check before relying on these. `picked` is the best-guess answer; `note` is the original reasoning.",
+  "items": [
+    {
+      "number": 138,
+      "picked": "A",
+      "note": "Q138 — question references a Security Group inbound rules table and a Route table \"shown below\", but the scraper (scrape_exam.py) strips all images via soup.get_text(), so that config was never captured. Stored answer (A) is the site's listed answer but can't be independently verified without seeing the actual rules."
+    },
+    {
+      "number": 161,
+      "picked": "C",
+      "note": "Q161 — question references a Network ACL inbound rules table that was never captured (scraper drops embedded images). Stored answer (C) is the site's listed answer but can't be independently verified without seeing the actual NACL rules."
+    },
+    {
+      "number": 232,
+      "picked": "A",
+      "note": "Q232 — question says \"Below is the security group configuration of their Microsoft SQL Server database:\" but no table/image follows it in the scraped text (scraper drops embedded images). Stored answer (A) is the site's listed answer but can't be independently verified without seeing the actual security group rules."
+    },
+    {
+      "number": 352,
+      "picked": "D",
+      "note": "Q352 — question says \"The main route table of the VPC is as shown below:\" but no table/image follows it in the scraped text (scraper drops embedded images). Stored answer (D) is the site's listed answer but can't be independently verified without seeing the actual route table."
+    }
+  ]
+}

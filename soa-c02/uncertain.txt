@@ -1,0 +1,3 @@
+Q27 assumes the newer NLB-with-security-groups behavior (post-Aug 2023). Older study guides may list a different answer.
+Q299 picks one-time Spot (B); "Spot with defined duration" (C) was deprecated in 2021, so B is the modern correct answer even though some older dumps say C.
+Q193 (A) keeps 6 On-Demand for guaranteed minimum capacity and uses Spot only for the burst — safer than pure Spot Fleet (D).

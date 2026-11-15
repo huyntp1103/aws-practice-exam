@@ -1,0 +1,47 @@
+{
+  "exam_code": "sap-c02",
+  "note": "Questions where the chosen answer is uncertain — double-check before relying on these. `picked` is the best-guess answer; `note` is the original reasoning.",
+  "items": [
+    {
+      "number": 11,
+      "picked": "A",
+      "note": "Q11 (DX redundancy with multi-region future) — picked A (Direct Connect Gateway with private VIFs). D (Transit Gateway) is defensible if you expect heavy inter-VPC traffic; both architectures work and forum discussions split here."
+    },
+    {
+      "number": 14,
+      "picked": "D",
+      "note": "Q14 (12-instance HPC across AZs with strict SLA on scheduled jobs) — picked D (3-3-3-3 with 3 OD + 1 Spot per AZ in 3 AZs). The math on AZ failure is tight; C with a Savings Plan instead of capacity reservations is the other commonly cited answer."
+    },
+    {
+      "number": 174,
+      "picked": [
+        "B",
+        "D"
+      ],
+      "note": "Q174 (Lambda processing 1-2 min instead of 3-5 sec) — went with [B, D] (more memory + Kinesis batching). [B, E] (memory + SQS FIFO) also has support; FIFO groups would help but throughput-limit at 300 msg/sec, which is why I leaned Kinesis."
+    },
+    {
+      "number": 214,
+      "picked": [
+        "A",
+        "C"
+      ],
+      "note": "Q214 (SNS fanout cross-region) — went with [A, C]: deploy SQS+Lambda to other regions, subscribe each regional SQS to the original SNS topic. SNS does support cross-region SQS subscriptions, which makes this the simpler architecture; some sources prefer [A, E] if they assume per-region SNS topics."
+    },
+    {
+      "number": 233,
+      "picked": "C",
+      "note": "Q233 (microservices + MySQL + Oracle OLAP) — picked C (EKS Fargate + Aurora Serverless MySQL + Redshift). A (ECS Fargate keeping MySQL on EC2) is defensible if interpreted as \"fewest changes\"; I went with the more modern stack since the question is about improving architecture."
+    },
+    {
+      "number": 235,
+      "picked": "B",
+      "note": "Q235 (S3 SSE-KMS costs increasing) — picked B (migrate to SSE-S3). The technically correct answer is \"S3 Bucket Keys\" (reduces KMS calls 99%), but that isn't in the options, so B is the best of the four."
+    },
+    {
+      "number": 311,
+      "picked": "C",
+      "note": "Q311 (modernize stateless app + MySQL, 100% CPU + patching downtime) — picked C (containerize on ECS). D (new AMI with SSM Agent + ASG) directly addresses both the scaling and patching points and is also defensible."
+    }
+  ]
+}

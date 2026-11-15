@@ -1,0 +1,45 @@
+{
+  "exam_code": "dva-c02",
+  "note": "Questions where the chosen answer is uncertain — double-check before relying on these. `picked` is the best-guess answer; `note` is the original reasoning.",
+  "items": [
+    {
+      "number": 86,
+      "picked": [
+        "A",
+        "C"
+      ],
+      "note": "Q86 (CI/CD triggers on source code change) — picked [A, C] (S3 with change detection + CodeCommit with commit-driven start). Some sources prefer [A, D] if they include the polling option, but commit-driven is the modern recommended pattern."
+    },
+    {
+      "number": 132,
+      "picked": "C",
+      "note": "Q132 (concert seat selection with two downstream Lambdas) — picked C (SNS fanout to both Lambdas). A (SNS FIFO → SQS FIFO) is also defensible if you read \"must process in order\" strictly, but the question doesn't really require strict ordering."
+    },
+    {
+      "number": 149,
+      "picked": [
+        "C",
+        "D"
+      ],
+      "note": "Q149 (S3 in-transit encryption + KMS at-rest, two answers) — picked [C, D] (app-side encrypt with KMS CMK before upload + aws:SecureTransport bucket policy). [B, D] is defensible too if you read \"client-side encryption via bucket policy\" as a valid mechanism, but bucket policies don't enforce client-side encryption directly."
+    },
+    {
+      "number": 174,
+      "picked": "B",
+      "note": "Q174 (initializing SDK outside Lambda handler) — B (runtime environment reuse), the canonical Lambda performance pattern."
+    },
+    {
+      "number": 235,
+      "picked": "D",
+      "note": "Q235 (CloudWatch ThrottlingException) — D (exponential backoff retry). A (limit increase) is a longer-term answer but D is the immediate best practice."
+    },
+    {
+      "number": 283,
+      "picked": [
+        "B",
+        "D"
+      ],
+      "note": "Q283 (multimedia app with guest + authenticated users, two answers) — picked [B, D] (Cognito identity pool for unauthenticated + separate roles for each user type). [A, D] is sometimes selected by treating user pools as the entry point, but identity pools are the canonical AWS choice for unauthenticated access."
+    }
+  ]
+}
