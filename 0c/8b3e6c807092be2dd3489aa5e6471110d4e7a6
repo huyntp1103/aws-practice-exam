@@ -1,0 +1,19 @@
+.github/workflows/deploy.yml
+  s_725ea0acdd81d9::t_1baca50a6a0046 1-48
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "0c8b3e6c807092be2dd3489aa5e6471110d4e7a6",
+  "prompts": {},
+  "sessions": {
+    "s_725ea0acdd81d9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "0fa5a0b8-e00e-4c56-b4ea-5cf56e2d93bf",
+        "model": "claude-sonnet-5"
+      },
+      "human_author": "Huy Nguyen <huyntp1103@gmail.com>"
+    }
+  }
+}
