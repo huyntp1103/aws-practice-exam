@@ -1,0 +1,19 @@
+data/saa-c03-bonso/questions.json
+  s_6845613aa5a0b3::t_5cabef1192ca9a 3166-3167
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ec834bbc105df1eb11a510ddd28712388e578920",
+  "prompts": {},
+  "sessions": {
+    "s_6845613aa5a0b3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "425526af-dd04-4782-81f8-42fde9213431",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Huy Nguyen <huyntp1103@gmail.com>"
+    }
+  }
+}
