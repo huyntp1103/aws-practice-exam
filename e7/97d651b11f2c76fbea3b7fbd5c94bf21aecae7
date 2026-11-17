@@ -1,0 +1,21 @@
+vite.config.ts
+  s_6845613aa5a0b3::t_fcbc16ab271bab 1,6
+README.md
+  s_6845613aa5a0b3::t_fcbc16ab271bab 57,59-61
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e797d651b11f2c76fbea3b7fbd5c94bf21aecae7",
+  "prompts": {},
+  "sessions": {
+    "s_6845613aa5a0b3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "425526af-dd04-4782-81f8-42fde9213431",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Huy Nguyen <huyntp1103@gmail.com>"
+    }
+  }
+}
