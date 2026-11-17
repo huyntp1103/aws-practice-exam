@@ -1,0 +1,19 @@
+wrangler.jsonc
+  s_6845613aa5a0b3::t_e94539144dbca3 1-8
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ea69473a649070c9e27f5982b23fc4e36d23f49d",
+  "prompts": {},
+  "sessions": {
+    "s_6845613aa5a0b3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "425526af-dd04-4782-81f8-42fde9213431",
+        "model": "unknown"
+      },
+      "human_author": "Huy Nguyen <huyntp1103@gmail.com>"
+    }
+  }
+}
