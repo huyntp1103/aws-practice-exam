@@ -54,11 +54,11 @@ echo -n "your-password" | shasum -a 256 | cut -d' ' -f1
 VITE_PASSWORD_HASH=<hex hash>
 ```
 
-**Production (GitHub Pages)** — set a repo secret:
+**Production (Cloudflare Pages)** — add an environment variable:
 
-1. Repo → **Settings → Secrets and variables → Actions → New repository secret**
-2. Name: `PASSWORD_HASH`, Value: the hex hash.
-3. The deploy workflow passes it to the build as `VITE_PASSWORD_HASH`.
+1. Cloudflare dashboard → your Pages project → **Settings → Variables and Secrets** (Production).
+2. Name: `VITE_PASSWORD_HASH`, Value: the hex hash.
+3. Redeploy; the build bakes it into the bundle.
 
 Leave the env var unset and the gate disables itself (open access). The build also logs a console warning in production if no hash is configured.
 
