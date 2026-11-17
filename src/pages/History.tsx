@@ -45,6 +45,15 @@ function isAttempt(v: unknown): v is Attempt {
   );
 }
 
+// Older exports stored a display name (e.g. "Amazon AWS Certified ... SAA-C03")
+// in examCode. Map those to the registry code by their trailing exam id.
+function resolveExamCode(raw: string): string | null {
+  if (examByCode(raw)) return raw;
+  const m = raw.match(/\b([a-z]{3}-c\d{2})\b/i);
+  const code = m?.[1].toLowerCase();
+  return code && examByCode(code) ? code : null;
+}
+
 function parseImportedAttempts(json: unknown): unknown[] {
   if (Array.isArray(json)) return json;
   const file = json as Partial<HistoryExportFile>;
@@ -150,14 +159,16 @@ export function History() {
         const candidates = parseImportedAttempts(JSON.parse(text));
         const byExam = new Map<string, Attempt[]>();
         let invalid = 0;
-        for (const c of candidates) {
-          if (!isAttempt(c) || !examByCode(c.examCode)) {
+        for (const raw of candidates) {
+          const code = isAttempt(raw) ? resolveExamCode(raw.examCode) : null;
+          if (!isAttempt(raw) || !code) {
             invalid++;
             continue;
           }
-          const list = byExam.get(c.examCode) ?? [];
+          const c: Attempt = { ...raw, examCode: code };
+          const list = byExam.get(code) ?? [];
           list.push(c);
-          byExam.set(c.examCode, list);
+          byExam.set(code, list);
         }
         let added = 0;
         let skipped = 0;
