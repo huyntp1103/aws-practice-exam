@@ -1,0 +1,19 @@
+src/pages/History.tsx
+  s_68365e92190cb3::t_9a1577bfba3924 48-56,162-164,168-169,171
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "2bda7d668346969417adbe9412f40474e981692a",
+  "prompts": {},
+  "sessions": {
+    "s_68365e92190cb3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e10a2053-caaf-4637-a0d9-8d92f594aaf5",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Huy Nguyen <huyntp1103@gmail.com>"
+    }
+  }
+}
