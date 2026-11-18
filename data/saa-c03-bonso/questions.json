@@ -4367,13 +4367,9 @@
         "A": "Alter the retention period in SQS.",
         "B": "Alter the visibility timeout of SQS.",
         "C": "Use an SQS FIFO Queue instead.",
-        "D": "Change the message size in SQS.",
-        "E": "Use an Amazon SQS FIFO Queue instead."
+        "D": "Change the message size in SQS."
       },
-      "answer": [
-        "C",
-        "E"
-      ],
+      "answer": "C",
       "tags": [
         "messaging-integration"
       ]
